@@ -1,0 +1,197 @@
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  background: black;
+  font-family: "Roboto Mono", monospace;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  list-style: none;
+}
+.top {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  grid-gap: 10px;
+}
+
+.bold {
+  font-weight: 500;
+}
+.large {
+  font-size: 1rem;
+}
+.card {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  height: 4rem;
+  border-radius: 1rem;
+  align-items: center;
+  transition: all 0.2s;
+  font-weight: 400;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid #dcdcdc3a;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 0px;
+  font-size: 0.8rem;
+}
+
+.card .symbol {
+  margin: 0 1rem;
+}
+
+.formatted-number {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3em;
+  /* color: #2c88ff; */
+}
+
+.info-card {
+  position: relative;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  border: 1px solid #dcdcdc3a;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 0px;
+}
+
+.info-card:hover {
+  box-shadow: rgb(99 99 99 / 40%) 0px 2px 8px 0px;
+}
+
+.token-card-list {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.card-grid {
+}
+
+.container {
+  padding: 10px;
+}
+
+.button {
+  padding: 0.5rem 2rem;
+  /* background-color: black; */
+  border-radius: 1rem;
+  min-width: 100px;
+  text-align: center;
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  margin-right: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid rgba(148, 148, 148, 0.317);
+}
+
+.active {
+  filter: brightness(1.2);
+  background: #2c88ff !important;
+  font-weight: bold;
+  color: white !important;
+}
+
+.button:hover {
+  transform: scale(1.02);
+  box-shadow: rgb(99 99 99 / 50%) 0px 2px 8px 0px;
+}
+
+.filter-buttons {
+  margin: 1rem 0;
+  height: 10vh;
+  align-items: center;
+  display: flex;
+}
+
+.detail-links {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.detail-links img {
+  height: 30px;
+  margin-right: 1rem;
+}
+
+/* ==============Table============= */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  /* background-color: #dddddd; */
+}
+
+.pair-card {
+  cursor: pointer;
+  padding: 0rem 0rem;
+  border-radius: 1rem;
+
+  align-items: center;
+  transition: all 0.2s;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  height: 1.6rem;
+  margin-top: 1rem;
+  /* box-shadow: rgb(99
+   99 99 / 10%) 0px 2px 8px 0px; */
+  /* font-size: .6rem; */
+}
+
+.pair {
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-top: 0.4rem;
+  margin-right: 0.4rem;
+  border: 1px solid #dcdcdc3a;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 40px;
+
+  text-align: center;
+}
+
+.pairs {
+  min-height: 16rem;
+}
+
+#coingecko {
+  transform: scale(1.2);
+}
+.theme {
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 3rem;
+}
