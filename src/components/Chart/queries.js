@@ -6,7 +6,6 @@ export const TOKEN_DETAILS = gql`
       orderBy: date
       orderDirection: desc
       first: 100 
-    
       where: { token: $id }
     ) {
       id
