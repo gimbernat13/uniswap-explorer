@@ -26,12 +26,11 @@ export default function Chart() {
     const milliseconds = data.date * 1000;
     const newDate = new Date(milliseconds);
     const formattedDate = newDate.toISOString().split("T")[0];
-
     return formattedDate;
   };
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={400}>
       <AreaChart data={reverseData}>
         <defs>
           <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
@@ -41,12 +40,21 @@ export default function Chart() {
         </defs>
 
         <Area dataKey="priceUSD" stroke="#2c88ff" fill="url(#color)" />
-        <XAxis dataKey={getXValue1} axisLine={true} tickLine={false} />
+        <XAxis
+          dataKey={getXValue1}
+          axisLine={true}
+          tickLine={true}
+          tickCount={15}
+        />
+        <YAxis />
+
         <YAxis
+          type="number"
+          domain={[dataMin => (0 - Math.abs(dataMin)), dataMax => (dataMax * 2)]}
           datakey="priceUSD"
-          axisLine={false}
-          tickLine={false}
-          tickCount={100}
+          axisLine={true}
+          tickLine={true}
+          // tickCount={30}
         />
 
         <Tooltip />

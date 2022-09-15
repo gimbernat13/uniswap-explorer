@@ -9,9 +9,8 @@ import { Tokens } from "./views/Tokens";
 import { TokenContextProvider } from "./context/TokenContext";
 import { ThemeContextProvider } from "./context/ThemeContext";
 
-
 const client = new ApolloClient({
-  uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
+  uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3",
   cache: new InMemoryCache(),
 });
 
