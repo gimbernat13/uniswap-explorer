@@ -1,4 +1,4 @@
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import Chart from "../../components/Chart/Chart";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { Layout } from "../../components/Layout/Layout";
@@ -7,12 +7,14 @@ import { TokenDetails } from "../../components/TokenDetails/TokenDetails";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
 import { ThemeContext } from "../../context/ThemeContext";
 
+
 function Page({ data }) {
+
   const { theme, themes, toggleTheme } = useContext(ThemeContext);
   return (
     <div style={theme} className="App">
-      
       <Layout>
+    
         <div className="main-panel container">
           <div className="card-grid ">
             <div className="top ">

@@ -3,7 +3,7 @@ export const TOKENS = gql`
   query Tokens($filter: String) {
     tokens(
       first: 150
-      orderBy: totalLiquidityETH
+      orderBy: $filter
       orderDirection: desc
     ) {
       id
@@ -16,21 +16,3 @@ export const TOKENS = gql`
     }
   }
 `;
-
-// export const TOKENS = gql`
-//   query Tokens($filter: String) {
-//     tokens(
-//       first: 150
-//       orderBy: tradeVolumeUSD
-//       orderDirection: desc
-//     ) {
-//       id
-//       symbol
-//       name
-//       tradeVolume
-//       txCount
-//       tradeVolumeUSD
-//       totalLiquidity
-//     }
-//   }
-// `;

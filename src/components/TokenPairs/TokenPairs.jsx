@@ -11,7 +11,7 @@ export const TokenPairs = () => {
   });
 
   console.log("token pair data is ", data);
-  if (loading) return <div className="pairs"> "Loading... </div>;
+  if (loading) return <div className="pairs"> Loading... </div>;
   if (error) return `Error! ${error.message}`;
   return (
     <div className="pairs">
