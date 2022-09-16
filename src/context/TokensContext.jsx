@@ -9,7 +9,7 @@ import {
 export const TokensContext = React.createContext();
 
 const INITIAL_STATE = {
-  filterBy: "volume ",
+  filterBy: "tradeVolumeUSD",
   sortBy: "asc",
   itemsOnPage: 150,
   selectedToken: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",

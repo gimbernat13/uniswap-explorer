@@ -1,15 +1,18 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext } from "react";
-import { TokenContext } from "../../context/TokenContext";
-import formatNumber from "../../utils/formatNumber";
+import { TokensContext } from "../../context/TokensContext";
 import { TokenCard } from "../TokenCard/TokenCard";
 import { TOKENS } from "./queries";
 
 export const TokenCardList = (props) => {
-  const { setData, tokenId, filterBy } = useContext(TokenContext);
+  const { state: tokensState } = useContext(TokensContext);
 
   const { loading, error, data } = useQuery(TOKENS, {
-    variables: { filter: filterBy },
+    variables: {
+      filter: tokensState.filterBy,
+      order: tokensState.sortBy,
+      itemsOnPage: tokensState.itemsOnPage,
+    },
   });
 
   if (loading) return "Loading...";

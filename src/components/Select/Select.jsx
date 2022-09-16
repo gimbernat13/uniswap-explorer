@@ -5,7 +5,7 @@ import * as Styled from "./styles";
 export const Select = ({ options, placeHolder, dispatch, action }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState({
-    value: "liquidity",
+    value: "tradeVolumeUSD",
     name: placeHolder,
   });
 
