@@ -1,6 +1,3 @@
-
-
-
 body {
   width: 100%;
   overflow-x: hidden;
@@ -11,15 +8,36 @@ body {
   font-family: "Roboto Mono", monospace;
   margin-top: 0;
   margin-bottom: 0;
+  background-image: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(248, 7, 252, 0.078) 0px,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: cover;
+ 
+
+
+  
+
+}
+ 
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.651);
+  height: 100%;
+  width: 1000%;
+  position: absolute;
+  top: 0;
 }
 
 ul {
   padding: 0;
   list-style-type: none;
 }
+
 li {
   list-style: none;
 }
+
 .top {
   display: grid;
   grid-template-columns: 35% 1fr;
@@ -29,9 +47,11 @@ li {
 .bold {
   font-weight: 500;
 }
+
 .large {
   font-size: 1rem;
 }
+
 .card {
   cursor: pointer;
   padding: 0.5rem 1rem;
@@ -41,11 +61,14 @@ li {
   transition: all 0.2s;
   font-weight: 400;
   min-width: 0;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 15% 2fr 4fr ;
+
   border: 1px solid #dcdcdc3a;
-  box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 0px;
+  /* box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 0px; */
   font-size: 0.8rem;
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.382);
 }
 
 .card .symbol {
@@ -67,12 +90,15 @@ h1 {
   padding: 3rem;
   border-radius: 0.5rem;
   transition: all 0.2s;
-  border: 1px solid #dcdcdc3a;
-  box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 0px;
+  border: 1px solid #9f9f9f3a;
+  backdrop-filter: blur(20px);
+  min-height: 55vh;
+  background-color: rgba(0, 0, 0, 0.382);
+
 }
 
 .info-card:hover {
-  box-shadow: rgb(99 99 99 / 40%) 0px 2px 8px 0px;
+  /* box-shadow: rgb(99 99 99 / 40%) 0px 2px 8px 0px; */
 }
 
 .token-card-list {
@@ -84,11 +110,10 @@ h1 {
   overflow-y: scroll;
 }
 
-.card-grid {
-}
+.card-grid {}
 
 .container {
-  padding: 10px;
+  padding: 0 120px;
 }
 
 .button {
@@ -105,10 +130,10 @@ h1 {
 }
 
 .active {
-  filter: brightness(1.2);
-  background: #2c88ff !important;
+  color: #ef11f3a4 !important;
+  backdrop-filter: blur(5px);
   font-weight: bold;
-  color: white !important;
+  border-color: #ef11f3a4 !important;;
 }
 
 .button:hover {
@@ -131,6 +156,7 @@ h1 {
   bottom: 1rem;
   right: 1rem;
 }
+
 .detail-links img {
   height: 25px;
   margin-right: 1rem;
@@ -194,6 +220,7 @@ tr:nth-child(even) {
 #coingecko {
   transform: scale(1.2);
 }
+
 .theme {
   font-size: 1em;
   cursor: pointer;

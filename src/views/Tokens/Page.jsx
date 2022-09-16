@@ -7,15 +7,15 @@ import { TokenDetails } from "../../components/TokenDetails/TokenDetails";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
 import { ThemeContext } from "../../context/ThemeContext";
 
-
 function Page({ data }) {
-
   const { theme, themes, toggleTheme } = useContext(ThemeContext);
   return (
     <div style={theme} className="App">
+      {/* <div className="dark-overlay"></div> */}
+
       <Layout>
-    
         <div className="main-panel container">
+          <h3>Uniswap V2 Explorer</h3>
           <div className="card-grid ">
             <div className="top ">
               <div className="info-card">
