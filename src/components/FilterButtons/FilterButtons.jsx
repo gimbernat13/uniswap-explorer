@@ -35,7 +35,6 @@ export const FilterButtons = () => {
           placeHolder="Filter By"
           options={options}
         />
-
         <Select
           dispatch={tokensDispatch}
           action={setSortBy}
