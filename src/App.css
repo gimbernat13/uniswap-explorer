@@ -1,3 +1,8 @@
+:root {
+  --border-radius: 1rem;
+  --border-color: 1px solid gray;
+}
+
 body {
   width: 100%;
   overflow-x: hidden;
@@ -8,19 +13,24 @@ body {
   font-family: "Roboto Mono", monospace;
   margin-top: 0;
   margin-bottom: 0;
-  background-image: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(248, 7, 252, 0.078) 0px,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background-image: radial-gradient(50% 50% at 50% 50%,
+      rgba(248, 7, 252, 0.078) 0px,
+      rgba(255, 255, 255, 0) 100%);
   background-size: cover;
- 
 
 
-  
+
+
+
 
 }
- 
+
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .dark-overlay {
   background-color: rgba(0, 0, 0, 0.651);
   height: 100%;
@@ -40,7 +50,7 @@ li {
 
 .top {
   display: grid;
-  grid-template-columns: 35% 1fr;
+  grid-template-columns: 50% 1fr;
   grid-gap: 10px;
 }
 
@@ -62,7 +72,7 @@ li {
   font-weight: 400;
   min-width: 0;
   display: grid;
-  grid-template-columns: 15% 2fr 4fr ;
+  grid-template-columns: 15% 2fr 4fr;
 
   border: 1px solid #dcdcdc3a;
   /* box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 0px; */
@@ -130,10 +140,10 @@ h1 {
 }
 
 .active {
-  color: #ef11f3a4 !important;
+  color: #ffffff !important;
   backdrop-filter: blur(5px);
   font-weight: bold;
-  border-color: #ef11f3a4 !important;;
+  border: 2px solid white;
 }
 
 .button:hover {

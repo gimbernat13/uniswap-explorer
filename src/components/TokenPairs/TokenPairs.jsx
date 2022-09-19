@@ -9,8 +9,6 @@ export const TokenPairs = () => {
   const { loading, error, data } = useQuery(TOKEN_PAIRS, {
     variables: { id: tokenId },
   });
-
-  console.log("token pair data is ", data);
   if (loading) return <div className="pairs"> Loading... </div>;
   if (error) return `Error! ${error.message}`;
   return (
@@ -22,7 +20,7 @@ export const TokenPairs = () => {
           <div> - </div>
           <div className="pair"> {pair.token1.symbol}</div>
           <div className="pair">
-            ${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}{" "}
+            ${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
           </div>
         </div>
       ))}

@@ -41,6 +41,7 @@ export default function Chart() {
 
         <Area dataKey="priceUSD" stroke="#2c88ff" fill="url(#color)" />
         <XAxis
+          scale={"band"}
           dataKey={getXValue1}
           axisLine={true}
           tickLine={true}
@@ -50,8 +51,8 @@ export default function Chart() {
 
         <YAxis
           type="number"
-          domain={[dataMin => (0 - Math.abs(dataMin)), dataMax => (dataMax * 2)]}
           datakey="priceUSD"
+          domain={["dataMin - 100", "dataMax + 100"]}
           axisLine={true}
           tickLine={true}
           // tickCount={30}

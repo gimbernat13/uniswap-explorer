@@ -18,7 +18,7 @@ export const SelectInner = styled.div`
   top: 65px;
   z-index: 3;
   border-radius: 1rem;
-  background-color: #80008054;
+  background-color: #00000044;
   backdrop-filter: blur(5px);
 `;
 export const SelectItem = styled.div`

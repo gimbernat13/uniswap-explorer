@@ -9,6 +9,9 @@ import { TokenContextProvider } from "./context/TokenContext";
 
 import { ThemeContextProvider } from "./context/ThemeContext";
 import "./App.css";
+import { PoolList } from "./components/PoolList/PoolList";
+import { Layout } from "./components/Layout/Layout";
+
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
   cache: new InMemoryCache(),
@@ -20,9 +23,13 @@ render(
       <TokenContextProvider>
         <ThemeContextProvider>
           <Router>
-            <Switch>
-              <Route path="/" exact component={Tokens} />
-            </Switch>
+            <Layout>
+              <Switch>
+                <Route path="/" exact component={Tokens} />
+                <Route path="/pairs" exact component={Tokens} />
+                <Route path="/liquidity" exact component={PoolList} />
+              </Switch>
+            </Layout>
           </Router>
         </ThemeContextProvider>
       </TokenContextProvider>

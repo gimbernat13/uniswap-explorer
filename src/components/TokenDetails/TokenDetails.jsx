@@ -13,8 +13,8 @@ export const TokenDetails = (props) => {
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  const { name, symbol, tradeVolumeUSD, totalLiquidity, txCount } = data.token;
 
+  const { name, symbol, tradeVolumeUSD, totalLiquidity, txCount } = data.token;
   return (
     <div>
       <h2>
