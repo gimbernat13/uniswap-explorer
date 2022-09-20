@@ -1,19 +1,17 @@
 import { gql } from "@apollo/client";
-export const TOKENS = gql`
-  query Pools($filter: String) {
-    tokens(
-      first: 150
-      orderBy: $filter
-      orderDirection: desc
-      where: { tradeVolumeUSD_gt: 20000, txCount_gt: 500 }
-    ) {
+
+export const PAIRS = gql`
+  query Pairs($filter: String, $order: String, $itemsOnPage: Int) {
+    pairs(first: 30, orderBy: txCount, orderDirection: desc) {
       id
-      symbol
-      name
-      tradeVolume
       txCount
-      tradeVolumeUSD
-      totalLiquidity
+      volumeUSD
+      token0 {
+        symbol
+      }
+      token1 {
+        symbol
+      }
     }
   }
 `;

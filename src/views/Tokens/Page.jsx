@@ -6,6 +6,7 @@ import { NavButtons } from "../../components/NavButtons/NavButtons";
 import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
 import { TokenDetails } from "../../components/TokenDetails/TokenDetails";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
+import { TokenTransactions } from "../../components/TokenTransactions/TokenTransactions";
 import { ThemeContext } from "../../context/ThemeContext";
 
 function Page({ data }) {
@@ -25,6 +26,9 @@ function Page({ data }) {
               <h2>Price USD (100 days) </h2>
               <Chart />
             </div>
+          </div>
+          <div className="middle">
+            <TokenTransactions />
           </div>
           <div className="bottom">
             <FilterButtons />

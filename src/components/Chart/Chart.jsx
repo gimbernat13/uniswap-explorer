@@ -50,12 +50,12 @@ export default function Chart() {
         <YAxis />
 
         <YAxis
+          scale={"band"}
           type="number"
           datakey="priceUSD"
-          domain={["dataMin - 100", "dataMax + 100"]}
-          axisLine={true}
-          tickLine={true}
-          // tickCount={30}
+          domain={["auto", "auto"]}
+          tickCount={15}
+          allowDataOverflow={true}
         />
 
         <Tooltip />
