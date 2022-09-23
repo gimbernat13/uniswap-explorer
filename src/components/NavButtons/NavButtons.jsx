@@ -9,9 +9,9 @@ export const NavButtons = () => {
         <Styled.Link>
           <Link to="/tokens">Tokens</Link>
         </Styled.Link>
-        <Styled.Link>
+        {/* <Styled.Link>
           <Link to="/liquidity">Pools</Link>
-        </Styled.Link>
+        </Styled.Link> */}
         <Styled.Link>
           <Link to="/pairs">Pairs</Link>
         </Styled.Link>

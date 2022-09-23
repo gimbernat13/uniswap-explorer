@@ -1,6 +1,8 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { TokensContext } from "../../context/TokensContext";
+import formatNumber from "../../utils/formatNumber";
 import { PAIRS } from "./queries";
 import * as Styled from "./styles";
 export const PoolList = () => {
@@ -13,22 +15,24 @@ export const PoolList = () => {
   if (error) return `Error! ${error.message}`;
   return (
     <>
-      <div>Most Traded Pairs</div>
+      <h2>Most Traded Pairs</h2>
       <Styled.PoolGrid>
         {data.pairs &&
-          data.pairs.map((pair, i) => {
+          data.pairs.map((pair) => {
             return (
-              <Styled.PoolCard>
-                <Styled.PoolCardInner>
-
-                    
-                  <div> 
-                    {pair.token0.symbol} - {pair.token1.symbol}{" "}
-                  </div>
-                  <div>{pair.txCount}</div>
-                  <div>Volume 24 hr : {pair.volumeUSD}</div>
-                </Styled.PoolCardInner>
-              </Styled.PoolCard>
+              <Link to={`/pairs/${pair.id}`}>
+                <Styled.PoolCard key={pair.id}>
+                  <Styled.PoolCardInner>
+                    <div>
+                      {pair.token0.symbol} - {pair.token1.symbol}{" "}
+                    </div>
+                    <div>TX Count: {pair.txCount}</div>
+                    <div>
+                      Total Volume : ${formatNumber(parseInt(pair.volumeUSD))}
+                    </div>
+                  </Styled.PoolCardInner>
+                </Styled.PoolCard>
+              </Link>
             );
           })}
       </Styled.PoolGrid>

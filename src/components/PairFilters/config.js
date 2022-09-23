@@ -1,11 +1,15 @@
 export const filterByOptions = [
   {
-    value: "txCount",
-    name: "TX Count",
+    value: "totalLiquidity",
+    name: " Liquidity",
   },
   {
     value: "tradeVolumeUSD",
     name: "Volume",
+  },
+  {
+    value: "volume",
+    name: "Newly Added",
   },
 ];
 

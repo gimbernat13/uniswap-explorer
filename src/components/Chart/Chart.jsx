@@ -53,7 +53,7 @@ export default function Chart() {
           scale={"band"}
           type="number"
           datakey="priceUSD"
-          domain={["auto", "auto"]}
+          domain={["dataMin", "auto"]}
           tickCount={15}
           allowDataOverflow={true}
         />

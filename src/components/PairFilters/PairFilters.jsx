@@ -4,33 +4,32 @@ import {
   setItemsOnPage,
   setSortBy,
 } from "../../context/actionNames";
-import { TokensContext } from "../../context/TokensContext";
+import { PairsContext } from "../../context/PairsContext";
 import { Select } from "../Select/Select";
 import { filterByOptions, itemsOnPageOptions, sortByOptions } from "./config";
 
-export const FilterButtons = () => {
-  const TokenContext = useContext(TokensContext);
-  const { dispatch: tokensDispatch, state: tokensState } = TokenContext;
+export const PairFilters = () => {
+  const PairContext = useContext(PairsContext);
+  const { dispatch: pairsDispatch, state: tokensState } = PairContext;
 
+  console.log("pair context ", PairContext);
   return (
     <div>
       <div className="filter-buttons">
-        <input>
-        </input>
         <Select
-          dispatch={tokensDispatch}
+          dispatch={pairsDispatch}
           action={setFilterBy}
           placeHolder="Filter By"
           options={filterByOptions}
         />
         <Select
-          dispatch={tokensDispatch}
+          dispatch={pairsDispatch}
           action={setSortBy}
           placeHolder="Sort By"
           options={sortByOptions}
         />
         <Select
-          dispatch={tokensDispatch}
+          dispatch={pairsDispatch}
           action={setItemsOnPage}
           placeHolder="Items per page"
           options={itemsOnPageOptions}
@@ -39,4 +38,5 @@ export const FilterButtons = () => {
     </div>
   );
 };
-
+{
+}
