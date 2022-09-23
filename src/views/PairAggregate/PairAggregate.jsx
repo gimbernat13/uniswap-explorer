@@ -12,7 +12,16 @@ export const PairAggregate = () => {
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  console.log(data)
 
-  return <div>PairAggregate</div>;
+  const { pairDayDatas, pair } = data;
+
+  console.log(pairDayDatas);
+  return (
+    <div>
+      <h1>
+        {pair.token0.symbol} - {pair.token1.symbol}
+      </h1>
+      <h2></h2>
+    </div>
+  );
 };
