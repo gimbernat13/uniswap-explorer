@@ -1,6 +1,7 @@
 import React from "react";
 import { setFilterBy } from "../../context/actionNames";
 import * as Styled from "./styles";
+import chevron from "../../assets/chevron.png";
 
 export const Select = ({ options, placeHolder, dispatch, action }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -24,7 +25,21 @@ export const Select = ({ options, placeHolder, dispatch, action }) => {
     >
       <Styled.Flex>
         <div>{selectedItem.name}</div>
-        <div>{isOpen ? "🔼" : "🔽"}</div>
+        <div>
+          {isOpen ? (
+            <img
+              style={{ height: "10px", transform: "rotate(270deg)" }}
+              src={chevron}
+              alt=""
+            />
+          ) : (
+            <img
+              style={{ height: "10px", transform: "rotate(90deg)" }}
+              src={chevron}
+              alt=""
+            />
+          )}{" "}
+        </div>
       </Styled.Flex>
       {isOpen && (
         <Styled.SelectInner>

@@ -1,8 +1,9 @@
 import { useQuery } from "@apollo/client";
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TokensContext } from "../../context/TokensContext";
-import formatNumber from "../../utils/formatNumber";
+import { PairCard } from "../PairCard/PairCard";
 import { PAIRS } from "./queries";
 import * as Styled from "./styles";
 export const PoolList = () => {
@@ -13,25 +14,38 @@ export const PoolList = () => {
   console.log("data is ", data);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const animatedItem = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
     <>
+      <motion.div>hola </motion.div>
       <h2>Most Traded Pairs</h2>
-      <Styled.PoolGrid>
+
+      <motion.div>
+        <motion.li variants={animatedItem}> putas </motion.li>
+        <motion.li variants={animatedItem}> putas </motion.li>
+      </motion.div>
+
+      <Styled.PoolGrid variants={container} initial="hidden" animate="show">
         {data.pairs &&
           data.pairs.map((pair) => {
             return (
               <Link to={`/pairs/${pair.id}`}>
-                <Styled.PoolCard key={pair.id}>
-                  <Styled.PoolCardInner>
-                    <div>
-                      {pair.token0.symbol} - {pair.token1.symbol}{" "}
-                    </div>
-                    <div>TX Count: {pair.txCount}</div>
-                    <div>
-                      Total Volume : ${formatNumber(parseInt(pair.volumeUSD))}
-                    </div>
-                  </Styled.PoolCardInner>
-                </Styled.PoolCard>
+                <PairCard pair={pair} />
               </Link>
             );
           })}

@@ -15,20 +15,13 @@ export const FilterButtons = () => {
   return (
     <div>
       <div className="filter-buttons">
-        <input>
-        </input>
         <Select
           dispatch={tokensDispatch}
           action={setFilterBy}
           placeHolder="Filter By"
           options={filterByOptions}
         />
-        <Select
-          dispatch={tokensDispatch}
-          action={setSortBy}
-          placeHolder="Sort By"
-          options={sortByOptions}
-        />
+
         <Select
           dispatch={tokensDispatch}
           action={setItemsOnPage}
@@ -39,4 +32,3 @@ export const FilterButtons = () => {
     </div>
   );
 };
-

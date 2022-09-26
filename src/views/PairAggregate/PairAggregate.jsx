@@ -21,7 +21,15 @@ export const PairAggregate = () => {
       <h1>
         {pair.token0.symbol} - {pair.token1.symbol}
       </h1>
-      <h2></h2>
+      <h2>
+        Reserve : {pair.token0.symbol} {pair.reserve0}
+        {pair.token1.symbol}
+      </h2>
+      <h2>
+        Reserve : {pair.token1.symbol} - {pair.reserve1}
+      </h2>
+      <h2>Lp Count: {pair.liquidityProviderCount} </h2>
+      <h3>{pairDayDatas.dailyTxns}</h3>
     </div>
   );
 };

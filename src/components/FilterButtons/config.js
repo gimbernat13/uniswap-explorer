@@ -9,16 +9,8 @@ export const filterByOptions = [
   },
 ];
 
-export const sortByOptions = [
-  {
-    value: "asc",
-    name: "Ascending",
-  },
-  {
-    value: "desc",
-    name: "Descending",
-  },
-];
+
+
 export const itemsOnPageOptions = [
   {
     value: 50,
@@ -30,6 +22,10 @@ export const itemsOnPageOptions = [
   },
   {
     value: 150,
+    name: 150,
+  },
+  {
+    value: 200,
     name: 150,
   },
 ];

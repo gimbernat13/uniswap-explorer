@@ -5,6 +5,7 @@ export const PAIR_AGGREGATE = gql`
       id
       reserve0
       reserve1
+      liquidityProviderCount
       token0 {
         symbol
       }
@@ -18,6 +19,7 @@ export const PAIR_AGGREGATE = gql`
       orderDirection: desc
       where: { pairAddress: $id, date_gt: 1592505859 }
     ) {
+      dailyTxns
       token0 {
         symbol
       }

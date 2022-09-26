@@ -10,7 +10,7 @@ export const TokensContext = React.createContext();
 
 const INITIAL_STATE = {
   filterBy: "tradeVolumeUSD",
-  sortBy: "asc",
+  sortBy: "desc",
   itemsOnPage: 150,
   selectedToken: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
 };
