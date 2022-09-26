@@ -11,9 +11,9 @@ export const PairCard = ({ pair }) => {
   return (
     <Styled.PoolCard variants={animatedItem} key={pair.id}>
       <Styled.PoolCardInner>
-        <div>
+        <h3>
           {pair.token0.symbol} - {pair.token1.symbol}{" "}
-        </div>
+        </h3>
         <div>TX Count: {pair.txCount}</div>
         <div>Daily Volume : ${formatNumber(parseInt(pair.volumeUSD))}</div>
       </Styled.PoolCardInner>

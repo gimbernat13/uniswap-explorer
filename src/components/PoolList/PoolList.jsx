@@ -20,25 +20,14 @@ export const PoolList = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.05,
       },
     },
   };
 
-  const animatedItem = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  };
-
   return (
     <>
-      <motion.div>hola </motion.div>
       <h2>Most Traded Pairs</h2>
-
-      <motion.div>
-        <motion.li variants={animatedItem}> putas </motion.li>
-        <motion.li variants={animatedItem}> putas </motion.li>
-      </motion.div>
 
       <Styled.PoolGrid variants={container} initial="hidden" animate="show">
         {data.pairs &&

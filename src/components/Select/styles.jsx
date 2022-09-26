@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Select = styled.div`
   border-radius: 1rem;
-  width: 200px;
+  min-width: 200px;
   text-align: center;
   box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   margin-right: 0.5rem;

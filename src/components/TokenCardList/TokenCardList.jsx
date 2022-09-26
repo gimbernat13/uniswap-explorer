@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { TokensContext } from "../../context/TokensContext";
 import { TokenCard } from "../TokenCard/TokenCard";
 import { TOKENS } from "./queries";
+import * as Styled from "./styles";
 
 export const TokenCardList = (props) => {
   const { state: tokensState } = useContext(TokensContext);
@@ -18,10 +19,10 @@ export const TokenCardList = (props) => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   return (
-    <div className="token-card-list">
+    <Styled.TokenGrid>
       {data.tokens.map((token, i) => {
         return <TokenCard index={i + 1} token={token} />;
       })}
-    </div>
+    </Styled.TokenGrid>
   );
 };

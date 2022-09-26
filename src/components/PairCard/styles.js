@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const PoolCard = styled(motion.div)`
   border-radius: 1rem;
-  border: var(--border-color);
+  border: var(--border);
   width: 100%;
   cursor: pointer;
 `;
