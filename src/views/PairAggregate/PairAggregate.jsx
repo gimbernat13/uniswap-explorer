@@ -2,7 +2,9 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
+import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
+import * as Styled from "./styles";
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
@@ -18,20 +20,22 @@ export const PairAggregate = () => {
 
   console.log(pairDayDatas);
   return (
-    <div>
-      <h1>
-        {pair.token0.symbol} - {pair.token1.symbol}
-      </h1>
-      <h2>
-        Reserve : {pair.token0.symbol} {pair.reserve0}
-        {pair.token1.symbol}
-      </h2>
-      <h2>
-        Reserve : {pair.token1.symbol} - {pair.reserve1}
-      </h2>
-      <h2>Lp Count: {pair.liquidityProviderCount} </h2>
-      <h3>{pairDayDatas.dailyTxns}</h3>
+    <Styled.AggregateGrid>
+      <div>
+        <h1>
+          {pair.token0.symbol} - {pair.token1.symbol}
+        </h1>
+        <h2>
+          Reserve : {pair.token0.symbol} {formatNumber(pair.reserve0)}
+          {pair.token1.symbol}
+        </h2>
+        <h2>
+          Reserve : {pair.token1.symbol} - {pair.reserve1}
+        </h2>
+        <h2>Lp Count: {pair.liquidityProviderCount} </h2>
+        <h3>{pairDayDatas.dailyTxns}</h3>
+      </div>
       <RecentSwaps id={pair.id} />
-    </div>
+    </Styled.AggregateGrid>
   );
 };
