@@ -16,7 +16,7 @@ export const RecentSwaps = ({ id }) => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.15,
       },
     },
   };

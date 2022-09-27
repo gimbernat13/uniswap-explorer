@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
+import Chart from "../../components/Chart/Chart";
 import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
 import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
@@ -21,19 +22,22 @@ export const PairAggregate = () => {
   console.log(pairDayDatas);
   return (
     <Styled.AggregateGrid>
-      <div>
-        <h1>
+      <div className="info-card">
+        <h3>
           {pair.token0.symbol} - {pair.token1.symbol}
-        </h1>
-        <h2>
+        </h3>
+        <p>
           Reserve : {pair.token0.symbol} {formatNumber(pair.reserve0)}
           {pair.token1.symbol}
-        </h2>
-        <h2>
+        </p>
+        <p>
           Reserve : {pair.token1.symbol} - {pair.reserve1}
-        </h2>
-        <h2>Lp Count: {pair.liquidityProviderCount} </h2>
+        </p>
+        <p>Lp Count: {pair.liquidityProviderCount} </p>
         <h3>{pairDayDatas.dailyTxns}</h3>
+      </div>
+      <div className="info-card">
+        <Chart />
       </div>
       <RecentSwaps id={pair.id} />
     </Styled.AggregateGrid>
