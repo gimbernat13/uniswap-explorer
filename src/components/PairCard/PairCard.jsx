@@ -4,8 +4,8 @@ import * as Styled from "./styles";
 
 export const PairCard = ({ pair }) => {
   const animatedItem = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
+    hidden: { y: 25, opacity: 0 },
+    show: { y: 0, opacity: 1 },
   };
 
   return (

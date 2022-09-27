@@ -18,13 +18,11 @@ function Page({ data }) {
         <h3>Uniswap V2 Explorer</h3>
         <div className="card-grid ">
           <div className="top ">
-            <div className="info-card">
+            <div className="--border">
               <TokenDetails />
-            </div>
-            <div className="info-card">
               <TokenPairs />
             </div>
-            <div className="info-card">
+            <div className="--border">
               <h2>Price USD (100 days) </h2>
               <Chart />
             </div>

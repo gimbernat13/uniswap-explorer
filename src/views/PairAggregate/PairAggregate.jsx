@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
+import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
 import { PAIR_AGGREGATE } from "./queries";
 
 export const PairAggregate = () => {
@@ -30,6 +31,7 @@ export const PairAggregate = () => {
       </h2>
       <h2>Lp Count: {pair.liquidityProviderCount} </h2>
       <h3>{pairDayDatas.dailyTxns}</h3>
+      <RecentSwaps id={pair.id} />
     </div>
   );
 };

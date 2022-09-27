@@ -17,7 +17,7 @@ export const TokenPairs = () => {
       {data.pairs.map((pair) => (
         <div className="pair-card">
           <div className="pair">{pair.token0.symbol}</div>
-          <div> - </div>
+
           <div className="pair"> {pair.token1.symbol}</div>
           <div className="pair">
             ${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
