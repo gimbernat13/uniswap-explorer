@@ -4,6 +4,7 @@ import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { Layout } from "../../components/Layout/Layout";
 import { NavButtons } from "../../components/NavButtons/NavButtons";
 import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
+import { TokenChart } from "../../components/TokenChart/TokenChart";
 import { TokenDetails } from "../../components/TokenDetails/TokenDetails";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
 import { TokenTransactions } from "../../components/TokenTransactions/TokenTransactions";
@@ -26,7 +27,7 @@ function Page({ data }) {
             </div>
             <div className="info-card">
               <h2>Price USD (100 days) </h2>
-              <Chart />
+              <TokenChart />
             </div>
           </div>
           <div className="middle">

@@ -11,16 +11,9 @@ import { TOKEN_DETAILS } from "./queries";
 import { TokenContext } from "../../context/TokenContext";
 import React, { useContext } from "react";
 
-export default function Chart() {
-  const TokensContext = useContext(TokenContext);
-  const { tokenId } = TokensContext;
-  const { loading, error, data } = useQuery(TOKEN_DETAILS, {
-    variables: { id: tokenId },
-  });
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
-
-  const reverseData = [...data.tokenDayDatas].reverse();
+export default function Chart({ chartData }) {
+  //  FIXME: create dynamic reverser for token or pair day datas
+  // const reverseData = [...data.tokenDayDatas].reverse();
 
   const getXValue1 = (data) => {
     const milliseconds = data.date * 1000;
@@ -29,9 +22,11 @@ export default function Chart() {
     return formattedDate;
   };
 
+  // FIXME: ADD CONDITIONAL IF ITS DATE THEN FORMAT TO ISO
+
   return (
     <ResponsiveContainer width="100%" height={300}>
-      <AreaChart data={reverseData}>
+      <AreaChart data={chartData}>
         <defs>
           <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#2c88ff" stopOpacity={0.4} />
