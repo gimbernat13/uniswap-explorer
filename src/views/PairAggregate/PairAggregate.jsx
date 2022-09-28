@@ -20,7 +20,6 @@ export const PairAggregate = () => {
 
   const { pairDayDatas, pair } = data;
 
-  console.log(pairDayDatas);
   return (
     <Styled.AggregateGrid>
       <div className="info-card">

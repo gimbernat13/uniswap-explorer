@@ -12,7 +12,6 @@ export const TokenChart = () => {
   });
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  console.log("chart data ", data);
   return (
     <div>
       <Chart chartData={data.tokenDayDatas} yKey={"priceUSD"} />

@@ -1,5 +1,4 @@
 import { useQuery } from "@apollo/client";
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TokensContext } from "../../context/TokensContext";
@@ -11,7 +10,6 @@ export const PoolList = () => {
 
   const { loading, error, data } = useQuery(PAIRS);
 
-  console.log("data is ", data);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 

@@ -12,7 +12,6 @@ export const PairFilters = () => {
   const PairContext = useContext(PairsContext);
   const { dispatch: pairsDispatch, state: tokensState } = PairContext;
 
-  console.log("pair context ", PairContext);
   return (
     <div>
       <div className="filter-buttons">

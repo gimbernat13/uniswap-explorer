@@ -7,7 +7,6 @@ import * as Styled from "./styles";
 export const RecentSwaps = ({ id }) => {
   const { loading, error, data } = useQuery(RECENT_SWAPS);
 
-  console.log("data is ", data);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
