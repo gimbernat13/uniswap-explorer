@@ -10,9 +10,6 @@ export const NavButtons = () => {
         <StyledButton>
           <Link to="/tokens">Tokens</Link>
         </StyledButton>
-        {/* <Styled.Link>
-          <Link to="/liquidity">Pools</Link>
-        </Styled.Link> */}
         <StyledButton>
           <Link to="/pairs">Pairs</Link>
         </StyledButton>

@@ -6,10 +6,7 @@ import {
   Area,
   Tooltip,
 } from "recharts";
-import { useQuery } from "@apollo/client";
-import { TOKEN_DETAILS } from "./queries";
-import { TokenContext } from "../../context/TokenContext";
-import React, { useContext } from "react";
+import React from "react";
 
 export default function Chart({ chartData, xKey, yKey }) {
   //  FIXME: create dynamic reverser for token or pair day datas
