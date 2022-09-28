@@ -11,18 +11,17 @@ import { TOKEN_DETAILS } from "./queries";
 import { TokenContext } from "../../context/TokenContext";
 import React, { useContext } from "react";
 
-export default function Chart({ chartData }) {
+export default function Chart({ chartData, xKey, yKey }) {
   //  FIXME: create dynamic reverser for token or pair day datas
   // const reverseData = [...data.tokenDayDatas].reverse();
 
-  const getXValue1 = (data) => {
+  // For time charts
+  const getTimeAxis = (data) => {
     const milliseconds = data.date * 1000;
     const newDate = new Date(milliseconds);
     const formattedDate = newDate.toISOString().split("T")[0];
     return formattedDate;
   };
-
-  // FIXME: ADD CONDITIONAL IF ITS DATE THEN FORMAT TO ISO
 
   return (
     <ResponsiveContainer width="100%" height={300}>
@@ -34,10 +33,15 @@ export default function Chart({ chartData }) {
           </linearGradient>
         </defs>
 
-        <Area dataKey="priceUSD" stroke="#2c88ff" fill="url(#color)" />
+        <Area
+          domain={["dataMin", "auto"]}
+          dataKey={yKey}
+          stroke="#2c88ff"
+          fill="url(#color)"
+        />
         <XAxis
           scale={"band"}
-          dataKey={getXValue1}
+          dataKey={getTimeAxis}
           axisLine={true}
           tickLine={true}
           tickCount={15}
@@ -47,7 +51,7 @@ export default function Chart({ chartData }) {
         <YAxis
           scale={"band"}
           type="number"
-          datakey="priceUSD"
+          datakey={yKey}
           domain={["dataMin", "auto"]}
           tickCount={15}
           allowDataOverflow={true}

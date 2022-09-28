@@ -12,10 +12,11 @@ export const PairChart = () => {
   });
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  console.log("chart data ", data);
+  console.log(tokenId);
+  console.log("pair daily  data ", data);
   return (
     <div>
-      <Chart chartData={data.pairDayDatas} />
+      <Chart yKey={"dailyTxns"} chartData={data.pairDayDatas} />
     </div>
   );
 };

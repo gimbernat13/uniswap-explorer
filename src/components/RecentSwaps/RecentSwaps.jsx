@@ -27,17 +27,19 @@ export const RecentSwaps = ({ id }) => {
 
   return (
     <Styled.TxTable variants={container} initial="hidden" animate="show">
-      {data.swaps.map((swap, i) => {
-        return (
-          <Styled.TxRow variants={animatedItem}>
-            <td>$ {formatNumber(formatNumber(parseInt(swap.amountUSD)))}</td>
-            <td>{swap.pair.token0.symbol} </td>
-            <td>-</td>
-            <td>{swap.pair.token1.symbol} </td>
-            <td>{swap.to} </td>
-          </Styled.TxRow>
-        );
-      })}
+      <tbody>
+        {data.swaps.map((swap, i) => {
+          return (
+            <Styled.TxRow key={i} variants={animatedItem}>
+              <td>$ {formatNumber(formatNumber(parseInt(swap.amountUSD)))}</td>
+              <td>{swap.pair.token0.symbol} </td>
+              <td>-</td>
+              <td>{swap.pair.token1.symbol} </td>
+              <td>{swap.to} </td>
+            </Styled.TxRow>
+          );
+        })}
+      </tbody>
     </Styled.TxTable>
   );
 };

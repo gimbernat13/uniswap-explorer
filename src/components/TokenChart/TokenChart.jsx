@@ -15,7 +15,7 @@ export const TokenChart = () => {
   console.log("chart data ", data);
   return (
     <div>
-      <Chart chartData={data.tokenDayDatas} />
+      <Chart chartData={data.tokenDayDatas} yKey={"priceUSD"} />
     </div>
   );
 };
