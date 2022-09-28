@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FilterButtons } from "../FilterButtons/FilterButtons";
+import { Button as StyledButton } from "../Button/styles";
 import * as Styled from "./styles";
+
 export const NavButtons = () => {
   return (
     <Styled.Flex>
       <Styled.NavFlex>
-        <Styled.Link>
+        <StyledButton>
           <Link to="/tokens">Tokens</Link>
-        </Styled.Link>
+        </StyledButton>
         {/* <Styled.Link>
           <Link to="/liquidity">Pools</Link>
         </Styled.Link> */}
-        <Styled.Link>
+        <StyledButton>
           <Link to="/pairs">Pairs</Link>
-        </Styled.Link>
+        </StyledButton>
       </Styled.NavFlex>
     </Styled.Flex>
   );

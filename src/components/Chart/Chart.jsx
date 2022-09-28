@@ -34,7 +34,7 @@ export default function Chart({ chartData, xKey, yKey }) {
         </defs>
 
         <Area
-          domain={["dataMin", "auto"]}
+          domain={"auto"}
           dataKey={yKey}
           stroke="#2c88ff"
           fill="url(#color)"
@@ -52,7 +52,7 @@ export default function Chart({ chartData, xKey, yKey }) {
           scale={"band"}
           type="number"
           datakey={yKey}
-          domain={["dataMin", "auto"]}
+          domain={["auto", "auto"]}
           tickCount={15}
           allowDataOverflow={true}
         />

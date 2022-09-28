@@ -12,7 +12,7 @@ export const NavFlex = styled.div`
   justify-content: space-evenly;
 `;
 
-export const Link = styled.div`
+export const Button = styled.div`
   border-radius: 1rem;
   min-width: 100px;
   text-align: center;
