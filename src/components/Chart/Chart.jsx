@@ -6,31 +6,33 @@ import {
   Area,
   Tooltip,
 } from "recharts";
-import React from "react";
+import { useQuery } from "@apollo/client";
+import { TOKEN_DETAILS } from "./queries";
+import { TokenContext } from "../../context/TokenContext";
+import React, { useContext } from "react";
 
-export default function Chart({ chartData, xKey, yKey, yKey1 }) {
-  //  FIXME: create dynamic reverser for token or pair day datas
-  // const reverseData = [...data.tokenDayDatas].reverse();
+export default function Chart() {
+  const TokensContext = useContext(TokenContext);
+  const { tokenId } = TokensContext;
+  const { loading, error, data } = useQuery(TOKEN_DETAILS, {
+    variables: { id: tokenId },
+  });
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
 
-  // For time charts
-  const getTimeAxis = (data) => {
+  const reverseData = [...data.tokenDayDatas].reverse();
+
+  const getXValue1 = (data) => {
     const milliseconds = data.date * 1000;
     const newDate = new Date(milliseconds);
     const formattedDate = newDate.toISOString().split("T")[0];
+
     return formattedDate;
   };
 
-  const stringToInt = (data) => {
-    const dailyTxns = parseInt(data.dailyTxns);
-
-    return dailyTxns;
-  };
-
-  console.log("chart da", chartData);
-
   return (
     <ResponsiveContainer width="100%" height={300}>
-      <AreaChart data={chartData}>
+      <AreaChart data={reverseData}>
         <defs>
           <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#2c88ff" stopOpacity={0.4} />
@@ -38,28 +40,14 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
           </linearGradient>
         </defs>
 
-        <Area
-          domain={"auto"}
-          dataKey={yKey}
-          stroke="#2c88ff"
-          fill="url(#color)"
+        <Area dataKey="priceUSD" stroke="#2c88ff" fill="url(#color)" />
+        <XAxis dataKey={getXValue1} axisLine={true} tickLine={false} />
+        <YAxis
+          datakey="priceUSD"
+          axisLine={false}
+          tickLine={false}
+          tickCount={100}
         />
-        {/* <Area
-          domain={"auto"}
-          dataKey={yKey1}
-          stroke="#2cff80"
-          fill="url(#color)"
-        /> */}
-        <XAxis
-          scale={"band"}
-          dataKey={getTimeAxis}
-          axisLine={true}
-          tickLine={true}
-          tickCount={15}
-        />
-        <YAxis />
-
-        <YAxis datakey={stringToInt} />
 
         <Tooltip />
 
