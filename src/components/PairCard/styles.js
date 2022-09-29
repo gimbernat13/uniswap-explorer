@@ -6,8 +6,8 @@ export const PoolCard = styled(motion.div)`
   border: var(--border);
   width: 100%;
   cursor: pointer;
+  color: lightgray;
 `;
 export const PoolCardInner = styled(motion.div)`
   padding: 1rem;
 `;
-

@@ -8,7 +8,7 @@ import {
 } from "recharts";
 import React from "react";
 
-export default function Chart({ chartData, xKey, yKey }) {
+export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
   // const reverseData = [...data.tokenDayDatas].reverse();
 
@@ -36,6 +36,12 @@ export default function Chart({ chartData, xKey, yKey }) {
           stroke="#2c88ff"
           fill="url(#color)"
         />
+        {/* <Area
+          domain={"auto"}
+          dataKey={yKey1}
+          stroke="#2cff80"
+          fill="url(#color)"
+        /> */}
         <XAxis
           scale={"band"}
           dataKey={getTimeAxis}
@@ -46,12 +52,9 @@ export default function Chart({ chartData, xKey, yKey }) {
         <YAxis />
 
         <YAxis
-          scale={"band"}
-          type="number"
           datakey={yKey}
           domain={["auto", "auto"]}
           tickCount={15}
-          allowDataOverflow={true}
         />
 
         <Tooltip />

@@ -204,7 +204,7 @@ tr {
 /* ==============Table============= */
 
 
-table{
+table {
   width: 100%;
 }
 
@@ -218,6 +218,7 @@ tr {
 td {
   background: var(--darkrow);
   /* text-align: center; */
+  color: lightgray;
   overflow: hidden;
 
 }

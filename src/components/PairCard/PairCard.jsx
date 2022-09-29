@@ -11,7 +11,7 @@ export const PairCard = ({ pair }) => {
   return (
     <Styled.PoolCard variants={animatedItem} key={pair.id}>
       <Styled.PoolCardInner>
-        <div style={{ fontWeight: "bold" }}>
+        <div style={{ fontWeight: "bold", color:"white" }}>
           {pair.token0.symbol} - {pair.token1.symbol}
         </div>
         <div>TX Count: {pair.txCount}</div>

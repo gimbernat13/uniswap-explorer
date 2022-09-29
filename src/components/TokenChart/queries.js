@@ -1,11 +1,11 @@
 import { gql } from "@apollo/client";
 
 export const TOKEN_DETAILS = gql`
-  query TokenDayDatas($id: String!) {
+  query TokenDayDatas($id: String!, $numberOfItems: Number!) {
     tokenDayDatas(
       orderBy: date
       orderDirection: desc
-      first: 100 
+      first: $numberOfItems
       where: { token: $id }
     ) {
       id

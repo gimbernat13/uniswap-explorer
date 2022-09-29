@@ -52,7 +52,11 @@ export const PairAggregate = () => {
           </Button>
         </FlexContainer>
 
-        <Chart yKey={selectedFilter} chartData={pairDayDatas} />
+        <Chart
+          yKey={"dailyVolumeToken0"}
+          yKey1={"dailyVolumeToken1"}
+          chartData={pairDayDatas}
+        />
       </div>
     </Styled.AggregateGrid>
   );
