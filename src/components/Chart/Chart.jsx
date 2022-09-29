@@ -52,9 +52,11 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
         <YAxis />
 
         <YAxis
+          scale={"band"}
           datakey={yKey}
-          domain={["auto", "auto"]}
-          tickCount={15}
+          type="number"
+          domain={[0, "dataMax + 1000"]}
+          allowDataOverflow
         />
 
         <Tooltip />

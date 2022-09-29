@@ -1,12 +1,13 @@
 import { gql } from "@apollo/client";
 
 export const RECENT_SWAPS = gql`
-  query RecentSwaps($filter: String, $order: String, $itemsOnPage: Int) {
-    swaps(
-      orderBy: timestamp
-      orderDirection: desc
-      where: { pair: "0xa478c2975ab1ea89e8196811f51a7b7ade33eb11" }
-    ) {
+  query RecentSwaps(
+    $filter: String
+    $order: String
+    $itemsOnPage: Int
+    $id: String!
+  ) {
+    swaps(orderBy: timestamp, orderDirection: desc, where: { pair: $id }) {
       pair {
         token0 {
           symbol

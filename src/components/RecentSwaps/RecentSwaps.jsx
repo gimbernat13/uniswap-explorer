@@ -5,7 +5,9 @@ import { RECENT_SWAPS } from "./queries";
 import * as Styled from "./styles";
 
 export const RecentSwaps = ({ id }) => {
-  const { loading, error, data } = useQuery(RECENT_SWAPS);
+  const { loading, error, data } = useQuery(RECENT_SWAPS, {
+    variables: { id: id },
+  });
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
