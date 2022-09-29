@@ -15,12 +15,12 @@ export const RecentSwaps = ({ id }) => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.05,
       },
     },
   };
   const animatedItem = {
-    hidden: { y: 25, opacity: 0 },
+    hidden: { y: 0, opacity: 0 },
     show: { y: 0, opacity: 1 },
   };
 

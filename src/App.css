@@ -130,8 +130,9 @@ tr {
   transition: all 0.2s;
   border: 1px solid #9f9f9f3a;
   backdrop-filter: blur(20px);
-  /* min-height: 400px; */
+  max-height: 400px;
   background-color: rgba(0, 0, 0, 0.382);
+  overflow-y: scroll;
 
 }
 
@@ -202,26 +203,63 @@ tr {
 
 /* ==============Table============= */
 
-table {
-  /* border-collapse: collapse; */
-  border-radius: 1rem;
-  /* padding: 1rem; */
-  height: 300px !important;
-  overflow-y: scroll;
 
+table{
+  width: 100%;
 }
-
-td,
 
 tr {
-  border: 1px solid white;
-  padding: 1rem;
+  border: 3px solid red !important;
   border-radius: 10px;
+  /* border: 1px solid rgba(211, 211, 211, 0.411); */
+
 }
 
-tr:nth-child(even) {
-  /* background-color: #dddddd; */
+td {
+  background: var(--darkrow);
+  /* text-align: center; */
+  overflow: hidden;
+
 }
+
+td:first-child {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+td:last-child {
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.table__tx-row {
+  transition: all 0.2s;
+  font-size: 0.8em;
+  height: 3rem;
+  border: 1px solid rgba(211, 211, 211, 0.411);
+
+
+}
+
+th {
+  font-size: 0.7em;
+  color: rgb(146, 146, 146);
+
+
+
+
+
+
+
+}
+
+.dex-symbol {
+  transform: scale(0.5);
+}
+
+
+
+
 
 .pair-card {
   cursor: pointer;
