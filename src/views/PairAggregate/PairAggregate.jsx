@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { Button } from "../../components/Button/styles";
 import Chart from "../../components/Chart/Chart";
 import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
-import { PairChart } from "../../components/PairChart/PairChart";
 import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
 import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";

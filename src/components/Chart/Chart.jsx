@@ -59,13 +59,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
         />
         <YAxis />
 
-        <YAxis
-          scale={"band"}
-          datakey={stringToInt}
-          type="number"
-          domain={["auto", "auto"]}
-          allowDataOverflow
-        />
+        <YAxis datakey={stringToInt} />
 
         <Tooltip />
 

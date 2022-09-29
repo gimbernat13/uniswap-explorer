@@ -8,7 +8,7 @@ export const TokenChart = ({ numberOfItems }) => {
   const TokensContext = useContext(TokenContext);
   const { tokenId } = TokensContext;
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
-    variables: { id: tokenId, numberOfItems: numberOfItems },
+    variables: { id: tokenId, numberOfItems: 33 },
   });
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;

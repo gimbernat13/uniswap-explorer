@@ -14,10 +14,11 @@ body {
   font-family: "Roboto Mono", monospace;
   margin-top: 0;
   margin-bottom: 0;
-  background-image: radial-gradient(50% 50% at 50% 50%,
-      rgba(67, 67, 67, 0.12) 0px,
-      rgba(255, 255, 255, 0) 100%);
+  background-color: black;
+  background: linear-gradient(rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.78)), url(./assets/bg2.jpg);
   background-size: cover;
+
+  background-attachment: fixed;
 
 
 
@@ -129,9 +130,9 @@ tr {
   border-radius: 0.5rem;
   transition: all 0.2s;
   border: 1px solid #9f9f9f3a;
-  backdrop-filter: blur(20px);
-  max-height: 400px;
-  background-color: rgba(0, 0, 0, 0.382);
+  backdrop-filter: blur(10px);
+  /* max-height: 300px; */
+  background-color: rgba(0, 0, 0, 0.556);
   overflow-y: scroll;
 
 }
