@@ -20,6 +20,14 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     return formattedDate;
   };
 
+  const stringToInt = (data) => {
+    const dailyTxns = parseInt(data.dailyTxns);
+
+    return dailyTxns;
+  };
+
+  console.log("chart da", chartData);
+
   return (
     <ResponsiveContainer width="100%" height={300}>
       <AreaChart data={chartData}>
@@ -53,9 +61,9 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
 
         <YAxis
           scale={"band"}
-          datakey={yKey}
+          datakey={stringToInt}
           type="number"
-          domain={[0, "dataMax + 1000"]}
+          domain={["auto", "auto"]}
           allowDataOverflow
         />
 
