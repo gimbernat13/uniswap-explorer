@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Card } from "../../components/Card/Card";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { Select } from "../../components/Select/Select";
 import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
@@ -23,13 +24,13 @@ function Page({ data }) {
         <div className="card-grid ">
           {}
           <div className="top ">
-            <div className="info-card">
+            <Card>
               <TokenDetails />
-            </div>
-            <div className="info-card">
+            </Card>
+            <Card>
               <TokenPairs />
-            </div>
-            <div className="info-card">
+            </Card>
+            <Card>
               <h2>Price USD (100 days) </h2>
               {/* <Select
                 dispatch={(e) => setNumberOfDays(e.target.value)}
@@ -37,7 +38,7 @@ function Page({ data }) {
                 options={dateRangeOptions}
               /> */}
               <TokenChart numberOfItems={50} />
-            </div>
+            </Card>
           </div>
           <div className="middle"></div>
           <div className="bottom">

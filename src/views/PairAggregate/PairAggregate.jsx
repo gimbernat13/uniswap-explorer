@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Button } from "../../components/Button/styles";
+import { Card } from "../../components/Card/Card";
 import Chart from "../../components/Chart/Chart";
 import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
 import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
@@ -23,7 +24,7 @@ export const PairAggregate = () => {
 
   return (
     <Styled.AggregateGrid>
-      <div className="info-card">
+      <Card>
         <h2>
           {pair.token0.symbol} - {pair.token1.symbol}
         </h2>
@@ -35,12 +36,12 @@ export const PairAggregate = () => {
           Reserve : {pair.token1.symbol} - {pair.reserve1}
         </p>
         <h3>{pairDayDatas.dailyTxns}</h3>
-      </div>
-      <div className="info-card">
+      </Card>
+      <Card>
         <h3>Recent Swaps</h3>
         <RecentSwaps id={pair.id} />
-      </div>
-      <div className="info-card">
+      </Card>
+      <Card>
         <FlexContainer>
           {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>
             Daily Transactions
@@ -51,7 +52,7 @@ export const PairAggregate = () => {
         </FlexContainer>
 
         <Chart yKey={selectedFilter} chartData={pairDayDatas} />
-      </div>
+      </Card>
     </Styled.AggregateGrid>
   );
 };
