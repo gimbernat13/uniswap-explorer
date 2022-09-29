@@ -10,7 +10,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import { dateRangeOptions } from "./config";
 
 function Page({ data }) {
-  const { theme, themes, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const [numberOfDays, setNumberOfDays] = React.useState({
     value: 50,
     name: 50,
@@ -21,6 +21,7 @@ function Page({ data }) {
       <div className="main-panel">
         <h3>Uniswap V2 Explorer</h3>
         <div className="card-grid ">
+          {}
           <div className="top ">
             <div className="info-card">
               <TokenDetails />
@@ -30,11 +31,11 @@ function Page({ data }) {
             </div>
             <div className="info-card">
               <h2>Price USD (100 days) </h2>
-              <Select
+              {/* <Select
                 dispatch={(e) => setNumberOfDays(e.target.value)}
                 placeHolder="Filter By"
                 options={dateRangeOptions}
-              />
+              /> */}
               <TokenChart numberOfItems={50} />
             </div>
           </div>

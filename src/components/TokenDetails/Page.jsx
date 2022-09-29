@@ -25,8 +25,6 @@ function Page({ data }) {
             </div>
             <div className="--border">
               <h2>Price USD (100 days) </h2>
-
-              
               <Chart />
             </div>
           </div>

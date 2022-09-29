@@ -24,17 +24,16 @@ export const PairAggregate = () => {
   return (
     <Styled.AggregateGrid>
       <div className="info-card">
-        <h3>
+        <h2>
           {pair.token0.symbol} - {pair.token1.symbol}
-        </h3>
+        </h2>
         <p>
-          Reserve : {pair.token0.symbol} {formatNumber(pair.reserve0)}
+          Reserve : {pair.token0.symbol} {pair.reserve0}
           {pair.token1.symbol}
         </p>
         <p>
           Reserve : {pair.token1.symbol} - {pair.reserve1}
         </p>
-        <p>Lp Count: {pair.liquidityProviderCount} </p>
         <h3>{pairDayDatas.dailyTxns}</h3>
       </div>
       <div className="info-card">
@@ -43,19 +42,15 @@ export const PairAggregate = () => {
       </div>
       <div className="info-card">
         <FlexContainer>
-          <Button onClick={() => setSelectedFilter("dailyTxns")}>
+          {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>
             Daily Transactions
-          </Button>
+          </Button> */}
           <Button onClick={() => setSelectedFilter("dailyVolumeUSD")}>
             Daily Volume
           </Button>
         </FlexContainer>
 
-        <Chart
-          yKey={"dailyVolumeToken0"}
-          yKey1={"dailyVolumeToken1"}
-          chartData={pairDayDatas}
-        />
+        <Chart yKey={selectedFilter} chartData={pairDayDatas} />
       </div>
     </Styled.AggregateGrid>
   );

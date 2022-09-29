@@ -34,7 +34,6 @@ export const RecentSwaps = ({ id }) => {
             <Styled.TxRow key={i} variants={animatedItem}>
               <td>$ {formatNumber(formatNumber(parseInt(swap.amountUSD)))}</td>
               <td>{swap.pair.token0.symbol} </td>
-              <td>-</td>
               <td>{swap.pair.token1.symbol} </td>
               <td>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
