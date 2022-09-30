@@ -5,7 +5,7 @@ import { TokensContext } from "../../context/TokensContext";
 import { PairCard } from "../PairCard/PairCard";
 import { PAIRS } from "./queries";
 import * as Styled from "./styles";
-export const PoolList = () => {
+export const PairList = () => {
   const { state: tokensState } = useContext(TokensContext);
 
   const { loading, error, data } = useQuery(PAIRS);

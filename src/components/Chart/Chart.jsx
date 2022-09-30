@@ -10,7 +10,7 @@ import React from "react";
 
 export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
-  // const reverseData = [...data.tokenDayDatas].reverse();
+  // const reverseData = [...chartData.reverse()];
 
   // For time charts
   const getTimeAxis = (data) => {
@@ -18,12 +18,6 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     const newDate = new Date(milliseconds);
     const formattedDate = newDate.toISOString().split("T")[0];
     return formattedDate;
-  };
-
-  const stringToInt = (data) => {
-    const dailyTxns = parseInt(data.dailyTxns);
-
-    return dailyTxns;
   };
 
   console.log("chart da", yKey);

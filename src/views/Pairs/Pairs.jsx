@@ -1,12 +1,12 @@
 import React from 'react'
 import { PairFilters } from '../../components/PairFilters/PairFilters'
-import { PoolList } from '../../components/PoolList/PoolList'
+import { PairList } from '../../components/PairList/PairList'
 
 export const Pairs = () => {
   return (
     <div>
         <PairFilters />
-        <PoolList />
+        <PairList />
     </div>
   )
 }

@@ -9,7 +9,7 @@ import { TokenContextProvider } from "./context/TokenContext";
 
 import { ThemeContextProvider } from "./context/ThemeContext";
 import "./App.css";
-import { PoolList } from "./components/PoolList/PoolList";
+import { PairList } from "./components/PairList/PairList";
 import { Layout } from "./components/Layout/Layout";
 import { Home } from "./views/Home/Home";
 import { Pairs } from "./views/Pairs/Pairs";
@@ -34,7 +34,7 @@ render(
                   <Route path="/tokens" exact component={Tokens} />
                   <Route path="/pairs/:pairID" exact component={PairAggregate} />
                   <Route path="/pairs" exact component={Pairs} />
-                  <Route path="/liquidity" exact component={PoolList} />
+                  <Route path="/liquidity" exact component={PairList} />
                 </Switch>
               </Layout>
             </Router>

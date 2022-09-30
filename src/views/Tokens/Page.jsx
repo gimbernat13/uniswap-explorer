@@ -22,7 +22,6 @@ function Page({ data }) {
       <div className="main-panel">
         <h3>Uniswap V2 Explorer</h3>
         <div className="card-grid ">
-          {}
           <div className="top ">
             <Card>
               <TokenDetails />

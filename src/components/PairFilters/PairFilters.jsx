@@ -21,12 +21,7 @@ export const PairFilters = () => {
           placeHolder="Filter By"
           options={filterByOptions}
         />
-        <Select
-          dispatch={pairsDispatch}
-          action={setSortBy}
-          placeHolder="Sort By"
-          options={sortByOptions}
-        />
+
         <Select
           dispatch={pairsDispatch}
           action={setItemsOnPage}
