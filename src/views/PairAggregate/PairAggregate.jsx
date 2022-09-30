@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
+import { BarCharts } from "../../components/BarCharts/BarCharts";
 import { Button } from "../../components/Button/styles";
 import { Card } from "../../components/Card/Card";
 import Chart from "../../components/Chart/Chart";
@@ -12,7 +13,8 @@ import * as Styled from "./styles";
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
-  const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
+  const [selectedFilter, setSelectedFilter] =
+    React.useState("dailyVolumeToken0");
   const { loading, error, data } = useQuery(PAIR_AGGREGATE, {
     variables: { id: pairID },
   });
@@ -50,7 +52,12 @@ export const PairAggregate = () => {
             Daily Volume
           </Button>
         </FlexContainer>
-
+        <BarCharts
+          yKey={selectedFilter}
+          yValue1={pairDayDatas.dailyVolumeToken0}
+          yValue2={pairDayDatas.dailyVolumeToken1}
+          chartData={pairDayDatas}
+        />
         <Chart yKey={selectedFilter} chartData={pairDayDatas} />
       </Card>
     </Styled.AggregateGrid>
