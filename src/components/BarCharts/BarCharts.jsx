@@ -45,16 +45,17 @@ export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
           );
         })}
       </FlexContainer>
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={chartData}>
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          <XAxis dataKey={getTimeAxis} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
 
-      <BarChart width={730} height={250} data={chartData}>
-        {/* <CartesianGrid strokeDasharray="3 3" /> */}
-        <XAxis dataKey={getTimeAxis} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-
-        <Bar dataKey={selectedFilter} fill="#8884d8" />
-      </BarChart>
+          <Bar dataKey={selectedFilter} fill="#8884d8" />
+        </BarChart>
+      </ResponsiveContainer>
     </>
   );
 };

@@ -5,7 +5,8 @@ export const Button = styled.div`
   min-width: 100px;
   max-width: 200px;
 
-  background-color: ${(props) => (props.isActive ? "gray" : "black")};
+  background-color: ${(props) =>
+    props.isActive ? " rgba(30, 96, 118, 0.732);" : "black"};
   /* color: ${(props) => (props.isActive ? "black" : "white")}; */
 
   text-align: center;

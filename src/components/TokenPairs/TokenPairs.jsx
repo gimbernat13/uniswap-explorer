@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { TOKEN_PAIRS } from "./queries";
 import { TokenContext } from "../../context/TokenContext";
 import formatNumber from "../../utils/formatNumber";
+import { Link } from "react-router-dom";
 
 export const TokenPairs = () => {
   const { tokenId } = useContext(TokenContext);
@@ -15,14 +16,16 @@ export const TokenPairs = () => {
     <div className="pairs">
       <h3> Top 3 Trading Pairs (Volume) </h3>
       {data.pairs.map((pair) => (
-        <div className="pair-card">
-          <div className="pair">{pair.token0.symbol}</div>
+        <Link to={`/pairs/${pair.id}`}>
+          <div className="pair-card">
+            <div className="pair">{pair.token0.symbol}</div>
 
-          <div className="pair"> {pair.token1.symbol}</div>
-          <div className="pair">
-            ${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
+            <div className="pair"> {pair.token1.symbol}</div>
+            <div className="pair">
+              ${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

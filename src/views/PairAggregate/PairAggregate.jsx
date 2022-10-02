@@ -25,34 +25,37 @@ export const PairAggregate = () => {
 
   return (
     <Styled.AggregateGrid>
-      <Card>
-        <h2>
-          {pair.token0.symbol} - {pair.token1.symbol}
-        </h2>
-        <p>
-          Reserve : {pair.token0.symbol} {pair.reserve0}
-          {pair.token1.symbol}
-        </p>
-        <p>
-          Reserve : {pair.token1.symbol} - {pair.reserve1}
-        </p>
-        <h3>{pairDayDatas.dailyTxns}</h3>
-      </Card>
+      <Styled.AggregateLeft>
+        <Card>
+          <h2>
+            {pair.token0.symbol} - {pair.token1.symbol}
+          </h2>
+          <p>
+            Reserve : {pair.token0.symbol} {pair.reserve0}
+            {pair.token1.symbol}
+          </p>
+          <p>
+            Reserve : {pair.token1.symbol} - {pair.reserve1}
+          </p>
+          <h3>{pairDayDatas.dailyTxns}</h3>
+        </Card>
+        <Card>
+          <FlexContainer>
+            {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>
+            Daily Transactions
+          </Button> */}
+          </FlexContainer>
+          <BarCharts
+            yValue1={pairDayDatas.dailyVolumeToken0}
+            yValue2={pairDayDatas.dailyVolumeToken1}
+            chartData={pairDayDatas}
+          />
+        </Card>
+      </Styled.AggregateLeft>
+
       <Card>
         <h3>Recent Swaps</h3>
         <RecentSwaps id={pair.id} />
-      </Card>
-      <Card>
-        <FlexContainer>
-          {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>
-            Daily Transactions
-          </Button> */}
-        </FlexContainer>
-        <BarCharts
-          yValue1={pairDayDatas.dailyVolumeToken0}
-          yValue2={pairDayDatas.dailyVolumeToken1}
-          chartData={pairDayDatas}
-        />
       </Card>
     </Styled.AggregateGrid>
   );
