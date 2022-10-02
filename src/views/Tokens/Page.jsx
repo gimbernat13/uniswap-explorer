@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Route } from "react-router-dom";
 import { Card } from "../../components/Card/Card";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { Select } from "../../components/Select/Select";
@@ -8,6 +9,7 @@ import { TokenDetails } from "../../components/TokenDetails/TokenDetails";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
 
 import { ThemeContext } from "../../context/ThemeContext";
+import { TokenAggregate } from "../TokenAggregate/TokenAggregate";
 import { dateRangeOptions } from "./config";
 
 function Page({ data }) {
@@ -22,24 +24,7 @@ function Page({ data }) {
       <div className="main-panel">
         <h3>Uniswap V2 Explorer</h3>
         <div className="card-grid ">
-          <div className="top ">
-            <Card>
-              <TokenDetails />
-            </Card>
-            <Card>
-              <TokenPairs />
-            </Card>
-            <Card>
-              <h2>Price USD (100 days) </h2>
-              {/* <Select
-                dispatch={(e) => setNumberOfDays(e.target.value)}
-                placeHolder="Filter By"
-                options={dateRangeOptions}
-              /> */}
-              <TokenChart numberOfItems={50} />
-            </Card>
-          </div>
-          <div className="middle"></div>
+          <TokenAggregate />
           <div className="bottom">
             <FilterButtons />
             <TokenCardList />

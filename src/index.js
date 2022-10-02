@@ -15,11 +15,74 @@ import { Home } from "./views/Home/Home";
 import { Pairs } from "./views/Pairs/Pairs";
 import { PairsContextProvider } from "./context/PairsContext";
 import { PairAggregate } from "./views/PairAggregate/PairAggregate";
+import Page from "./views/Tokens/Page";
+import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
+import { TokenCardList } from "./components/TokenCardList/TokenCardList";
 
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
   cache: new InMemoryCache(),
 });
+
+const routes = [
+  {
+    path: "/pairs",
+    component: PairRoutes,
+    routes: [
+      {
+        path: "/pairs/:pairID",
+        component: PairAggregate,
+      },
+    ],
+  },
+  {
+    path: "/tokens",
+    component: TokenRoutes,
+    routes: [
+      {
+        path: "/tokens/:tokenID",
+        component: TokenAggregate,
+      },
+    ],
+  },
+];
+
+function PairRoutes({ routes }) {
+  return (
+    <div>
+      <Switch>
+        {routes.map((route, i) => (
+          <RouteWithSubRoutes key={i} {...route} />
+        ))}
+      </Switch>
+      <PairList />
+    </div>
+  );
+}
+
+function TokenRoutes({ routes }) {
+  return (
+    <div>
+      <Switch>
+        {routes.map((route, i) => (
+          <RouteWithSubRoutes key={i} {...route} />
+        ))}
+      </Switch>
+      <TokenCardList />
+    </div>
+  );
+}
+function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      path={route.path}
+      render={(props) => (
+        // pass the sub-routes down to keep nesting
+        <route.component {...props} routes={route.routes} />
+      )}
+    />
+  );
+}
 
 render(
   <ApolloProvider client={client}>
@@ -30,11 +93,9 @@ render(
             <Router>
               <Layout>
                 <Switch>
-                  <Route path="/" exact component={Home} />
-                  <Route path="/tokens" exact component={Tokens} />
-                  <Route path="/pairs/:pairID" exact component={PairAggregate} />
-                  <Route path="/pairs" exact component={Pairs} />
-                  <Route path="/liquidity" exact component={PairList} />
+                  {routes.map((route, i) => (
+                    <RouteWithSubRoutes key={i} {...route} />
+                  ))}
                 </Switch>
               </Layout>
             </Router>

@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { TokensContext } from "../../context/TokensContext";
 import { TokenCard } from "../TokenCard/TokenCard";
 import { TOKENS } from "./queries";
@@ -18,10 +19,16 @@ export const TokenCardList = (props) => {
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
+
   return (
     <Styled.TokenGrid>
       {data.tokens.map((token, i) => {
-        return <TokenCard index={i + 1} token={token} />;
+        console.log("token ", token);
+        return (
+          <Link to={`/tokens/${token.id}`}>
+            <TokenCard index={i + 1} token={token} />
+          </Link>
+        );
       })}
     </Styled.TokenGrid>
   );
