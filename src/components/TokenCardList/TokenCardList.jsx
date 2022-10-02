@@ -23,7 +23,6 @@ export const TokenCardList = (props) => {
   return (
     <Styled.TokenGrid>
       {data.tokens.map((token, i) => {
-        console.log("token ", token);
         return (
           <Link to={`/tokens/${token.id}`}>
             <TokenCard index={i + 1} token={token} />

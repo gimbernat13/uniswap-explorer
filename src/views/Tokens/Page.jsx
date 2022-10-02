@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Route } from "react-router-dom";
+import { Route, useParams } from "react-router-dom";
 import { Card } from "../../components/Card/Card";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { Select } from "../../components/Select/Select";
@@ -18,6 +18,9 @@ function Page({ data }) {
     value: 50,
     name: 50,
   });
+
+  const { tokenID } = useParams();
+
   return (
     <div style={theme} className="App">
       {/* <div className="dark-overlay"></div> */}
@@ -27,7 +30,7 @@ function Page({ data }) {
           <TokenAggregate />
           <div className="bottom">
             <FilterButtons />
-            <TokenCardList />
+            <TokenCardList tokenID={tokenID} />
           </div>
         </div>
       </div>
