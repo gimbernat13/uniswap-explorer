@@ -11,6 +11,8 @@ import {
   Area,
   // CartesianGrid,
 } from "recharts";
+import { Button } from "../Button/styles";
+import { FlexContainer } from "../FlexContainer/FlexContainer";
 
 export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
   // FIXME: Extract to utils
@@ -21,13 +23,29 @@ export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
     return formattedDate;
   };
 
-  console.log("chart data ", chartData);
+  const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
+  const checkButtonActive = (id) => id === selectedFilter;
 
-  chartData.map((item) => {
-    console.log(item.dailyVolumeUSD);
-  });
+  const filters = [
+    { name: "Daily Volume", id: "dailyVolumeUSD" },
+    { name: "Daily Txns", id: "dailyTxns" },
+    { name: "Reserve", id: "reserveUSD" },
+  ];
   return (
     <>
+      <FlexContainer>
+        {filters.map((filter, i) => {
+          return (
+            <Button
+              isActive={filter.id === selectedFilter}
+              onClick={() => setSelectedFilter(filter.id)}
+            >
+              {filter.name}
+            </Button>
+          );
+        })}
+      </FlexContainer>
+
       <BarChart width={730} height={250} data={chartData}>
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
         <XAxis dataKey={getTimeAxis} />
@@ -35,8 +53,7 @@ export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
         <Tooltip />
         <Legend />
 
-        <Bar dataKey={"dailyVolumeToken0"} fill="#8884d8" />
-        <Bar dataKey={"dailyVolumeToken1"} fill="#82ca9d" />
+        <Bar dataKey={selectedFilter} fill="#8884d8" />
       </BarChart>
     </>
   );

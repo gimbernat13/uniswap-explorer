@@ -6,4 +6,7 @@ export const AggregateGrid = styled(motion.div)`
   grid-template-columns: auto;
   gap: 20px;
   color: white;
+  &:nth-child(1) {
+    background-color: pink;
+  }
 `;
