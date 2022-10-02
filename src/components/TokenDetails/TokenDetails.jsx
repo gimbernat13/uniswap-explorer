@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { useQuery } from "@apollo/client";
 import { TOKEN_DETAILS } from "./queries";
 import formatNumber from "../../utils/formatNumber";
-import { TokenContext } from "../../context/TokenContext";
 
 export const TokenDetails = ({ tokenID }) => {
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {

@@ -9,7 +9,6 @@ export const TokenCard = ({ token, index }) => {
   const { theme } = useContext(ThemeContext);
   const { tokenID } = useParams();
 
-  console.log("hola ", useParams());
   return (
     <div
       style={theme}

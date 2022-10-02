@@ -15,9 +15,10 @@ import { Home } from "./views/Home/Home";
 import { Pairs } from "./views/Pairs/Pairs";
 import { PairsContextProvider } from "./context/PairsContext";
 import { PairAggregate } from "./views/PairAggregate/PairAggregate";
-import Page from "./views/Tokens/Page";
+import { TokensView } from "./views/Tokens";
 import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
 import { TokenCardList } from "./components/TokenCardList/TokenCardList";
+import { FilterButtons } from "./components/FilterButtons/FilterButtons";
 
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
@@ -37,7 +38,7 @@ const routes = [
   },
   {
     path: "/tokens",
-    component: TokenRoutes,
+    component: TokensView,
     routes: [
       {
         path: "/tokens/:tokenID",
@@ -60,19 +61,7 @@ function PairRoutes({ routes }) {
   );
 }
 
-function TokenRoutes({ routes }) {
-  return (
-    <div>
-      <Switch>
-        {routes.map((route, i) => (
-          <RouteWithSubRoutes key={i} {...route} />
-        ))}
-      </Switch>
-      <TokenCardList />
-    </div>
-  );
-}
-function RouteWithSubRoutes(route) {
+export function RouteWithSubRoutes(route) {
   return (
     <Route
       path={route.path}

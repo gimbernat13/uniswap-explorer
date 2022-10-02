@@ -20,7 +20,6 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     return formattedDate;
   };
 
-  console.log("chart da", yKey);
 
   return (
     <ResponsiveContainer width="100%" height={300}>
