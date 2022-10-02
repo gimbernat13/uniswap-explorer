@@ -3,12 +3,15 @@ import { Card } from "../../components/Card/Card";
 import { TokenChart } from "../../components/TokenChart/TokenChart";
 import { TokenDetails } from "../../components/TokenDetails/TokenDetails";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
+import { useParams } from "react-router-dom";
 
 export const TokenAggregate = () => {
+  const { tokenID } = useParams();
+
   return (
     <>
       <Card>
-        <TokenDetails />
+        <TokenDetails tokenID={tokenID} />
       </Card>
       <Card>
         <TokenPairs />

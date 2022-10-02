@@ -4,11 +4,9 @@ import { TOKEN_DETAILS } from "./queries";
 import formatNumber from "../../utils/formatNumber";
 import { TokenContext } from "../../context/TokenContext";
 
-export const TokenDetails = (props) => {
-  const { tokenId } = useContext(TokenContext);
-
+export const TokenDetails = ({ tokenID }) => {
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
-    variables: { id: tokenId },
+    variables: { id: tokenID },
   });
 
   if (loading) return "Loading...";
@@ -35,7 +33,7 @@ export const TokenDetails = (props) => {
       <div className="detail-links">
         <a
           target="_blank"
-          href={`https://www.coingecko.com/en/coins/${tokenId}`}
+          href={`https://www.coingecko.com/en/coins/${tokenID}`}
         >
           <img
             id="coingecko"
@@ -43,7 +41,7 @@ export const TokenDetails = (props) => {
             alt=""
           />
         </a>
-        <a target="_blank" href={`https://etherscan.io/address/${tokenId}`}>
+        <a target="_blank" href={`https://etherscan.io/address/${tokenID}`}>
           <img
             src="https://etherscan.io/images/logo-ether.png?v=0.0.2"
             alt=""
