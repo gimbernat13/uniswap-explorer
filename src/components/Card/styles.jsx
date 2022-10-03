@@ -8,7 +8,7 @@ export const Card = styled(motion.div)`
   transition: all 0.2s;
   height: ${(props) => props.height};
   border: 1px solid #9f9f9f3a;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
   background-color: var(--transparent-black);
   overflow-y: scroll;
 `;

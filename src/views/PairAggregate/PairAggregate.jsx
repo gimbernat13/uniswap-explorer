@@ -10,6 +10,7 @@ import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
 import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
 import * as Styled from "./styles";
+import { BarLoader } from "react-spinners";
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
@@ -18,7 +19,7 @@ export const PairAggregate = () => {
     variables: { id: pairID },
   });
 
-  if (loading) return "Loading...";
+  if (loading) return <BarLoader color="#36d7b7" />;
   if (error) return `Error! ${error.message}`;
 
   const { pairDayDatas, pair } = data;

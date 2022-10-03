@@ -5,6 +5,7 @@ import { TokensContext } from "../../context/TokensContext";
 import { TokenCard } from "../TokenCard/TokenCard";
 import { TOKENS } from "./queries";
 import * as Styled from "./styles";
+import { BarLoader } from "react-spinners";
 
 export const TokenCardList = (props) => {
   const { state: tokensState } = useContext(TokensContext);
@@ -17,7 +18,7 @@ export const TokenCardList = (props) => {
     },
   });
 
-  if (loading) return "Loading...";
+  if (loading) return <BarLoader color="#36d7b7" /> ;
   if (error) return `Error! ${error.message}`;
 
   return (

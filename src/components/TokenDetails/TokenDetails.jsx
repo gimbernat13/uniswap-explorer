@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import { useQuery } from "@apollo/client";
 import { TOKEN_DETAILS } from "./queries";
 import formatNumber from "../../utils/formatNumber";
+import { BarLoader } from "react-spinners";
 
 export const TokenDetails = ({ tokenID }) => {
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
     variables: { id: tokenID },
   });
 
-  if (loading) return "Loading...";
+  if (loading) return <BarLoader color="#36d7b7" />;
   if (error) return `Error! ${error.message}`;
 
   const { name, symbol, tradeVolumeUSD, totalLiquidity, txCount } = data.token;

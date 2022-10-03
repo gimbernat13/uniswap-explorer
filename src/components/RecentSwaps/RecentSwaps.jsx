@@ -3,13 +3,14 @@ import React from "react";
 import formatNumber from "../../utils/formatNumber";
 import { RECENT_SWAPS } from "./queries";
 import * as Styled from "./styles";
+import { BarLoader } from "react-spinners";
 
 export const RecentSwaps = ({ id }) => {
   const { loading, error, data } = useQuery(RECENT_SWAPS, {
     variables: { id: id },
   });
 
-  if (loading) return "Loading...";
+  if (loading) return <BarLoader color="#36d7b7" />;
   if (error) return `Error! ${error.message}`;
 
   const container = {
