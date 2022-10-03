@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 export const AggregateGrid = styled(motion.div)`
   display: grid;
-  grid-template-columns:
-    2fr
-    1fr;
+  grid-template-columns: 1fr 40%;
   gap: 20px;
   color: white;
 

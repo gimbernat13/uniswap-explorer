@@ -7,6 +7,15 @@ import { TOKENS } from "./queries";
 import * as Styled from "./styles";
 import { BarLoader } from "react-spinners";
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
 export const TokenCardList = (props) => {
   const { state: tokensState } = useContext(TokensContext);
 
@@ -18,11 +27,11 @@ export const TokenCardList = (props) => {
     },
   });
 
-  if (loading) return <BarLoader color="#36d7b7" /> ;
+  if (loading) return <BarLoader color="#36d7b7" />;
   if (error) return `Error! ${error.message}`;
 
   return (
-    <Styled.TokenGrid>
+    <Styled.TokenGrid variants={container} initial="hidden" animate="show">
       {data.tokens.map((token, i) => {
         return (
           <Link to={`/tokens/${token.id}`}>

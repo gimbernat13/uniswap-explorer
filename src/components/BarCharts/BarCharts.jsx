@@ -48,12 +48,12 @@ export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={chartData}>
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
-          {/* <XAxis dataKey={getTimeAxis} /> */}
+          <XAxis dataKey={getTimeAxis} />
           <YAxis />
           <Tooltip />
           <Legend />
 
-          <Bar dataKey={selectedFilter} fill="#8884d8" />
+          <Bar dataKey={selectedFilter} fill="#36d7b7" />
         </BarChart>
       </ResponsiveContainer>
     </>

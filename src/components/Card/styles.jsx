@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const Card = styled(motion.div)`
   position: relative;
-  padding: 3rem;
-  border-radius: 0.5rem;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
   transition: all 0.2s;
   height: ${(props) => props.height};
   border: 1px solid #9f9f9f3a;
@@ -13,5 +13,5 @@ export const Card = styled(motion.div)`
   overflow-y: scroll;
 `;
 export const CardInner = styled(motion.div)`
-  padding: 1rem;
+  /* padding: .5rem; */
 `;
