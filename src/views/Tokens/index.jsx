@@ -3,6 +3,7 @@ import { Switch, useParams } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
+import { setSelectedToken } from "../../context/actionNames";
 
 import { ThemeContext } from "../../context/ThemeContext";
 import { TokensContext } from "../../context/TokensContext";
@@ -18,7 +19,9 @@ export function TokensView({ routes }) {
   const { tokenID } = useParams();
   const { state: tokensState, dispatch } = useContext(TokensContext);
   console.log("token state ", tokensState);
-  React.useEffect(() => {}, []);
+  React.useEffect(() => {
+    dispatch({ type: setSelectedToken, payload: tokenID });
+  }, [tokenID]);
 
   return (
     <div>

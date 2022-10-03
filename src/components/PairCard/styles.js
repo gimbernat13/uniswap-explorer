@@ -7,6 +7,7 @@ export const PoolCard = styled(motion.div)`
   width: 100%;
   cursor: pointer;
   color: lightgray;
+  background-color: var(--transparent-black);
 `;
 export const PoolCardInner = styled(motion.div)`
   padding: 1rem;

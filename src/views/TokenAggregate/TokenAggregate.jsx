@@ -4,12 +4,12 @@ import { TokenChart } from "../../components/TokenChart/TokenChart";
 import { TokenDetails } from "../../components/TokenDetails/TokenDetails";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
 import { useParams } from "react-router-dom";
-
+import * as Styled from "./styles";
 export const TokenAggregate = () => {
   const { tokenID } = useParams();
 
   return (
-    <>
+    <Styled.TokenAggregateGrid>
       <Card>
         <TokenDetails tokenID={tokenID} />
       </Card>
@@ -25,6 +25,6 @@ export const TokenAggregate = () => {
               /> */}
         <TokenChart numberOfItems={50} />
       </Card>
-    </>
+    </Styled.TokenAggregateGrid>
   );
 };

@@ -9,7 +9,7 @@ export const Card = styled(motion.div)`
   height: ${(props) => props.height};
   border: 1px solid #9f9f9f3a;
   backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.556);
+  background-color: var(--transparent-black);
   overflow-y: scroll;
 `;
 export const CardInner = styled(motion.div)`

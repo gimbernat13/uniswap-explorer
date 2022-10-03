@@ -1,6 +1,8 @@
 :root {
   --border-radius: 1rem;
   --border: 1px solid rgb(62, 62, 62);
+  --transparent-black: rgba(0, 0, 0, 0.667);
+  
 }
 
 body {
@@ -16,7 +18,7 @@ body {
   margin-bottom: 0;
   background-color: black;
   background-image: url(./assets/bg2.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.78)), url(./assets/bg2.jpg);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.853), rgba(0, 0, 0, 0.78)), url(./assets/bg2.jpg); */
   ;
   background-size: cover;
 
@@ -153,7 +155,7 @@ tr {
 .card-grid {}
 
 .container {
-  padding: 0 120px;
+  padding: 0 5rem;
 }
 
 .button {

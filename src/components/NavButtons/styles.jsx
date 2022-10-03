@@ -22,7 +22,7 @@ export const Button = styled.div`
   cursor: pointer;
   position: relative;
   border: 1px solid rgba(148, 148, 148, 0.317);
-  padding: 1rem;
+  padding: .5rem;
 `;
 
 export const ActiveLink = styled.div`

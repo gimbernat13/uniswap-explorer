@@ -9,6 +9,7 @@ export const Select = styled.div`
   transition: all 0.2s;
   cursor: pointer;
   position: relative;
+  background-color: var(--transparent-black);
   border: 1px solid rgba(148, 148, 148, 0.317);
 `;
 export const SelectInner = styled.div`

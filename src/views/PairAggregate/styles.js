@@ -6,9 +6,6 @@ export const AggregateGrid = styled(motion.div)`
   grid-template-columns:
     2fr
     1fr;
-  grid-template-rows:
-    2fr
-    1fr;
   gap: 20px;
   color: white;
 
@@ -18,5 +15,4 @@ export const AggregateGrid = styled(motion.div)`
 export const AggregateLeft = styled(motion.div)`
   display: grid;
   gap: 20px;
-
 `;
