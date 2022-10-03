@@ -6,6 +6,7 @@ import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
 
 
 export function TokensView({ routes }) {
+  // FIXME: ADD TIME FILTER TO CHARTS 
   const [numberOfDays, setNumberOfDays] = React.useState({
     value: 50,
     name: 50,

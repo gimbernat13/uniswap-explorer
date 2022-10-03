@@ -18,7 +18,6 @@ export const TokenPairs = () => {
   if (error) return `Error! ${error.message}`;
   return (
     <div className="pairs">
-      <h3> Top 3 Trading Pairs (Volume) </h3>
       {data.pairs.map((pair) => (
         <Link to={`/pairs/${pair.id}`}>
           <div className="pair-card">

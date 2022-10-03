@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import * as Styled from "./styles";
 import { setSelectedToken } from "../../context/actionNames";
 import { TokensContext } from "../../context/TokensContext";
+
 export const TokenAggregate = () => {
   const { tokenID } = useParams();
   const { state: tokensState, dispatch } = useContext(TokensContext);
@@ -21,6 +22,8 @@ export const TokenAggregate = () => {
         <TokenDetails tokenID={tokenID} />
       </Card>
       <Card>
+        <h3> Top 3 Trading Pairs (Volume) </h3>
+
         <TokenPairs />
       </Card>
       <Card>

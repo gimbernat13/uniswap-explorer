@@ -19,6 +19,10 @@ export const PairAggregate = () => {
     variables: { id: pairID },
   });
 
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [pairID]);
+
   if (loading) return <BarLoader color="#36d7b7" />;
   if (error) return `Error! ${error.message}`;
 

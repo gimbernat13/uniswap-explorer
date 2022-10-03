@@ -7,9 +7,6 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-  AreaChart,
-  Area,
-  // CartesianGrid,
 } from "recharts";
 import { Button } from "../Button/styles";
 import { FlexContainer } from "../FlexContainer/FlexContainer";
