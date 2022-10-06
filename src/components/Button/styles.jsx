@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Button = styled.div`
-  margin-right: 5px;
+  width: ${(props) => props.width};
+  height: fit-content !important;
   padding: 8px 0.85rem;
   text-decoration: none;
   border-radius: 12px;
@@ -11,14 +12,13 @@ export const Button = styled.div`
   border: 2px solid rgba(245, 245, 245, 0.3);
   background-clip: content-box, border-box;
   box-shadow: var(--transparent-black) 2px 1000px 2px inset;
-  /* border: ${(props) => (props.isActive ? " brightness(2)" : "")}; */
   opacity: 0.9;
   background-color: var(--transparent-black);
   color: white !important;
-  width: fit-content !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  height: fit-content !important;
+  text-align: center;
+
   background-origin: border-box;
 
   &:hover {

@@ -51,6 +51,7 @@ const routes = [
 function PairRoutes({ routes }) {
   return (
     <div>
+      <h2>Token Pairs</h2>
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
