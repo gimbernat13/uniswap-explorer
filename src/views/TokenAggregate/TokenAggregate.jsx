@@ -18,22 +18,26 @@ export const TokenAggregate = () => {
 
   return (
     <Styled.TokenAggregateGrid>
-      <Card>
-        <TokenDetails tokenID={tokenID} />
-      </Card>
-      <Card>
-        <h3> Top 3 Trading Pairs (Volume) </h3>
-
-        <TokenPairs />
-      </Card>
-      <Card>
-        <h2>Price USD (100 days) </h2>
-        {/* <Select
+      <div>
+        <Card>
+          <TokenDetails tokenID={tokenID} />
+        </Card>
+        <br />
+        <Card>
+          <h2>Price USD (100 days) </h2>
+          <TokenChart numberOfItems={50} />
+          {/* <Select
                 dispatch={(e) => setNumberOfDays(e.target.value)}
                 placeHolder="Filter By"
                 options={dateRangeOptions}
               /> */}
-        <TokenChart numberOfItems={50} />
+        </Card>
+      </div>
+
+      <Card>
+        <h3> Top 3 Trading Pairs (Volume) </h3>
+
+        <TokenPairs />
       </Card>
     </Styled.TokenAggregateGrid>
   );
