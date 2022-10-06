@@ -11,7 +11,6 @@ import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
 import * as Styled from "./styles";
 import { BarLoader } from "react-spinners";
-import { SwapWidget } from '@uniswap/widgets'
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
@@ -33,7 +32,7 @@ export const PairAggregate = () => {
     <Styled.AggregateGrid>
 
       <Styled.AggregateLeft>
-        <Card>
+        <Card height={"3000vh"}>
           <h2>
             {pair.token0.symbol} - {pair.token1.symbol}
           </h2>

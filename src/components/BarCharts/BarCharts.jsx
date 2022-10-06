@@ -30,18 +30,19 @@ export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
   ];
   return (
     <>
-      <FlexContainer>
-        {filters.map((filter, i) => {
-          return (
-            <Button
-              isActive={filter.id === selectedFilter}
-              onClick={() => setSelectedFilter(filter.id)}
-            >
-              {filter.name}
-            </Button>
-          );
-        })}
-      </FlexContainer>
+      {/* <FlexContainer> */}
+      {filters.map((filter, i) => {
+        return (
+          <Button
+            isActive={filter.id === selectedFilter}
+            onClick={() => setSelectedFilter(filter.id)}
+          >
+            {filter.name}
+          </Button>
+        );
+      })}
+      <br />
+      {/* </FlexContainer> */}
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={chartData}>
           {/* <CartesianGrid strokeDasharray="3 3" /> */}

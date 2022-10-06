@@ -4,9 +4,8 @@ import { RouteWithSubRoutes } from "../..";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
 
-
 export function TokensView({ routes }) {
-  // FIXME: ADD TIME FILTER TO CHARTS 
+  // FIXME: ADD TIME FILTER TO CHARTS
   const [numberOfDays, setNumberOfDays] = React.useState({
     value: 50,
     name: 50,
@@ -21,6 +20,7 @@ export function TokensView({ routes }) {
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch>
+
       <FilterButtons />
       <TokenCardList />
     </div>
