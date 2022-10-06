@@ -1,22 +1,32 @@
 import styled from "styled-components";
 
 export const Button = styled.div`
-  border-radius: 1rem;
-  min-width: 100px;
-  max-width: 200px;
-
-  background-color: ${(props) =>
-    props.isActive ? " rgba(30, 96, 118, 0.732);" : "black"};
-  /* color: ${(props) => (props.isActive ? "black" : "white")}; */
-
-  text-align: center;
-  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-  margin: 1rem 0;
-  margin-right: 0.5rem;
-
-  transition: all 0.2s;
+  padding: 8px 0.85rem;
+  text-decoration: none;
+  border-radius: 12px;
+  display: inline-block;
+  box-sizing: border-box;
   cursor: pointer;
-  position: relative;
-  border: 1px solid rgba(148, 148, 148, 0.317);
-  padding: 0.5rem;
+  border: 2px solid transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(
+      95.5deg,
+      rgba(15, 53, 255, 0.3) 12.82%,
+      rgba(255, 72, 181, 0.3) 41.96%,
+      rgba(15, 53, 255, 0.08) 75.06%,
+      rgba(15, 53, 255, 0.11) 107.66%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: rgb(53 55 58) 1px 1000px 1px inset;
+  opacity: 0.9;
+  background-color: var(--transparent-black);
+  color: white !important;
+  width: fit-content !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  height: fit-content !important;
 `;
