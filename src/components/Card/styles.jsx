@@ -7,14 +7,14 @@ export const Card = styled(motion.div)`
   border-radius: 1rem;
   transition: all 0.2s;
   height: ${(props) => props.height};
-  border: 1px solid #9f9f9f3a;
+  border: 2px solid #9f9f9f3a;
   backdrop-filter: blur(1px);
   background-color: var(--transparent-black);
   overflow-y: scroll;
 
   border: 1px solid rgba(245, 245, 245, 0.3);
   background-clip: content-box, border-box;
-  box-shadow: var(--transparent-black) 2px 1000px 2px inset;
+  box-shadow: black 2px 1000px 2px inset;
   opacity: 0.9;
   background-color: var(--transparent-black);
   color: white !important;

@@ -13,36 +13,49 @@ export const Sidebar = () => {
 
   const sidebarItems = [
     {
-      
-    }
-  ]
+      title: "Home",
+      icon: "🏠",
+      url: "/",
+    },
+    {
+      title: "Tokens",
+      icon: "🪙",
+      url: "/tokens",
+    },
+    {
+      title: "Pairs",
+      icon: "💰",
+
+      url: "/pairs",
+    },
+  ];
   return (
-    <Styled.Sidebar width={!isSidebarOpen ? "var(--sidebar-margin)" : "200px"}>
+    <Styled.Sidebar width={!isSidebarOpen ? "var(--sidebar-margin)" : "250px"}>
       <ul>
         <li>
           <Button width="50px" onClick={toggleSidebarOpen}>
-            {" "}
             {isSidebarOpen ? "←" : "→"}{" "}
           </Button>
         </li>
-        <li>
-          <Button width="50px" onClick={() => history.goBack()}>
-            {" "}
-            🔙{" "}
-          </Button>
-        </li>
-        <li>
-          <Button width="50px">
-            <Link to="/tokens">🪙</Link>
-          </Button>
-        </li>
-        <li>
-          {" "}
-          <Button width="50px">
-            <Link to="/pairs">💸</Link>
-          </Button>
-        </li>
+        {sidebarItems.map((item, i) => {
+          return (
+            <Link to={item.url}>
+              <li>
+                <Button width="50px">{item.icon} </Button>
+                <div className={!isSidebarOpen ? "hidden" : "shown"}>
+                  {item.title}
+                </div>
+              </li>
+            </Link>
+          );
+        })}
       </ul>
     </Styled.Sidebar>
   );
 };
+
+{
+  /* <Button width="50px" onClick={() => history.goBack()}>
+{item.icon}
+</Button> */
+}

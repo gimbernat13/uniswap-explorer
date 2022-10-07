@@ -7,10 +7,11 @@ export const Layout = ({ children }) => {
   const { theme, themes, toggleTheme } = useContext(ThemeContext);
   return (
     // <div style={theme}>
-    <div className="main container">
+    <>
       <Sidebar />
-      {children}
-    </div>
+      <div className="main container">{children}</div>
+    </>
+
     // </div>
   );
 };

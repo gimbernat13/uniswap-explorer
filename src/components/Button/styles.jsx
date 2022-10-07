@@ -18,6 +18,7 @@ export const Button = styled.div`
   font-size: 1rem !important;
   font-weight: 400 !important;
   text-align: center;
+  margin-right: 7px;
 
   background-origin: border-box;
 
