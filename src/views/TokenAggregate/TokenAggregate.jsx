@@ -24,7 +24,7 @@ export const TokenAggregate = () => {
         </Card>
         <br />
         <Card>
-          <h2>Price USD (100 days) </h2>
+          <h3>Price USD (100 days) </h3>
           <TokenChart numberOfItems={50} />
           {/* <Select
                 dispatch={(e) => setNumberOfDays(e.target.value)}

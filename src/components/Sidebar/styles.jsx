@@ -4,6 +4,8 @@ export const Sidebar = styled.div`
   cursor: pointer;
   transition: all 0.2s;
   background: var(--transparent-black);
+  border-right: 2px solid rgba(245, 245, 245, 0.095);
+
   /* border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem; */
   backdrop-filter: blur(2px);
@@ -16,6 +18,7 @@ export const Sidebar = styled.div`
   height: 100%;
   transition: all 0.4s;
   padding: 0 0.5rem;
+  
 
   ul {
     display: grid;

@@ -1,15 +1,7 @@
-import { motion } from "framer-motion/dist/framer-motion";
 import styled from "styled-components";
 
-export const Card = styled(motion.div)`
-  position: relative;
-  padding: 2rem 3rem;
-
-  transition: all 0.2s;
-  height: ${(props) => props.height};
+export const BorderedCard = styled.div`
   backdrop-filter: blur(1px);
-  overflow-y: scroll;
-
   border-radius: 1rem;
   border: 2px solid rgba(245, 245, 245, 0.107);
   background-clip: content-box, border-box;
@@ -20,7 +12,6 @@ export const Card = styled(motion.div)`
   font-size: 1rem !important;
   font-weight: 400 !important;
   background-origin: border-box;
-
   &:hover {
     background-image: linear-gradient(
         rgba(255, 255, 255, 0),
@@ -34,7 +25,4 @@ export const Card = styled(motion.div)`
         rgba(15, 53, 255, 0.11) 107.66%
       );
   }
-`;
-export const CardInner = styled(motion.div)`
-  /* padding: .5rem; */
 `;
