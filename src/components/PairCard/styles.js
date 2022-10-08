@@ -3,11 +3,9 @@ import styled from "styled-components";
 
 export const PoolCard = styled(motion.div)`
   border-radius: 1rem;
-  border: var(--border);
   width: 100%;
   cursor: pointer;
   color: lightgray;
-  background-color: var(--transparent-black);
 `;
 export const PoolCardInner = styled(motion.div)`
   padding: 1rem;

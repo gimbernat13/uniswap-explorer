@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BorderedCard = styled.div`
   backdrop-filter: blur(1px);
   border-radius: 1rem;
-  border: 2px solid rgba(245, 245, 245, 0.107);
+  border: 2px solid rgba(245, 245, 245, 0.241);
   background-clip: content-box, border-box;
   box-shadow: black 2px 1000px 2px inset;
   opacity: 0.9;
