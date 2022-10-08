@@ -15,7 +15,7 @@ export const TokenCard = ({ token, index }) => {
         <div className="symbol bold large">{index}</div>
         <div className="symbol bold large">{token.symbol.toUpperCase()}</div>
         <div className="symbol">
-          {formatNumber(parseFloat(token.tradeVolumeUSD).toFixed(2))} USD{" "}
+          $ {formatNumber(parseFloat(token.tradeVolumeUSD).toFixed(2))}
         </div>
       </Styled.TokenCard>
     </BorderedCard>

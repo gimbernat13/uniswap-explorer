@@ -101,7 +101,7 @@ li {
   font-weight: 400;
   min-width: 0;
   display: grid;
-  grid-template-columns: 2fr 3fr 5fr;
+  grid-template-columns: 2fr 2fr 5fr;
   font-size: 0.8rem;
 
 
@@ -123,14 +123,19 @@ li {
   overflow: hidden;
 }
 
+ul {
+  padding: none !important;
+  margin: none !important;
+}
+
 h1 {
   font-size: 3em;
   /* color: #2c88ff; */
 }
 
 h1,
-h2,
-h3,
+div,
+div,
 h4 {
   padding: none !important;
   margin: none !important;

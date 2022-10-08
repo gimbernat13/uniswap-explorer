@@ -32,9 +32,9 @@ export const PairAggregate = () => {
     <Styled.AggregateGrid>
       <Styled.AggregateLeft>
         <Card>
-          <h2>
+          <div>
             {pair.token0.symbol} - {pair.token1.symbol}
-          </h2>
+          </div>
           <div>
             {/* {formatNumber(parseFloat(pair.reserve0).toFixed(2))} */}
             {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
@@ -48,7 +48,7 @@ export const PairAggregate = () => {
           <div>
             Volume USD : $ {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
           </div>
-          <h3>{pairDayDatas.dailyTxns}</h3>
+          <div>{pairDayDatas.dailyTxns}</div>
         </Card>
         <Card>
           <FlexContainer>
@@ -65,7 +65,7 @@ export const PairAggregate = () => {
       </Styled.AggregateLeft>
 
       <Card>
-        <h3>Recent Swaps</h3>
+        <div>Recent Swaps</div>
         <RecentSwaps id={pair.id} />
       </Card>
     </Styled.AggregateGrid>

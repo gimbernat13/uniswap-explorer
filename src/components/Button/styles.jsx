@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.div`
-  transform: scale(0.8);
+  /* transform: scale(0.8); */
   width: ${(props) => props.width};
   height: fit-content !important;
   padding: 8px 0.85rem;
@@ -16,7 +16,7 @@ export const Button = styled.div`
   opacity: 0.9;
   background-color: var(--transparent-black);
   color: white !important;
-  font-size: 1rem !important;
+  font-size: .7rem !important;
   font-weight: 400 !important;
   text-align: center;
   margin-right: 7px;

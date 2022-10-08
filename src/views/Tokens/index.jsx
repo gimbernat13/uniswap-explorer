@@ -15,7 +15,7 @@ export function TokensView({ routes }) {
 
   return (
     <div>
-      <h2>Tokens</h2>
+      <h3>Tokens</h3>
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />

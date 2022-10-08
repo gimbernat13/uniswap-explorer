@@ -43,7 +43,7 @@ export const RecentSwaps = ({ id }) => {
                     src="https://etherscan.io/assets/svg/logos/logo-etherscan.svg?v=0.0.2"
                     alt=""
                   />
-                </a>{" "}
+                </a>
               </td>
             </Styled.TxRow>
           );

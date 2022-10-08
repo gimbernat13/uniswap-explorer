@@ -1,11 +1,11 @@
 import { gql } from "@apollo/client";
 export const TOKEN_PAIRS = gql`
-  query TokenDayDatas($id:String!) {
+  query TokenDayDatas($id: String!) {
     pairs(
       orderBy: volumeUSD
       orderDirection: desc
-      first: 10
-      where: { token0: $id}
+      first: 5
+      where: { token0: $id }
     ) {
       id
       volumeUSD

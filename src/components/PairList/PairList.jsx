@@ -26,7 +26,7 @@ export const PairList = () => {
 
   return (
     <>
-      <h2>Most Traded Pairs</h2>
+      <h3>Most Traded Pairs</h3>
 
       <Styled.PoolGrid variants={container} initial="hidden" animate="show">
         {data.pairs &&
