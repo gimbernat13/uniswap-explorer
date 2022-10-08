@@ -10,38 +10,16 @@ export const TokenDetails = ({ tokenID }) => {
     variables: { id: tokenID },
   });
 
-  if (loading)
-    return (
-      <ContentLoader
-        speed={2}
-        width={"700px"}
-        height={"100%"}
-        viewBox="0 0 800 460"
-        backgroundColor="#68686835"
-        foregroundColor="#0e0e0e79"
-      >
-        {/* <circle cx="31" cy="31" r="15" /> */}
-        <rect x="0" y="0" rx="1rem" ry="1rem" width="240" height="90px" />
-        <rect
-          x="0"
-          y="100"
-          rx="1rem"
-          ry="1rem"
-          borderRadius
-          width="800"
-          height="400"
-        />
-      </ContentLoader>
-    );
+  if (loading) return <BarLoader color="#36d7b7" />;
 
   if (error) return `Error! ${error.message}`;
 
   const { name, symbol, tradeVolumeUSD, totalLiquidity, txCount } = data.token;
   return (
     <div>
-      <h2>
+      <div>
         {name} ({symbol})
-      </h2>
+      </div>
       <ul>
         <li>
           Total Trade Volume :$

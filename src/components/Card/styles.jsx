@@ -3,12 +3,10 @@ import styled from "styled-components";
 
 export const Card = styled(motion.div)`
   position: relative;
-  padding: 2rem 3rem;
+  padding: 1rem;
 
   transition: all 0.2s;
   height: ${(props) => props.height};
   overflow-y: scroll;
 `;
-export const CardInner = styled(motion.div)`
-  /* padding: .5rem; */
-`;
+export const CardInner = styled(motion.div)``;

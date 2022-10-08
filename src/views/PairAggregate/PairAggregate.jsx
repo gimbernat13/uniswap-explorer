@@ -30,19 +30,24 @@ export const PairAggregate = () => {
 
   return (
     <Styled.AggregateGrid>
-
       <Styled.AggregateLeft>
-        <Card height={"3000vh"}>
+        <Card>
           <h2>
             {pair.token0.symbol} - {pair.token1.symbol}
           </h2>
-          <p>
-            Reserve : {pair.token0.symbol} {pair.reserve0}
+          <div>
+            {/* {formatNumber(parseFloat(pair.reserve0).toFixed(2))} */}
+            {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
+            {pair.token0.symbol}
+          </div>
+          <div>
+            {/* {formatNumber(parseFloat(pair.reserve0).toFixed(2))} */}
+            {formatNumber(parseFloat(pair.reserve1).toFixed(2))} -{" "}
             {pair.token1.symbol}
-          </p>
-          <p>
-            Reserve : {pair.token1.symbol} - {pair.reserve1}
-          </p>
+          </div>
+          <div>
+            Volume USD : $ {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
+          </div>
           <h3>{pairDayDatas.dailyTxns}</h3>
         </Card>
         <Card>

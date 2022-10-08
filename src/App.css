@@ -128,11 +128,13 @@ h1 {
   /* color: #2c88ff; */
 }
 
-/* h1,
+h1,
 h2,
 h3,
 h4 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0),
+  padding: none !important;
+  margin: none !important;
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0)),
     linear-gradient(95.5deg,
       rgba(15, 53, 255) 12.82%,
@@ -140,8 +142,8 @@ h4 {
       rgb(255, 15, 183) 75.06%,
       rgba(15, 53, 255) 107.66%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+  -webkit-text-fill-color: transparent; */
+}
 
 tr {
   border: 1pd solid white !important;

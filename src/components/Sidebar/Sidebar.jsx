@@ -2,7 +2,7 @@ import React from "react";
 import * as Styled from "./styles";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "../Button/Button";
-
+import Tokens from "../../assets/bitcoin.png";
 export const Sidebar = () => {
   let history = useHistory();
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
@@ -19,13 +19,12 @@ export const Sidebar = () => {
     // },
     {
       title: "Tokens",
-      icon: "🪙",
+      icon: Tokens,
       url: "/tokens",
     },
     {
       title: "Pairs",
-      icon: "💰",
-
+      icon: Tokens,
       url: "/pairs",
     },
   ];
@@ -41,7 +40,9 @@ export const Sidebar = () => {
           return (
             <Link to={item.url}>
               <li>
-                <Button width="50px">{item.icon} </Button>
+                <Button width="50px">
+                  <img style={{ height: "20px" }} src={item.icon} alt="" />{" "}
+                </Button>
                 <div className={!isSidebarOpen ? "hidden" : "shown"}>
                   {item.title}
                 </div>

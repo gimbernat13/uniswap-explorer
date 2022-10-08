@@ -18,12 +18,11 @@ export const Sidebar = styled.div`
   height: 100%;
   transition: all 0.4s;
   padding: 0 0.5rem;
-  
 
   ul {
     display: grid;
     /* align-items: center; */
-    justify-content: center;
+    /* justify-content: center; */
     gap: 20px;
     transition: all 0.4s;
 
@@ -31,9 +30,12 @@ export const Sidebar = styled.div`
       transition: all 0.4s;
       width: 100%;
       display: flex;
-
-      /* justify-content: center; */
+      /* text-align: center; */
+      justify-content: center;
       align-items: center;
+      &:hover{
+        filter: brightness(1.3);
+      }
     }
   }
 `;

@@ -10,8 +10,8 @@ export const PairCard = ({ pair }) => {
   };
 
   return (
-    <BorderedCard>
-      <Styled.PoolCard variants={animatedItem} key={pair.id}>
+    <BorderedCard variants={animatedItem}>
+      <Styled.PoolCard key={pair.id}>
         <Styled.PoolCardInner>
           <div style={{ fontWeight: "bold", color: "white" }}>
             {pair.token0.symbol} - {pair.token1.symbol}

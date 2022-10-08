@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion/dist/framer-motion";
 
-export const BorderedCard = styled.div`
+export const BorderedCard = styled(motion.div)`
   transition: all 1s;
   backdrop-filter: blur(1px);
   border-radius: 1rem;

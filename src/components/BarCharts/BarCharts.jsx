@@ -9,9 +9,8 @@ import {
   YAxis,
 } from "recharts";
 import { Button } from "../Button/styles";
-import { FlexContainer } from "../FlexContainer/FlexContainer";
 
-export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
+export const BarCharts = ({ chartData }) => {
   // FIXME: Extract to utils
   const getTimeAxis = (data) => {
     const milliseconds = data.date * 1000;
@@ -30,22 +29,20 @@ export const BarCharts = ({ chartData, yKey, yValue1, yValue2, xKey }) => {
   ];
   return (
     <>
-      <FlexContainer>
-        {filters.map((filter, i) => {
-          return (
-            <Button
-              isActive={filter.id === selectedFilter}
-              onClick={() => setSelectedFilter(filter.id)}
-            >
-              {filter.name}
-            </Button>
-          );
-        })}
-        <br />
-      </FlexContainer>
+      {filters.map((filter, i) => {
+        return (
+          <Button
+            isActive={filter.id === selectedFilter}
+            onClick={() => setSelectedFilter(filter.id)}
+          >
+            {filter.name}
+          </Button>
+        );
+      })}
       <br />
       <br />
-      <ResponsiveContainer width="100%" height={300}>
+      <br />
+      <ResponsiveContainer width="100%" height={200}>
         <BarChart data={chartData}>
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey={getTimeAxis} />

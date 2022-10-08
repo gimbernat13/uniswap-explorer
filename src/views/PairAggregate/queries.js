@@ -6,6 +6,7 @@ export const PAIR_AGGREGATE = gql`
       reserve0
       reserve1
       liquidityProviderCount
+      volumeUSD
       token0 {
         symbol
       }

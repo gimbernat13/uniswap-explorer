@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.div`
+  transform: scale(0.8);
   width: ${(props) => props.width};
   height: fit-content !important;
   padding: 8px 0.85rem;

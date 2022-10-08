@@ -10,6 +10,7 @@ export const Card = ({ children, height }) => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ x: -300, opacity: 0 }}
         className="transparent-card"
+        height={height}
       >
         <Styled.CardInner height={height}>{children}</Styled.CardInner>
       </Styled.Card>
