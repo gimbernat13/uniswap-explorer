@@ -23,6 +23,9 @@ export const Select = styled.div`
         rgba(15, 53, 255, 0.11) 107.66%
       );
   }
+  img {
+    margin-left: 10px;
+  }
 `;
 export const SelectInner = styled.div`
   padding: inherit;

@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import * as Styled from "./styles";
 import { setSelectedToken } from "../../context/actionNames";
 import { TokensContext } from "../../context/TokensContext";
+import ContentLoader from "react-content-loader";
 
 export const TokenAggregate = () => {
   const { tokenID } = useParams();

@@ -12,11 +12,11 @@ export const Sidebar = () => {
   };
 
   const sidebarItems = [
-    {
-      title: "Home",
-      icon: "🏠",
-      url: "/",
-    },
+    // {
+    //   title: "Home",
+    //   icon: "🏠",
+    //   url: "/",
+    // },
     {
       title: "Tokens",
       icon: "🪙",

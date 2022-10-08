@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const BorderedCard = styled.div`
+  transition: all 1s;
   backdrop-filter: blur(1px);
   border-radius: 1rem;
   border: 2px solid rgba(245, 245, 245, 0.241);
@@ -24,5 +25,8 @@ export const BorderedCard = styled.div`
         rgba(15, 53, 255, 0.08) 75.06%,
         rgba(15, 53, 255, 0.11) 107.66%
       );
+  }
+  &:hover {
+    filter: brightness(1.3);
   }
 `;

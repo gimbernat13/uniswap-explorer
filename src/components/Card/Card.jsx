@@ -1,6 +1,5 @@
 import React from "react";
 import * as Styled from "./styles";
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import { BorderedCard } from "../BorderedCard/BorderedCard";
 
 export const Card = ({ children, height }) => {
