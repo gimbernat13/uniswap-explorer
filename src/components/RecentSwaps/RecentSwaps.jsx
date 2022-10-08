@@ -38,11 +38,12 @@ export const RecentSwaps = ({ id }) => {
               <td>{swap.pair.token1.symbol} </td>
               <td>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img
+                  Eth
+                  {/* <img
                     style={{ height: "20px" }}
                     src="https://etherscan.io/assets/svg/logos/logo-etherscan.svg?v=0.0.2"
                     alt=""
-                  />
+                  /> */}
                 </a>
               </td>
             </Styled.TxRow>

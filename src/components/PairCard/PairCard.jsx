@@ -1,6 +1,7 @@
 import React from "react";
 import formatNumber from "../../utils/formatNumber";
 import { BorderedCard } from "../BorderedCard/BorderedCard";
+import { Card } from "../Card/Card";
 import * as Styled from "./styles";
 
 export const PairCard = ({ pair }) => {
@@ -10,7 +11,7 @@ export const PairCard = ({ pair }) => {
   };
 
   return (
-    <BorderedCard variants={animatedItem}>
+    <Card variants={animatedItem}>
       <Styled.PoolCard key={pair.id}>
         <Styled.PoolCardInner>
           <div style={{ fontWeight: "bold", color: "white" }}>
@@ -20,6 +21,6 @@ export const PairCard = ({ pair }) => {
           <div>Daily Volume : ${formatNumber(parseInt(pair.volumeUSD))}</div>
         </Styled.PoolCardInner>
       </Styled.PoolCard>
-    </BorderedCard>
+    </Card>
   );
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Card = styled(motion.div)`
   position: relative;
-  padding: 1rem;
+  padding: .8rem;
 
   transition: all 0.2s;
   height: ${(props) => props.height};

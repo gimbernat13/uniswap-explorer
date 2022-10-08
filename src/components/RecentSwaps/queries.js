@@ -7,7 +7,12 @@ export const RECENT_SWAPS = gql`
     $itemsOnPage: Int
     $id: String!
   ) {
-    swaps(first:18 orderBy: timestamp, orderDirection: desc, where: { pair: $id }) {
+    swaps(
+      first: 10
+      orderBy: timestamp
+      orderDirection: desc
+      where: { pair: $id }
+    ) {
       pair {
         token0 {
           symbol

@@ -7,6 +7,4 @@ export const PoolCard = styled(motion.div)`
   cursor: pointer;
   color: lightgray;
 `;
-export const PoolCardInner = styled(motion.div)`
-  padding: 1rem;
-`;
+export const PoolCardInner = styled(motion.div)``;

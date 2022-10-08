@@ -27,29 +27,38 @@ export const PairAggregate = () => {
   if (error) return `Error! ${error.message}`;
 
   const { pairDayDatas, pair } = data;
-
+  console.log("pair da", pairDayDatas);
   return (
     <Styled.AggregateGrid>
       <Styled.AggregateLeft>
-        <Card>
-          <div>
-            {pair.token0.symbol} - {pair.token1.symbol}
-          </div>
-          <div>
-            {/* {formatNumber(parseFloat(pair.reserve0).toFixed(2))} */}
-            {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
-            {pair.token0.symbol}
-          </div>
-          <div>
-            {/* {formatNumber(parseFloat(pair.reserve0).toFixed(2))} */}
-            {formatNumber(parseFloat(pair.reserve1).toFixed(2))} -{" "}
-            {pair.token1.symbol}
-          </div>
-          <div>
-            Volume USD : $ {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
-          </div>
-          <div>{pairDayDatas.dailyTxns}</div>
-        </Card>
+        <Styled.PairSpecs>
+          <Card>
+            <div>
+              Volume: {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
+            </div>
+            <div>
+              24h Volume:
+              {formatNumber(
+                parseFloat(pairDayDatas[0].dailyVolumeToken0).toFixed(2)
+              )}
+              {}
+            </div>
+          </Card>
+          <Card>
+            <div>{pair.token0.symbol}</div>
+            <div>
+              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
+              {pair.token0.symbol}
+            </div>
+          </Card>
+          <Card>
+            <div>{pair.token0.symbol}</div>
+            <div>
+              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
+              {pair.token0.symbol}
+            </div>
+          </Card>
+        </Styled.PairSpecs>
         <Card>
           <FlexContainer>
             {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>

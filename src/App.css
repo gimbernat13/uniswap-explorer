@@ -94,16 +94,7 @@ li {
 }
 
 .card {
-  cursor: pointer;
-  height: 4rem;
-  border-radius: 1rem;
-  align-items: center;
-  font-weight: 400;
-  min-width: 0;
-  display: grid;
-  grid-template-columns: 2fr 2fr 5fr;
-  font-size: 0.8rem;
-
+ 
 
 
 }
