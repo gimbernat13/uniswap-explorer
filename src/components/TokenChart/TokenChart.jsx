@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import Chart from "../Chart/Chart";
 import { BarLoader } from "react-spinners";
 import ContentLoader from "react-content-loader";
-
+import { Loader } from "../Loader/Loader";
 export const TokenChart = ({ numberOfItems }) => {
   const TokenContext = useContext(TokensContext);
   const { state: tokenState } = TokenContext;
@@ -16,7 +16,7 @@ export const TokenChart = ({ numberOfItems }) => {
   if (loading)
     return (
       <div>
-        <BarLoader color="#36d7b7" />
+        <Loader />
         <br />
       </div>
     );

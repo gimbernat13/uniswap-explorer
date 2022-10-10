@@ -190,11 +190,31 @@ tr {
   border: 2px solid rgba(148, 148, 148, 0.317);
 }
 
+.large-text {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.bold {
+  font-weight: bold;
+
+}
+
+.medium-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 .active {
   color: #ffffff !important;
   backdrop-filter: blur(5px);
   font-weight: bold;
   border: 2px solid white;
+}
+
+h3 {
+  margin: none;
+  padding: 0 !important;
 }
 
 .button:hover {
@@ -365,4 +385,3 @@ th {
 .recharts-tooltip-wrapper {
   background: pink !important;
 }
-

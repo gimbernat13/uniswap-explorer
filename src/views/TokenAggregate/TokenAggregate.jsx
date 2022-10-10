@@ -20,9 +20,8 @@ export const TokenAggregate = () => {
   return (
     <Styled.TokenAggregateGrid>
       <Styled.LeftGrid>
-        <Card height={"100%"}>
-          <TokenDetails tokenID={tokenID} />
-        </Card>
+        <TokenDetails tokenID={tokenID} />
+
         <br />
         <Card height={"220px"}>
           <div>Price USD (100 days) </div>

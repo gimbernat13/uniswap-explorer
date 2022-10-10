@@ -5,6 +5,7 @@ import { TokensContext } from "../../context/TokensContext";
 import formatNumber from "../../utils/formatNumber";
 import { Link } from "react-router-dom";
 import { BarLoader } from "react-spinners";
+import { Loader } from "../Loader/Loader";
 
 export const TokenPairs = () => {
   const { state: tokenState, dispatch: tokenDispatch } =
@@ -14,7 +15,7 @@ export const TokenPairs = () => {
   const { loading, error, data } = useQuery(TOKEN_PAIRS, {
     variables: { id: tokenState.selectedToken },
   });
-  if (loading) return <BarLoader color="#36d7b7" />;
+  if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
   return (
     <div className="pairs">

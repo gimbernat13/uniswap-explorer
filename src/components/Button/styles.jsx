@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Button = styled.div`
   /* transform: scale(0.8); */
+  transition: all 0.2s;
   width: ${(props) => props.width};
   height: fit-content !important;
   padding: 8px 0.85rem;
@@ -37,6 +38,7 @@ export const Button = styled.div`
       );
   }
   &.active {
+    font-weight: 500 !important;
 
     filter: brightness(1.3);
     background-image: linear-gradient(

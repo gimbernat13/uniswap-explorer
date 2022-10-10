@@ -20,7 +20,6 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     return formattedDate;
   };
 
-
   return (
     <ResponsiveContainer width="100%" height={200}>
       <AreaChart data={chartData}>
@@ -31,7 +30,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
           </linearGradient>
         </defs>
 
-        <Area dataKey={yKey} stroke="#2c88ff" fill="url(#color)" />
+        <Area dataKey={yKey} stroke="#96a0f7" fill="url(#color)" />
         <XAxis dataKey={getTimeAxis} axisLine={true} tickLine={false} />
         <YAxis
           type="number"

@@ -2,54 +2,46 @@ import React, { useContext } from "react";
 import { useQuery } from "@apollo/client";
 import { TOKEN_DETAILS } from "./queries";
 import formatNumber from "../../utils/formatNumber";
-import { BarLoader } from "react-spinners";
-import ContentLoader from "react-content-loader";
+import * as Styled from "./styles";
+import { Loader } from "../Loader/Loader";
+import { Card } from "../Card/Card";
 
 export const TokenDetails = ({ tokenID }) => {
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
     variables: { id: tokenID },
   });
 
-  if (loading) return <BarLoader color="#36d7b7" />;
+  if (loading) return <Loader />;
 
   if (error) return `Error! ${error.message}`;
 
   const { name, symbol, tradeVolumeUSD, totalLiquidity, txCount } = data.token;
   return (
-    <div>
+    <Styled.TokenDetailsGrid>
       <div>
-        {name} ({symbol})
-      </div>
-      <ul>
-        <li>
+        <Card height={""}>
+          <h2>
+            {name} ({symbol})
+          </h2>
+        </Card>
+        <br />
+        <Card>
           Total Trade Volume :$
           {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD{" "}
-        </li>
-        <li>
-          Total Liquidity: $
-          {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
-        </li>
-        <li>24h Transactions: {formatNumber(parseFloat(txCount))}</li>
-      </ul>
-
-      <div className="detail-links">
-        <a
-          target="_blank"
-          href={`https://www.coingecko.com/en/coins/${tokenID}`}
-        >
-          <img
-            id="coingecko"
-            src="https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png"
-            alt=""
-          />
-        </a>
-        <a target="_blank" href={`https://etherscan.io/address/${tokenID}`}>
-          <img
-            src="https://etherscan.io/images/logo-ether.png?v=0.0.2"
-            alt=""
-          />
-        </a>
+        </Card>
       </div>
-    </div>
+      <div>
+          <Card>
+            Total Trade Volume :$
+            {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD{" "}
+          </Card>
+          <Card>
+            Total Liquidity: $
+            {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
+          </Card>
+          <Card>24h Transactions: {formatNumber(parseFloat(txCount))}</Card>
+          <Card>24h TX: {formatNumber(parseFloat(txCount))}</Card>
+      </div>
+    </Styled.TokenDetailsGrid>
   );
 };

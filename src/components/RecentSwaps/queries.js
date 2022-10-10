@@ -8,7 +8,7 @@ export const RECENT_SWAPS = gql`
     $id: String!
   ) {
     swaps(
-      first: 10
+      first: 18
       orderBy: timestamp
       orderDirection: desc
       where: { pair: $id }

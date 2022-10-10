@@ -43,7 +43,7 @@ export const BarCharts = ({ chartData }) => {
       <br />
       <br />
       <br />
-      <ResponsiveContainer width="100%" height={200}>
+      <ResponsiveContainer width="100%" height={250}>
         <BarChart data={chartData}>
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey={getTimeAxis} />
@@ -51,7 +51,7 @@ export const BarCharts = ({ chartData }) => {
           <Tooltip />
           <Legend />
           rgba(15, 53, 255, 0.3)
-          <Bar dataKey={selectedFilter} fill="#36d7b7" />
+          <Bar dataKey={selectedFilter} fill="#98a1fa" />
         </BarChart>
       </ResponsiveContainer>
     </>

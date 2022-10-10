@@ -16,6 +16,11 @@ export const AggregateLeft = styled(motion.div)`
 
 export const PairSpecs = styled(motion.div)`
   display: grid;
-  grid-template-columns:  2fr 2fr 3fr;
+  grid-template-columns: 1fr 1fr auto;
   gap: 20px;
+`;
+
+export const InfoCard = styled(motion.div)`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `;

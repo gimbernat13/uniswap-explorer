@@ -4,10 +4,10 @@ import styled from "styled-components";
 export const Card = styled(motion.div)`
   position: relative;
   padding: 0.8rem;
-  transition: all 1s;
+  transition: all .2s;
   backdrop-filter: blur(1px);
   border-radius: 1rem;
-  border: 2px solid rgba(245, 245, 245, 0.241);
+  border: 2px solid rgba(245, 245, 245, 0.029);
   background-clip: content-box, border-box;
   box-shadow: black 2px 1000px 2px inset;
   opacity: 0.9;
@@ -20,6 +20,7 @@ export const Card = styled(motion.div)`
 
   &:hover {
     filter: brightness(1.3);
+    border: 2px solid rgba(245, 245, 245, 0.083);
 
     background-image: linear-gradient(
         rgba(255, 255, 255, 0),
@@ -35,6 +36,8 @@ export const Card = styled(motion.div)`
   }
 
   &.active {
+    border: 2px solid rgba(245, 245, 245, 0.083);
+
     filter: brightness(1.5);
     background-image: linear-gradient(
         rgba(255, 255, 255, 0),
@@ -49,11 +52,11 @@ export const Card = styled(motion.div)`
       );
   }
 
-  &.vertical-center {
+  %.vertical-center {
     display: flex;
     align-items: center;
   }
 `;
 export const CardInner = styled(motion.div)`
-  width: 100%;
+  /* width: 100%; */
 `;

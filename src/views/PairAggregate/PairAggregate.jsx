@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BarCharts } from "../../components/BarCharts/BarCharts";
 import { Button } from "../../components/Button/styles";
 import { Card } from "../../components/Card/Card";
@@ -11,7 +11,7 @@ import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
 import * as Styled from "./styles";
 import { BarLoader } from "react-spinners";
-
+import { Loader } from "../../components/Loader/Loader";
 export const PairAggregate = () => {
   const { pairID } = useParams();
 
@@ -23,7 +23,7 @@ export const PairAggregate = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [pairID]);
 
-  if (loading) return <BarLoader color="#36d7b7" />;
+  if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
   const { pairDayDatas, pair } = data;
@@ -32,31 +32,32 @@ export const PairAggregate = () => {
     <Styled.AggregateGrid>
       <Styled.AggregateLeft>
         <Styled.PairSpecs>
+          <Link to={`/tokens/${pair.token0.id}`}>
+            <Card>
+              <div className="large-text">{pair.token0.symbol}</div>
+              <div>{formatNumber(parseFloat(pair.reserve0).toFixed(2))} </div>
+            </Card>
+          </Link>
+          <Link to={`/tokens/${pair.token1.id}`}>
+            <Card>
+              <div className="large-text">{pair.token1.symbol}</div>
+              <div>{formatNumber(parseFloat(pair.reserve1).toFixed(2))} </div>
+            </Card>
+          </Link>
+
           <Card>
-            <div>{pair.token0.symbol}</div>
-            <div>
-              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
-              {pair.token0.symbol}
-            </div>
-          </Card>
-          <Card>
-            <div>{pair.token1.symbol}</div>
-            <div>
-              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
-              {pair.token0.symbol}
-            </div>
-          </Card>
-          <Card>
-            <div>
-              Volume: {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
-            </div>
-            <div>
-              24h Volume:
-              {formatNumber(
-                parseFloat(pairDayDatas[0].dailyVolumeToken0).toFixed(2)
-              )}
-              {}
-            </div>
+            <Styled.InfoCard>
+              <div>Volume: </div>
+              <div>${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}</div>
+              <div> 24h V:</div>
+              <div>
+                {formatNumber(
+                  parseFloat(pairDayDatas[0].dailyVolumeToken0).toFixed(2)
+                )}
+              </div>
+              <div> Reserve: </div>
+              <div>${formatNumber(parseFloat(pair.reserveUSD).toFixed(2))}</div>
+            </Styled.InfoCard>
           </Card>
         </Styled.PairSpecs>
         <Card>
@@ -74,7 +75,7 @@ export const PairAggregate = () => {
       </Styled.AggregateLeft>
 
       <Card>
-        <div>Recent Swaps</div>
+        <div className="medium-text">Recent Swaps</div>
         <RecentSwaps id={pair.id} />
       </Card>
     </Styled.AggregateGrid>

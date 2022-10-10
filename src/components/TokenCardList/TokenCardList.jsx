@@ -6,7 +6,7 @@ import { TokenCard } from "../TokenCard/TokenCard";
 import { TOKENS } from "./queries";
 import * as Styled from "./styles";
 import { BarLoader } from "react-spinners";
-
+import { Loader } from "../Loader/Loader";
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -27,7 +27,7 @@ export const TokenCardList = (props) => {
     },
   });
 
-  if (loading) return <BarLoader color="#36d7b7" />;
+  if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
   return (

@@ -11,9 +11,11 @@ export const PAIR_AGGREGATE = gql`
       totalSupply
       token0 {
         symbol
+        id
       }
       token1 {
         symbol
+        id
       }
     }
     pairDayDatas(

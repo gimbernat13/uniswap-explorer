@@ -52,6 +52,7 @@ function PairRoutes({ routes }) {
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch>
+      <h3>Most Traded Pairs</h3>
       <PairList />
     </div>
   );
