@@ -4,10 +4,10 @@ import styled from "styled-components";
 export const Card = styled(motion.div)`
   position: relative;
   padding: 0.8rem;
-  transition: all .2s;
+  transition: all 0.2s;
   backdrop-filter: blur(1px);
   border-radius: 1rem;
-  border: 2px solid rgba(245, 245, 245, 0.029);
+  border: 2px solid rgba(245, 245, 245, 0.065);
   background-clip: content-box, border-box;
   box-shadow: black 2px 1000px 2px inset;
   opacity: 0.9;

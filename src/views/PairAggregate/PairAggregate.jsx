@@ -47,15 +47,15 @@ export const PairAggregate = () => {
 
           <Card>
             <Styled.InfoCard>
-              <div>Volume: </div>
+              <div className="bold">Volume: </div>
               <div>${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}</div>
-              <div> 24h V:</div>
+              <div className="bold"> 24h V:</div>
               <div>
                 {formatNumber(
                   parseFloat(pairDayDatas[0].dailyVolumeToken0).toFixed(2)
                 )}
               </div>
-              <div> Reserve: </div>
+              <div className="bold"> Reserve: </div>
               <div>${formatNumber(parseFloat(pair.reserveUSD).toFixed(2))}</div>
             </Styled.InfoCard>
           </Card>

@@ -4,7 +4,7 @@ export const TOKEN_PAIRS = gql`
     pairs(
       orderBy: volumeUSD
       orderDirection: desc
-      first: 5
+      first: 10
       where: { token0: $id }
     ) {
       id

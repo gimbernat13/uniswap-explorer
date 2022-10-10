@@ -20,7 +20,7 @@ export const PairCard = ({ pair }) => {
             {pair.token0.symbol} - {pair.token1.symbol}
           </div>
           <div>TX Count: {pair.txCount}</div>
-          <div>Daily Volume : ${formatNumber(parseInt(pair.volumeUSD))}</div>
+          <div>24 H V: ${formatNumber(parseInt(pair.volumeUSD))}</div>
         </Styled.PoolCardInner>
       </Styled.PoolCard>
     </Card>
