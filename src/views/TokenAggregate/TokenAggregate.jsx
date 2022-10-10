@@ -19,12 +19,12 @@ export const TokenAggregate = () => {
 
   return (
     <Styled.TokenAggregateGrid>
-      <div>
-        <Card>
+      <Styled.LeftGrid>
+        <Card height={"100%"}>
           <TokenDetails tokenID={tokenID} />
         </Card>
         <br />
-        <Card>
+        <Card height={"220px"}>
           <div>Price USD (100 days) </div>
           <TokenChart numberOfItems={50} />
           {/* <Select
@@ -33,7 +33,7 @@ export const TokenAggregate = () => {
                 options={dateRangeOptions}
               /> */}
         </Card>
-      </div>
+      </Styled.LeftGrid>
 
       <Card>
         <div> Top 3 Trading Pairs (Volume) </div>

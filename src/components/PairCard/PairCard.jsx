@@ -1,6 +1,5 @@
 import React from "react";
 import formatNumber from "../../utils/formatNumber";
-import { BorderedCard } from "../BorderedCard/BorderedCard";
 import { Card } from "../Card/Card";
 import * as Styled from "./styles";
 

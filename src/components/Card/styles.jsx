@@ -16,6 +16,8 @@ export const Card = styled(motion.div)`
   font-size: 1rem !important;
   font-weight: 400 !important;
   background-origin: border-box;
+  height: ${(props) => props.height};
+
   &:hover {
     filter: brightness(1.3);
 
@@ -46,5 +48,12 @@ export const Card = styled(motion.div)`
         rgba(15, 53, 255, 0.11) 107.66%
       );
   }
+
+  &.vertical-center {
+    display: flex;
+    align-items: center;
+  }
 `;
-export const CardInner = styled(motion.div)``;
+export const CardInner = styled(motion.div)`
+  width: 100%;
+`;
