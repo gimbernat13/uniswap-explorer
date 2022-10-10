@@ -34,6 +34,7 @@ export const BarCharts = ({ chartData }) => {
           <Button
             isActive={filter.id === selectedFilter}
             onClick={() => setSelectedFilter(filter.id)}
+            className={filter.id === selectedFilter ? "active" : ""}
           >
             {filter.name}
           </Button>

@@ -93,11 +93,7 @@ li {
   font-size: 1rem;
 }
 
-.card {
- 
-
-
-}
+.card {}
 
 .card .symbol {
   margin: 0 1rem;
@@ -296,26 +292,28 @@ th {
   align-items: center;
   transition: all 0.2s;
   min-width: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  grid-template-rows: auto;
   align-items: center;
+  gap: 24px;
   height: 1.6rem;
-  margin-top: 1rem;
+  padding: .5rem 0;
+  /* margin-top: 1rem; */
+  /* border: 1px solid gray; */
+  /* justify-content: space-between; */
   /* box-shadow: rgb(99
    99 99 / 10%) 0px 2px 8px 0px; */
   /* font-size: .6rem; */
 }
 
 .pair {
-  border: 2px solid black;
   padding: 0.5rem;
   border-radius: 1rem;
-  margin-top: 0.4rem;
-  margin-right: 0.4rem;
   border: 2px solid #dcdcdc3a;
   text-overflow: ellipsis;
   overflow: hidden;
-  min-width: 40px;
-
+  /* min-width: 40px; */
   text-align: center;
 }
 
@@ -332,3 +330,39 @@ th {
   cursor: pointer;
   margin-left: 3rem;
 }
+
+
+
+.recharts-legend-item-text,
+.recharts-legend-icon {
+  display: none !important;
+}
+
+.active-card {
+  transition: all 1s;
+  backdrop-filter: blur(1px);
+  border-radius: 1rem;
+  border: 2px solid rgba(245, 245, 245, 0.241);
+  background-clip: content-box, border-box;
+  box-shadow: black 2px 1000px 2px inset;
+  opacity: 0.9;
+  background-color: var(--transparent-black);
+  color: white !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  background-origin: border-box;
+  background-image: linear-gradient(rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)),
+    linear-gradient(95.5deg,
+      rgba(15, 53, 255, 0.3) 12.82%,
+      rgba(255, 72, 181, 0.3) 41.96%,
+      rgba(15, 53, 255, 0.08) 75.06%,
+      rgba(15, 53, 255, 0.11) 107.66%);
+
+}
+
+
+.recharts-tooltip-wrapper {
+  background: pink !important;
+}
+

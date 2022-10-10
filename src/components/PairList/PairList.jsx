@@ -6,8 +6,9 @@ import { PairCard } from "../PairCard/PairCard";
 import { PAIRS } from "./queries";
 import * as Styled from "./styles";
 import { BarLoader } from "react-spinners";
+// import { SwapWidget } frxom '@uniswap/widgets';
+
 export const PairList = () => {
-  const { state: tokensState } = useContext(TokensContext);
 
   const { loading, error, data } = useQuery(PAIRS);
 
@@ -33,7 +34,7 @@ export const PairList = () => {
           data.pairs.map((pair) => {
             return (
               <Link to={`/pairs/${pair.id}`}>
-                <PairCard pair={pair} />
+                <PairCard  pair={pair} />
               </Link>
             );
           })}

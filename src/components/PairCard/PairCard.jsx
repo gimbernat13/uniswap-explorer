@@ -11,7 +11,9 @@ export const PairCard = ({ pair }) => {
   };
 
   return (
-    <Card variants={animatedItem}>
+    <Card
+      variants={animatedItem}
+    >
       <Styled.PoolCard key={pair.id}>
         <Styled.PoolCardInner>
           <div style={{ fontWeight: "bold", color: "white" }}>

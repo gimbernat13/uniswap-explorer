@@ -33,6 +33,20 @@ export const PairAggregate = () => {
       <Styled.AggregateLeft>
         <Styled.PairSpecs>
           <Card>
+            <div>{pair.token0.symbol}</div>
+            <div>
+              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
+              {pair.token0.symbol}
+            </div>
+          </Card>
+          <Card>
+            <div>{pair.token1.symbol}</div>
+            <div>
+              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
+              {pair.token0.symbol}
+            </div>
+          </Card>
+          <Card>
             <div>
               Volume: {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
             </div>
@@ -42,20 +56,6 @@ export const PairAggregate = () => {
                 parseFloat(pairDayDatas[0].dailyVolumeToken0).toFixed(2)
               )}
               {}
-            </div>
-          </Card>
-          <Card>
-            <div>{pair.token0.symbol}</div>
-            <div>
-              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
-              {pair.token0.symbol}
-            </div>
-          </Card>
-          <Card>
-            <div>{pair.token0.symbol}</div>
-            <div>
-              {formatNumber(parseFloat(pair.reserve0).toFixed(2))} -{" "}
-              {pair.token0.symbol}
             </div>
           </Card>
         </Styled.PairSpecs>

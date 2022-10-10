@@ -22,9 +22,8 @@ export const TokenPairs = () => {
         <Link to={`/pairs/${pair.id}`}>
           <div className="pair-card">
             <div className="pair">{pair.token0.symbol}</div>
-
             <div className="pair"> {pair.token1.symbol}</div>
-            <div className="pair">
+            <div className="pairsf">
               ${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
             </div>
           </div>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const PoolGrid = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   justify-content: center;
   gap: 20px;
   color: white;
