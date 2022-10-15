@@ -246,55 +246,6 @@ h3 {
 /* ==============Table============= */
 
 
-table {
-  width: 100%;
-}
-
-tr {
-  border: 3px solid red !important;
-  border-radius: 10px;
-  /* border: 2px solid rgba(211, 211, 211, 0.411); */
-
-}
-
-td {
-  background: var(--darkrow);
-  /* text-align: center; */
-  color: lightgray;
-  overflow: hidden;
-
-}
-
-td:first-child {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-}
-
-td:last-child {
-  border-bottom-right-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-
-.table__tx-row {
-  transition: all 0.2s;
-  font-size: 0.8em;
-  height: 3rem;
-  border: 2px solid rgba(211, 211, 211, 0.411);
-
-
-}
-
-th {
-  font-size: 0.7em;
-  color: rgb(146, 146, 146);
-
-
-
-
-
-
-
-}
 
 .dex-symbol {
   transform: scale(0.5);

@@ -34,11 +34,11 @@ export const TokenAggregate = () => {
         </Card>
       </Styled.LeftGrid>
 
-      <Card>
+      <div>
         <div> Top 3 Trading Pairs (Volume) </div>
 
         <TokenPairs />
-      </Card>
+      </div>
     </Styled.TokenAggregateGrid>
   );
 };

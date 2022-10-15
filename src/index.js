@@ -1,7 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { ApolloProvider } from "@apollo/client/react";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient } from "@apollo/client";
+import { InMemoryCache } from "apollo-cache-inmemory";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { TokensContextProvider } from "./context/TokensContext";
 import { TokenContextProvider } from "./context/TokenContext";
@@ -14,6 +15,7 @@ import { PairsContextProvider } from "./context/PairsContext";
 import { PairAggregate } from "./views/PairAggregate/PairAggregate";
 import { TokensView } from "./views/Tokens";
 import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
+import { Pairs } from "./views/Pairs/Pairs";
 
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
@@ -23,7 +25,7 @@ const client = new ApolloClient({
 const routes = [
   {
     path: "/pairs",
-    component: PairRoutes,
+    component: Pairs,
     routes: [
       {
         path: "/pairs/:pairID",
@@ -42,21 +44,6 @@ const routes = [
     ],
   },
 ];
-
-function PairRoutes({ routes }) {
-  return (
-    <div>
-      <h3>Pairs</h3>
-      <Switch>
-        {routes.map((route, i) => (
-          <RouteWithSubRoutes key={i} {...route} />
-        ))}
-      </Switch>
-      <h3>Most Traded Pairs</h3>
-      <PairList />
-    </div>
-  );
-}
 
 export function RouteWithSubRoutes(route) {
   return (

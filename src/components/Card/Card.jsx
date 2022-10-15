@@ -2,7 +2,6 @@ import React from "react";
 import * as Styled from "./styles";
 
 export const Card = ({ children, height, isActive }) => {
-  console.log(isActive);
   return (
     <Styled.Card
       initial={{ y: 20, opacity: 0 }}

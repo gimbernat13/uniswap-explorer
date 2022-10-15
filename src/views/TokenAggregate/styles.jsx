@@ -4,7 +4,7 @@ export const TokenAggregateGrid = styled.div`
   display: grid;
   width: 100%;
   gap: 24px;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 4fr 1fr;
   .transparent-card:nth-of-type(3) {
     /* grid-column: 1/3; */
   }
