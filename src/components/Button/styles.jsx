@@ -41,16 +41,6 @@ export const Button = styled.div`
     font-weight: 500 !important;
 
     filter: brightness(1.3);
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0)
-      ),
-      linear-gradient(
-        95.5deg,
-        rgba(15, 53, 255, 0.3) 12.82%,
-        rgba(255, 72, 181, 0.3) 41.96%,
-        rgba(15, 53, 255, 0.08) 75.06%,
-        rgba(15, 53, 255, 0.11) 107.66%
-      );
+    background-color: var(--accent-purple)
   }
 `;

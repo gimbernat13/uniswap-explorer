@@ -30,7 +30,7 @@ export function PairTable({ data1 }) {
       {
         Header: "Volume USD",
         accessor: (row) => (
-          <div>{formatNumber(parseFloat(row.volumeUSD).toFixed(2))} </div>
+          <div>$ {formatNumber(parseFloat(row.volumeUSD).toFixed(2))} </div>
         ),
       },
       {
@@ -61,7 +61,7 @@ export function PairTable({ data1 }) {
                 <th
                   {...column.getHeaderProps()}
                   style={{
-                    // borderBottom: "solid 3px red",
+                    borderBottom: "var(--border)",
                     // background: "aliceblue",
                     // color: "black",
                     fontWeight: "bold",
