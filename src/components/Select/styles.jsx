@@ -31,7 +31,7 @@ export const SelectInner = styled.div`
   padding: inherit;
   position: absolute;
   width: inherit;
-  top: 65px;
+  top: 45px;
   z-index: 3;
   border-radius: 1rem;
   background-color: #000000b2;

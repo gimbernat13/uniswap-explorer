@@ -23,20 +23,9 @@ export const TokenAggregate = () => {
         <TokenDetails tokenID={tokenID} />
 
         <br />
-        <Card height={"220px"}>
-          <div>Price USD (100 days) </div>
-          <TokenChart numberOfItems={50} />
-          {/* <Select
-                dispatch={(e) => setNumberOfDays(e.target.value)}
-                placeHolder="Filter By"
-                options={dateRangeOptions}
-              /> */}
-        </Card>
       </Styled.LeftGrid>
 
       <div>
-        <div className="medium-text"> Top Pairs </div>
-
         <TokenPairs />
       </div>
     </Styled.TokenAggregateGrid>

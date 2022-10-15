@@ -40,9 +40,7 @@ export const Sidebar = () => {
           return (
             <Link to={item.url}>
               <li>
-                <Button width="50px">
-                  <img style={{ height: "20px" }} src={item.icon} alt="" />{" "}
-                </Button>
+                <img style={{ height: "20px" }} src={item.icon} alt="" />{" "}
                 <div className={!isSidebarOpen ? "hidden" : "shown"}>
                   {item.title}
                 </div>

@@ -5,6 +5,7 @@ import formatNumber from "../../utils/formatNumber";
 import * as Styled from "./styles";
 import { Loader } from "../Loader/Loader";
 import { Card } from "../Card/Card";
+import { TokenChart } from "../TokenChart/TokenChart";
 
 export const TokenDetails = ({ tokenID }) => {
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
@@ -19,28 +20,26 @@ export const TokenDetails = ({ tokenID }) => {
   return (
     <Styled.TokenDetailsGrid>
       <div>
-        <Card height={""}>
+        <Card>
           <h2>
             {name} ({symbol})
           </h2>
         </Card>
         <br />
         <Card>
-          Total Trade Volume :$
-          {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD{" "}
+          V:
+          {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD
+        </Card>
+        <Card>
+          L:
+          {formatNumber(parseFloat(totalLiquidity).toFixed(2))} USD
         </Card>
       </div>
       <div>
-          <Card>
-            Total Trade Volume :$
-            {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD{" "}
-          </Card>
-          <Card>
-            Total Liquidity: $
-            {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
-          </Card>
-          <Card>24h Transactions: {formatNumber(parseFloat(txCount))}</Card>
-          <Card>24h TX: {formatNumber(parseFloat(txCount))}</Card>
+        <Card>
+          <div>Price USD (100 days) </div>
+          <TokenChart numberOfItems={50} />
+        </Card>
       </div>
     </Styled.TokenDetailsGrid>
   );

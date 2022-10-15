@@ -21,7 +21,7 @@ body {
   /* background-image: url(./assets/bg2.jpg); */
   /* background: linear-gradient(rgba(0, 0, 0, 0.853), rgba(0, 0, 0, 0.78)), url(./assets/bg2.jpg); */
   ;
-  background: linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.9)), url(./assets/bg2.jpg);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.89), rgba(0, 0, 0, 0.938)), url(./assets/bg2.jpg); */
 
   background-size: cover;
 
@@ -131,9 +131,6 @@ h4 {
   -webkit-text-fill-color: transparent; */
 }
 
-tr {
-  border: 1pd solid white !important;
-}
 
 
 
@@ -167,7 +164,7 @@ tr {
 
 .container {
   margin-left: var(--sidebar-margin);
-  padding: 0 5rem;
+  padding: 0 10rem;
   margin-top: 1rem
 }
 
@@ -197,6 +194,7 @@ tr {
 .medium-text {
   font-weight: bold;
   font-size: 1.2rem;
+  padding-bottom: 10px;
 }
 
 .active {
@@ -238,6 +236,35 @@ h3 {
 }
 
 /* ==============Table============= */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  text-align: start;
+  border-spacing: 0px !important;
+  font-variant: normal;
+
+
+
+
+}
+
+th,
+td {
+  text-align: left;
+  border-radius: var(--border-radius);
+
+}
+
+
+tr {
+  /* border: 1px solid white !important; */
+}
+
+td:hover {
+  /* background-color: rgba(124, 124, 124, 0.25); */
+}
+
 
 
 
