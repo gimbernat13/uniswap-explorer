@@ -6,6 +6,8 @@ export const PAIRS = gql`
       id
       txCount
       volumeUSD
+      reserveETH
+      reserveUSD
       token0 {
         symbol
       }

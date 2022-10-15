@@ -7,7 +7,7 @@ export const Card = styled(motion.div)`
   transition: all 0.2s;
   backdrop-filter: blur(1px);
   border-radius: 1rem;
-  border: 2px solid rgba(245, 245, 245, 0.065);
+  border: 2px solid rgba(245, 245, 245, 0.029);
   background-clip: content-box, border-box;
   box-shadow: black 2px 1000px 2px inset;
   opacity: 0.9;
@@ -36,8 +36,6 @@ export const Card = styled(motion.div)`
   }
 
   &.active {
-    border: 2px solid rgba(245, 245, 245, 0.083);
-
     filter: brightness(1.5);
     background-image: linear-gradient(
         rgba(255, 255, 255, 0),

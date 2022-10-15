@@ -1,53 +1,25 @@
 import React from "react";
 import { useTable } from "react-table";
-import formatNumber from "../../utils/formatNumber";
-import { Card } from "../Card/Card";
 export function PairTable({ data1 }) {
-  console.log("data1 ", data1);
+
+
   const columns = React.useMemo(
     () => [
-      {
-        Header: "Pair",
-
-        accessor: (row) => {
-          console.log(row);
-          return (
-            <td>
-              <Card>
-                {row.token0.symbol} - {row.token1.symbol}
-              </Card>
-            </td>
-          );
-        },
-      },
       {
         Header: "TX Count",
         accessor: "txCount", // accessor is the "key" in the data
       },
       {
         Header: "Volume USD",
-        accessor: (row) => (
-          <td>{formatNumber(parseFloat(row.volumeUSD).toFixed(2))} </td>
-        ),
-      },
-      {
-        Header: "Reserve ETH",
-        accessor: (row) => (
-          <td>{formatNumber(parseFloat(row.reserveETH).toFixed(2))} </td>
-        ),
-      },
-      {
-        Header: "Reserve USD",
-        accessor: (row) => (
-          <td>{formatNumber(parseFloat(row.reserveUSD).toFixed(2))} </td>
-        ),
+        accessor: "volumeUSD",
       },
     ],
     []
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data: data1 });
+    useTable({ columns, data1 });
+
   return (
     <table {...getTableProps()}>
       <thead>
@@ -57,9 +29,9 @@ export function PairTable({ data1 }) {
               <th
                 {...column.getHeaderProps()}
                 style={{
-                  // borderBottom: "solid 3px red",
-                  // background: "aliceblue",
-                  // color: "black",
+                  borderBottom: "solid 3px red",
+                  background: "aliceblue",
+                  color: "black",
                   fontWeight: "bold",
                 }}
               >
@@ -80,7 +52,7 @@ export function PairTable({ data1 }) {
                     {...cell.getCellProps()}
                     style={{
                       padding: "10px",
-                      // border: "solid 1px gray",
+                      border: "solid 1px gray",
                       //   background: "papayawhip",
                     }}
                   >

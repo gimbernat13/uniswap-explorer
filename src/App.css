@@ -21,18 +21,12 @@ body {
   /* background-image: url(./assets/bg2.jpg); */
   /* background: linear-gradient(rgba(0, 0, 0, 0.853), rgba(0, 0, 0, 0.78)), url(./assets/bg2.jpg); */
   ;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(./assets/bg2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.9)), url(./assets/bg2.jpg);
 
   background-size: cover;
 
   background-attachment: fixed;
   /* background-blend-mode: overlay; */
-
-
-
-
-
-
 }
 
 .hidden {
@@ -290,6 +284,8 @@ h3 {
 
 .pairs {
   min-height: 16rem;
+  display: grid;
+  gap: 1rem;
 }
 
 #coingecko {

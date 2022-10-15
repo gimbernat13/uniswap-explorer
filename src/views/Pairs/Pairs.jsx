@@ -19,7 +19,7 @@ export function Pairs({ routes }) {
         ))}
       </Switch>
       <h3>Most Traded Pairs</h3>
-      <PairTable data={data} />
+      <PairTable data1={data.pairs} />
       <PairList data={data} />
     </div>
   );

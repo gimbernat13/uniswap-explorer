@@ -35,7 +35,7 @@ export const TokenAggregate = () => {
       </Styled.LeftGrid>
 
       <div>
-        <div> Top 3 Trading Pairs (Volume) </div>
+        <div className="medium-text"> Top Pairs </div>
 
         <TokenPairs />
       </div>
