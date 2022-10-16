@@ -1,8 +1,12 @@
+import { useQuery } from "@apollo/client";
 import React from "react";
-import { Switch, useParams } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
+import { Loader } from "../../components/Loader/Loader";
 import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
+import { TokenTable } from "../../components/TokenTable/TokenTable";
+import { TOKENS } from "./queries";
 
 export function TokensView({ routes }) {
   // FIXME: ADD TIME FILTER TO CHARTS
@@ -11,8 +15,10 @@ export function TokensView({ routes }) {
     name: 50,
   });
 
-  console.log(useParams());
-
+  const { loading, error, data } = useQuery(TOKENS);
+  if (loading) return <Loader />;
+  if (error) return `Error! ${error.message}`;
+  console.log("table data ", data);
   return (
     <div>
       <h3>Tokens</h3>
@@ -23,6 +29,8 @@ export function TokensView({ routes }) {
       </Switch>
 
       <FilterButtons />
+      <TokenTable tableData={data.tokens} />
+
       <TokenCardList />
     </div>
   );

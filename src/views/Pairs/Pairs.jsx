@@ -47,7 +47,7 @@ export function Pairs({ routes }) {
           })}
         </div>
       </Styled.FlexSpaced>
-      {viewType.id === "table" && <PairTable data1={data.pairs} />}
+      {viewType.id === "table" && <PairTable tableData={data.pairs} />}
       {viewType.id === "cards" && <PairList data={data} />}
     </div>
   );

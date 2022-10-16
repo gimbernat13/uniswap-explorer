@@ -21,7 +21,7 @@ export const TokenPairs = () => {
     <div className="pairs">
       {data.pairs.map((pair) => (
         <Link to={`/pairs/${pair.id}`}>
-         <PairCard pair={pair} />
+          <PairCard pair={pair} />
         </Link>
       ))}
     </div>

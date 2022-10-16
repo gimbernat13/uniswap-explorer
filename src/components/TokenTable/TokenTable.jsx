@@ -5,47 +5,56 @@ import { setSelectedPair } from "../../context/actionNames";
 import { PairsContext } from "../../context/PairsContext";
 import formatNumber from "../../utils/formatNumber";
 import { Card } from "../Card/Card";
-export function PairTable({ tableData }) {
+export function TokenTable({ tableData }) {
+  console.log("token data ", tableData);
+  // id
+  // symbol
+  // name
+  // tradeVolume
+  // txCount
+  // tradeVolumeUSD
+  // totalLiquidity
   const columns = React.useMemo(
     () => [
+      // {
+      //   Header: "Pair",
+      //   accessor: (row) => {
+      //     return (
+      //       <div>
+      //         <Link to={`/pairs/${row.id}`}>
+      //           {row.token0.symbol} - {row.token1.symbol}
+      //         </Link>
+      //       </div>
+      //     );
+      //   },
+      // },
       {
-        Header: "Pair",
-        accessor: (row) => {
-          return (
-            <div>
-              <Link to={`/pairs/${row.id}`}>
-                {row.token0.symbol} - {row.token1.symbol}
-              </Link>
-            </div>
-          );
-        },
+        Header: "Symbol",
+        accessor: "symbol",
       },
       {
-        Header: "TX Count",
+        Header: "Name",
+        accessor: "name",
+      },
+      {
+        Header: "Trade Volume ",
+        accessor: (row) => (
+          <div>{formatNumber(parseFloat(row.tradeVolume).toFixed(2))} </div>
+        ),
+      },
+      {
+        Header: "Tx's",
         accessor: (row) => <div>{formatNumber(parseFloat(row.txCount))} </div>,
       },
       {
-        Header: "Volume USD",
+        Header: "Trade Volume USD",
         accessor: (row) => (
-          <div>$ {formatNumber(parseFloat(row.volumeUSD).toFixed(2))} </div>
-        ),
-      },
-      {
-        Header: "Reserve ETH",
-        accessor: (row) => (
-          <div>{formatNumber(parseFloat(row.reserveETH).toFixed(2))} </div>
-        ),
-      },
-      {
-        Header: "Reserve USD",
-        accessor: (row) => (
-          <div>{formatNumber(parseFloat(row.reserveUSD).toFixed(2))} </div>
+          <div>{formatNumber(parseFloat(row.tradeVolumeUSD).toFixed(2))} </div>
         ),
       },
     ],
     []
   );
-  const { state: pairState, dispatch: pairDispatch } = useContext(PairsContext);
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data: tableData }, useSortBy);
 
@@ -82,21 +91,25 @@ export function PairTable({ tableData }) {
             return (
               <tr
                 {...row.getRowProps()}
-                className={row.id === pairState.selectedPair ? "active" : ""}
-                onClick={() =>
-                  pairDispatch({ type: setSelectedPair, payload: row.id })
-                }
+                // className={row.id === pairState.selectedPair ? "active" : ""}
+                // onClick={() =>
+                //   pairDispatch({ type: setSelectedPair, payload: row.id })
+                // }
               >
                 {row.cells.map((cell) => {
                   return (
+                    // <Link to={`/pairs/${row.id}`}>
                     <td
                       {...cell.getCellProps()}
                       style={{
                         padding: "10px",
+                        // border: "solid 1px gray",
+                        //   background: "papayawhip",
                       }}
                     >
                       {cell.render("Cell")}
                     </td>
+                    // </Link>
                   );
                 })}
               </tr>
