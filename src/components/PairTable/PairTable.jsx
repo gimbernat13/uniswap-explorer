@@ -15,10 +15,10 @@ export function PairTable({ data1 }) {
           return (
             <div>
               <Link to={`/pairs/${row.id}`}>
-                {/* <Card> */}
                 {row.token0.symbol} - {row.token1.symbol}
-                {/* </Card> */}
               </Link>
+              {/* <Card> */}
+              {/* </Card> */}
             </div>
           );
         },
@@ -92,6 +92,7 @@ export function PairTable({ data1 }) {
               >
                 {row.cells.map((cell) => {
                   return (
+                    // <Link to={`/pairs/${row.id}`}>
                     <td
                       {...cell.getCellProps()}
                       style={{
@@ -102,6 +103,7 @@ export function PairTable({ data1 }) {
                     >
                       {cell.render("Cell")}
                     </td>
+                    // </Link>
                   );
                 })}
               </tr>
