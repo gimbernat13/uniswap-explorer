@@ -4,9 +4,9 @@ export const Sidebar = styled.nav`
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   background-color: var(--transparent-black);
-  width: 16rem;
+  width: 10rem;
   padding: 1.8rem 0.85rem;
   color: #fff;
   display: flex;

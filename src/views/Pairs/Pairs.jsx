@@ -25,13 +25,15 @@ export function Pairs({ routes }) {
   if (error) return `Error! ${error.message}`;
   return (
     <div>
+      <h3>Pairs</h3>
+
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch>
       <Styled.FlexSpaced>
-        <h3>Pairs</h3>
+        <h3>Most Traded</h3>
         <div>
           {viewTypes.map((type) => {
             return (

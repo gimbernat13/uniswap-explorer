@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import { setSelectedPair } from "../../context/actionNames";
 import { PairsContext } from "../../context/PairsContext";
 import { TokensContext } from "../../context/TokensContext";
@@ -50,7 +50,7 @@ export function PairTable({ data1 }) {
   );
   const { state: pairState, dispatch: pairDispatch } = useContext(PairsContext);
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data: data1 });
+    useTable({ columns, data: data1 }, useSortBy);
 
   return (
     <Card>
@@ -60,15 +60,20 @@ export function PairTable({ data1 }) {
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th
-                  {...column.getHeaderProps()}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
                   style={{
                     borderBottom: "var(--border)",
-                    // background: "aliceblue",
-                    // color: "black",
                     fontWeight: "bold",
                   }}
                 >
                   {column.render("Header")}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " 🔽"
+                        : " 🔼"
+                      : ""}
+                  </span>
                 </th>
               ))}
             </tr>
