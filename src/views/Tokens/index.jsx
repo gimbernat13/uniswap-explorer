@@ -5,6 +5,7 @@ import { RouteWithSubRoutes } from "../..";
 import { Button } from "../../components/Button/Button";
 import { FilterButtons } from "../../components/FilterButtons/FilterButtons";
 import { Loader } from "../../components/Loader/Loader";
+import { Swap } from "../../components/Swap/Swap";
 import { TokenCardList } from "../../components/TokenCardList/TokenCardList";
 import { TokenTable } from "../../components/TokenTable/TokenTable";
 import { TOKENS } from "./queries";
@@ -40,6 +41,7 @@ export function TokensView({ routes }) {
         ))}
       </Switch>
 
+      <Swap />
       <Styled.FlexSpaced>
         <FilterButtons />
         <h3>Most Traded</h3>
