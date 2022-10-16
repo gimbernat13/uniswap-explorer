@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Button = styled.div`
   /* transform: scale(0.8); */
-  transition: all 0.2s;
+  transition: all .2s;
   width: ${(props) => props.width};
   height: fit-content !important;
   padding: 8px 0.85rem;
@@ -41,6 +41,16 @@ export const Button = styled.div`
     font-weight: 500 !important;
 
     filter: brightness(1.3);
-    background-color: var(--accent-purple)
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(
+        95.5deg,
+        rgba(15, 53, 255, 0.3) 12.82%,
+        rgba(255, 72, 181, 0.3) 41.96%,
+        rgba(15, 53, 255, 0.08) 75.06%,
+        rgba(15, 53, 255, 0.11) 107.66%
+      );
   }
 `;
