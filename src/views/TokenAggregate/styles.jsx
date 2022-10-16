@@ -11,7 +11,13 @@ export const TokenAggregateGrid = styled.div`
 `;
 export const LeftGrid = styled.div`
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: auto  2fr;
   gap: 1rem;
+
+  .large {
+    grid-column: 1/4;
+  }
+  :nth-of-type(1) {
+  }
   /* background-color: pink; */
 `;

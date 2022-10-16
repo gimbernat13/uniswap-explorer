@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styled from "./styles";
 
-export const Card = ({ children, height, isActive }) => {
+export const Card = ({ children, height, isActive, className }) => {
   return (
     <Styled.Card
       initial={{ y: 20, opacity: 0 }}
@@ -9,6 +9,7 @@ export const Card = ({ children, height, isActive }) => {
       exit={{ x: -300, opacity: 0 }}
       className={isActive ? "active " : ""}
       height={height}
+      {...className}
     >
       <Styled.CardInner
         initial={{ y: 20, opacity: 0 }}

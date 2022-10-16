@@ -231,14 +231,14 @@ h3 {
 .detail-links {
   display: flex;
   align-items: center;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  justify-content: center;
+  margin-left: 10px;
+
 }
 
 .detail-links img {
   height: 20px;
-  margin-right: 1rem;
+  margin-right: 10px;
 }
 
 /* ==============Table============= */

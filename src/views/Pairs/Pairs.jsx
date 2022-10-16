@@ -32,8 +32,6 @@ export function Pairs({ routes }) {
       </Switch>
       <Styled.FlexSpaced>
         <h3>Pairs</h3>
-        <h3>{viewType.id}</h3>
-
         <div>
           {viewTypes.map((type) => {
             return (

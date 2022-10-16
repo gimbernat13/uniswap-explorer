@@ -33,7 +33,7 @@ export const Sidebar = styled.div`
 
     li {
       transition: all 0.4s;
-      width: 100%;
+      width: 170px;
       display: flex;
       /* text-align: center; */
       justify-content: center;
