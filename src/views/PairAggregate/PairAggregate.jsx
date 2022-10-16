@@ -2,15 +2,12 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { BarCharts } from "../../components/BarCharts/BarCharts";
-import { Button } from "../../components/Button/styles";
 import { Card } from "../../components/Card/Card";
-import Chart from "../../components/Chart/Chart";
 import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
 import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
 import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
 import * as Styled from "./styles";
-import { BarLoader } from "react-spinners";
 import { Loader } from "../../components/Loader/Loader";
 export const PairAggregate = () => {
   const { pairID } = useParams();

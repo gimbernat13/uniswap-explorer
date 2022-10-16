@@ -1,8 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { ApolloProvider } from "@apollo/client/react";
-import { ApolloClient } from "@apollo/client";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { TokensContextProvider } from "./context/TokensContext";
 import { TokenContextProvider } from "./context/TokenContext";

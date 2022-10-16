@@ -204,6 +204,7 @@ h4 {
 }
 
 .active {
+  color: greenyellow !important;
   /* color: #ffffff !important;
   backdrop-filter: blur(5px);
   font-weight: bold;

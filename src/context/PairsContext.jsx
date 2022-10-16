@@ -3,7 +3,7 @@ import {
   setFilterBy,
   setSortBy,
   setItemsOnPage,
-  setSelectedToken,
+  setSelectedPair,
 } from "./actionNames";
 
 export const PairsContext = React.createContext();
@@ -12,7 +12,7 @@ const INITIAL_STATE = {
   filterBy: "tradeVolumeUSD",
   sortBy: "asc",
   itemsOnPage: 150,
-  selectedToken: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  selectedPair: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
 };
 
 export function reducer(state, action) {
@@ -32,18 +32,15 @@ export function reducer(state, action) {
         ...state,
         itemsOnPage: action.payload,
       };
-    case setSelectedToken:
+    case setSelectedPair:
       return {
         ...state,
-        selectedToken: action.payload,
+        selectedPair: action.payload,
       };
     default:
       throw new Error();
   }
 }
-
-
-
 
 export function PairsContextProvider({ children }) {
   const [state, dispatch] = React.useReducer(reducer, {

@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import { useTable } from "react-table";
+import { setSelectedPair } from "../../context/actionNames";
+import { PairsContext } from "../../context/PairsContext";
+import { TokensContext } from "../../context/TokensContext";
 import formatNumber from "../../utils/formatNumber";
 import { Card } from "../Card/Card";
 export function PairTable({ data1 }) {
-  console.log("data1 ", data1);
   const columns = React.useMemo(
     () => [
       {
         Header: "Pair",
-
         accessor: (row) => {
-          console.log(row);
           return (
             <div>
               <Link to={`/pairs/${row.id}`}>
@@ -48,9 +48,10 @@ export function PairTable({ data1 }) {
     ],
     []
   );
-
+  const { state: pairState, dispatch: pairDispatch } = useContext(PairsContext);
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data: data1 });
+
   return (
     <Card>
       <table {...getTableProps()}>
@@ -77,7 +78,13 @@ export function PairTable({ data1 }) {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr
+                {...row.getRowProps()}
+                className={row.id === pairState.selectedPair ? "active" : ""}
+                onClick={() =>
+                  pairDispatch({ type: setSelectedPair, payload: row.id })
+                }
+              >
                 {row.cells.map((cell) => {
                   return (
                     <td
