@@ -29,26 +29,27 @@ export const Sidebar = () => {
     },
   ];
   return (
-    <Styled.Sidebar width={!isSidebarOpen ? "var(--sidebar-margin)" : "250px"}>
-      <ul>
-        <li>
-          <Button width="50px" onClick={toggleSidebarOpen}>
-            {isSidebarOpen ? "←" : "→"}{" "}
-          </Button>
+    <Styled.Sidebar className={isSidebarOpen ? "expanded" : "shrink"}>
+      <div className="sidebar-links">
+        <li className="tooltip-element" onClick={toggleSidebarOpen}>
+          ¡Toggle
         </li>
-        {sidebarItems.map((item, i) => {
-          return (
-            <Link to={item.url}>
-              <li>
-                <img style={{ height: "20px" }} src={item.icon} alt="" />{" "}
-                <div className={!isSidebarOpen ? "hidden" : "shown open"}>
-                  {item.title}
+        <ul>
+          <div className="active-tab"></div>
+
+          {sidebarItems.map((item) => (
+            <li key={item.url} className="tooltip-element" data-tooltip="1">
+              <Link to={item.url}>
+                <div className="icon">
+                  <i className="bx bx-bar-chart-square"></i>
+                  <i className="bx bxs-bar-chart-square"></i>
                 </div>
-              </li>
-            </Link>
-          );
-        })}
-      </ul>
+                <span className="link hide">Projects</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Styled.Sidebar>
   );
 };

@@ -1,46 +1,28 @@
 import styled from "styled-components";
 
-export const Sidebar = styled.div`
-  cursor: pointer;
-  transition: all 0.2s;
-  background: var(--transparent-black);
-  /* border-right: 2px solid rgba(245, 245, 245, 0.095); */
-
-  /* border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem; */
-  backdrop-filter: blur(2px);
-  width: ${(props) => props.width};
-  z-index: 6;
-  position: fixed;
-  /* box-shadow: 0px 4px 30px 0px #131313; */
-
+export const Sidebar = styled.nav`
+  position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
+  background-color: var(--transparent-black);
+  width: 16rem;
+  padding: 1.8rem 0.85rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.5s ease-in-out;
+  backdrop-filter: blur(2px);
   transition: all 0.4s;
-  padding: 0 0.5rem;
+  z-index: 5;
+  box-shadow: var(--box-shadow-light);
 
   &:hover {
-    box-shadow: rgb(0 0 0 / 24%) 12px 16px 24px, rgb(0 0 0 / 24%) 12px 8px 12px,
-      rgb(0 0 0 / 32%) 4px 4px 8px;
+    box-shadow: var(--box-shadow);
   }
-  ul {
-    display: grid;
-    /* align-items: center; */
-    /* justify-content: center; */
-    gap: 20px;
-    transition: all 0.4s;
-
-    li {
-      transition: all 0.4s;
-      width: 170px;
-      display: flex;
-      /* text-align: center; */
-      justify-content: center;
-      align-items: center;
-      &:hover {
-        filter: brightness(1.3);
-      }
-    }
+  &.shrink {
+    width: 3.8rem;
   }
 `;
+
+export const SidebarLink = styled.div``;
