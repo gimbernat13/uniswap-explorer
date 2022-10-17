@@ -31,7 +31,6 @@ export function TokensView({ routes }) {
   const { loading, error, data } = useQuery(TOKENS);
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
-  console.log("table data ", data);
   return (
     <div>
       <h2>Tokens</h2>
@@ -41,7 +40,6 @@ export function TokensView({ routes }) {
         ))}
       </Switch>
 
-      <Swap />
       <Styled.FlexSpaced>
         <FilterButtons />
         <h3>Most Traded</h3>

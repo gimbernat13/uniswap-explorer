@@ -2,7 +2,11 @@
   --border-radius: 1rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
+  --transparent-black-light: rgba(0, 0, 0, 0.209);
+
   --transparent-black: rgba(0, 0, 0, 0.385);
+  --transparent-black-dark: rgba(0, 0, 0, 0.906);
+
   --accent-green: #36d7b7;
   --accent-purple: #98a1fa;
   --accent-purple-dark: #4449734b;
@@ -80,7 +84,7 @@ li {
 .top {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 10px;
 
 
 }
@@ -319,7 +323,7 @@ tr:hover {
   grid-template-columns: 1fr 1fr 4fr;
   grid-template-rows: auto;
   align-items: center;
-  gap: 24px;
+  gap: 10px;
   height: 1.6rem;
   padding: .5rem 0;
   /* margin-top: 1rem; */
@@ -343,7 +347,7 @@ tr:hover {
 .pairs {
   min-height: 16rem;
   display: grid;
-  gap: 1rem;
+  gap: 10px;
 }
 
 #coingecko {
@@ -638,4 +642,14 @@ body.shrink .admin-profile {
 
 body.shrink .tooltip {
   display: grid;
+}
+
+
+
+/* =======Modal  */
+
+
+
+.modal-box {
+  
 }

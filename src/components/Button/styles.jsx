@@ -11,9 +11,10 @@ export const Button = styled.div`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  border: 1px solid rgba(245, 245, 245, 0.3);
+  border: 2px solid rgba(245, 245, 245, 0.3);
   opacity: 0.9;
   background-color: var(--transparent-black);
+  background-color: var(--main-color);
   color: white !important;
   font-size: 0.8rem !important;
   font-weight: 400 !important;

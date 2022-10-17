@@ -4,20 +4,20 @@ import styled from "styled-components";
 export const AggregateGrid = styled(motion.div)`
   display: grid;
   width: 100%;
-  gap: 20px;
+  gap: 10px;
   grid-template-columns: 6fr 3fr;
   .transparent-card:nth-of-type(1) {
   }
 `;
 export const AggregateLeft = styled(motion.div)`
   display: grid;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const PairSpecs = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr 1fr auto;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const InfoCard = styled(motion.div)`

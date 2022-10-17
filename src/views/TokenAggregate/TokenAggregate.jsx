@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Card } from "../../components/Card/Card";
 import { TokenChart } from "../../components/TokenChart/TokenChart";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
+import { Button } from "../../components/Button/Button";
+
 import { useParams } from "react-router-dom";
 import * as Styled from "./styles";
 import { setSelectedToken } from "../../context/actionNames";
@@ -10,8 +12,15 @@ import { useQuery } from "@apollo/client";
 import { Loader } from "../../components/Loader/Loader";
 import { TOKEN_DETAILS } from "./queries";
 import formatNumber from "../../utils/formatNumber";
+import { Swap } from "../../components/Swap/Swap";
+import Modal from "../../components/Modal/Modal";
 
 export const TokenAggregate = () => {
+  const modalRef = React.useRef();
+
+  const openModal = () => {
+    modalRef.current.openModal();
+  };
   const { tokenID } = useParams();
   const { state: tokensState, dispatch } = useContext(TokensContext);
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
@@ -27,60 +36,72 @@ export const TokenAggregate = () => {
   const { name, symbol, tradeVolumeUSD, totalLiquidity, txCount } = data.token;
 
   return (
-    <Styled.TokenAggregateGrid>
-      <div>
+    <>
+      <Modal ref={modalRef}>
+        <Swap />
+        {/* <button onClick={() => modalRef.current.close()}>Close Modal</button> */}
+      </Modal>
+      <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
-          <Card>
-            <div className="large-text">{symbol}</div>
-
-            <div className="medium-text">{name}</div>
-            <div className="detail-links">
-              <a
-                target="_blank"
-                // href={`https://www.coingecko.com/en/coins/${tokenId}`}
-              >
-                <img
-                  id="coingecko"
-                  src="https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png"
-                  alt=""
-                />
-              </a>
-              <a
-                target="_blank"
-                // href={`https://etherscan.io/address/${tokenId}`}
-              >
-                <img
-                  src="https://etherscan.io/images/logo-ether.png?v=0.0.2"
-                  alt=""
-                />
-              </a>
-            </div>
-          </Card>
-          <Card>
-            <ul>
-              <li>
-                Volume:
-                {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD{" "}
-              </li>
-              <li>
-                Liquidity:
-                {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
-              </li>
-              <li>TX's: {formatNumber(parseFloat(txCount))}</li>
-            </ul>
-          </Card>
-          <div className="large">
+          <Styled.LeftTopGrid>
             <Card>
-              <h3>Price</h3>
-              <TokenChart />
-            </Card>
-          </div>
-        </Styled.LeftGrid>
-      </div>
+              <div className="large-text">{symbol}</div>
 
-      <div>
-        <TokenPairs />
-      </div>
-    </Styled.TokenAggregateGrid>
+              <div className="medium-text">{name}</div>
+              <div className="detail-links">
+                <a
+                  target="_blank"
+                  // href={`https://www.coingecko.com/en/coins/${tokenId}`}
+                >
+                  <img
+                    id="coingecko"
+                    src="https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png"
+                    alt=""
+                  />
+                </a>
+                <a
+                  target="_blank"
+                  // href={`https://etherscan.io/address/${tokenId}`}
+                >
+                  <img
+                    src="https://etherscan.io/images/logo-ether.png?v=0.0.2"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </Card>
+            <Card>
+              <ul>
+                <li>
+                  Volume:
+                  {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD{" "}
+                </li>
+                <li>
+                  Liquidity:
+                  {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
+                </li>
+                <li>TX's: {formatNumber(parseFloat(txCount))}</li>
+              </ul>
+            </Card>
+          </Styled.LeftTopGrid>
+
+          <Card>
+            <h3>Price</h3>
+            <TokenChart />
+          </Card>
+        </Styled.LeftGrid>
+
+        <div>
+          <Card>
+            <div className="medium-text">Top Pairs</div>
+            <TokenPairs />
+          </Card>
+          <br />
+          <Button width="100%" onClick={openModal}>
+            Trade
+          </Button>
+        </div>
+      </Styled.TokenAggregateGrid>
+    </>
   );
 };
