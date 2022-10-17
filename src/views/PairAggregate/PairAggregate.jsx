@@ -30,19 +30,19 @@ export const PairAggregate = () => {
       <Styled.AggregateLeft>
         <Styled.PairSpecs>
           <Link to={`/tokens/${pair.token0.id}`}>
-            <Card>
+            <Card height="100%">
               <div className="large-text">{pair.token0.symbol}</div>
               <div>{formatNumber(parseFloat(pair.reserve0).toFixed(2))} </div>
             </Card>
           </Link>
           <Link to={`/tokens/${pair.token1.id}`}>
-            <Card>
+            <Card height="100%">
               <div className="large-text">{pair.token1.symbol}</div>
               <div>{formatNumber(parseFloat(pair.reserve1).toFixed(2))} </div>
             </Card>
           </Link>
 
-          <Card>
+          <Card height="100%">
             <Styled.InfoCard>
               <div className="bold">Volume: </div>
               <div>${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}</div>
@@ -57,7 +57,7 @@ export const PairAggregate = () => {
             </Styled.InfoCard>
           </Card>
         </Styled.PairSpecs>
-        <Card>
+        <Card height="100%">
           <FlexContainer>
             {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>
             Daily Transactions
@@ -71,7 +71,7 @@ export const PairAggregate = () => {
         </Card>
       </Styled.AggregateLeft>
 
-      <Card>
+      <Card height="100%">
         <div className="medium-text">Recent Swaps</div>
         <RecentSwaps id={pair.id} />
       </Card>

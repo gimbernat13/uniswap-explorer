@@ -70,18 +70,31 @@ export const TokenAggregate = () => {
                 </a>
               </div>
             </Card>
-            <Card>
-              <ul>
-                <li>
-                  Volume:
-                  {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))} USD{" "}
-                </li>
-                <li>
-                  Liquidity:
-                  {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
-                </li>
-                <li>TX's: {formatNumber(parseFloat(txCount))}</li>
-              </ul>
+            <Card height={"100%"}>
+              <Styled.DetailsGrid>
+                <Styled.DetailsGridItem>
+                  <Card transparent height="100%">
+                    <div className="medium-text"> Vol:</div>
+                    <div>
+                      ${formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))}
+                    </div>
+                  </Card>
+                </Styled.DetailsGridItem>
+                <Styled.DetailsGridItem>
+                  <Card transparent height="100%">
+                    <div className="medium-text"> Liq:</div>
+                    <div>
+                      {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
+                    </div>
+                  </Card>
+                </Styled.DetailsGridItem>
+                <Styled.DetailsGridItem>
+                  <Card transparent height="100%">
+                    <div className="medium-text"> TX's:</div>
+                    <div>{formatNumber(parseFloat(txCount))}</div>
+                  </Card>
+                </Styled.DetailsGridItem>
+              </Styled.DetailsGrid>
             </Card>
           </Styled.LeftTopGrid>
 

@@ -2,6 +2,8 @@
   --border-radius: 1rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
+  --border-ultra-light: 1px solid rgba(64, 73, 99, 0.222);
+
   --transparent-black-light: none !important;
   --transparent-black: rgba(0, 0, 0, 0.385);
   --transparent-black-dark: rgba(0, 0, 0, 0.906);
@@ -191,6 +193,7 @@ h4 {
 .large-text {
   font-weight: bold;
   font-size: 1.8rem;
+  color: whitesmoke;
 }
 
 .bold {
@@ -201,6 +204,8 @@ h4 {
 .medium-text {
   font-weight: bold;
   font-size: 1.2rem;
+  color: whitesmoke;
+
   /* padding-bottom: 10px; */
 }
 
@@ -241,6 +246,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
   margin-left: 10px;
 
 }

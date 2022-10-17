@@ -23,3 +23,15 @@ export const FlexSpaced = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+export const DetailsGrid = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  height: 100%;
+  /* align-items: center; */
+`;
+export const DetailsGridItem = styled.div`
+  /* background-color: pink; */
+  border-radius: var(--border-radius);
+  height: 100%;
+`;
