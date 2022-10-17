@@ -15,8 +15,8 @@ export const Button = styled.div`
   border: 1px solid transparent;
 
   opacity: 0.9;
-  background-color: var(--transparent-black);
-  background-color: var(--main-color);
+  /* background-color: var(--transparent-black); */
+  /* background-color: var(--main-color); */
   /* color: white !important; */
   font-size: 0.8rem !important;
   font-weight: 400 !important;
