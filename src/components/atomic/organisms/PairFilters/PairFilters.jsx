@@ -3,9 +3,9 @@ import {
   setFilterBy,
   setItemsOnPage,
   setSortBy,
-} from "../../context/actionNames";
-import { PairsContext } from "../../context/PairsContext";
-import { Select } from "../Select/Select";
+} from "../../../../context/actionNames";
+import { PairsContext } from "../../../../context/PairsContext";
+import { Select } from "../../../Select/Select";
 import { filterByOptions, itemsOnPageOptions, sortByOptions } from "./config";
 
 export const PairFilters = () => {

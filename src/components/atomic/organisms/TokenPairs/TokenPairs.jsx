@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PairCard } from "../PairCard/PairCard";
+import { PairCard } from "../../molecules/PairCard/PairCard";
 
 export const TokenPairs = ({ data }) => {
   return (

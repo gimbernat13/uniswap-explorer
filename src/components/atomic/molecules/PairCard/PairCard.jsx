@@ -1,19 +1,13 @@
 import React from "react";
-import formatNumber from "../../utils/formatNumber";
-import { Card } from "../Card/Card";
-import Modal from "../Modal/Modal";
+import formatNumber from "../../../../utils/formatNumber";
+import { Card } from "../../atoms/Card/Card";
 import * as Styled from "./styles";
-import { SwapWidget } from "@uniswap/widgets/dist/index.js";
-
-import { darkTheme, lightTheme } from "@uniswap/widgets";
-import { Button } from "../Button/Button";
 
 export const PairCard = ({ pair }) => {
   const animatedItem = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
-
   return (
     <>
       <Card transparent variants={animatedItem}>

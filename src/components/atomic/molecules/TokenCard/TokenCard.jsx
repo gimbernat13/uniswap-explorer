@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { TokensContext } from "../../context/TokensContext";
+import { TokensContext } from "../../../../context/TokensContext";
 
-import formatNumber from "../../utils/formatNumber";
+import formatNumber from "../../../../utils/formatNumber";
 import { Card } from "../Card/Card";
 import * as Styled from "./styles";
 const animatedItem = {
