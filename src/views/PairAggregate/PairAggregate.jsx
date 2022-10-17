@@ -1,14 +1,14 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { Card } from "../../components/Card/Card";
-import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
-import { RecentSwaps } from "../../components/RecentSwaps/RecentSwaps";
 import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
 import * as Styled from "./styles";
-import { Loader } from "../../components/Loader/Loader";
-import { BarCharts } from "../../components/atomic/organisms/BarCharts/BarCharts";
+import { BarCharts } from "components/atomic/organisms/BarCharts/BarCharts";
+import { Card } from "components/atomic/atoms/Card/Card";
+import { Loader } from "components/atomic/atoms/Loader/Loader";
+import { FlexContainer } from "components/global/FlexContainer/FlexContainer";
+import { RecentSwaps } from "components/atomic/organisms/RecentSwaps/RecentSwaps";
 export const PairAggregate = () => {
   const { pairID } = useParams();
 

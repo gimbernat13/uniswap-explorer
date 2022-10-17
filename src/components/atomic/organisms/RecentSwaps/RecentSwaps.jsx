@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
+import { Loader } from "components/atomic/atoms/Loader/Loader";
 import React from "react";
-import formatNumber from "../../utils/formatNumber";
-import { Loader } from "../Loader/Loader";
+import formatNumber from "utils/formatNumber";
 import { RECENT_SWAPS } from "./queries";
 import * as Styled from "./styles";
 export const RecentSwaps = ({ id }) => {

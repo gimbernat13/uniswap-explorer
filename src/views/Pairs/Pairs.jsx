@@ -2,19 +2,18 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { Switch } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
-import { Button } from "../../components/Button/Button";
-import { Loader } from "../../components/Loader/Loader";
-import { PairList } from "../../components/PairList/PairList";
-import { PairTable } from "../../components/PairTable/PairTable";
+
 import { PAIRS } from "./queries";
 import * as Styled from "./styles";
-
+import { Button } from "components/atomic/atoms/Button/Button";
+import { Loader } from "components/atomic/atoms/Loader/Loader";
+import { PairList } from "components/atomic/organisms/PairList/PairList";
+import { PairTable } from "components/atomic/organisms/PairTable/PairTable";
 export function Pairs({ routes }) {
   const viewTypes = [
     { id: "table", text: "Table", icon: "" },
     { id: "cards", text: "Cards", icon: "" },
   ];
-
   const [viewType, setViewType] = React.useState({
     id: "table",
     text: "Table",

@@ -1,21 +1,20 @@
 import React, { useContext } from "react";
-import { Card } from "../../components/Card/Card";
-import { TokenPairs } from "../../components/atomic/organisms/TokenPairs/TokenPairs";
-import { Button } from "../../components/Button/Button";
+import * as Styled from "./styles";
+import { useQuery } from "@apollo/client";
 import { SwapWidget } from "@uniswap/widgets/dist/index.js";
 import { useParams } from "react-router-dom";
-import * as Styled from "./styles";
 import { setSelectedToken } from "../../context/actionNames";
 import { TokensContext } from "../../context/TokensContext";
-import { useQuery } from "@apollo/client";
-import { Loader } from "../../components/atomic/atoms/Loader/Loader";
 import { TOKEN_DETAILS } from "./queries";
-import Modal from "../../components/atomic/molecules/Modal/Modal";
 import { darkTheme, lightTheme } from "@uniswap/widgets";
-import Chart from "../../components/atomic/organisms/Chart/Chart";
-import { TokenMainDetails } from "../../components/atomic/molecules/TokenMainDetails/TokenMainDetails";
-import { TokenDetails } from "../../components/atomic/molecules/TokenDetails/TokenDetails";
-
+import { TokenPairs } from "components/atomic/organisms/TokenPairs/TokenPairs";
+import Modal from "components/atomic/molecules/Modal/Modal";
+import { TokenMainDetails } from "components/atomic/molecules/TokenMainDetails/TokenMainDetails";
+import { TokenDetails } from "components/atomic/molecules/TokenDetails/TokenDetails";
+import { Card } from "components/atomic/atoms/Card/Card";
+import Chart from "components/atomic/organisms/Chart/Chart";
+import { Loader } from "components/atomic/atoms/Loader/styles";
+import { Button } from "components/atomic/atoms/Button/Button";
 export const TokenAggregate = () => {
   const modalRef = React.useRef();
   const openModal = () => {

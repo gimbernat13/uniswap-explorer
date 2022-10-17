@@ -1,8 +1,8 @@
+import { Card } from "components/atomic/atoms/Card/Card";
 import React, { useContext } from "react";
 import { TokensContext } from "../../../../context/TokensContext";
 
 import formatNumber from "../../../../utils/formatNumber";
-import { Card } from "../Card/Card";
 import * as Styled from "./styles";
 const animatedItem = {
   hidden: { opacity: 0 },
@@ -10,7 +10,6 @@ const animatedItem = {
 };
 export const TokenCard = ({ token, index }) => {
   const { state: tokensState } = useContext(TokensContext);
-
   return (
     <Card isActive={tokensState.selectedToken === token.id}>
       <Styled.TokenCard className="card">

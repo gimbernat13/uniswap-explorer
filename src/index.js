@@ -8,19 +8,18 @@ import { TokenContextProvider } from "./context/TokenContext";
 
 import { ThemeContextProvider } from "./context/ThemeContext";
 import "./App.css";
-import { PairList } from "./components/PairList/PairList";
-import { Layout } from "./components/Layout/Layout";
+// import { Layout } from "components/Layout/Layout";
 import { PairsContextProvider } from "./context/PairsContext";
 import { PairAggregate } from "./views/PairAggregate/PairAggregate";
-import { TokensView } from "./views/Tokens";
+import { TokensView } from "./views/Tokens/Tokens";
 import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
 import { Pairs } from "./views/Pairs/Pairs";
+import { Layout } from "components/global/Layout/Layout";
 
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
   cache: new InMemoryCache(),
 });
-
 const routes = [
   {
     path: "/pairs",

@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Card } from "components/atomic/atoms/Card/Card";
+import React from "react";
 import { useTable, useSortBy } from "react-table";
-import { setSelectedPair } from "../../../../context/actionNames";
-import { PairsContext } from "../../../../context/PairsContext";
 import formatNumber from "../../../../utils/formatNumber";
-import { Card } from "../Card/Card";
 export function TokenTable({ tableData }) {
   const columns = React.useMemo(
     () => [

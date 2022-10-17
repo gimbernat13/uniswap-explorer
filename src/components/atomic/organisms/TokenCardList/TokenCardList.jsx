@@ -1,6 +1,6 @@
+import { TokenCard } from "components/atomic/molecules/TokenCard/TokenCard";
 import React from "react";
 import { Link } from "react-router-dom";
-import { TokenCard } from "../TokenCard/TokenCard";
 import * as Styled from "./styles";
 const container = {
   hidden: { opacity: 0 },

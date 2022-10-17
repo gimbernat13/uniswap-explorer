@@ -1,12 +1,11 @@
 import React from "react";
 import * as Styled from "./styles";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { Button } from "../Button/Button";
-import Tokens from "../../assets/bitcoin.png";
+import Tokens from "../../../../assets/bitcoin.png";
+import { Button } from "components/atomic/atoms/Button/Button";
 export const Sidebar = () => {
   let history = useHistory();
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
-
   const toggleSidebarOpen = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };

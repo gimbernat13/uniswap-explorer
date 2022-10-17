@@ -1,3 +1,4 @@
+import { Button } from "components/atomic/atoms/Button/Button";
 import React from "react";
 import {
   Bar,
@@ -8,7 +9,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Button } from "../Button/styles";
 
 export const BarCharts = ({ chartData }) => {
   // FIXME: Extract to utils
@@ -21,7 +21,6 @@ export const BarCharts = ({ chartData }) => {
 
   const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
   const checkButtonActive = (id) => id === selectedFilter;
-
   const filters = [
     { name: "Daily Volume", id: "dailyVolumeUSD" },
     { name: "Daily Txns", id: "dailyTxns" },
