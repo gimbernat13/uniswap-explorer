@@ -215,10 +215,11 @@ h4 {
 }
 
 .active {
-  background-color: var(--accent-purple-dark)
+  background-color: var(--accent-purple-dark);
+  border-radius: var(--border-radius)
 }
 
-nav .active {
+/* nav .active {
   width: 100%;
   height: 53px;
   background-color: var(--main-color-dark);
@@ -227,7 +228,7 @@ nav .active {
   top: 2.5px;
   left: 0;
   transition: top 0.3s;
-}
+} */
 
 h3 {
   margin: none;

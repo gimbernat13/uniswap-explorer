@@ -1,6 +1,6 @@
 import React from "react";
 import * as Styled from "./styles";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, NavLink, useHistory, useParams } from "react-router-dom";
 import Tokens from "../../../../assets/bitcoin.png";
 import { Button } from "components/atomic/atoms/Button/Button";
 export const Sidebar = () => {
@@ -11,11 +11,6 @@ export const Sidebar = () => {
   };
 
   const sidebarItems = [
-    // {
-    //   title: "Home",
-    //   icon: "🏠",
-    //   url: "/",
-    // },
     {
       title: "Tokens",
       icon: Tokens,
@@ -27,7 +22,10 @@ export const Sidebar = () => {
       url: "/pairs",
     },
   ];
-  console.log(useParams());
+  function handleChildClick(e) {
+    e.stopPropagation();
+  }
+
   return (
     <Styled.Sidebar
       onClick={toggleSidebarOpen}
@@ -41,13 +39,15 @@ export const Sidebar = () => {
           </Button> */}
             {sidebarItems.map((item) => (
               <li key={item.url} className="tooltip-element" data-tooltip="1">
-                <Link to={item.url}>
-                  <div className="icon">
-                    <i className="bx bx-bar-chart-square"></i>
-                    <i className="bx bxs-bar-chart-square"></i>
-                  </div>
-                  <span className="link hide">{item.title}</span>
-                </Link>
+                <div>
+                  <NavLink onClick={handleChildClick} to={item.url}>
+                    <div className="icon">
+                      <i className="bx bx-bar-chart-square"></i>
+                      <i className="bx bxs-bar-chart-square"></i>
+                    </div>
+                    <span className="link hide">{item.title}</span>
+                  </NavLink>
+                </div>
               </li>
             ))}
           </ul>

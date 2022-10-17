@@ -4,7 +4,7 @@ import { Card } from "../../atoms/Card/Card";
 import * as Styled from "./styles";
 
 export const TokenDetails = ({ data }) => {
-  const { name, symbol, id , tradeVolumeUSD, totalLiquidity, txCount} = data;
+  const { name, symbol, id , tradeVolumeUSD, derivedETH, txCount} = data;
   return (
     <Styled.DetailsGrid>
     <Styled.DetailsGridItem>
@@ -19,7 +19,7 @@ export const TokenDetails = ({ data }) => {
       <Card transparent height="100%">
         <div className="medium-text"> Liq:</div>
         <div>
-          {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
+          {formatNumber(parseFloat(derivedETH).toFixed(2))}{" "}
         </div>
       </Card>
     </Styled.DetailsGridItem>

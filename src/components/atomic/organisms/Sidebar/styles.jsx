@@ -16,6 +16,7 @@ export const Sidebar = styled.nav`
   transition: all 0.4s;
   z-index: 5;
   box-shadow: var(--box-shadow-light);
+  cursor: pointer;
 
   &:hover {
     box-shadow: var(--box-shadow);

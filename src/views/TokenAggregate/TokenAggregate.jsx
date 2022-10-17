@@ -64,7 +64,7 @@ export const TokenAggregate = () => {
             <div className="medium-text">Top Pairs</div>
             <TokenPairs data={data.pairs} />
           </Card>
-          <Button width="100%" onClick={openModal}>
+          <Button isActive width="100%" onClick={openModal}>
             Trade
           </Button>
         </Styled.RightGrid>
