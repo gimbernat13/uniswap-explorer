@@ -11,7 +11,7 @@ export const RECENT_SWAPS = gql`
       first: 18
       orderBy: timestamp
       orderDirection: desc
-      where: { pair: $id }
+      where: { pair: $id  }
     ) {
       pair {
         token0 {
