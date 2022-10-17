@@ -9,6 +9,7 @@ export const TOKEN_PAIRS = gql`
     ) {
       id
       volumeUSD
+      txCount
       token0 {
         symbol
       }
