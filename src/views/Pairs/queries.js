@@ -9,9 +9,11 @@ export const PAIRS = gql`
       reserveETH
       reserveUSD
       token0 {
+        id
         symbol
       }
       token1 {
+        id
         symbol
       }
     }

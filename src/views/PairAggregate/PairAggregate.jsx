@@ -17,7 +17,7 @@ export const PairAggregate = () => {
   });
 
   React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [pairID]);
 
   if (loading) return <Loader />;

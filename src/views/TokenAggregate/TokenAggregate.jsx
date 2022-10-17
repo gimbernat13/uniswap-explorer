@@ -4,7 +4,6 @@ import { TokenChart } from "../../components/TokenChart/TokenChart";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
 import { Button } from "../../components/Button/Button";
 import { SwapWidget } from "@uniswap/widgets/dist/index.js";
-
 import { useParams } from "react-router-dom";
 import * as Styled from "./styles";
 import { setSelectedToken } from "../../context/actionNames";
@@ -13,7 +12,6 @@ import { useQuery } from "@apollo/client";
 import { Loader } from "../../components/Loader/Loader";
 import { TOKEN_DETAILS } from "./queries";
 import formatNumber from "../../utils/formatNumber";
-import { Swap } from "../../components/Swap/Swap";
 import Modal from "../../components/Modal/Modal";
 import { darkTheme, lightTheme } from "@uniswap/widgets";
 
@@ -36,14 +34,11 @@ export const TokenAggregate = () => {
 
   if (error) return `Error! ${error.message}`;
   const { name, symbol, tradeVolumeUSD, totalLiquidity, txCount } = data.token;
-
   return (
     <>
       <Modal ref={modalRef}>
         <SwapWidget
-          // defaultInputTokenAddress={NATIVE}
           defaultOutputTokenAddress={tokenID}
-          // defaultInputAmount={2}
           theme={true ? darkTheme : lightTheme}
         />
         {/* <button onClick={() => modalRef.current.close()}>Close Modal</button> */}
@@ -53,7 +48,6 @@ export const TokenAggregate = () => {
           <Styled.LeftTopGrid>
             <Card>
               <div className="large-text">{symbol}</div>
-
               <div className="medium-text">{name}</div>
               <div className="detail-links">
                 <a

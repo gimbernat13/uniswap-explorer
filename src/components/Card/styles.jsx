@@ -2,7 +2,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import styled from "styled-components";
 
 export const Card = styled(motion.div)`
-  position: relative;
+  /* position: relative; */
   transition: all 0.3s;
   border-radius: 1rem;
   background-clip: content-box, border-box;
