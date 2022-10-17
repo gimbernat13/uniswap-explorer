@@ -250,12 +250,8 @@ h3 {
   margin-left: 10px;
 
 }
-.sidebar-links{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100vh;
-}
+
+
 
 .detail-links img {
   height: 20px;
@@ -489,6 +485,7 @@ nav:hover .shrink-btn,
   text-align: center;
   min-width: 3.7rem;
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
@@ -614,4 +611,14 @@ body.shrink .admin-profile {
 
 body.shrink .tooltip {
   display: grid;
+}
+
+
+
+
+.shits {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }

@@ -58,7 +58,7 @@ export function TokensView({ routes }) {
       </Styled.FlexSpaced>
 
       {viewType.id === "table" && <TokenTable tableData={data.tokens} />}
-      {viewType.id === "cards" && <TokenCardList />}
+      {viewType.id === "cards" && <TokenCardList data={data} />}
     </div>
   );
 }

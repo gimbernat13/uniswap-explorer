@@ -50,8 +50,10 @@ export const Sidebar = () => {
             ))}
           </ul>
         </div>
-        <div>
-          <Button onClick={toggleSidebarOpen}>←</Button>
+        <div className="icon">
+          <Button width="40px" onClick={toggleSidebarOpen}>
+            ←
+          </Button>
         </div>
       </div>
     </Styled.Sidebar>

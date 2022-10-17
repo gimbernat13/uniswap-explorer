@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
 export const TOKENS = gql`
-  query Tokens($filter: String) {
+  query Tokens {
     tokens(
       first: 150
-      orderBy: $filter
+      orderBy: txCount
       orderDirection: desc
-      where: { tradeVolumeUSD_gt: 20000 , txCount_gt : 500 }
-    ) {
+    ) # where: { tradeVolumeUSD_gt: 20000, txCount_gt: 500 }
+    {
       id
       symbol
       name

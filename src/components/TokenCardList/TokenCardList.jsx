@@ -1,12 +1,7 @@
-import { useQuery } from "@apollo/client";
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { TokensContext } from "../../context/TokensContext";
 import { TokenCard } from "../TokenCard/TokenCard";
-import { TOKENS } from "./queries";
 import * as Styled from "./styles";
-import { BarLoader } from "react-spinners";
-import { Loader } from "../Loader/Loader";
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -16,20 +11,7 @@ const container = {
     },
   },
 };
-export const TokenCardList = (props) => {
-  const { state: tokensState } = useContext(TokensContext);
-
-  const { loading, error, data } = useQuery(TOKENS, {
-    variables: {
-      filter: tokensState.filterBy,
-      order: tokensState.sortBy,
-      itemsOnPage: tokensState.itemsOnPage,
-    },
-  });
-
-  if (loading) return <Loader />;
-  if (error) return `Error! ${error.message}`;
-
+export const TokenCardList = ({ data }) => {
   return (
     <Styled.TokenGrid variants={container} initial="hidden" animate="show">
       {data.tokens.map((token, i) => {
