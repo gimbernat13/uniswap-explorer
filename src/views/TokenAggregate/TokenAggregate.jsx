@@ -105,16 +105,16 @@ export const TokenAggregate = () => {
           </Card>
         </Styled.LeftGrid>
 
-        <div>
+        <Styled.RightGrid>
           <Card>
             <div className="medium-text">Top Pairs</div>
             <TokenPairs />
           </Card>
-          <br />
+
           <Button width="100%" onClick={openModal}>
             Trade
           </Button>
-        </div>
+        </Styled.RightGrid>
       </Styled.TokenAggregateGrid>
     </>
   );

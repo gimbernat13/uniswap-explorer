@@ -186,7 +186,7 @@ h4 {
 
 .container {
   margin-left: var(--sidebar-margin);
-  padding: 0 10rem;
+  padding: 0 9rem;
   margin-top: 1rem
 }
 
@@ -249,6 +249,12 @@ h3 {
   margin-top: 10px;
   margin-left: 10px;
 
+}
+.sidebar-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .detail-links img {
@@ -458,8 +464,6 @@ nav:hover .shrink-btn,
 .search input::placeholder {
   color: var(--text-color);
 }
-
-
 
 
 .sidebar-links ul {

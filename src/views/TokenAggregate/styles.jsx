@@ -35,3 +35,9 @@ export const DetailsGridItem = styled.div`
   border-radius: var(--border-radius);
   height: 100%;
 `;
+export const RightGrid = styled.div`
+  display: grid;
+  gap: 10px;
+  height: 100%;
+  /* align-items: center; */
+`;
