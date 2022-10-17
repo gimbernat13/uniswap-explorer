@@ -132,7 +132,7 @@ export const TokenAggregate = () => {
         <Styled.RightGrid>
           <Card>
             <div className="medium-text">Top Pairs</div>
-            <TokenPairs />
+            <TokenPairs data={data.pairs} />
           </Card>
 
           <Button width="100%" onClick={openModal}>
