@@ -10,7 +10,7 @@ export const TokenAggregateGrid = styled.div`
   }
 `;
 export const LeftTopGrid = styled.div`
-  display: grid;
+  display: grid; 
   grid-template-columns: auto 1fr;
   gap: 10px;
 `;
@@ -38,6 +38,8 @@ export const DetailsGridItem = styled.div`
   border-radius: var(--border-radius);
 `;
 export const RightGrid = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+  overflow-y: scroll;
 `;
