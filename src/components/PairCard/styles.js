@@ -5,6 +5,5 @@ export const PoolCard = styled(motion.div)`
   border-radius: 1rem;
   width: 100%;
   cursor: pointer;
-  color: lightgray;
 `;
 export const PoolCardInner = styled(motion.div)``;

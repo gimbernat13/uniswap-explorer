@@ -23,7 +23,6 @@ export const SelectInner = styled.div`
   top: 45px;
   z-index: 3;
   border-radius: 1rem;
-  background-color: #000000b2;
   border: 1px solid rgba(148, 148, 148, 0.317);
 
   backdrop-filter: blur(1px);

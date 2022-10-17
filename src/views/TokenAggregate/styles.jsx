@@ -13,8 +13,6 @@ export const LeftTopGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px;
-
-  /* background-color: pink; */
 `;
 export const LeftGrid = styled.div`
   display: grid;

@@ -1,14 +1,21 @@
 import React from "react";
 import * as Styled from "./styles";
 
-export const Card = ({ children, height, isActive, className }) => {
+export const Card = ({
+  children,
+  height,
+  isActive,
+  className,
+  transparent,
+}) => {
   return (
     <Styled.Card
-      initial={{ y: 0 , opacity: 0 }}
+      initial={{ y: 0, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ x: -300, opacity: 0 }}
       className={isActive ? "active " : ""}
       height={height}
+      transparent={transparent}
       {...className}
     >
       <Styled.CardInner

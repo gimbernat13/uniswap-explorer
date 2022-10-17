@@ -39,9 +39,9 @@ export function TokensView({ routes }) {
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch>
-
+      <br />
       <Styled.FlexSpaced>
-        <FilterButtons />
+        {/* <FilterButtons /> */}
         <h3>Most Traded</h3>
         <div>
           {viewTypes.map((type) => {

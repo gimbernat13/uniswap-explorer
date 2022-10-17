@@ -6,5 +6,4 @@ export const PoolGrid = styled(motion.div)`
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   justify-content: center;
   gap: 10px;
-  color: white;
 `;
