@@ -3,6 +3,7 @@ import { Card } from "../../components/Card/Card";
 import { TokenChart } from "../../components/TokenChart/TokenChart";
 import { TokenPairs } from "../../components/TokenPairs/TokenPairs";
 import { Button } from "../../components/Button/Button";
+import { SwapWidget } from "@uniswap/widgets/dist/index.js";
 
 import { useParams } from "react-router-dom";
 import * as Styled from "./styles";
@@ -14,6 +15,7 @@ import { TOKEN_DETAILS } from "./queries";
 import formatNumber from "../../utils/formatNumber";
 import { Swap } from "../../components/Swap/Swap";
 import Modal from "../../components/Modal/Modal";
+import { darkTheme, lightTheme } from "@uniswap/widgets";
 
 export const TokenAggregate = () => {
   const modalRef = React.useRef();
@@ -38,7 +40,12 @@ export const TokenAggregate = () => {
   return (
     <>
       <Modal ref={modalRef}>
-        <Swap />
+        <SwapWidget
+          // defaultInputTokenAddress={NATIVE}
+          defaultOutputTokenAddress={tokenID}
+          // defaultInputAmount={2}
+          theme={true ? darkTheme : lightTheme}
+        />
         {/* <button onClick={() => modalRef.current.close()}>Close Modal</button> */}
       </Modal>
       <Styled.TokenAggregateGrid>
