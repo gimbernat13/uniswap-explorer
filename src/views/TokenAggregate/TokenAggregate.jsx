@@ -46,30 +46,36 @@ export const TokenAggregate = () => {
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
           <Styled.LeftTopGrid>
-            <Card>
-              <div className="large-text">{symbol}</div>
-              <div className="medium-text">{name}</div>
-              <div className="detail-links">
-                <a
-                  target="_blank"
-                  // href={`https://www.coingecko.com/en/coins/${tokenId}`}
-                >
-                  <img
-                    id="coingecko"
-                    src="https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png"
-                    alt=""
-                  />
-                </a>
-                <a
-                  target="_blank"
-                  // href={`https://etherscan.io/address/${tokenId}`}
-                >
-                  <img
-                    src="https://etherscan.io/images/logo-ether.png?v=0.0.2"
-                    alt=""
-                  />
-                </a>
-              </div>
+            <Card flex height={"100%"}>
+              <Styled.FlexSpacedV>
+                <div>
+                  <div className="large-text">{symbol}</div>
+                  <div className="medium-text">{name}</div>
+                </div>
+                <div>
+                  <div className="detail-links">
+                    <a
+                      // target="_blank"
+                      href={`https://www.coingecko.com/en/coins/${tokenID}`}
+                    >
+                      <img
+                        id="coingecko"
+                        src="https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      // target="_blank"
+                      href={`https://etherscan.io/address/${tokenID}`}
+                    >
+                      <img
+                        src="https://etherscan.io/images/logo-ether.png?v=0.0.2"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+              </Styled.FlexSpacedV>
             </Card>
             <Card height={"100%"}>
               <Styled.DetailsGrid>
@@ -87,6 +93,24 @@ export const TokenAggregate = () => {
                     <div>
                       {formatNumber(parseFloat(totalLiquidity).toFixed(2))}{" "}
                     </div>
+                  </Card>
+                </Styled.DetailsGridItem>
+                <Styled.DetailsGridItem>
+                  <Card transparent height="100%">
+                    <div className="medium-text"> TX's:</div>
+                    <div>{formatNumber(parseFloat(txCount))}</div>
+                  </Card>
+                </Styled.DetailsGridItem>
+                <Styled.DetailsGridItem>
+                  <Card transparent height="100%">
+                    <div className="medium-text"> TX's:</div>
+                    <div>{formatNumber(parseFloat(txCount))}</div>
+                  </Card>
+                </Styled.DetailsGridItem>
+                <Styled.DetailsGridItem>
+                  <Card transparent height="100%">
+                    <div className="medium-text"> TX's:</div>
+                    <div>{formatNumber(parseFloat(txCount))}</div>
                   </Card>
                 </Styled.DetailsGridItem>
                 <Styled.DetailsGridItem>

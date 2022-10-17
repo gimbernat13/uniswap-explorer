@@ -10,6 +10,7 @@ export const TOKEN_DETAILS = gql`
       txCount
       
     }
+    
   }
 `;
 

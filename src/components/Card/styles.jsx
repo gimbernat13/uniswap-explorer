@@ -2,7 +2,8 @@ import { motion } from "framer-motion/dist/framer-motion";
 import styled from "styled-components";
 
 export const Card = styled(motion.div)`
-  /* position: relative; */
+  position: relative;
+  display: ${(props) => (props.flex ? "flex" : "block")};
   transition: all 0.3s;
   border-radius: 1rem;
   background-clip: content-box, border-box;
@@ -16,7 +17,7 @@ export const Card = styled(motion.div)`
     props.transparent ? "var(--border-ultra-light)" : "var(--border-light)"};
   font-size: 1rem !important;
   font-weight: 400 !important;
-  height: ${(props) => props.height};
+  height: ${(props) => (props.height ? props.height : "100%")};
   &:hover {
     box-shadow: rgb(0 0 0 / 24%) 6px 8px 12px, rgb(0 0 0 / 24%) 6px 4px 6px,
       rgb(0 0 0 / 32%) 2px 2px 4px;

@@ -7,6 +7,7 @@ export const Card = ({
   isActive,
   className,
   transparent,
+  flex
 }) => {
   return (
     <Styled.Card
@@ -15,6 +16,7 @@ export const Card = ({
       exit={{ x: -300, opacity: 0 }}
       className={isActive ? "active " : ""}
       height={height}
+      flex={flex}
       transparent={transparent}
       {...className}
     >

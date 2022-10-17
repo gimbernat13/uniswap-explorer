@@ -30,7 +30,10 @@ export const Sidebar = () => {
   ];
   console.log(useParams());
   return (
-    <Styled.Sidebar className={isSidebarOpen ? "expanded" : "shrink"}>
+    <Styled.Sidebar
+      onClick={toggleSidebarOpen}
+      className={isSidebarOpen ? "expanded" : "shrink"}
+    >
       <div className="sidebar-links shits">
         <div>
           <ul>
@@ -50,11 +53,11 @@ export const Sidebar = () => {
             ))}
           </ul>
         </div>
-        <div className="icon">
+        {/* <div className="icon">
           <Button width="40px" onClick={toggleSidebarOpen}>
             ←
           </Button>
-        </div>
+        </div> */}
       </div>
     </Styled.Sidebar>
   );
