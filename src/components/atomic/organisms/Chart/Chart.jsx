@@ -29,7 +29,6 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             <stop offset="75%" stopColor="#2c88ff" stopOpacity={0.05} />
           </linearGradient>
         </defs>
-
         <Area dataKey={yKey} stroke="#96a0f7" fill="url(#color)" />
         <XAxis dataKey={getTimeAxis} axisLine={true} tickLine={false} />
         <YAxis
@@ -40,9 +39,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
           tickLine={false}
           tickCount={100}
         />
-
         <Tooltip />
-
         {/* <CartesianGrid opacity={0.1} vertical={false} /> */}
       </AreaChart>
     </ResponsiveContainer>
