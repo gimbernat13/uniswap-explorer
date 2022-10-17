@@ -73,7 +73,7 @@ export const PairAggregate = () => {
 
       <Card height="100%">
         <div className="medium-text">Recent Swaps</div>
-        <RecentSwaps id={pair.id} />
+        {/* <RecentSwaps pairData={data.pairData} swapData={data.swaps} /> */}
       </Card>
     </Styled.AggregateGrid>
   );
