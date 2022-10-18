@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion/dist/framer-motion";
 import styled from "styled-components";
 
 export const AggregateGrid = styled(motion.div)`
@@ -12,6 +12,12 @@ export const AggregateGrid = styled(motion.div)`
 export const AggregateLeft = styled(motion.div)`
   display: grid;
   gap: 10px;
+`;
+export const AggregateRight = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
 `;
 
 export const PairSpecs = styled(motion.div)`
