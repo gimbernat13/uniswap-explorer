@@ -216,7 +216,7 @@ h4 {
 
 .active {
   background-color: var(--accent-purple-dark);
-  border-radius: var(--border-radius)
+  border-radius: var(--border-radius);
 }
 
 /* nav .active {

@@ -34,9 +34,6 @@ export const Sidebar = () => {
       <div className="sidebar-links shits">
         <div>
           <ul>
-            {/* <Button width="100%" onClick={() => history.goBack()}>
-            ←{" "}
-          </Button> */}
             {sidebarItems.map((item) => (
               <li key={item.url} className="tooltip-element" data-tooltip="1">
                 <div>
@@ -52,11 +49,11 @@ export const Sidebar = () => {
             ))}
           </ul>
         </div>
-        {/* <div className="icon">
+        <div style={{ marginLeft: "10px" }} className="icon">
           <Button width="40px" onClick={toggleSidebarOpen}>
             ←
           </Button>
-        </div> */}
+        </div>
       </div>
     </Styled.Sidebar>
   );

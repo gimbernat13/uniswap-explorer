@@ -51,7 +51,10 @@ export const TokenAggregate = () => {
               <TokenMainDetails data={data.token} />
             </Card>
             <Card height={"100%"}>
-              <TokenDetails data={data.token} />
+              <TokenDetails
+                tokenData={data.token}
+                tokenDayDatas={data.tokenDayDatas[0]}
+              />
             </Card>
           </Styled.LeftTopGrid>
           <Card>
