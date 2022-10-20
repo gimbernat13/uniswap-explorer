@@ -19,6 +19,8 @@ export const BarCharts = ({ chartData }) => {
     return formattedDate;
   };
 
+  var reverseData = [...chartData].reverse();
+
   const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
   const checkButtonActive = (id) => id === selectedFilter;
   const filters = [
@@ -43,7 +45,7 @@ export const BarCharts = ({ chartData }) => {
       <br />
       <br />
       <ResponsiveContainer width="100%" height={250}>
-        <BarChart data={chartData}>
+        <BarChart data={reverseData}>
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey={getTimeAxis} />
           <YAxis />

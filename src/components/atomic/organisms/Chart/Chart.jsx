@@ -11,6 +11,7 @@ import React from "react";
 export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
   // const reverseData = [...chartData.reverse()];
+  var reverseData = [...chartData].reverse();
 
   // For time charts
   const getTimeAxis = (data) => {
@@ -22,7 +23,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
 
   return (
     <ResponsiveContainer width="100%" height={300}>
-      <AreaChart data={chartData}>
+      <AreaChart data={reverseData}>
         <defs>
           <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#2c88ff" stopOpacity={0.4} />

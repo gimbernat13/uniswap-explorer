@@ -15,11 +15,11 @@ export const Sidebar = styled.nav`
   backdrop-filter: blur(2px);
   transition: all 0.4s;
   z-index: 5;
-  box-shadow: var(--box-shadow-light);
+  /* box-shadow: var(--box-shadow-light); */
   cursor: pointer;
 
   &:hover {
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-light);
   }
   &.shrink {
     width: 3.8rem;

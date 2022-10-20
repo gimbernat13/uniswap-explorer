@@ -100,6 +100,7 @@ export const PairAggregate = () => {
           </Button>
         </Styled.AggregateRight>
       </Styled.AggregateGrid>
+      <br />
     </>
   );
 };

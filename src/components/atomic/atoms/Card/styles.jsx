@@ -19,8 +19,7 @@ export const Card = styled(motion.div)`
   font-weight: 400 !important;
   height: ${(props) => (props.height ? props.height : "100%")};
   &:hover {
-    box-shadow: rgb(0 0 0 / 24%) 6px 8px 12px, rgb(0 0 0 / 24%) 6px 4px 6px,
-      rgb(0 0 0 / 32%) 2px 2px 4px;
+    box-shadow: var(--box-shadow-light);
   }
 `;
 export const CardInner = styled(motion.div)`

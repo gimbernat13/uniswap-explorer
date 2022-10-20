@@ -5,7 +5,7 @@ export const AggregateGrid = styled(motion.div)`
   display: grid;
   width: 100%;
   gap: 10px;
-  grid-template-columns: 6fr 3fr;
+  grid-template-columns: 3fr 1fr;
   .transparent-card:nth-of-type(1) {
   }
 `;
