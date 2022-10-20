@@ -22,12 +22,12 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     const formattedDate = newDate.toISOString().split("T")[0];
     return formattedDate;
   };
-  const [selectedFilter, setSelectedFilter] = React.useState("priceUSD");
+  const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
 
   const filters = [
     { name: "Price", id: "priceUSD" },
-    // { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
-    // { name: "Daily Tx's", id: "dailyTxns" },
+    { name: "Daily Volume", id: "dailyVolumeUSD" },
+    { name: "Daily Tx's", id: "dailyTxns" },
   ];
 
   return (

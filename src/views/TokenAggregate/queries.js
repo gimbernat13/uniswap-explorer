@@ -12,7 +12,7 @@ export const TOKEN_DETAILS = gql`
     pairs(
       orderBy: volumeUSD
       orderDirection: desc
-      first: 4
+      first: 5
       where: { token1: $id }
     ) {
       id
@@ -28,7 +28,7 @@ export const TOKEN_DETAILS = gql`
     tokenDayDatas(
       orderBy: date
       orderDirection: desc
-      first: $numberOfItems
+      first: 1000
       where: { token: $id }
     ) {
       id
