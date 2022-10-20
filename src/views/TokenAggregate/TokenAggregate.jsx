@@ -58,7 +58,6 @@ export const TokenAggregate = () => {
             </Card>
           </Styled.LeftTopGrid>
           <Card>
-            <h3>Price</h3>
             <Chart chartData={data.tokenDayDatas} yKey={"priceUSD"} />
           </Card>
         </Styled.LeftGrid>

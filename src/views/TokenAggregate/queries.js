@@ -40,6 +40,7 @@ export const TOKEN_DETAILS = gql`
       dailyVolumeETH
       dailyVolumeToken
       dailyVolumeUSD
+      dailyTxns
     }
   }
 `;

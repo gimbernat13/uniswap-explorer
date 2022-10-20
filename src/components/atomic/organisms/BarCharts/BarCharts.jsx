@@ -9,6 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import * as Styled from "./styles";
 
 export const BarCharts = ({ chartData }) => {
   // FIXME: Extract to utils
@@ -18,11 +19,8 @@ export const BarCharts = ({ chartData }) => {
     const formattedDate = newDate.toISOString().split("T")[0];
     return formattedDate;
   };
-
   var reverseData = [...chartData].reverse();
-
   const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
-  const checkButtonActive = (id) => id === selectedFilter;
   const filters = [
     { name: "Daily Volume", id: "dailyVolumeUSD" },
     { name: "Daily Txns", id: "dailyTxns" },
@@ -30,31 +28,38 @@ export const BarCharts = ({ chartData }) => {
   ];
   return (
     <>
-      {filters.map((filter, i) => {
-        return (
-          <Button
-            isActive={filter.id === selectedFilter}
-            onClick={() => setSelectedFilter(filter.id)}
-            className={filter.id === selectedFilter ? "active" : ""}
-          >
-            {filter.name}
-          </Button>
-        );
-      })}
-      <br />
-      <br />
-      <br />
-      <ResponsiveContainer width="100%" height={250}>
-        <BarChart data={reverseData}>
-          {/* <CartesianGrid strokeDasharray="3 3" /> */}
-          <XAxis dataKey={getTimeAxis} />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          rgba(15, 53, 255, 0.3)
-          <Bar dataKey={selectedFilter} fill="#98a1fa" />
-        </BarChart>
-      </ResponsiveContainer>
+      <Styled.ChartGrid>
+        <div>
+          {filters.map((filter, i) => {
+            return (
+              <Button
+                isActive={filter.id === selectedFilter}
+                onClick={() => setSelectedFilter(filter.id)}
+                className={filter.id === selectedFilter ? "active" : ""}
+              >
+                {filter.name}
+              </Button>
+            );
+          })}
+        </div>
+
+        <ResponsiveContainer width="100%" height={350}>
+          <BarChart data={reverseData}>
+            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+            <XAxis dataKey={getTimeAxis} />
+            <YAxis
+              // dataKey={selectedFilter}
+              // domain={["auto", "auto"]}
+              // axisLine={false}
+              // tickLine={false}
+            />
+            <Tooltip />
+            <Legend />
+            rgba(15, 53, 255, 0.3)
+            <Bar dataKey={selectedFilter} fill="#98a1fa" />
+          </BarChart>
+        </ResponsiveContainer>
+      </Styled.ChartGrid>
     </>
   );
 };
