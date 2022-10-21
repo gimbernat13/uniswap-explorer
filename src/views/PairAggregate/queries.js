@@ -38,7 +38,7 @@ export const PAIR_AGGREGATE = gql`
       reserveUSD
     }
     swaps(
-      first: 18
+      first: 5
       orderBy: timestamp
       orderDirection: desc
       where: { pair: $id }

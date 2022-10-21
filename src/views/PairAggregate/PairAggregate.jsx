@@ -31,7 +31,7 @@ export const PairAggregate = () => {
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
-  const { pairDayDatas, pair } = data;
+  const { pairDayDatas, pair, swaps } = data;
   console.log("pair da", pairDayDatas);
   return (
     <>
@@ -94,7 +94,7 @@ export const PairAggregate = () => {
         <Styled.AggregateRight>
           <Card height="100%">
             <div className="medium-text">Recent Swaps</div>
-            {/* <RecentSwaps pairData={data.pairData} swapData={data.swaps} /> */}
+            <RecentSwaps pairData={pair} swapData={swaps} />
           </Card>
           <Button isActive width="100%" onClick={openModal}>
             Trade Pair
