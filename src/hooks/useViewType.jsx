@@ -8,26 +8,11 @@ export const useViewType = () => {
     { id: "table", text: "Table", icon: <UilListUl size={15} /> },
     { id: "cards", text: "Cards", icon: <UilTable size={15} /> },
   ];
-  const [viewType, setViewType] = React.useState({
-    id: "table",
-    text: "Table",
-    icon: <UilTable />,
-  });
 
-  return (
-    <div>
-      <div>
-        {viewTypes.map((type) => {
-          return (
-            <Button
-              isActive={viewType.id === type.id}
-              onClick={() => setViewType(type)}
-            >
-              {type.icon}
-            </Button>
-          );
-        })}
-      </div>
-    </div>
-  );
+  const [viewType, setViewType] = React.useState(viewTypes[0]);
+  const handleViewTypeChange = (type) => {
+    setViewType(type);
+  };
+
+  return { viewTypes, viewType, handleViewTypeChange };
 };

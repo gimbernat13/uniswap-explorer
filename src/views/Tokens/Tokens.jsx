@@ -10,26 +10,20 @@ import { TokenCardList } from "components/atomic/organisms/TokenCardList/TokenCa
 import { TokenTable } from "components/atomic/organisms/TokenTable/TokenTable";
 import { UilTable } from "@iconscout/react-unicons";
 import { UilListUl } from "@iconscout/react-unicons";
+import { useViewType } from "hooks/useViewType";
+import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
 export function TokensView({ routes }) {
   // FIXME: ADD TIME FILTER TO CHARTS
   const [numberOfDays, setNumberOfDays] = React.useState({
     value: 50,
     name: 50,
   });
-  const viewTypes = [
-    { id: "table", text: "Table", icon: <UilListUl size={15} /> },
-    { id: "cards", text: "Cards", icon: <UilTable size={15} /> },
-  ];
-
-  const [viewType, setViewType] = React.useState({
-    id: "table",
-    text: "Table",
-    icon: <UilTable />,
-  });
+  const { viewType, viewTypes, handleViewTypeChange } = useViewType();
 
   const { loading, error, data } = useQuery(TOKENS);
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
+
   return (
     <div>
       <h3>Tokens</h3>
@@ -43,17 +37,11 @@ export function TokensView({ routes }) {
         {/* <FilterButtons /> */}
         <h3>Most Traded</h3>
         <div>
-          {viewTypes.map((type) => {
-            return (
-              // <UilAirplay size="140" color="#61DAFB" />
-              <Button
-                isActive={viewType.id === type.id}
-                onClick={() => setViewType(type)}
-              >
-                {type.icon}
-              </Button>
-            );
-          })}
+          <ViewTypeButtons
+            viewType={viewType}
+            viewTypes={viewTypes}
+            handleViewTypeChange={handleViewTypeChange}
+          />
         </div>
       </Styled.FlexSpaced>
 

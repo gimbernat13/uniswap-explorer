@@ -9,23 +9,16 @@ import { Button } from "components/atomic/atoms/Button/Button";
 import { Loader } from "components/atomic/atoms/Loader/Loader";
 import { PairList } from "components/atomic/organisms/PairList/PairList";
 import { PairTable } from "components/atomic/organisms/PairTable/PairTable";
+import { useViewType } from "hooks/useViewType";
+import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
 export function Pairs({ routes }) {
-  const viewTypes = [
-    { id: "table", text: "Table", icon: "" },
-    { id: "cards", text: "Cards", icon: "" },
-  ];
-  const [viewType, setViewType] = React.useState({
-    id: "table",
-    text: "Table",
-    icon: "",
-  });
+  const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(PAIRS);
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
   return (
     <div>
       <h3>Pairs</h3>
-
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
@@ -34,16 +27,11 @@ export function Pairs({ routes }) {
       <Styled.FlexSpaced>
         <h3>Most Traded</h3>
         <div>
-          {viewTypes.map((type) => {
-            return (
-              <Button
-                isActive={viewType.id === type.id}
-                onClick={() => setViewType(type)}
-              >
-                {type.text}
-              </Button>
-            );
-          })}
+          <ViewTypeButtons
+            viewType={viewType}
+            viewTypes={viewTypes}
+            handleViewTypeChange={handleViewTypeChange}
+          />
         </div>
       </Styled.FlexSpaced>
       {viewType.id === "table" && <PairTable tableData={data.pairs} />}
