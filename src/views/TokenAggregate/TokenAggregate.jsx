@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { setSelectedToken } from "../../context/actionNames";
 import { TokensContext } from "../../context/TokensContext";
 import { TOKEN_DETAILS } from "./queries";
-import { darkTheme, lightTheme } from "@uniswap/widgets";
+// import { darkTheme, lightTheme } from "@uniswap/widgets";
 import { TokenPairs } from "components/atomic/organisms/TokenPairs/TokenPairs";
 import Modal from "components/atomic/molecules/Modal/Modal";
 import { TokenMainDetails } from "components/atomic/molecules/TokenMainDetails/TokenMainDetails";

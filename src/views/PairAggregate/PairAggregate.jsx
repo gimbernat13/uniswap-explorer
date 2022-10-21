@@ -10,7 +10,7 @@ import { Loader } from "components/atomic/atoms/Loader/Loader";
 import { FlexContainer } from "components/global/FlexContainer/FlexContainer";
 import { RecentSwaps } from "components/atomic/organisms/RecentSwaps/RecentSwaps";
 import { Button } from "components/atomic/atoms/Button/Button";
-import { darkTheme, lightTheme } from "@uniswap/widgets";
+// import { darkTheme, lightTheme } from "@uniswap/widgets";
 import Modal from "components/atomic/molecules/Modal/Modal";
 // import { SwapWidget } from "@uniswap/widgets/dist/index.js";
 
