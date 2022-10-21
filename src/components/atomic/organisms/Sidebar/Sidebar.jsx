@@ -31,6 +31,12 @@ export const Sidebar = () => {
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
+      {" "}
+      <div style={{ marginLeft: "10px" }} className="icon">
+        <Button width="40px" onClick={toggleSidebarOpen}>
+          ←
+        </Button>
+      </div>
       <div className="sidebar-links shits">
         <div>
           <ul>
@@ -60,7 +66,7 @@ export const Sidebar = () => {
 };
 
 {
-  /* <Button width="50px" onClick={() => history.goBack()}>
+  /* <Button width="50px"r onClick={() => history.goBack()}>
 {item.icon}
 </Button> */
 }

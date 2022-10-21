@@ -8,7 +8,8 @@ import { TOKENS } from "./queries";
 import * as Styled from "./styles";
 import { TokenCardList } from "components/atomic/organisms/TokenCardList/TokenCardList";
 import { TokenTable } from "components/atomic/organisms/TokenTable/TokenTable";
-
+import { UilTable } from "@iconscout/react-unicons";
+import { UilListUl } from "@iconscout/react-unicons";
 export function TokensView({ routes }) {
   // FIXME: ADD TIME FILTER TO CHARTS
   const [numberOfDays, setNumberOfDays] = React.useState({
@@ -16,14 +17,14 @@ export function TokensView({ routes }) {
     name: 50,
   });
   const viewTypes = [
-    { id: "table", text: "Table", icon: "" },
-    { id: "cards", text: "Cards", icon: "" },
+    { id: "table", text: "Table", icon: <UilListUl size={15} /> },
+    { id: "cards", text: "Cards", icon: <UilTable size={15} /> },
   ];
 
   const [viewType, setViewType] = React.useState({
     id: "table",
     text: "Table",
-    icon: "",
+    icon: <UilTable />,
   });
 
   const { loading, error, data } = useQuery(TOKENS);
@@ -31,7 +32,7 @@ export function TokensView({ routes }) {
   if (error) return `Error! ${error.message}`;
   return (
     <div>
-      <h2>Tokens</h2>
+      <h3>Tokens</h3>
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
@@ -44,11 +45,12 @@ export function TokensView({ routes }) {
         <div>
           {viewTypes.map((type) => {
             return (
+              // <UilAirplay size="140" color="#61DAFB" />
               <Button
                 isActive={viewType.id === type.id}
                 onClick={() => setViewType(type)}
               >
-                {type.text}
+                {type.icon}
               </Button>
             );
           })}

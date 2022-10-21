@@ -8,7 +8,6 @@ export const Button = styled.div`
   padding: 8px 0.85rem;
   text-decoration: none;
   border-radius: 11px;
-  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   border: 1px solid rgba(245, 245, 245, 0.3);
@@ -17,8 +16,7 @@ export const Button = styled.div`
       ? "1px solid transparent"
       : "1px solid rgba(245, 245, 245, 0.3)"};
 
-  /* border: 1px solid transparent; */
-
+  display: inline-block;
   opacity: 0.9;
   background-color: ${(props) =>
     props.isActive ? "var(--main-color) " : " var(--transparent-black)"};
@@ -36,4 +34,9 @@ export const Button = styled.div`
     font-weight: 500 !important;
     background-color: var(--accent-purple-dark);
   }
+`;
+export const ButtonInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
