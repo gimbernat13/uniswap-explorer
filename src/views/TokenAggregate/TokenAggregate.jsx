@@ -22,10 +22,10 @@ export const TokenAggregate = () => {
   };
 
   const { tokenID } = useParams();
-  const { dispatch } = useContext(TokensContext);
+  const { state: tokensState, dispatch } = useContext(TokensContext);
 
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
-    variables: { id: tokenID },
+    variables: { id: tokenID, timeFrame: tokensState.timeFrame },
   });
 
   React.useEffect(() => {

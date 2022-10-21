@@ -1,15 +1,16 @@
 import React from "react";
 import * as Styled from "./styles";
-// import chevron from "../../assets/chevron.png";
-import { UilExchange } from "@iconscout/react-unicons";
-import { setFilterBy } from "context/actionNames";
+import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
 
-export const Select = ({ options, placeHolder, dispatch, action }) => {
+export const Select = ({
+  options,
+  placeHolder,
+  dispatch,
+  action,
+  selectedFilter,
+  setSelectedFilter,
+}) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedItem, setSelectedItem] = React.useState({
-    value: "tradeVolumeUSD",
-    name: placeHolder,
-  });
 
   function expand() {
     setIsOpen(true);
@@ -25,21 +26,9 @@ export const Select = ({ options, placeHolder, dispatch, action }) => {
       onClick={() => setIsOpen(!isOpen)}
     >
       <Styled.Flex>
-        <div>{selectedItem.name}</div>
+        <div>{selectedFilter.name}</div>
         <div>
-          {isOpen ? (
-            <img
-              style={{ height: "10px", transform: "rotate(270deg)" }}
-              src={UilExchange}
-              alt=""
-            />
-          ) : (
-            <img
-              style={{ height: "10px", transform: "rotate(90deg)" }}
-              src={UilExchange}
-              alt=""
-            />
-          )}{" "}
+          {isOpen ? <UilAngleDown size={16} /> : <UilAngleUp size={16} />}
         </div>
       </Styled.Flex>
       {isOpen && (
@@ -50,7 +39,7 @@ export const Select = ({ options, placeHolder, dispatch, action }) => {
                 <Styled.SelectItem
                   key={option + i}
                   onClick={() => {
-                    setSelectedItem(option);
+                    setSelectedFilter(option);
                     dispatch({ type: action, payload: option.value });
                   }}
                 >

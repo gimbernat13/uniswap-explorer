@@ -1,7 +1,8 @@
-import { Card } from "components/atomic/atoms/Card/Card";
 import React from "react";
 import { useTable, useSortBy } from "react-table";
 import formatNumber from "../../../../utils/formatNumber";
+import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
+
 export function TokenTable({ tableData }) {
   const columns = React.useMemo(
     () => [
@@ -49,10 +50,18 @@ export function TokenTable({ tableData }) {
                   fontWeight: "bold",
                 }}
               >
-                {column.render("Header")}
-                <span>
-                  {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
-                </span>
+                <div style={{ display: "flex" }}>
+                  {column.render("Header")}
+                  {column.isSorted ? (
+                    column.isSortedDesc ? (
+                      <UilAngleDown />
+                    ) : (
+                      <UilAngleUp />
+                    )
+                  ) : (
+                    <UilAngleUp color="transparent" />
+                  )}{" "}
+                </div>
               </th>
             ))}
           </tr>

@@ -6,15 +6,18 @@ import {
   Area,
   Tooltip,
 } from "recharts";
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "components/atomic/atoms/Button/Button";
 import * as Styled from "./styles";
 import { Select } from "components/atomic/atoms/Select/Select";
+import { TokensContext } from "context/TokensContext";
+import { setTimeFrame } from "context/actionNames";
 
 export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
-  // const reverseData = [...chartData.reverse()];
   var reverseData = [...chartData].reverse();
+  const TokenContext = useContext(TokensContext);
+  const { dispatch: tokensDispatch, state: tokensState } = TokenContext;
 
   // For time charts
   const getTimeAxis = (data) => {
@@ -23,13 +26,12 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     const formattedDate = newDate.toISOString().split("T")[0];
     return formattedDate;
   };
-  const [selectedFilter, setSelectedFilter] = React.useState("priceUSD");
-
   const filters = [
     { name: "Price", id: "priceUSD" },
     { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
     { name: "Daily Tx's", id: "dailyTxns" },
   ];
+
   const timeOptions = [
     {
       value: 30,
@@ -40,10 +42,17 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
       name: "100 Days",
     },
     {
+      value: 500,
+      name: "500 days",
+    },
+    {
       value: 1000,
       name: "All Time",
     },
   ];
+
+  const [selectedFilter, setSelectedFilter] = React.useState(filters[0]);
+  const [timeFrame, setTimeFrames] = React.useState(timeOptions[0]);
 
   return (
     <>
@@ -53,9 +62,9 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             {filters.map((filter, i) => {
               return (
                 <Button
-                  isActive={filter.id === selectedFilter}
-                  onClick={() => setSelectedFilter(filter.id)}
-                  className={filter.id === selectedFilter ? "active" : ""}
+                  isActive={filter.id === selectedFilter.id}
+                  onClick={() => setSelectedFilter(filter)}
+                  className={filter.id === selectedFilter.id ? "active" : ""}
                 >
                   {filter.name}
                 </Button>
@@ -63,7 +72,14 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             })}
           </div>
           <div>
-            <Select placeHolder="Time" options={timeOptions} />
+            <Select
+              dispatch={tokensDispatch}
+              action={setTimeFrame}
+              // placeHolder="Time"
+              options={timeOptions}
+              selectedFilter={timeFrame}
+              setSelectedFilter={setTimeFrames}
+            />
           </div>
         </Styled.FilterChartFlex>
         <ResponsiveContainer width="100%" height={300}>
@@ -75,7 +91,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
               </linearGradient>
             </defs>
             <Area
-              dataKey={selectedFilter}
+              dataKey={selectedFilter.id}
               stroke="#96a0f7"
               fill="url(#color)"
             />
@@ -83,7 +99,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             <YAxis
               type="number"
               domain={["auto", "auto"]}
-              datakey={selectedFilter}
+              datakey={selectedFilter.id}
               axisLine={false}
               tickLine={false}
               tickCount={100}

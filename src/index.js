@@ -4,7 +4,6 @@ import { ApolloProvider } from "@apollo/client/react";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { TokensContextProvider } from "./context/TokensContext";
-import { TokenContextProvider } from "./context/TokenContext";
 
 import { ThemeContextProvider } from "./context/ThemeContext";
 import "./App.css";
@@ -60,19 +59,17 @@ root.render(
     <ApolloProvider client={client}>
       <TokensContextProvider>
         <PairsContextProvider>
-          <TokenContextProvider>
-            <ThemeContextProvider>
-              <Router>
-                <Layout>
-                  <Switch>
-                    {routes.map((route, i) => (
-                      <RouteWithSubRoutes key={i} {...route} />
-                    ))}
-                  </Switch>
-                </Layout>
-              </Router>
-            </ThemeContextProvider>
-          </TokenContextProvider>
+          <ThemeContextProvider>
+            <Router>
+              <Layout>
+                <Switch>
+                  {routes.map((route, i) => (
+                    <RouteWithSubRoutes key={i} {...route} />
+                  ))}
+                </Switch>
+              </Layout>
+            </Router>
+          </ThemeContextProvider>
         </PairsContextProvider>
       </TokensContextProvider>
     </ApolloProvider>
