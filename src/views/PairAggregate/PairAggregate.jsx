@@ -12,7 +12,7 @@ import { RecentSwaps } from "components/atomic/organisms/RecentSwaps/RecentSwaps
 import { Button } from "components/atomic/atoms/Button/Button";
 // import { darkTheme, lightTheme } from "@uniswap/widgets";
 import Modal from "components/atomic/molecules/Modal/Modal";
-// import { SwapWidget } from "@uniswap/widgets/dist/index.js";
+// import { SwapWidget } from "@uniswap/widgets";
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
@@ -39,7 +39,7 @@ export const PairAggregate = () => {
         {/* <SwapWidget
           defaultInputTokenAddress={pair.token0.id}
           defaultOutputTokenAddress={pair.token1.id}
-          theme={true ? darkTheme : lightTheme}
+          // theme={true ? darkTheme : lightTheme}
         /> */}
       </Modal>
       <Styled.AggregateGrid>
