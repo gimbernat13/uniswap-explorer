@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { Button } from "components/atomic/atoms/Button/Button";
 import * as Styled from "./styles";
+import { Select } from "components/atomic/atoms/Select/Select";
 
 export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
@@ -26,26 +27,45 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
 
   const filters = [
     { name: "Price", id: "priceUSD" },
-    // { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
-    // { name: "Daily Tx's", id: "dailyTxns" },
+    { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
+    { name: "Daily Tx's", id: "dailyTxns" },
+  ];
+  const timeOptions = [
+    {
+      value: 30,
+      name: "30 Days",
+    },
+    {
+      value: 100,
+      name: "100 Days",
+    },
+    {
+      value: 1000,
+      name: "All Time",
+    },
   ];
 
   return (
     <>
       <Styled.ChartGrid>
-        <div>
-          {filters.map((filter, i) => {
-            return (
-              <Button
-                isActive={filter.id === selectedFilter}
-                onClick={() => setSelectedFilter(filter.id)}
-                className={filter.id === selectedFilter ? "active" : ""}
-              >
-                {filter.name}
-              </Button>
-            );
-          })}
-        </div>
+        <Styled.FilterChartFlex>
+          <div>
+            {filters.map((filter, i) => {
+              return (
+                <Button
+                  isActive={filter.id === selectedFilter}
+                  onClick={() => setSelectedFilter(filter.id)}
+                  className={filter.id === selectedFilter ? "active" : ""}
+                >
+                  {filter.name}
+                </Button>
+              );
+            })}
+          </div>
+          <div>
+            <Select placeHolder="Time" options={timeOptions} />
+          </div>
+        </Styled.FilterChartFlex>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={reverseData}>
             <defs>

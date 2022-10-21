@@ -5,7 +5,6 @@ import { RouteWithSubRoutes } from "../..";
 
 import { PAIRS } from "./queries";
 import * as Styled from "./styles";
-import { Button } from "components/atomic/atoms/Button/Button";
 import { Loader } from "components/atomic/atoms/Loader/Loader";
 import { PairList } from "components/atomic/organisms/PairList/PairList";
 import { PairTable } from "components/atomic/organisms/PairTable/PairTable";

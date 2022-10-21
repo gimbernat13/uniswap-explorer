@@ -5,6 +5,7 @@ import { useTable, useSortBy } from "react-table";
 import { setSelectedPair } from "../../../../context/actionNames";
 import { PairsContext } from "../../../../context/PairsContext";
 import formatNumber from "../../../../utils/formatNumber";
+import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
 export function PairTable({ tableData }) {
   const columns = React.useMemo(
     () => [
@@ -62,10 +63,20 @@ export function PairTable({ tableData }) {
                   fontWeight: "bold",
                 }}
               >
-                {column.render("Header")}
-                <span>
-                  {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
-                </span>
+                <div style={{ display: "flex" }}>
+                  <div>{column.render("Header")}</div>
+                  <div>
+                    {column.isSorted ? (
+                      column.isSortedDesc ? (
+                        <UilAngleDown />
+                      ) : (
+                        <UilAngleUp />
+                      )
+                    ) : (
+                      <UilAngleUp color="transparent" />
+                    )}
+                  </div>
+                </div>
               </th>
             ))}
           </tr>

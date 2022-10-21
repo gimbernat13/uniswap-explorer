@@ -4,13 +4,17 @@ import { Link } from "react-router-dom";
 import * as Styled from "./styles";
 
 export const PairList = ({ data }) => {
+  function handleChildClick(e) {
+    e.stopPropagation();
+  }
+
   return (
     <>
       <Styled.PoolGrid initial="hidden" animate="show">
         {data.pairs &&
           data.pairs.map((pair) => {
             return (
-              <Link to={`/pairs/${pair.id}`}>
+              <Link onClick={handleChildClick} to={`/pairs/${pair.id}`}>
                 <PairCard pair={pair} />
               </Link>
             );

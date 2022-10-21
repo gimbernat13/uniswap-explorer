@@ -37,6 +37,7 @@ export const Button = styled.div`
 `;
 export const ButtonInner = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
 `;

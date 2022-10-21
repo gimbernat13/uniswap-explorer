@@ -1,7 +1,8 @@
 import React from "react";
-import { setFilterBy } from "../../context/actionNames";
 import * as Styled from "./styles";
-import chevron from "../../assets/chevron.png";
+// import chevron from "../../assets/chevron.png";
+import { UilExchange } from "@iconscout/react-unicons";
+import { setFilterBy } from "context/actionNames";
 
 export const Select = ({ options, placeHolder, dispatch, action }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -29,13 +30,13 @@ export const Select = ({ options, placeHolder, dispatch, action }) => {
           {isOpen ? (
             <img
               style={{ height: "10px", transform: "rotate(270deg)" }}
-              src={chevron}
+              src={UilExchange}
               alt=""
             />
           ) : (
             <img
               style={{ height: "10px", transform: "rotate(90deg)" }}
-              src={chevron}
+              src={UilExchange}
               alt=""
             />
           )}{" "}

@@ -9,8 +9,6 @@ export const filterByOptions = [
   },
 ];
 
-
-
 export const itemsOnPageOptions = [
   {
     value: 50,
@@ -27,5 +25,19 @@ export const itemsOnPageOptions = [
   {
     value: 200,
     name: 150,
+  },
+];
+export const timeOptions = [
+  {
+    value: 30,
+    name: "30 Days",
+  },
+  {
+    value: 100,
+    name: "100 Days",
+  },
+  {
+    value: 1000,
+    name: "All Time",
   },
 ];

@@ -36,6 +36,7 @@ export const PairAggregate = () => {
   return (
     <>
       <Modal ref={modalRef}>
+        <h1>hei nigga</h1>
         {/* <SwapWidget
           defaultInputTokenAddress={pair.token0.id}
           defaultOutputTokenAddress={pair.token1.id}

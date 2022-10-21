@@ -6,3 +6,8 @@ export const ChartGrid = styled(motion.div)`
   display: grid;
   gap: 1rem;
 `;
+
+export const FilterChartFlex = styled(motion.div)`
+  display: flex;
+  justify-content: space-between;
+`;
