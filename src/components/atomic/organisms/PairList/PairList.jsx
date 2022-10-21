@@ -5,6 +5,7 @@ import * as Styled from "./styles";
 
 export const PairList = ({ data }) => {
   function handleChildClick(e) {
+    e.preventDefault();
     e.stopPropagation();
   }
 

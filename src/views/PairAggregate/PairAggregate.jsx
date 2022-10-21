@@ -10,9 +10,8 @@ import { Loader } from "components/atomic/atoms/Loader/Loader";
 import { FlexContainer } from "components/global/FlexContainer/FlexContainer";
 import { RecentSwaps } from "components/atomic/organisms/RecentSwaps/RecentSwaps";
 import { Button } from "components/atomic/atoms/Button/Button";
-// import { darkTheme, lightTheme } from "@uniswap/widgets";
+import { darkTheme, lightTheme, SwapWidget } from "@uniswap/widgets";
 import Modal from "components/atomic/molecules/Modal/Modal";
-// import { SwapWidget } from "@uniswap/widgets";
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
@@ -36,12 +35,11 @@ export const PairAggregate = () => {
   return (
     <>
       <Modal ref={modalRef}>
-        <h1>hei nigga</h1>
-        {/* <SwapWidget
+        <SwapWidget
           defaultInputTokenAddress={pair.token0.id}
           defaultOutputTokenAddress={pair.token1.id}
-          // theme={true ? darkTheme : lightTheme}
-        /> */}
+          theme={darkTheme}
+        />
       </Modal>
       <Styled.AggregateGrid>
         <Styled.AggregateLeft>

@@ -27,7 +27,7 @@ export const SelectInner = styled.div`
   z-index: 3;
   border-radius: 1rem;
   border: 1px solid rgba(148, 148, 148, 0.317);
-
+  background-color: var(--transparent-black);
   backdrop-filter: blur(1px);
 `;
 export const SelectItem = styled.div`

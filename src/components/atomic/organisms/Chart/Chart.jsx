@@ -34,6 +34,10 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
 
   const timeOptions = [
     {
+      value: 7,
+      name: "Last Week",
+    },
+    {
       value: 30,
       name: "30 Days",
     },

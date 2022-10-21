@@ -21,14 +21,15 @@ export const PairCard = ({ pair }) => {
   return (
     <>
       <Modal ref={modalRef}>
-        <h1>hey niggas</h1>
+        <h1>hey </h1>
         {/* <SwapWidget
           defaultInputTokenAddress={pair.token0.id}
           defaultOutputTokenAddress={pair.token1.id}
           // theme={true ? darkTheme : lightTheme}
         /> */}
       </Modal>
-      <Card transparent variants={animatedItem}>
+      {/* <Card transparent variants={animatedItem}> */}
+      <Card variants={animatedItem}>
         <Styled.PoolCard key={pair.id}>
           <Styled.PoolCardInner>
             <div className="medium-text">
@@ -36,10 +37,12 @@ export const PairCard = ({ pair }) => {
             </div>
             <div>{pair.txCount} Tx's</div>
             <div>${formatNumber(parseInt(pair.volumeUSD))}</div>
-            <Button onClick={openModal}>
-              Trade
-              <UilExchange size={15} />
-            </Button>
+
+            <Styled.TradeButton>
+              <Button isActive onClick={openModal}>
+                <UilExchange size={10} />
+              </Button>
+            </Styled.TradeButton>
           </Styled.PoolCardInner>
         </Styled.PoolCard>
       </Card>

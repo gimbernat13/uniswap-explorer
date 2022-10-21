@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import * as Styled from "./styles";
 import { useQuery } from "@apollo/client";
-// import { SwapWidget } from "@uniswap/widgets/dist/index.js";
+import { SwapWidget, darkTheme, lightTheme } from "@uniswap/widgets";
 import { useParams } from "react-router-dom";
 import { setSelectedToken } from "../../context/actionNames";
 import { TokensContext } from "../../context/TokensContext";
 import { TOKEN_DETAILS } from "./queries";
-// import { darkTheme, lightTheme } from "@uniswap/widgets";
 import { TokenPairs } from "components/atomic/organisms/TokenPairs/TokenPairs";
 import Modal from "components/atomic/molecules/Modal/Modal";
 import { TokenMainDetails } from "components/atomic/molecules/TokenMainDetails/TokenMainDetails";
@@ -39,10 +38,7 @@ export const TokenAggregate = () => {
   return (
     <>
       <Modal ref={modalRef}>
-        {/* <SwapWidget
-          defaultOutputTokenAddress={id}
-          theme={true ? darkTheme : lightTheme}
-        /> */}
+        <SwapWidget defaultOutputTokenAddress={id} theme={darkTheme} />
       </Modal>
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
