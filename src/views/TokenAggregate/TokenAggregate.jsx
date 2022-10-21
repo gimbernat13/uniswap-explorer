@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import * as Styled from "./styles";
 import { useQuery } from "@apollo/client";
-import { SwapWidget } from "@uniswap/widgets/dist/index.js";
+// import { SwapWidget } from "@uniswap/widgets/dist/index.js";
 import { useParams } from "react-router-dom";
 import { setSelectedToken } from "../../context/actionNames";
 import { TokensContext } from "../../context/TokensContext";
@@ -39,10 +39,10 @@ export const TokenAggregate = () => {
   return (
     <>
       <Modal ref={modalRef}>
-        <SwapWidget
+        {/* <SwapWidget
           defaultOutputTokenAddress={id}
           theme={true ? darkTheme : lightTheme}
-        />
+        /> */}
       </Modal>
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
