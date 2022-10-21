@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 
 export const ModalWrapper = styled(motion.div)`
   position: fixed;
