@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom/client";
 import { ApolloProvider } from "@apollo/client/react";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,7 +15,7 @@ import { TokensView } from "./views/Tokens/Tokens";
 import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
 import { Pairs } from "./views/Pairs/Pairs";
 import { Layout } from "components/global/Layout/Layout";
-
+import reportWebVitals from "./reportWebVitals";
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
   cache: new InMemoryCache(),
@@ -54,26 +54,33 @@ export function RouteWithSubRoutes(route) {
     />
   );
 }
-
-render(
-  <ApolloProvider client={client}>
-    <TokensContextProvider>
-      <PairsContextProvider>
-        <TokenContextProvider>
-          <ThemeContextProvider>
-            <Router>
-              <Layout>
-                <Switch>
-                  {routes.map((route, i) => (
-                    <RouteWithSubRoutes key={i} {...route} />
-                  ))}
-                </Switch>
-              </Layout>
-            </Router>
-          </ThemeContextProvider>
-        </TokenContextProvider>
-      </PairsContextProvider>
-    </TokensContextProvider>
-  </ApolloProvider>,
-  document.getElementById("root")
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <ApolloProvider client={client}>
+      <TokensContextProvider>
+        <PairsContextProvider>
+          <TokenContextProvider>
+            <ThemeContextProvider>
+              <Router>
+                <Layout>
+                  <Switch>
+                    {routes.map((route, i) => (
+                      <RouteWithSubRoutes key={i} {...route} />
+                    ))}
+                  </Switch>
+                </Layout>
+              </Router>
+            </ThemeContextProvider>
+          </TokenContextProvider>
+        </PairsContextProvider>
+      </TokensContextProvider>
+    </ApolloProvider>
+    ,
+  </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
