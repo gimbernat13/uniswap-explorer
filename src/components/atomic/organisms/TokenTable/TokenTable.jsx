@@ -2,7 +2,7 @@ import React from "react";
 import { useTable, useSortBy } from "react-table";
 import formatNumber from "../../../../utils/formatNumber";
 import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
-
+import { Link } from "react-router-dom";
 export function TokenTable({ tableData }) {
   const columns = React.useMemo(
     () => [
@@ -79,8 +79,8 @@ export function TokenTable({ tableData }) {
               // }
             >
               {row.cells.map((cell) => {
+                console.log(row);
                 return (
-                  // <Link to={`/pairs/${row.id}`}>
                   <td
                     {...cell.getCellProps()}
                     style={{
@@ -89,9 +89,10 @@ export function TokenTable({ tableData }) {
                       //   background: "papayawhip",
                     }}
                   >
-                    {cell.render("Cell")}
+                    <Link to={`/tokens/${row.original.id}`}>
+                      {cell.render("Cell")}
+                    </Link>
                   </td>
-                  // </Link>
                 );
               })}
             </tr>
