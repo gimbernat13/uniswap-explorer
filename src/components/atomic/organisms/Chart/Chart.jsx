@@ -102,7 +102,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             <XAxis dataKey={getTimeAxis} axisLine={true} tickLine={false} />
             <YAxis
               type="number"
-              domain={["auto", "auto"]}
+              // domain={["auto", "auto"]}
               datakey={selectedFilter.id}
               axisLine={false}
               tickLine={false}

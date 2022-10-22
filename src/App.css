@@ -2,7 +2,7 @@
   --border-radius: 1rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
-  --border-ultra-light: 1px solid rgba(64, 73, 99, 0.222);
+  --border-ultra-light: 1px solid rgba(64, 73, 99, 0.407);
 
   --transparent-black-light: none !important;
   --transparent-black: rgba(0, 0, 0, 0.385);
@@ -35,7 +35,10 @@ body {
   width: 100%;
   background: black;
   color: rgb(209, 209, 209) !important;
-  font-family: "Roboto Mono", monospace;
+  /* font-family: "Roboto Mono", monospace; */
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;

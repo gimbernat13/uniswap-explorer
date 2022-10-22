@@ -13,13 +13,18 @@ export const Card = styled(motion.div)`
     props.transparent
       ? "var(--transparent-black-light)"
       : "var(--transparent-black)"};
-  border: ${(props) =>
-    props.transparent ? "var(--border-ultra-light)" : "var(--border-light)"};
+  /* border: ${(props) =>
+    props.transparent ? "var(--border-ultra-light)" : "var(--border-light)"}; */
+  border: 1px solid transparent;
   font-size: 1rem !important;
   font-weight: 400 !important;
   height: ${(props) => (props.height ? props.height : "100%")};
   &:hover {
     box-shadow: var(--box-shadow-light);
+    /* border: ${(props) =>
+      props.transparent
+        ? "var(--border-ultra-light)"
+        : "var(--border-light)"}; */
   }
 `;
 export const CardInner = styled(motion.div)`

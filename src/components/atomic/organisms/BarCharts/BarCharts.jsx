@@ -48,8 +48,13 @@ export const BarCharts = ({ chartData }) => {
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey={getTimeAxis} />
             <YAxis
+              type="number"
               // dataKey={selectedFilter}
+              // domain={["auto", "dataMax + 10000"]}
               // domain={["auto", "auto"]}
+              // domain={["0", "dataMax + 10000"]}
+              tickSize={0}
+              tick={{ fontSize: 14, width: 250 }}
               // axisLine={false}
               // tickLine={false}
             />

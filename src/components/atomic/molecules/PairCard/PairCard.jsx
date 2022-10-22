@@ -35,7 +35,7 @@ export const PairCard = ({ pair }) => {
             <div className="medium-text">
               {pair.token0.symbol} - {pair.token1.symbol}
             </div>
-            <div>{pair.txCount} Tx's</div>
+            {/* <div>{pair.txCount} Tx's</div> */}
             <div>${formatNumber(parseInt(pair.volumeUSD))}</div>
 
             <Styled.TradeButton>

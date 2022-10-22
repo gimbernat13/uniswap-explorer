@@ -10,11 +10,9 @@ export const Button = styled.div`
   border-radius: 11px;
   box-sizing: border-box;
   cursor: pointer;
-  border: 1px solid rgba(245, 245, 245, 0.3);
+  /* border: var(--border-ultra-light); */
   border: ${(props) =>
-    props.isActive
-      ? "1px solid transparent"
-      : "1px solid rgba(245, 245, 245, 0.3)"};
+    props.isActive ? "1px solid transparent" : "var(--border-ultra-light)"};
 
   display: inline-block;
   opacity: 0.9;
