@@ -51,64 +51,63 @@ export function PairTable({ tableData }) {
     useTable({ columns, data: tableData }, useSortBy);
 
   return (
-    <table className="styled-table" {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th
-                {...column.getHeaderProps(column.getSortByToggleProps())}
-                style={{
-                  borderBottom: "var(--border)",
-                  fontWeight: "bold",
-                }}
-              >
-                <div style={{ display: "flex" }}>
-                  <div>{column.render("Header")}</div>
-                  <div>
-                    {column.isSorted ? (
-                      column.isSortedDesc ? (
-                        <UilAngleDown />
+    <Card noPadding>
+      <table className="styled-table" {...getTableProps()}>
+        <thead>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  style={{
+                    borderBottom: "var(--border)",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <div>{column.render("Header")}</div>
+                    <div>
+                      {column.isSorted ? (
+                        column.isSortedDesc ? (
+                          <UilAngleDown />
+                        ) : (
+                          <UilAngleUp />
+                        )
                       ) : (
-                        <UilAngleUp />
-                      )
-                    ) : (
-                      <UilAngleUp color="transparent" />
-                    )}
+                        <UilAngleUp color="transparent" />
+                      )}
+                    </div>
                   </div>
-                </div>
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
-          return (
-            <tr
-              {...row.getRowProps()}
-              className={row.id === pairState.selectedPair ? "active" : ""}
-              onClick={() =>
-                pairDispatch({ type: setSelectedPair, payload: row.id })
-              }
-            >
-              {row.cells.map((cell) => {
-                return (
-                  <td
-                    {...cell.getCellProps()}
-                    style={{
-                      padding: "10px",
-                    }}
-                  >
-                    {cell.render("Cell")}
-                  </td>
-                );
-              })}
+                </th>
+              ))}
             </tr>
-          );
-        })}
-      </tbody>
-    </table>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <tr
+                {...row.getRowProps()}
+                className={row.id === pairState.selectedPair ? "active" : ""}
+                onClick={() =>
+                  pairDispatch({ type: setSelectedPair, payload: row.id })
+                }
+              >
+                {row.cells.map((cell) => {
+                  return (
+                    <td
+                      {...cell.getCellProps()}
+                    >
+                      {cell.render("Cell")}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </Card>
   );
 }

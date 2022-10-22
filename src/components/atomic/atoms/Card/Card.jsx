@@ -7,7 +7,8 @@ export const Card = ({
   isActive,
   className,
   transparent,
-  flex
+  flex,
+  noPadding,
 }) => {
   return (
     <Styled.Card
@@ -25,6 +26,7 @@ export const Card = ({
         animate={{ y: 0, opacity: 1 }}
         exit={{ x: -300, opacity: 0 }}
         height={height}
+        noPadding={noPadding}
       >
         {children}
       </Styled.CardInner>

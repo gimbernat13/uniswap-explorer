@@ -266,7 +266,7 @@ td:first-child {
 /* // Set border-radius on the top-right and bottom-right of the last table data on the table row */
 td:last-child,
 th:last-child {
-  border-top-right-radius:  10px;
+  border-top-right-radius: 10px;
 }
 
 tr:hover {
@@ -613,5 +613,5 @@ body.shrink .tooltip {
   opacity: 0.9;
   background-color: var(--transparent-black-light);
   background-color: var(--transparent-black);
-  border: var(--border-light);
+  border: var(--border-ultra-light);
 }

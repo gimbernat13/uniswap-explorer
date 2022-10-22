@@ -28,5 +28,5 @@ export const Card = styled(motion.div)`
   }
 `;
 export const CardInner = styled(motion.div)`
-  padding: 0.8rem;
+  padding: ${(props) => (props.noPadding ? "none" : " 0.8rem")};
 `;

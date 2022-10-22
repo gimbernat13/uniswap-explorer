@@ -13,6 +13,7 @@ import { UilListUl } from "@iconscout/react-unicons";
 import { useViewType } from "hooks/useViewType";
 import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
 import { TokensContext } from "context/TokensContext";
+import { Card } from "components/atomic/atoms/Card/Card";
 export function TokensView({ routes }) {
   // FIXME: ADD TIME FILTER TO CHARTS
   const [numberOfDays, setNumberOfDays] = React.useState({
@@ -29,8 +30,8 @@ export function TokensView({ routes }) {
   return (
     <div>
       <h3>Tokens</h3>
-      {tokensState.selectedToken}
-      <p>Select a Token to view Stats</p>
+      <Card>Select a Token to view Stats</Card>
+      <br />
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
