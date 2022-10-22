@@ -6,7 +6,7 @@ export const RecentSwaps = ({ swapData, pairData }) => {
   const { token0, token1 } = pairData;
 
   return (
-    <Styled.TxTable initial="hidden" animate="show">
+    <Styled.TxTable className="styled-table" initial="hidden" animate="show">
       <tbody>
         {swapData.map((swap, i) => {
           return (

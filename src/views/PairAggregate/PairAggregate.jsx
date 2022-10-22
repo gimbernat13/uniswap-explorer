@@ -90,16 +90,20 @@ export const PairAggregate = () => {
           </Card>
         </Styled.AggregateLeft>
         <Styled.AggregateRight>
-          <Card height="100%">
-            <div className="medium-text">Recent Swaps</div>
-            <RecentSwaps pairData={pair} swapData={swaps} />
-          </Card>
-          <Button isActive width="100%" onClick={openModal}>
-            Trade Pair
-          </Button>
+          {/* <Card height="100%"> */}
+          <div>
+            <SwapWidget
+              defaultInputTokenAddress={pair.token0.id}
+              defaultOutputTokenAddress={pair.token1.id}
+              theme={darkTheme}
+            />
+          </div>
+
+          {/* </Card> */}
         </Styled.AggregateRight>
       </Styled.AggregateGrid>
       <br />
+      <RecentSwaps pairData={pair} swapData={swaps} />
     </>
   );
 };

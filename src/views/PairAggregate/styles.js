@@ -5,7 +5,7 @@ export const AggregateGrid = styled(motion.div)`
   display: grid;
   width: 100%;
   gap: 10px;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 4fr 2fr;
   .transparent-card:nth-of-type(1) {
   }
 `;
@@ -18,6 +18,8 @@ export const AggregateRight = styled(motion.div)`
   flex-direction: column;
   gap: 10px;
   overflow-y: scroll;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const PairSpecs = styled(motion.div)`

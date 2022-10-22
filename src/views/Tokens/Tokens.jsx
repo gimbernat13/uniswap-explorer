@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
-import { Switch } from "react-router-dom";
+import React, { useContext } from "react";
+import { Switch, useParams } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 import { Button } from "components/atomic/atoms/Button/Button";
 import { Loader } from "components/atomic/atoms/Loader/Loader";
@@ -12,6 +12,7 @@ import { UilTable } from "@iconscout/react-unicons";
 import { UilListUl } from "@iconscout/react-unicons";
 import { useViewType } from "hooks/useViewType";
 import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
+import { TokensContext } from "context/TokensContext";
 export function TokensView({ routes }) {
   // FIXME: ADD TIME FILTER TO CHARTS
   const [numberOfDays, setNumberOfDays] = React.useState({
@@ -19,14 +20,17 @@ export function TokensView({ routes }) {
     name: 50,
   });
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
+  const TokenContext = useContext(TokensContext);
+  const { dispatch: tokensDispatch, state: tokensState } = TokenContext;
 
   const { loading, error, data } = useQuery(TOKENS);
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
-
   return (
     <div>
       <h3>Tokens</h3>
+      {tokensState.selectedToken}
+      <p>Select a Token to view Stats</p>
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />

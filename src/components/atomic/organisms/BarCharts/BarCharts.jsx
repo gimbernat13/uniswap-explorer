@@ -47,10 +47,8 @@ export const BarCharts = ({ chartData }) => {
           <BarChart
             data={reverseData}
             margin={{
-              top: 200,
-              right: 30,
-              left: 35,
-              bottom: 50,
+              top: 20,
+              bottom: 20,
             }}
           >
             {/* <CartesianGrid strokeDasharray="3 3" /> */}

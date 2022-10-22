@@ -33,9 +33,9 @@ export const Sidebar = () => {
     >
       {" "}
       <div style={{ marginLeft: "10px" }} className="icon">
-        <Button width="40px" onClick={toggleSidebarOpen}>
+        {/* <Button width="40px" onClick={toggleSidebarOpen}>
           ←
-        </Button>
+        </Button> */}
       </div>
       <div className="sidebar-links shits">
         <div>
@@ -56,9 +56,9 @@ export const Sidebar = () => {
           </ul>
         </div>
         <div style={{ marginLeft: "10px" }} className="icon">
-          <Button width="40px" onClick={toggleSidebarOpen}>
+          {/* <Button width="40px" onClick={toggleSidebarOpen}>
             ←
-          </Button>
+          </Button> */}
         </div>
       </div>
     </Styled.Sidebar>
