@@ -44,7 +44,15 @@ export const BarCharts = ({ chartData }) => {
         </div>
 
         <ResponsiveContainer width="100%" height={350}>
-          <BarChart data={reverseData}>
+          <BarChart
+            data={reverseData}
+            margin={{
+              top: 200,
+              right: 30,
+              left: 35,
+              bottom: 50,
+            }}
+          >
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey={getTimeAxis} />
             <YAxis
