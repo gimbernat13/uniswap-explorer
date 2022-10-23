@@ -9,9 +9,11 @@ export const Card = ({
   transparent,
   flex,
   noPadding,
+  fitContent,
 }) => {
   return (
     <Styled.Card
+      fitContent={fitContent}
       initial={{ y: 0, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ x: -300, opacity: 0 }}

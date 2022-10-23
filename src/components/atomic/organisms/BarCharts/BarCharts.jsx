@@ -47,7 +47,7 @@ export const BarCharts = ({ chartData }) => {
           <BarChart
             data={reverseData}
             margin={{
-              top: 20,
+              top: 100,
               bottom: 20,
             }}
           >

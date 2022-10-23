@@ -19,6 +19,8 @@ export const Card = styled(motion.div)`
   font-size: 1rem !important;
   font-weight: 400 !important;
   height: ${(props) => (props.height ? props.height : "100%")};
+  width: ${(props) => props.fitContent && "fit-content"};
+
   &:hover {
     box-shadow: var(--box-shadow-light);
     /* border: ${(props) =>

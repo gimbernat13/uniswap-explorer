@@ -30,7 +30,7 @@ export function TokensView({ routes }) {
   return (
     <div>
       <h3>Tokens</h3>
-      <Card>Select a Token to view Stats</Card>
+      <Card fitContent>Select a Token to view Stats</Card>
       <br />
       <Switch>
         {routes.map((route, i) => (
