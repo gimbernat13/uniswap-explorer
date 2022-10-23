@@ -4,7 +4,7 @@ import * as Styled from "./styles";
 export const RecentSwaps = ({ swapData, pairData }) => {
   const { amountUSD } = swapData;
   const { token0, token1 } = pairData;
-  console.log("swap data ");
+  console.log("swap data ", swapData);
 
   return (
     <Styled.TxTable className="styled-table" initial="hidden" animate="show">
@@ -12,7 +12,7 @@ export const RecentSwaps = ({ swapData, pairData }) => {
         {swapData.map((swap, i) => {
           return (
             <Styled.TxRow key={i}>
-              <td>$ {formatNumber(parseInt(amountUSD))}</td>
+              <td>$ {formatNumber(parseInt(swap.amountUSD))}</td>
               <td>{token0.symbol} </td>
               <td>{token1.symbol} </td>
               <td>
