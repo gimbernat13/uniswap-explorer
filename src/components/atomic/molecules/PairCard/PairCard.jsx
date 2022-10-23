@@ -37,12 +37,6 @@ export const PairCard = ({ pair }) => {
             </div>
             {/* <div>{pair.txCount} Tx's</div> */}
             <div>${formatNumber(parseInt(pair.volumeUSD))}</div>
-
-            <Styled.TradeButton>
-              <Button isActive onClick={openModal}>
-                <UilExchange size={10} />
-              </Button>
-            </Styled.TradeButton>
           </Styled.PoolCardInner>
         </Styled.PoolCard>
       </Card>
