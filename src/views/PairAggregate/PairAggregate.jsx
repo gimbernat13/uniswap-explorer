@@ -27,7 +27,7 @@ export const PairAggregate = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [pairID]);
 
-  if (loading) return <Loader />;
+  return <Loader />;
   if (error) return `Error! ${error.message}`;
 
   const { pairDayDatas, pair, swaps } = data;

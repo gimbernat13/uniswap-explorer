@@ -14,6 +14,7 @@ import { Card } from "components/atomic/atoms/Card/Card";
 import Chart from "components/atomic/organisms/Chart/Chart";
 import { Loader } from "components/atomic/atoms/Loader/styles";
 import { Button } from "components/atomic/atoms/Button/Button";
+import { BarLoader } from "react-spinners";
 export const TokenAggregate = () => {
   const modalRef = React.useRef();
   const openModal = () => {
@@ -31,7 +32,7 @@ export const TokenAggregate = () => {
     dispatch({ type: setSelectedToken, payload: tokenID });
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [tokenID]);
-  if (loading) return <Loader />;
+  if (loading) return <BarLoader color="#828bdd" />;
   if (error) return `Error! ${error.message}`;
 
   const { id } = data.token;

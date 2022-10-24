@@ -80,7 +80,6 @@ export function TokenTable({ tableData }) {
                 // }
               >
                 {row.cells.map((cell) => {
-                  console.log(row);
                   return (
                     <td
                       {...cell.getCellProps()}

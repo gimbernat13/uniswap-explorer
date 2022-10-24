@@ -35,7 +35,7 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
         <Card transparent height="100%">
-          <div className="medium-text"> TX's:</div>
+          <div className="medium-text"> Tx's 24 Hours</div>
           <div>{formatNumber(parseFloat(txCount))}</div>
         </Card>
       </Styled.DetailsGridItem>

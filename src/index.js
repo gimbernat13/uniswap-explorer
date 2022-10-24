@@ -2,7 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ApolloProvider } from "@apollo/client/react";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { TokensContextProvider } from "./context/TokensContext";
 
 import { ThemeContextProvider } from "./context/ThemeContext";
@@ -62,6 +67,9 @@ root.render(
           <ThemeContextProvider>
             <Router>
               <Layout>
+                <Route exact path="/">
+                  <Redirect to="/tokens" />
+                </Route>
                 <Switch>
                   {routes.map((route, i) => (
                     <RouteWithSubRoutes key={i} {...route} />

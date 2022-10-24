@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Switch, useParams } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 
 import { Loader } from "components/atomic/atoms/Loader/Loader";
@@ -17,6 +17,7 @@ export function TokensView({ routes }) {
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(TOKENS);
 
+  console.log("oarams ", useParams());
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
   return (
