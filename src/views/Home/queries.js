@@ -1,19 +1,10 @@
 import { gql } from "@apollo/client";
 export const UNISWAP = gql`
   query Uniswap($filter: String) {
-    tokens(
-      first: 150
-      orderBy: $filter
-      orderDirection: desc
-      where: { tradeVolumeUSD_gt: 20000 , txCount_gt : 500 }
-    ) {
-      id
-      symbol
-      name
-      tradeVolume
+    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f") {
+      totalVolumeUSD
+      totalLiquidityUSD
       txCount
-      tradeVolumeUSD
-      totalLiquidity
     }
   }
 `;

@@ -27,7 +27,6 @@ export const Sidebar = () => {
   }
   const ref = useRef();
   useOnClickOutside(ref, () => setIsSidebarOpen(false));
-  console.log("sidebar ")
   return (
     <Styled.Sidebar
       ref={ref}

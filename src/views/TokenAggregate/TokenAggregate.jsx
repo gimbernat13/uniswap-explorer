@@ -35,11 +35,11 @@ export const TokenAggregate = () => {
   if (loading) return <BarLoader color="#828bdd" />;
   if (error) return `Error! ${error.message}`;
 
-  const { id } = data.token;
+  // const { id } = data.token;
   return (
     <>
       <Modal ref={modalRef}>
-        <SwapWidget defaultOutputTokenAddress={id} theme={darkTheme} />
+        <SwapWidget defaultOutputTokenAddress={tokenID} theme={darkTheme} />
       </Modal>
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>

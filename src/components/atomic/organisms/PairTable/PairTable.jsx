@@ -96,10 +96,10 @@ export function PairTable({ tableData }) {
               >
                 {row.cells.map((cell) => {
                   return (
-                    <td
-                      {...cell.getCellProps()}
-                    >
-                      {cell.render("Cell")}
+                    <td {...cell.getCellProps()}>
+                      <Link to={`/tokens/${row.original.id}`}>
+                        {cell.render("Cell")}
+                      </Link>
                     </td>
                   );
                 })}
