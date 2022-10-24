@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import * as Styled from "./styles";
 import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
+import { useOnClickOutside } from "context/useOnClickOutside";
 
 export const Select = ({
   options,
@@ -19,8 +20,12 @@ export const Select = ({
   function close() {
     setIsOpen(false);
   }
+  const ref = useRef();
+  useOnClickOutside(ref, () => close());
+
   return (
     <Styled.Select
+      ref={ref}
       onFocus={expand}
       onBlur={close}
       onClick={() => setIsOpen(!isOpen)}

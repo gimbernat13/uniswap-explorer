@@ -14,7 +14,6 @@ import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/Vie
 import { Card } from "components/atomic/atoms/Card/Card";
 import { hasSubRoute } from "utils/hasSubRoute";
 export function TokensView({ routes }) {
-  // FIXME: ADD TIME FILTER TO CHARTS
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(TOKENS);
 
@@ -22,16 +21,12 @@ export function TokensView({ routes }) {
   console.log("3232 ", useHistory());
 
   const { location } = useHistory();
-
-
-  // FIXME: abstract hassubroute  to utils ?
-
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
   return (
     <div>
       <h3>Tokens</h3>
-      {!hasSubRoute("/tokens" , location) && (
+      {!hasSubRoute("/tokens", location) && (
         <Card fitContent>Select a Token to view Stats</Card>
       )}
       <Switch>

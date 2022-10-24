@@ -11,7 +11,7 @@ export const TokenAggregateGrid = styled.div`
 `;
 export const LeftTopGrid = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 13fr;
   gap: 10px;
 `;
 export const LeftGrid = styled.div`

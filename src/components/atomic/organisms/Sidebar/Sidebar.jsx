@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import * as Styled from "./styles";
 import { Link, NavLink, useHistory, useParams } from "react-router-dom";
 import Tokens from "../../../../assets/bitcoin.png";
 import { Button } from "components/atomic/atoms/Button/Button";
+import { useOnClickOutside } from "context/useOnClickOutside";
 export const Sidebar = () => {
-  let history = useHistory();
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const toggleSidebarOpen = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -25,9 +25,12 @@ export const Sidebar = () => {
   function handleChildClick(e) {
     e.stopPropagation();
   }
-
+  const ref = useRef();
+  useOnClickOutside(ref, () => setIsSidebarOpen(false));
+  console.log("sidebar ")
   return (
     <Styled.Sidebar
+      ref={ref}
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
@@ -64,9 +67,3 @@ export const Sidebar = () => {
     </Styled.Sidebar>
   );
 };
-
-{
-  /* <Button width="50px"r onClick={() => history.goBack()}>
-{item.icon}
-</Button> */
-}

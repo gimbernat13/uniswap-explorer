@@ -1,5 +1,5 @@
 import React from "react";
-const useOnClickOutside = (ref, handler) => {
+export  const useOnClickOutside = (ref, handler) => {
   React.useEffect(() => {
     const listener = (event) => {
       // Do nothing if clicking ref's element or descendent elements
