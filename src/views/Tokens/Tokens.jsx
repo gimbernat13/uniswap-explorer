@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { Switch, useParams } from "react-router-dom";
+import { Switch, useHistory, useParams } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 
 import { Loader } from "components/atomic/atoms/Loader/Loader";
@@ -12,25 +12,33 @@ import { TokenTable } from "components/atomic/organisms/TokenTable/TokenTable";
 import { useViewType } from "hooks/useViewType";
 import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
 import { Card } from "components/atomic/atoms/Card/Card";
+import { hasSubRoute } from "utils/hasSubRoute";
 export function TokensView({ routes }) {
   // FIXME: ADD TIME FILTER TO CHARTS
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(TOKENS);
 
-  console.log("oarams ", useParams());
+  console.log("oarams ", window.location);
+  console.log("3232 ", useHistory());
+
+  const { location } = useHistory();
+
+
+  // FIXME: abstract hassubroute  to utils ?
+
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
   return (
     <div>
       <h3>Tokens</h3>
-      <Card fitContent>Select a Token to view Stats</Card>
-      <br />
+      {!hasSubRoute("/tokens" , location) && (
+        <Card fitContent>Select a Token to view Stats</Card>
+      )}
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch>
-      <br />
       <Styled.FlexSpaced>
         {/* <FilterButtons /> */}
         <h3>Most Traded</h3>

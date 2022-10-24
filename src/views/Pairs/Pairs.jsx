@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Switch, useHistory } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 
 import { PAIRS } from "./queries";
@@ -10,7 +10,10 @@ import { PairList } from "components/atomic/organisms/PairList/PairList";
 import { PairTable } from "components/atomic/organisms/PairTable/PairTable";
 import { useViewType } from "hooks/useViewType";
 import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
+import { hasSubRoute } from "utils/hasSubRoute";
+import { Card } from "components/atomic/atoms/Card/Card";
 export function Pairs({ routes }) {
+  const { location } = useHistory();
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(PAIRS);
   if (loading) return <Loader />;
@@ -18,6 +21,9 @@ export function Pairs({ routes }) {
   return (
     <div>
       <h3>Pairs</h3>
+      {!hasSubRoute("/pairs", location) && (
+        <Card fitContent>Select a Pair to view Stats</Card>
+      )}
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
