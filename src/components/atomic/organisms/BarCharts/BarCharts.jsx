@@ -44,26 +44,9 @@ export const BarCharts = ({ chartData }) => {
         </div>
 
         <ResponsiveContainer width="100%" height={350}>
-          <BarChart
-            data={reverseData}
-            margin={{
-              top: 100,
-              bottom: 20,
-            }}
-          >
-            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          <BarChart data={reverseData}>
             <XAxis dataKey={getTimeAxis} />
-            <YAxis
-              type="number"
-              // dataKey={selectedFilter}
-              // domain={["auto", "dataMax + 10000"]}
-              // domain={["auto", "auto"]}
-              // domain={["0", "dataMax + 10000"]}
-              tickSize={0}
-              tick={{ fontSize: 14, width: 250 }}
-              // axisLine={false}
-              // tickLine={false}
-            />
+            <YAxis tickSize={0} tick={{ fontSize: 14, width: 250 }} />
             <Tooltip />
             <Legend />
             rgba(15, 53, 255, 0.3)

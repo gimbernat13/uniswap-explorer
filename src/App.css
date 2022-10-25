@@ -400,6 +400,7 @@ nav:hover .shrink-btn,
   min-width: 3.7rem;
   display: grid;
   align-items: center;
+  justify-content: center;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }

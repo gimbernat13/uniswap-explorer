@@ -4,6 +4,8 @@ import { Link, NavLink, useHistory, useParams } from "react-router-dom";
 import Tokens from "../../../../assets/bitcoin.png";
 import { Button } from "components/atomic/atoms/Button/Button";
 import { useOnClickOutside } from "context/useOnClickOutside";
+import { UilCoins, UilWaterGlass } from "@iconscout/react-unicons";
+
 export const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const toggleSidebarOpen = () => {
@@ -13,12 +15,12 @@ export const Sidebar = () => {
   const sidebarItems = [
     {
       title: "Tokens",
-      icon: Tokens,
+      icon: <UilCoins />,
       url: "/tokens",
     },
     {
       title: "Pairs",
-      icon: Tokens,
+      icon: <UilWaterGlass />,
       url: "/pairs",
     },
   ];
@@ -47,8 +49,8 @@ export const Sidebar = () => {
                 <div>
                   <NavLink onClick={handleChildClick} to={item.url}>
                     <div className="icon">
-                      <i className="bx bx-bar-chart-square"></i>
-                      <i className="bx bxs-bar-chart-square"></i>
+                      <i>{item.icon}</i>
+                      <i> {item.icon}</i>
                     </div>
                     <span className="link hide">{item.title}</span>
                   </NavLink>
@@ -56,11 +58,6 @@ export const Sidebar = () => {
               </li>
             ))}
           </ul>
-        </div>
-        <div style={{ marginLeft: "10px" }} className="icon">
-          {/* <Button width="40px" onClick={toggleSidebarOpen}>
-            ←
-          </Button> */}
         </div>
       </div>
     </Styled.Sidebar>
