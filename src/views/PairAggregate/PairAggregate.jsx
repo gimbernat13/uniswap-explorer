@@ -82,11 +82,11 @@ export const PairAggregate = () => {
             Daily Transactions
           </Button> */}
             </FlexContainer>
-            <BarCharts
+            {/* <BarCharts
               yValue1={pairDayDatas.dailyVolumeToken0}
               yValue2={pairDayDatas.dailyVolumeToken1}
               chartData={pairDayDatas}
-            />
+            /> */}
           </Card>
         </Styled.AggregateLeft>
         <Styled.AggregateRight>

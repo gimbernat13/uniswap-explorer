@@ -38,6 +38,7 @@ export const TokenAggregate = () => {
   // const { id } = data.token;
   return (
     <>
+      {window.screen.width}
       <Modal ref={modalRef}>
         <SwapWidget defaultOutputTokenAddress={tokenID} theme={darkTheme} />
       </Modal>
@@ -55,7 +56,7 @@ export const TokenAggregate = () => {
             </Card>
           </Styled.LeftTopGrid>
           <Card>
-            <Chart chartData={data.tokenDayDatas} yKey={"priceUSD"} />
+            {/* <Chart chartData={data.tokenDayDatas} yKey={"priceUSD"} /> */}
           </Card>
         </Styled.LeftGrid>
         <Styled.RightGrid>

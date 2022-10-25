@@ -1,3 +1,4 @@
+import { deviceQueries } from "config/viewSizes";
 import styled from "styled-components";
 
 export const TokenAggregateGrid = styled.div`
@@ -5,14 +6,20 @@ export const TokenAggregateGrid = styled.div`
   width: 100%;
   gap: 10px;
   grid-template-columns: 3fr 1fr;
+
+  @media ${deviceQueries.laptopM} {
+    display: block;
+  }
   .transparent-card:nth-of-type(3) {
-    /* grid-column: 1/3; */
   }
 `;
 export const LeftTopGrid = styled.div`
   display: grid;
-  grid-template-columns: auto 13fr;
+  grid-template-columns: auto 1fr;
   gap: 10px;
+  @media ${deviceQueries.laptopM} {
+    grid-template-columns: auto;
+  }
 `;
 export const LeftGrid = styled.div`
   display: grid;
@@ -29,14 +36,7 @@ export const FlexSpacedV = styled.div`
   flex-direction: column;
   height: 100%;
 `;
-export const DetailsGrid = styled.div`
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 10px;
-`;
-export const DetailsGridItem = styled.div`
-  border-radius: var(--border-radius);
-`;
+
 export const RightGrid = styled.div`
   display: flex;
   flex-direction: column;
