@@ -29,7 +29,7 @@ export const PairCard = ({ pair }) => {
         /> */}
       </Modal>
       {/* <Card transparent variants={animatedItem}> */}
-      <Card variants={animatedItem}>
+      <Card transparent variants={animatedItem}>
         <Styled.PoolCard key={pair.id}>
           <Styled.PoolCardInner>
             <div className="medium-text">

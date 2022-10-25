@@ -14,6 +14,9 @@ export const Home = () => {
 
   return (
     <>
+      {/* <Card fitContent> */}
+        <div className="large-text">Uniswap Explorer</div>
+      {/* </Card> */}
       <Card>
         <h1>{totalLiquidityUSD}</h1>
         <h1>{totalVolumeUSD}</h1>

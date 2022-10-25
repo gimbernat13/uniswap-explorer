@@ -64,7 +64,7 @@ export function PairTable({ tableData }) {
                     fontWeight: "bold",
                   }}
                 >
-                  <div style={{ display: "flex" }}>
+                  <div style={{ display: "flex", alignItems: "center" }}>
                     <div>{column.render("Header")}</div>
                     <div>
                       {column.isSorted ? (

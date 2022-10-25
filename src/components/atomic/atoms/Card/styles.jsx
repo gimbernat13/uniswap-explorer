@@ -23,10 +23,7 @@ export const Card = styled(motion.div)`
 
   &:hover {
     box-shadow: var(--box-shadow-light);
-    /* border: ${(props) =>
-      props.transparent
-        ? "var(--border-ultra-light)"
-        : "var(--border-light)"}; */
+    border: var(--border-ultra-light);
   }
 `;
 export const CardInner = styled(motion.div)`

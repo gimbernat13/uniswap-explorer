@@ -1,12 +1,12 @@
 import { deviceQueries } from "config/viewSizes";
 import styled from "styled-components";
-export const Sidebar = styled.nav`
+export const MobileBar = styled.nav`
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   height: 90vh;
   background-color: var(--transparent-black-dark);
-  width: 10rem;
+  width: 100%;
   padding: 1.8rem 0.85rem;
   color: #fff;
   display: flex;

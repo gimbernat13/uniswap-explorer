@@ -72,8 +72,10 @@ root.render(
           <ThemeContextProvider>
             <Router>
               <Layout>
-                <Route component={Home} exact path="/"></Route>
                 <Switch>
+                  <Route exact path="/">
+                    <Redirect to="/tokens" />
+                  </Route>
                   {routes.map((route, i) => (
                     <RouteWithSubRoutes key={i} {...route} />
                   ))}

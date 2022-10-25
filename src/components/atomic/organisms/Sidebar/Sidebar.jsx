@@ -15,12 +15,12 @@ export const Sidebar = () => {
   const sidebarItems = [
     {
       title: "Tokens",
-      icon: <UilCoins />,
+      icon: <UilCoins size={20} />,
       url: "/tokens",
     },
     {
       title: "Pairs",
-      icon: <UilWaterGlass />,
+      icon: <UilWaterGlass size={20} />,
       url: "/pairs",
     },
   ];
@@ -45,7 +45,7 @@ export const Sidebar = () => {
         <div>
           <ul>
             {sidebarItems.map((item) => (
-              <li key={item.url} className="tooltip-element" data-tooltip="1">
+              <li key={item.url}>
                 <div>
                   <NavLink onClick={handleChildClick} to={item.url}>
                     <div className="icon">

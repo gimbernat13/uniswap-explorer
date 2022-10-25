@@ -38,7 +38,6 @@ export const TokenAggregate = () => {
   // const { id } = data.token;
   return (
     <>
-      {window.screen.width}
       <Modal ref={modalRef}>
         <SwapWidget defaultOutputTokenAddress={tokenID} theme={darkTheme} />
       </Modal>

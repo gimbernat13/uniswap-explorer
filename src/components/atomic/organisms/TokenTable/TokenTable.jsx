@@ -51,7 +51,7 @@ export function TokenTable({ tableData }) {
                     fontWeight: "bold",
                   }}
                 >
-                  <div style={{ display: "flex" }}>
+                  <div style={{ display: "flex", alignItems: "center" }}>
                     {column.render("Header")}
                     {column.isSorted ? (
                       column.isSortedDesc ? (
@@ -72,23 +72,10 @@ export function TokenTable({ tableData }) {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr
-                {...row.getRowProps()}
-                // className={row.id === pairState.selectedPair ? "active" : ""}
-                // onClick={() =>
-                //   pairDispatch({ type: setSelectedPair, payload: row.id })
-                // }
-              >
+              <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td
-                      {...cell.getCellProps()}
-                      style={{
-                        padding: "10px",
-                        // border: "solid 1px gray",
-                        //   background: "papayawhip",
-                      }}
-                    >
+                    <td {...cell.getCellProps()} style={{}}>
                       <Link to={`/tokens/${row.original.id}`}>
                         {cell.render("Cell")}
                       </Link>
