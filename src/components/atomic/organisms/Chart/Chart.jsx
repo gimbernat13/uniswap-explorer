@@ -85,7 +85,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             />
           </div>
         </Styled.FilterChartFlex>
-        <ResponsiveContainer  height={300}>
+        <ResponsiveContainer height={300}>
           <AreaChart data={reverseData}>
             <defs>
               <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">

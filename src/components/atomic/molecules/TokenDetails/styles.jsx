@@ -8,6 +8,9 @@ export const DetailsGrid = styled.div`
   @media ${deviceQueries.laptop} {
     grid-template-columns: auto auto;
   }
+  @media ${deviceQueries.tablet} {
+    display: block;
+  }
 `;
 export const DetailsGridItem = styled.div`
   border-radius: var(--border-radius);

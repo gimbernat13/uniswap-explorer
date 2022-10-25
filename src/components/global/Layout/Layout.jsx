@@ -1,3 +1,4 @@
+import { Container } from "components/atomic/atoms/Container/Container";
 import { Sidebar } from "components/atomic/organisms/Sidebar/Sidebar";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
@@ -7,7 +8,9 @@ export const Layout = ({ children }) => {
     // <div style={theme}>
     <>
       <Sidebar />
-      <div className="main container">{children}</div>
+      <div className="main">
+        <Container>{children}</Container>
+      </div>
     </>
 
     // </div>

@@ -21,6 +21,11 @@ export const LeftTopGrid = styled.div`
     grid-template-columns: auto;
   }
 `;
+export const Chart = styled.div`
+  @media ${deviceQueries.laptopM} {
+    display: none;
+  }
+`;
 export const LeftGrid = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;

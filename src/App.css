@@ -125,11 +125,7 @@ ul {
 
 
 
-.container {
-  margin-left: var(--sidebar-margin);
-  padding: 0 6rem;
-  margin-top: 1rem
-}
+
 
 .large-text {
   font-weight: bold;

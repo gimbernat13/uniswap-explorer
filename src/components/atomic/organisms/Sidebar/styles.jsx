@@ -1,11 +1,11 @@
+import { deviceQueries } from "config/viewSizes";
 import styled from "styled-components";
-
 export const Sidebar = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
   height: 90vh;
-  background-color: var(--transparent-black);
+  background-color: var(--transparent-black-dark);
   width: 10rem;
   padding: 1.8rem 0.85rem;
   color: #fff;
@@ -17,6 +17,9 @@ export const Sidebar = styled.nav`
   z-index: 5;
   /* box-shadow: var(--box-shadow-light); */
   cursor: pointer;
+  @media ${deviceQueries.laptop} {
+    display: none;
+  }
 
   &:hover {
     box-shadow: var(--box-shadow-light);
