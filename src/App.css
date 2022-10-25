@@ -338,7 +338,7 @@ ul {
 
 
 
-
+/* Sidebar  */
 
 .sidebar-top h3 {
   padding-left: 0.5rem;
@@ -378,21 +378,6 @@ nav:hover .shrink-btn,
   pointer-events: all;
 }
 
-.search {
-  min-height: 2.7rem;
-  background-color: var(--main-color-light);
-  margin: 2rem 0.5rem 1.7rem;
-  display: grid;
-  grid-template-columns: 2.7rem 1fr;
-  align-items: center;
-  text-align: center;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-.search input::placeholder {
-  color: var(--text-color);
-}
 
 
 .sidebar-links ul {
@@ -452,62 +437,9 @@ nav:hover .shrink-btn,
 }
 
 
-.sidebar-links h4 {
-  position: relative;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  padding: 0 0.8rem;
-  color: var(--text-color);
-  letter-spacing: 0.5px;
-  height: 45px;
-  line-height: 45px;
-  transition: opacity 0.3s 0.2s, height 0.5s 0s;
-}
 
 
 
-
-
-
-
-.tooltip {
-  background-color: var(--main-color);
-  position: absolute;
-  right: -1.2rem;
-  top: 0;
-  transform: translateX(100%) translateY(-50%);
-  padding: 0 0.8rem;
-  font-size: 0.85rem;
-  display: none;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-  height: 30px;
-  align-items: center;
-  border-radius: 7px;
-  box-shadow: 0 3px 10px -3px rgba(70, 46, 118, 0.3);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.tooltip span {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.tooltip span.show {
-  opacity: 1;
-}
-
-.tooltip-element:hover~.tooltip {
-  opacity: 1;
-  pointer-events: all;
-}
 
 /* When the menu shrinks */
 

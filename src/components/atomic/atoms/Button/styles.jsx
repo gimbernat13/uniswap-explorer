@@ -11,8 +11,9 @@ export const Button = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   /* border: var(--border-ultra-light); */
-  border: ${(props) =>
-    props.isActive ? "1px solid transparent" : "var(--border-ultra-light)"};
+  /* border: ${(props) =>
+    props.isActive ? "1px solid transparent" : "var(--border-ultra-light)"}; */
+  border: 1px solid transparent;
 
   display: inline-block;
   opacity: 0.9;
