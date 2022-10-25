@@ -56,7 +56,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   ];
 
   const [selectedFilter, setSelectedFilter] = React.useState(filters[0]);
-  const [timeFrame, setTimeFrames] = React.useState(timeOptions[0]);
+  const [timeFrame, setTimeFrames] = React.useState(timeOptions[4]);
 
   return (
     <>
