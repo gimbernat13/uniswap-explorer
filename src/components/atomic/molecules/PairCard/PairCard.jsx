@@ -20,14 +20,6 @@ export const PairCard = ({ pair }) => {
   };
   return (
     <>
-      <Modal ref={modalRef}>
-        <h1>hey </h1>
-        {/* <SwapWidget
-          defaultInputTokenAddress={pair.token0.id}
-          defaultOutputTokenAddress={pair.token1.id}
-          // theme={true ? darkTheme : lightTheme}
-        /> */}
-      </Modal>
       {/* <Card transparent variants={animatedItem}> */}
       <Card transparent variants={animatedItem}>
         <Styled.PoolCard key={pair.id}>

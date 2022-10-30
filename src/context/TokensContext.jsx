@@ -14,7 +14,7 @@ const INITIAL_STATE = {
   sortBy: "desc",
   itemsOnPage: 150,
   selectedToken: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
-  timeFrame: 100,
+  timeFrame: 30,
 };
 
 export function reducer(state, action) {

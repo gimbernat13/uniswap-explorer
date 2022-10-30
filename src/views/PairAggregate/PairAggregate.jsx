@@ -76,7 +76,7 @@ export const PairAggregate = () => {
               </Styled.InfoCard>
             </Card>
           </Styled.PairSpecs>
-          <Card height="100%">
+          <Card variant="primary" height="100%">
             <FlexContainer>
               {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>
             Daily Transactions

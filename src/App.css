@@ -1,7 +1,7 @@
 :root {
   --border-radius: 1rem;
   --border: 1px solid rgb(64, 73, 99);
-  --border-light: 1px solid rgba(64, 73, 99, 0.557);
+  --border-light: 1px solid rgba(100, 130, 219, 0.557);
   --border-ultra-light: 1px solid rgba(64, 73, 99, 0.407);
 
   --transparent-black-light: none !important;
@@ -406,6 +406,5 @@ body.shrink .tooltip {
   border-radius: 1rem;
   background-clip: content-box, border-box;
   opacity: 0.9;
-  background-color: var(--transparent-black-light);
-  background-color: var(--transparent-black);
+
 }

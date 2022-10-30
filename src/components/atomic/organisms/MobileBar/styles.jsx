@@ -4,21 +4,26 @@ export const MobileBar = styled.nav`
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 90vh;
+  height: 5vh;
   background-color: var(--transparent-black-dark);
-  width: 100%;
-  padding: 1.8rem 0.85rem;
+  width: 100vw;
+  padding: 1rem 0;
   color: #fff;
   display: flex;
   flex-direction: column;
   transition: width 0.5s ease-in-out;
   backdrop-filter: blur(2px);
   transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
+  opacity: 0;
+
   /* box-shadow: var(--box-shadow-light); */
   cursor: pointer;
   @media ${deviceQueries.laptop} {
-    display: none;
+    opacity: 1;
   }
 
   &:hover {
@@ -29,4 +34,7 @@ export const MobileBar = styled.nav`
   }
 `;
 
-export const SidebarLink = styled.div``;
+export const NavLinks = styled.ul`
+  display: flex;
+  gap: 20px;
+`;

@@ -44,10 +44,10 @@ export const TokenAggregate = () => {
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
           <Styled.LeftTopGrid>
-            <Card flex height={"100%"}>
+            <Card variant="tra,nsparent" flex height={"100%"}>
               <TokenMainDetails data={data.token} />
             </Card>
-            <Card height={"100%"}>
+            <Card variant="transparent" height={"100%"}>
               <TokenDetails
                 tokenData={data.token}
                 tokenDayDatas={data.tokenDayDatas[0]}

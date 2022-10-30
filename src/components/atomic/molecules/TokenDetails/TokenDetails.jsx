@@ -18,19 +18,19 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
   return (
     <Styled.DetailsGrid>
       <Styled.DetailsGridItem>
-        <Card transparent height="100%">
+        <Card variant="primary" height="100%">
           <div className="medium-text">Total Volume</div>
           <div>${formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))}</div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
-        <Card transparent height="100%">
+        <Card variant="primary" height="100%">
           <div className="medium-text">Total Liquidity </div>
           <div>ETH {formatNumber(parseFloat(totalLiquidity).toFixed(2))} </div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
-        <Card transparent height="100%">
+        <Card variant="primary" height="100%">
           <div className="medium-text">Total TX's:</div>
           <div>{formatNumber(parseFloat(tokenTxCount))}</div>
         </Card>
