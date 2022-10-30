@@ -5,9 +5,9 @@ export const Sidebar = styled.nav`
   top: 0;
   left: 0;
   height: 90vh;
-  background-color: var(--transparent-black-dark);
+  background-color: var(--transparent-black);
   width: 10rem;
-  padding: 1.8rem 0.85rem;
+  padding: 1rem 0.85rem;
   color: #fff;
   display: flex;
   flex-direction: column;

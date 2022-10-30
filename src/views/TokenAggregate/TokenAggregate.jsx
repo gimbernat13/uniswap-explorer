@@ -25,7 +25,7 @@ export const TokenAggregate = () => {
   const { state: tokensState, dispatch } = useContext(TokensContext);
 
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
-    variables: { id: tokenID, timeFrame: tokensState.timeFrame },
+    variables: { id: tokenID, timeFrame: tokensState.timeFrame.id },
   });
 
   React.useEffect(() => {

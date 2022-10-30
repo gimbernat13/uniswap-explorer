@@ -10,8 +10,12 @@ import React, { useContext } from "react";
 import { Button } from "components/atomic/atoms/Button/Button";
 import * as Styled from "./styles";
 import { Select } from "components/atomic/atoms/Select/Select";
-import { TokensContext } from "context/TokensContext";
-import { setTimeFrame } from "context/actionNames";
+import {
+  timeOptions,
+  tokenFilters,
+  TokensContext,
+} from "context/TokensContext";
+import { setFilterBy, setTimeFrame } from "context/actionNames";
 
 export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
@@ -26,49 +30,22 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     const formattedDate = newDate.toISOString().split("T")[0];
     return formattedDate;
   };
-  const filters = [
-    { name: "Price", id: "priceUSD" },
-    { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
-    { name: "Daily Tx's", id: "dailyTxns" },
-  ];
-
-  const timeOptions = [
-    {
-      value: 7,
-      name: "Last Week",
-    },
-    {
-      value: 30,
-      name: "30 Days",
-    },
-    {
-      value: 100,
-      name: "100 Days",
-    },
-    {
-      value: 500,
-      name: "500 days",
-    },
-    {
-      value: 1000,
-      name: "All Time",
-    },
-  ];
-
-  const [selectedFilter, setSelectedFilter] = React.useState(filters[0]);
-  const [timeFrame, setTimeFrames] = React.useState(timeOptions[1]);
 
   return (
     <>
       <Styled.ChartGrid>
         <Styled.FilterChartFlex>
           <div>
-            {filters.map((filter, i) => {
+            {tokenFilters.map((filter, i) => {
               return (
                 <Button
-                  isActive={filter.id === selectedFilter.id}
-                  onClick={() => setSelectedFilter(filter)}
-                  className={filter.id === selectedFilter.id ? "active" : ""}
+                  isActive={filter.id === tokensState.filterBy.id}
+                  onClick={() => {
+                    tokensDispatch({ type: setFilterBy, payload: filter });
+                  }}
+                  className={
+                    filter.id === tokensState.filterBy.id ? "active" : ""
+                  }
                 >
                   {filter.name}
                 </Button>
@@ -80,8 +57,8 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
               dispatch={tokensDispatch}
               action={setTimeFrame}
               options={timeOptions}
-              selectedFilter={timeFrame}
-              setSelectedFilter={setTimeFrames}
+              state={tokensState}
+              value={tokensState.timeFrame}
             />
           </div>
         </Styled.FilterChartFlex>
@@ -94,7 +71,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
               </linearGradient>
             </defs>
             <Area
-              dataKey={selectedFilter.id}
+              dataKey={tokensState.filterBy.id}
               stroke="#96a0f7"
               fill="url(#color)"
             />
@@ -102,7 +79,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             <YAxis
               type="number"
               // domain={["auto", "auto"]}
-              datakey={selectedFilter.id}
+              datakey={tokensState.filterBy.id}
               axisLine={false}
               tickLine={false}
               tickCount={100}

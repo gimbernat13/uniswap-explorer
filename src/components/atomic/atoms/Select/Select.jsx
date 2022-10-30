@@ -3,14 +3,7 @@ import * as Styled from "./styles";
 import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
 import { useOnClickOutside } from "context/useOnClickOutside";
 
-export const Select = ({
-  options,
-  placeHolder,
-  dispatch,
-  action,
-  selectedFilter,
-  setSelectedFilter,
-}) => {
+export const Select = ({ options, dispatch, action, state, value }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   function expand() {
@@ -22,7 +15,7 @@ export const Select = ({
   }
   const ref = useRef();
   useOnClickOutside(ref, () => close());
-
+  console.log(state);
   return (
     <Styled.Select
       ref={ref}
@@ -31,7 +24,7 @@ export const Select = ({
       onClick={() => setIsOpen(!isOpen)}
     >
       <Styled.Flex>
-        <div>{selectedFilter.name}</div>
+        {value.name}
         <div>
           {isOpen ? <UilAngleDown size={16} /> : <UilAngleUp size={16} />}
         </div>
@@ -44,8 +37,7 @@ export const Select = ({
                 <Styled.SelectItem
                   key={option + i}
                   onClick={() => {
-                    setSelectedFilter(option);
-                    dispatch({ type: action, payload: option.value });
+                    dispatch({ type: action, payload: option });
                   }}
                 >
                   {option.name}

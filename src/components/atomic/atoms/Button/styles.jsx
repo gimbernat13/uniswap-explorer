@@ -13,12 +13,12 @@ export const Button = styled.div`
   /* border: var(--border-ultra-light); */
   /* border: ${(props) =>
     props.isActive ? "1px solid transparent" : "var(--border-ultra-light)"}; */
-  border: 1px solid transparent;
-
+  border: var(--border-ultra-light);
+  background-color: #0000002c;
   display: inline-block;
   opacity: 0.9;
   background-color: ${(props) =>
-    props.isActive ? "var(--main-color) " : " var(--transparent-black)"};
+    props.isActive ? "var(--main-color) " : " var(--transparent-black-light)"};
 
   color: white !important;
   font-size: 0.8rem !important;

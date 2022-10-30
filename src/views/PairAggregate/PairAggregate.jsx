@@ -103,7 +103,9 @@ export const PairAggregate = () => {
         </Styled.AggregateRight>
       </Styled.AggregateGrid>
       <br />
-      <RecentSwaps pairData={pair} swapData={swaps} />
+      <Card>
+        <RecentSwaps pairData={pair} swapData={swaps} />
+      </Card>
     </>
   );
 };
