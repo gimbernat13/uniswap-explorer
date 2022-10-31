@@ -1,18 +1,23 @@
-import { lightTheme } from "@uniswap/widgets";
 import { Button } from "components/atomic/atoms/Button/Button";
 import { Container } from "components/atomic/atoms/Container/Container";
 import { MobileBar } from "components/atomic/organisms/MobileBar/MobileBar";
 import { Sidebar } from "components/atomic/organisms/Sidebar/Sidebar";
-import { useDarkMode } from "hooks/useDarkMode";
-import React from "react";
+import { ThemeContext } from "context/ThemeContext";
+import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, GlobalStyles } from "../GlobalStyles/GlobalStyles";
+import {
+  darkTheme,
+  lightTheme,
+  GlobalStyles,
+} from "../GlobalStyles/GlobalStyles";
 export const Layout = ({ children }) => {
-  const { theme, toggleTheme } = useDarkMode();
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const localTheme = localStorage.getItem("theme");
+
   return (
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+      <Button onClick={toggleTheme}> holaaaaaaaa</Button>
       <GlobalStyles />
-      <Button onClick={toggleTheme}> Togle teeeeeeeme </Button>
       <Sidebar />
       <div className="main">
         <Container>{children}</Container>

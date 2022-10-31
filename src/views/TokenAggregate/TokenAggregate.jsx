@@ -44,7 +44,7 @@ export const TokenAggregate = () => {
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
           <Styled.LeftTopGrid>
-            <Card variant="tra,nsparent" flex height={"100%"}>
+            <Card variant="transparent" flex height={"100%"}>
               <TokenMainDetails data={data.token} />
             </Card>
             <Card variant="transparent" height={"100%"}>

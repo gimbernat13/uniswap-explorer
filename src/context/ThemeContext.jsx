@@ -1,25 +1,20 @@
 import React from "react";
 import { css } from "styled-components";
-export const themes = {
-  dark: css`
-    background-color: "black";
-    color: "white";
-  `,
-  light: css`
-    background-color: "white";
-    color: "black";
-  `,
-};
 
 export const ThemeContext = React.createContext();
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = React.useState(themes.light);
+  const [theme, setTheme] = React.useState("light");
+
   const toggleTheme = () => {
-    theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, themes, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

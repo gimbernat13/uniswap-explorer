@@ -1,17 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import * as Styled from "./styles";
-import { Link, NavLink, useHistory, useParams } from "react-router-dom";
-import Tokens from "../../../../assets/bitcoin.png";
+import { NavLink } from "react-router-dom";
 import { Button } from "components/atomic/atoms/Button/Button";
 import { useOnClickOutside } from "context/useOnClickOutside";
 import { UilCoins, UilWaterGlass } from "@iconscout/react-unicons";
+import { ThemeContext } from "styled-components";
 
 export const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const toggleSidebarOpen = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
+  const { toggleTheme, theme } = useContext(ThemeContext);
   const sidebarItems = [
     {
       title: "Tokens",
@@ -27,6 +27,9 @@ export const Sidebar = () => {
   function handleChildClick(e) {
     e.stopPropagation();
   }
+  function handleToggleTheme(e) {
+    toggleTheme();
+  }
   const ref = useRef();
   useOnClickOutside(ref, () => setIsSidebarOpen(false));
   return (
@@ -35,12 +38,8 @@ export const Sidebar = () => {
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
-      {" "}
-      <div style={{ marginLeft: "10px" }} className="icon">
-        {/* <Button width="40px" onClick={toggleSidebarOpen}>
-          ←
-        </Button> */}
-      </div>
+      <Button onClick={handleToggleTheme}> ☽</Button>
+
       <div className="sidebar-links shits">
         <div>
           <ul>

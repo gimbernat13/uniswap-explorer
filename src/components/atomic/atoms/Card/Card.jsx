@@ -23,13 +23,14 @@ const StyledCard = styled.div`
   font-weight: 400 !important;
   height: ${(props) => (props.height ? props.height : "100%")};
   width: ${(props) => props.fitContent && "fit-content"};
-  border: var(--border-ultra-light);
-  /* background-color: #0000002c; */
-
+  border: 1px solid transparent;
+  color: ${({ theme }) => theme.text};
   backdrop-filter: blur(5px);
+  background-color: ${({ theme }) => theme.cardBg};
+  box-shadow: ${({ theme }) => theme.boxShadow};
   &:hover {
     box-shadow: var(--box-shadow-light);
-    border: var(--border-ultra-light);
+    /* border: var(--border-ultra-light); */
   }
 
   ${(props) => {
