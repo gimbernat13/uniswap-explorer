@@ -33,7 +33,7 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   width: 100%;
-  background: black;
+  /* background: black; */
   color: rgb(209, 209, 209) !important;
   /* font-family: "Roboto Mono", monospace; */
   font-family: 'Roboto', sans-serif;
@@ -42,17 +42,15 @@ body {
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
-  background-color: black;
 
 
 
 
-  background: linear-gradient(rgb(32, 39, 56) 0%, rgb(7, 8, 22) 100%);
+  /* background: linear-gradient(rgb(32, 39, 56) 0%, rgb(7, 8, 22) 100%); */
   /* background-image: url(./assets/bg2.jpg); */
   /* background: linear-gradient(rgba(0, 0, 0, 0.853), rgba(0, 0, 0, 0.78)), url(./assets/bg2.jpg); */
   ;
   /* background: linear-gradient(rgba(0, 0, 0, 0.89), rgba(0, 0, 0, 0.938)), url(./assets/bg2.jpg); */
-
   background-size: cover;
 
   background-attachment: fixed;

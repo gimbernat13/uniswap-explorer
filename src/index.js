@@ -63,6 +63,7 @@ export function RouteWithSubRoutes(route) {
     />
   );
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -70,18 +71,18 @@ root.render(
       <TokensContextProvider>
         <PairsContextProvider>
           <ThemeContextProvider>
-            <Router>
-              <Layout>
-                <Switch>
-                  <Route exact path="/">
-                    <Redirect to="/tokens" />
-                  </Route>
-                  {routes.map((route, i) => (
-                    <RouteWithSubRoutes key={i} {...route} />
-                  ))}
-                </Switch>
-              </Layout>
-            </Router>
+              <Router>
+                <Layout>
+                  <Switch>
+                    <Route exact path="/">
+                      <Redirect to="/tokens" />
+                    </Route>
+                    {routes.map((route, i) => (
+                      <RouteWithSubRoutes key={i} {...route} />
+                    ))}
+                  </Switch>
+                </Layout>
+              </Router>
           </ThemeContextProvider>
         </PairsContextProvider>
       </TokensContextProvider>

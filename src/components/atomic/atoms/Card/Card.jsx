@@ -1,3 +1,4 @@
+import { ThemeContext, themes } from "context/ThemeContext";
 import React from "react";
 import styled, { css } from "styled-components";
 const CARD_VARIANTS = {
@@ -23,12 +24,14 @@ const StyledCard = styled.div`
   height: ${(props) => (props.height ? props.height : "100%")};
   width: ${(props) => props.fitContent && "fit-content"};
   border: var(--border-ultra-light);
-  background-color: #0000002c;
+  /* background-color: #0000002c; */
+
   backdrop-filter: blur(5px);
   &:hover {
     box-shadow: var(--box-shadow-light);
     border: var(--border-ultra-light);
   }
+
   ${(props) => {
     console.log("variant ", props.variant);
     return props.variant && CARD_VARIANTS[props.variant];
