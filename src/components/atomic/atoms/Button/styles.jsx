@@ -20,6 +20,8 @@ export const Button = styled.div`
       ? "var(--accent-purple) "
       : " var(--transparent-black-light)"};
 
+  color: ${(props) => (props.isActive ? "white" : "")};
+
   font-size: 0.8rem !important;
   font-weight: 500 !important;
   text-align: center;
@@ -29,6 +31,7 @@ export const Button = styled.div`
     filter: brightness(1.3);
   }
   &.active {
+    color: white;
     font-weight: 500 !important;
     background-color: var(--accent-purple-dark);
   }

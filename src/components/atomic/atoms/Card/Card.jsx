@@ -3,9 +3,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 const CARD_VARIANTS = {
   primary: css`
-    color: white;
-    background-color: var(--transparent-black);
-    border: var(--border-ultra-light);
+    border: var(--border-ultra-light) !important;
   `,
   transparent: css`
     background-color: transparent !important;

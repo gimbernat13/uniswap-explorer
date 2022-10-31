@@ -63,7 +63,12 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
           </div>
         </Styled.FilterChartFlex>
         <ResponsiveContainer height={300}>
-          <AreaChart data={reverseData}>
+          <AreaChart
+            margin={{
+              top: 30,
+            }}
+            data={reverseData}
+          >
             <defs>
               <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#2c88ff" stopOpacity={0.4} />
@@ -77,6 +82,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             />
             <XAxis dataKey={getTimeAxis} axisLine={true} tickLine={false} />
             <YAxis
+              width={80}
               type="number"
               // domain={["auto", "auto"]}
               datakey={tokensState.filterBy.id}

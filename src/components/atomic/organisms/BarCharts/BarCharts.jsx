@@ -44,9 +44,14 @@ export const BarCharts = ({ chartData }) => {
         </div>
 
         <ResponsiveContainer width="100%" height={350}>
-          <BarChart data={reverseData}>
+          <BarChart
+            margin={{
+              top: 30,
+            }}
+            data={reverseData}
+          >
             <XAxis dataKey={getTimeAxis} />
-            <YAxis />
+            <YAxis width={80} />
             <Tooltip />
             <Legend />
             rgba(15, 53, 255, 0.3)
