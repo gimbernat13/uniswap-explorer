@@ -36,14 +36,6 @@ export const PairAggregate = () => {
   console.log("pair da", pairDayDatas);
   return (
     <>
-      <Modal ref={modalRef}>
-        {theme}
-        <SwapWidget
-          defaultInputTokenAddress={pair.token0.id}
-          defaultOutputTokenAddress={pair.token1.id}
-          theme={theme === "dark" ? darkTheme : lightTheme}
-        />
-      </Modal>
       <Styled.AggregateGrid>
         <Styled.AggregateLeft>
           <Styled.PairSpecs>
@@ -98,7 +90,7 @@ export const PairAggregate = () => {
             <SwapWidget
               defaultInputTokenAddress={pair.token0.id}
               defaultOutputTokenAddress={pair.token1.id}
-              theme={darkTheme}
+              theme={theme === "dark" ? darkTheme : darkTheme}
             />
           </div>
 

@@ -1,17 +1,15 @@
-import React, { useContext, useRef } from "react";
+import React, { useRef } from "react";
 import * as Styled from "./styles";
 import { NavLink } from "react-router-dom";
 import { Button } from "components/atomic/atoms/Button/Button";
 import { useOnClickOutside } from "context/useOnClickOutside";
 import { UilCoins, UilWaterGlass } from "@iconscout/react-unicons";
-import { ThemeContext } from "styled-components";
 
-export const Sidebar = () => {
+export const Sidebar = ({ theme, toggleTheme }) => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const toggleSidebarOpen = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-  const { toggleTheme, theme } = useContext(ThemeContext);
   const sidebarItems = [
     {
       title: "Tokens",
@@ -28,6 +26,7 @@ export const Sidebar = () => {
     e.stopPropagation();
   }
   function handleToggleTheme(e) {
+    e.stopPropagation();
     toggleTheme();
   }
   const ref = useRef();
@@ -38,27 +37,25 @@ export const Sidebar = () => {
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
-      {/* <Button onClick={handleToggleTheme}> ☽</Button> */}
-
       <div className="sidebar-links shits">
-        <div>
-          <ul>
-            {sidebarItems.map((item) => (
-              <li key={item.url}>
-                <div>
-                  <NavLink onClick={handleChildClick} to={item.url}>
-                    <div className="icon">
-                      <i>{item.icon}</i>
-                      <i> {item.icon}</i>
-                    </div>
-                    <span className="link hide">{item.title}</span>
-                  </NavLink>
+        {sidebarItems.map((item) => (
+          <div key={item.url}>
+            <div>
+              <NavLink onClick={handleChildClick} to={item.url}>
+                <div className="icon">
+                  {/* <Button> {item.icon}</Button> */}
+                  <i>{item.icon}</i>
+                  <i> {item.icon}</i>
                 </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+                <span className="link hide">{item.title}</span>
+              </NavLink>
+            </div>
+          </div>
+        ))}
       </div>
+      <Button onClick={handleToggleTheme}>
+        {theme === "dark" ? "☼" : "☽"}
+      </Button>
     </Styled.Sidebar>
   );
 };

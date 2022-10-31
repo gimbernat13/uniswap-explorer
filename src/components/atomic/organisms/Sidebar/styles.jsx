@@ -4,12 +4,13 @@ export const Sidebar = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 96vh;
   background-color: ${({ theme }) => theme.cardBg};
   width: 10rem;
   padding: 1rem 0.85rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   transition: width 0.5s ease-in-out;
   backdrop-filter: blur(2px);
   transition: all 0.4s;
@@ -28,4 +29,4 @@ export const Sidebar = styled.nav`
   }
 `;
 
-export const SidebarLink = styled.div``;
+export const SidebarLinksCentered = styled.div``;

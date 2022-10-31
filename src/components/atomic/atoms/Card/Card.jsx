@@ -8,9 +8,9 @@ const CARD_VARIANTS = {
     border: var(--border-ultra-light);
   `,
   transparent: css`
-    background-color: var(--transparent-black-light);
-    border: var(--border-ultra-light);
+    background-color: transparent !important;
     border: 1px solid transparent;
+    box-shadow: none;
   `,
 };
 
@@ -27,9 +27,8 @@ const StyledCard = styled.div`
   color: ${({ theme }) => theme.text};
   backdrop-filter: blur(5px);
   background-color: ${({ theme }) => theme.cardBg};
-  box-shadow: ${({ theme }) => theme.boxShadow};
   &:hover {
-    box-shadow: var(--box-shadow-light);
+    box-shadow: ${({ theme }) => theme.boxShadow};
     /* border: var(--border-ultra-light); */
   }
 

@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
-
     color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
   }
@@ -10,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 export const lightTheme = {
   body: "#E2E4EB",
   // body: "linear-gradient(rgb(238, 243, 255) 0%, rgb(214, 216, 255) 100%)",
-  text: "#121620",
+  text: "#3d3d3d",
   cardBg: "white",
   boxShadow: "var(--card-box-shadow)",
 };

@@ -21,7 +21,7 @@ export const Button = styled.div`
       : " var(--transparent-black-light)"};
 
   font-size: 0.8rem !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   text-align: center;
   margin-right: 7px;
   /* box-shadow: var(--box-shadow-light); */
