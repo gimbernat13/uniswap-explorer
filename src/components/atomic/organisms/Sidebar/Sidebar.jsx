@@ -38,7 +38,7 @@ export const Sidebar = () => {
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
-      <Button onClick={handleToggleTheme}> ☽</Button>
+      {/* <Button onClick={handleToggleTheme}> ☽</Button> */}
 
       <div className="sidebar-links shits">
         <div>

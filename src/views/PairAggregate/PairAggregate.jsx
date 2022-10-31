@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import formatNumber from "../../utils/formatNumber";
 import { PAIR_AGGREGATE } from "./queries";
@@ -12,6 +12,7 @@ import { RecentSwaps } from "components/atomic/organisms/RecentSwaps/RecentSwaps
 import { Button } from "components/atomic/atoms/Button/Button";
 import { darkTheme, lightTheme, SwapWidget } from "@uniswap/widgets";
 import Modal from "components/atomic/molecules/Modal/Modal";
+import { ThemeContext } from "styled-components";
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
@@ -27,6 +28,7 @@ export const PairAggregate = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [pairID]);
 
+  const { theme } = useContext(ThemeContext);
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
@@ -35,10 +37,11 @@ export const PairAggregate = () => {
   return (
     <>
       <Modal ref={modalRef}>
+        {theme}
         <SwapWidget
           defaultInputTokenAddress={pair.token0.id}
           defaultOutputTokenAddress={pair.token1.id}
-          theme={darkTheme}
+          theme={theme === "dark" ? darkTheme : lightTheme}
         />
       </Modal>
       <Styled.AggregateGrid>

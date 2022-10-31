@@ -3,15 +3,14 @@ import styled from "styled-components";
 export const Select = styled.div`
   border-radius: var(--border-radius);
   text-align: center;
-  box-shadow: rgb(99 99 99 / 20%) 0px 1px 8px 0px;
   margin-right: 0.5rem;
   transition: all 0.2s;
   cursor: pointer;
   position: relative;
-  box-shadow: var(--transparent-black) 1px 1000px 1px inset;
-  border: 1px solid rgba(245, 245, 245, 0.3);
+  border: var(--border-thick);
   font-size: 0.8rem !important;
   width: 150px;
+  background-color: ${({ theme }) => theme.cardBg};
 
   &:hover {
   }
@@ -27,7 +26,8 @@ export const SelectInner = styled.div`
   z-index: 3;
   border-radius: 1rem;
   border: 1px solid rgba(148, 148, 148, 0.317);
-  background-color: var(--transparent-black);
+  background-color: ${({ theme }) => theme.cardBg};
+
   backdrop-filter: blur(1px);
 `;
 export const SelectItem = styled.div`

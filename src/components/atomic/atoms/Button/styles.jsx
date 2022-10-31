@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Button = styled.div`
-  /* transform: scale(0.8); */
   transition: all 0.2s;
   width: ${(props) => props.width};
   height: fit-content !important;
@@ -10,22 +9,22 @@ export const Button = styled.div`
   border-radius: 11px;
   box-sizing: border-box;
   cursor: pointer;
-  /* border: var(--border-ultra-light); */
-  /* border: ${(props) =>
-    props.isActive ? "1px solid transparent" : "var(--border-ultra-light)"}; */
-  border: var(--border-ultra-light);
+  border: var(--border-thick);
   background-color: #0000002c;
   display: inline-block;
   opacity: 0.9;
-  background-color: ${(props) =>
-    props.isActive ? "var(--main-color) " : " var(--transparent-black-light)"};
+  background-color: ${({ theme }) => theme.cardBg};
 
-  color: white !important;
+  background-color: ${(props) =>
+    props.isActive
+      ? "var(--accent-purple) "
+      : " var(--transparent-black-light)"};
+
   font-size: 0.8rem !important;
   font-weight: 400 !important;
   text-align: center;
   margin-right: 7px;
-
+  /* box-shadow: var(--box-shadow-light); */
   &:hover {
     filter: brightness(1.3);
   }
