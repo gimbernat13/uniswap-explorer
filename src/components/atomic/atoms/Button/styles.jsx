@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Button = styled.button`
   color: ${({ theme }) => theme.text};
@@ -19,6 +19,7 @@ export const Button = styled.button`
   font-weight: 500 !important;
   text-align: center;
   text-decoration: none;
+
   /* box-shadow: var(--box-shadow-light); */
   &:hover {
     filter: brightness(1.3);

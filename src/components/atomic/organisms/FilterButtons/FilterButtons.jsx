@@ -1,16 +1,13 @@
-import React, { useContext } from "react";
-import {
-  setFilterBy,
-  setItemsOnPage,
-  setSortBy,
-} from "../../context/actionNames";
-import { TokensContext } from "../../context/TokensContext";
-import { Select } from "../Select/Select";
-import { filterByOptions, itemsOnPageOptions, sortByOptions } from "./config";
+import { Select } from 'components/atomic/atoms/Select/Select';
+import { setFilterBy, setItemsOnPage } from 'context/actionNames';
+import { TokensContext } from 'context/TokensContext';
+import React, { useContext } from 'react';
 
-export const FilterButtons = () => {
+import { filterByOptions, itemsOnPageOptions } from './config';
+
+export function FilterButtons() {
   const TokenContext = useContext(TokensContext);
-  const { dispatch: tokensDispatch, state: tokensState } = TokenContext;
+  const { dispatch: tokensDispatch } = TokenContext;
 
   return (
     <div>
@@ -31,4 +28,4 @@ export const FilterButtons = () => {
       </div>
     </div>
   );
-};
+}

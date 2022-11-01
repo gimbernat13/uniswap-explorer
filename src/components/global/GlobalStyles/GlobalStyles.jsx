@@ -12,7 +12,7 @@ export const lightTheme = {
   text: "#3d3d3d",
   cardBg: "#ffffffa1",
   boxShadow: "var(--card-box-shadow)",
-  sidebarBg: "#ffffff",
+  sidebarBg: "#e7e7e7",
 };
 export const darkTheme = {
   body: "linear-gradient(rgb(32, 39, 56) 0%, rgb(7, 8, 22) 100%)",

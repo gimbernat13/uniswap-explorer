@@ -58,6 +58,7 @@ export function Sidebar({ theme, toggleTheme }) {
               </Styled.SidebarLink>
             </NavLink>
           ))}
+
         </Styled.SidebarLinks>
         <Button onClick={handleToggleTheme}>
           {theme === 'dark' ? (
