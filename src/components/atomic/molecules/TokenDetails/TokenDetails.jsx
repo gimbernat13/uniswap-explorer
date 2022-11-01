@@ -35,7 +35,7 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
           <div>{formatNumber(parseFloat(tokenTxCount))}</div>
         </Card>
       </Styled.DetailsGridItem>
-      {/* <Styled.DetailsGridItem>
+      <Styled.DetailsGridItem>
         <Card transparent height="100%">
           <div className="medium-text">Daily Volume </div>
           <div>${formatNumber(parseFloat(dailyVolumeUSD).toFixed(2))} </div>
@@ -52,7 +52,7 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
           <div className="medium-text">Tx's 24 Hours</div>
           <div>{formatNumber(parseFloat(dailyTxns))}</div>
         </Card>
-      </Styled.DetailsGridItem> */}
+      </Styled.DetailsGridItem>
     </Styled.DetailsGrid>
   );
 };

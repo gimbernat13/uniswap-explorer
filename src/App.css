@@ -3,7 +3,7 @@
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(100, 130, 219, 0.557);
   --border-ultra-light: 1px solid rgba(64, 73, 99, 0.194);
-  --border-thick: 2px solid rgba(64, 73, 99, 0.194);
+  --border-thick: 3px solid rgba(64, 73, 99, 0.194);
 
   --transparent-black-light: none !important;
   --transparent-black: rgba(0, 0, 0, 0.385);
