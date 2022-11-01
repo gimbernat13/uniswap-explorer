@@ -8,6 +8,7 @@ import {
   UilWaterGlass,
   UilMoon,
   UilSun,
+  UilNerd,
 } from "@iconscout/react-unicons";
 export const Sidebar = ({ theme, toggleTheme }) => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
@@ -45,7 +46,9 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       <Styled.SidebarInner>
         <Styled.SidebarLinks>
           <Styled.SidebarLink>
-            <h1 style={{ transform: "scale(1.5) , marginLeft: -5px" }}>🦄</h1>
+            <h1 style={{ transform: "scale(1.5) , marginLeft: -5px" }}>
+              <UilNerd />
+            </h1>
             <h2 className="hide"> Explorer</h2>
           </Styled.SidebarLink>
           {sidebarItems.map((item) => (
