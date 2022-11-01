@@ -47,7 +47,6 @@ export function Sidebar({ theme, toggleTheme }) {
       <Styled.SidebarInner>
         <Styled.SidebarLinks>
           <UilNerd />
-
           <Styled.SidebarLink>
             <h2 className="hide"> Explorer</h2>
           </Styled.SidebarLink>

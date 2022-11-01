@@ -32,7 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
-    "lintFix": "eslint  --ext .js --ignore-path .gitignore . --fix"
+    "lintFix": "eslint --fix --ext .js --ignore-path .gitignore . "
 
   },
   "eslintConfig": {

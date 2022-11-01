@@ -8,9 +8,9 @@ import { useViewType } from 'hooks/useViewType';
 import { ViewTypeButtons } from 'components/atomic/molecules/ViewTypeButtons/ViewTypeButtons';
 import { Card } from 'components/atomic/atoms/Card/Card';
 import { hasSubRoute } from 'utils/hasSubRoute';
+import { RouteWithSubRoutes } from 'index';
 import * as Styled from './styles';
 import { TOKENS } from './queries';
-import { RouteWithSubRoutes } from '../..';
 
 export function TokensView({ routes }) {
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
