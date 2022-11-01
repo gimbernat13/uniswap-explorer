@@ -10,7 +10,7 @@ export const TokenMainDetails = ({ data }) => {
         <div className="medium-text">{name}</div>
       </div>
       <div>
-        <div className="detail-links">
+        <Styled.DetailLinks className="detail-links">
           <a
             // target="_blank"
             href={`https://www.coingecko.com/en/coins/${id}`}
@@ -30,7 +30,7 @@ export const TokenMainDetails = ({ data }) => {
               alt=""
             />
           </a>
-        </div>
+        </Styled.DetailLinks>
       </div>
     </Styled.FlexSpacedV>
   );

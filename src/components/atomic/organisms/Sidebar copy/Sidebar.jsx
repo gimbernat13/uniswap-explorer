@@ -6,7 +6,7 @@ import { useOnClickOutside } from "context/useOnClickOutside";
 import { UilCoins, UilWaterGlass } from "@iconscout/react-unicons";
 
 export const Sidebar = ({ theme, toggleTheme }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const toggleSidebarOpen = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -22,7 +22,6 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       url: "/pairs",
     },
   ];
-
   function handleChildClick(e) {
     e.stopPropagation();
   }
@@ -38,21 +37,25 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
+      <div className="sidebar-links">
+        {sidebarItems.map((item) => (
+          <div key={item.url}>
+            <ul>
+              <NavLink onClick={handleChildClick} to={item.url}>
+                <li className="icon">
+                  {/* <Button> {item.icon}</Button> */}
+                  <i>{item.icon}</i>
+                  <i> {item.icon}</i>
+                </li>
+                <span className="link hide">{item.title}</span>
+              </NavLink>
+            </ul>
+          </div>
+        ))}
+      </div>
       <Button onClick={handleToggleTheme}>
         {theme === "dark" ? "☼" : "☽"}
       </Button>
-      <Styled.SidebarInner>
-        <Styled.SidebarLinks>
-          {sidebarItems.map((item) => (
-            <NavLink key={item.url} onClick={handleChildClick} to={item.url}>
-              <Styled.SidebarLink>
-                <li className="icon">{item.icon}</li>
-                <span className="hide">{item.title}</span>
-              </Styled.SidebarLink>
-            </NavLink>
-          ))}
-        </Styled.SidebarLinks>
-      </Styled.SidebarInner>
     </Styled.Sidebar>
   );
 };
