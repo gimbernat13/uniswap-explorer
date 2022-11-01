@@ -43,8 +43,7 @@ export const SidebarInner = styled.div`
 export const SidebarLink = styled.div`
   display: flex;
   border-radius: var(--border-radius);
-  /* padding: 10px 8px; */
-  margin: 10px;
+  padding: 0.8rem 0.5rem;
   align-items: center;
   gap: 10px;
   margin-left: 14px;

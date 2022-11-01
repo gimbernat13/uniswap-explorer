@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+  color: ${({ theme }) => theme.text};
+  width: ${(props) => props.width};
   position: relative;
   z-index: 2;
   transition: all 0.2s;
-  width: ${(props) => props.width};
   height: fit-content !important;
   padding: 8px 0.85rem;
   text-decoration: none;

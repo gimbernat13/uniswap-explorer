@@ -43,7 +43,7 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
       <Styled.SidebarInner>
-        <Button isActive onClick={handleToggleTheme}>
+        <Button onClick={handleToggleTheme}>
           {theme === "dark" ? (
             <UilSun size={15} color="white" />
           ) : (

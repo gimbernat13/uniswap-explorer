@@ -9,7 +9,7 @@
   --transparent-black: rgba(0, 0, 0, 0.385);
   --transparent-black-dark: rgba(0, 0, 0, 0.906);
 
-  --accent-gray: #bebebe;
+  --accent-gray: #202020;
 
   --accent-green: #36d7b7;
   --accent-purple: #5460ce;
@@ -35,7 +35,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   height: 100%;
-  /* background: black; */
   /* font-family: "Roboto Mono", monospace; */
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
@@ -43,7 +42,6 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 a {
@@ -111,8 +109,22 @@ ul {
 }
 
 .active {
-  background-color: var(--accent-gray);
-  border-radius: var(--border-radius);
+  background-color: var(--accent-purple) !important;
+  /* border-radius: var(--border-radius); */
+  background-clip: content-box, border-box;
+  /* box-shadow: var(--transparent-black) 2px 1000px 2px inset; */
+  /* box-shadow: rgb(123, 123, 123) 2px 1000px 2px inset; */
+  opacity: 0.9;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  background-origin: border-box;
+  background-image: linear-gradient(rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)),
+    linear-gradient(95.5deg,
+      rgba(15, 53, 255, 0.3) 12.82%,
+      rgba(255, 72, 181, 0.3) 41.96%,
+      rgba(15, 53, 255, 0.08) 75.06%,
+      rgba(15, 53, 255, 0.11) 107.66%);
 }
 
 h3 {
