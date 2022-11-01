@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
@@ -7,17 +8,17 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 export const lightTheme = {
-  body: "radial-gradient(100% 100% at 50% 0%, rgba(184, 202, 255, 0.51) 0%, rgba(255, 255, 255, 0) 100%), rgb(255, 255, 255)",
+  body: 'radial-gradient(100% 100% at 50% 0%, rgba(184, 202, 255, 0.51) 0%, rgba(255, 255, 255, 0) 100%), rgb(255, 255, 255)',
   // body: "linear-gradient(rgb(238, 243, 255) 0%, rgb(214, 216, 255) 100%)",
-  text: "#3d3d3d",
-  cardBg: "#ffffffa1",
-  boxShadow: "var(--card-box-shadow)",
-  sidebarBg: "#e7e7e7",
+  text: '#3d3d3d',
+  cardBg: '#ffffffa1',
+  boxShadow: 'var(--card-box-shadow)',
+  sidebarBg: '#e7e7e7',
 };
 export const darkTheme = {
-  body: "linear-gradient(rgb(32, 39, 56) 0%, rgb(7, 8, 22) 100%)",
-  text: "#f1f1f1",
-  cardBg: "var(--transparent-black)",
-  boxShadow: "var(--card-box-shadow)",
-  sidebarBg: "var(--transparent-black)",
+  body: 'linear-gradient(rgb(32, 39, 56) 0%, rgb(7, 8, 22) 100%)',
+  text: '#f1f1f1',
+  cardBg: 'var(--transparent-black)',
+  boxShadow: 'var(--card-box-shadow)',
+  sidebarBg: 'var(--transparent-black)',
 };
