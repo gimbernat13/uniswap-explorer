@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { Switch, useHistory } from "react-router-dom";
+import { Switch, useHistory, useParams } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 
 import { PAIRS } from "./queries";
@@ -13,6 +13,9 @@ import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/Vie
 import { hasSubRoute } from "utils/hasSubRoute";
 import { Card, CARD_VARIANTS } from "components/atomic/atoms/Card/Card";
 export function Pairs({ routes }) {
+  React.useEffect(() => {}, []);
+
+  console.log(useParams());
   const { location } = useHistory();
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(PAIRS);

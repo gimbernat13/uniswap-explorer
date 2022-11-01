@@ -19,11 +19,13 @@ export const MobileBar = styled.nav`
   justify-content: center;
   z-index: 5;
   opacity: 0;
+  display: none;
 
   /* box-shadow: var(--box-shadow-light); */
   cursor: pointer;
   @media ${deviceQueries.laptop} {
     opacity: 1;
+    display: block;
   }
 
   &:hover {

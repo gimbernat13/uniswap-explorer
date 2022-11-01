@@ -35,7 +35,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
     <>
       <Styled.ChartGrid>
         <Styled.FilterChartFlex>
-          <div>
+          <Styled.FilterButtons>
             {tokenFilters.map((filter, i) => {
               return (
                 <Button
@@ -51,7 +51,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
                 </Button>
               );
             })}
-          </div>
+          </Styled.FilterButtons>
           <div>
             <Select
               dispatch={tokensDispatch}

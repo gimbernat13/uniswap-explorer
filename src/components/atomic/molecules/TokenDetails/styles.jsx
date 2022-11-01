@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DetailsGrid = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 10px;
+  gap: 5px;
 
   @media ${deviceQueries.laptop} {
     grid-template-columns: auto auto;

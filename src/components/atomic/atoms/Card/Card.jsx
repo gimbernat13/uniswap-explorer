@@ -11,7 +11,6 @@ const CARD_VARIANTS = {
     box-shadow: none;
   `,
 };
-
 const StyledCard = styled(motion.div)`
   position: relative;
   display: ${(props) => (props.flex ? "flex" : "block")};
@@ -46,7 +45,14 @@ const animated = {
     },
   },
 };
-export function Card({ variant, children, height, fitContent, noPadding }) {
+export function Card({
+  variant,
+  children,
+  height,
+  fitContent,
+  noPadding,
+  className,
+}) {
   return (
     <StyledCard
       variants={animated}
@@ -55,6 +61,7 @@ export function Card({ variant, children, height, fitContent, noPadding }) {
       fitContent={fitContent}
       height={height}
       variant={variant}
+      className={className}
     >
       <CardInner noPadding={noPadding}>{children}</CardInner>
     </StyledCard>

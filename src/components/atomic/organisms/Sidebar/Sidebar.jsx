@@ -43,13 +43,6 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
       <Styled.SidebarInner>
-        <Button onClick={handleToggleTheme}>
-          {theme === "dark" ? (
-            <UilSun size={15} color="white" />
-          ) : (
-            <UilMoon size={15} />
-          )}
-        </Button>
         <Styled.SidebarLinks>
           {sidebarItems.map((item) => (
             <NavLink key={item.url} onClick={handleChildClick} to={item.url}>
@@ -60,6 +53,13 @@ export const Sidebar = ({ theme, toggleTheme }) => {
             </NavLink>
           ))}
         </Styled.SidebarLinks>
+        <Button onClick={handleToggleTheme}>
+          {theme === "dark" ? (
+            <UilSun size={15} color="white" />
+          ) : (
+            <UilMoon size={15} />
+          )}
+        </Button>
       </Styled.SidebarInner>
     </Styled.Sidebar>
   );

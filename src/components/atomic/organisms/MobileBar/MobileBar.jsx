@@ -2,7 +2,6 @@ import React from "react";
 import * as Styled from "./styles";
 import { UilCoins, UilWaterGlass } from "@iconscout/react-unicons";
 import { NavLink } from "react-router-dom";
-import { Card } from "components/atomic/atoms/Card/Card";
 import { Button } from "../NavButtons/styles";
 
 export const MobileBar = () => {

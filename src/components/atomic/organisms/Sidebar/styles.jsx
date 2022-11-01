@@ -5,7 +5,7 @@ export const Sidebar = styled.nav`
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: ${(theme) => theme.cardBg};
+  background-color: ${({ theme }) => theme.sidebarBg};
   width: 10rem;
   transition: width 0.5s ease-in-out;
   backdrop-filter: blur(2px);
@@ -20,7 +20,7 @@ export const Sidebar = styled.nav`
     box-shadow: var(--box-shadow-light);
   }
   &.shrink {
-    width: 5rem;
+    width: 4rem;
     .hide {
       color: green;
       opacity: 0;
@@ -31,24 +31,22 @@ export const Sidebar = styled.nav`
   }
 `;
 export const SidebarInner = styled.div`
-  padding: 1rem 0.5rem;
-  height: 100%;
+  padding: 1rem 0.7rem;
+  height: 96%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  button {
-    align-items: center;
-  }
 `;
 
 export const SidebarLink = styled.li`
   display: flex;
   padding: 0.5rem 0.5rem;
   align-items: center;
-  gap: 10px;
-  margin-left: 14px;
+  gap: 5px;
+  margin-left: 4px;
 `;
 export const SidebarLinks = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 `;

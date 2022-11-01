@@ -8,8 +8,8 @@
   --transparent-black: rgba(0, 0, 0, 0.385);
   --transparent-black-dark: rgba(0, 0, 0, 0.906);
   --accent-gray: #202020;
-  --accent-green: #36d7b7;
-  --accent-purple: #5460ce;
+  --accent-green: #1e7866;
+  --accent-purple: #5487ce;
   --accent-purple-dark: #4449734b;
   --sidebar-margin: 80px;
   --box-shadow-light: rgba(0, 0, 0, 0.086) 6px 8px 12px, rgba(0, 0, 0, 0.108) 6px 4px 6px;
@@ -64,12 +64,13 @@ a {
 
 
 /* ==============List ============= */
-x li {
+li {
   list-style: none;
 }
 
 ul {
-  padding: 0;
+  padding: 0 !important;
+  margin: 0 !important;
   list-style-type: none;
 }
 
