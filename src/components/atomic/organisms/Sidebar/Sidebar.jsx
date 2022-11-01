@@ -37,30 +37,25 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
-      <div>
-        <div className="icon" style={{ marginLeft: "0px" }}>
-          <Button onClick={handleToggleTheme}>
-            {theme === "dark" ? "☼" : "☽"}
-          </Button>
-        </div>
-
-        <div className="sidebar-links">
-          {sidebarItems.map((item) => (
-            <div key={item.url}>
-              <ul>
-                <NavLink onClick={handleChildClick} to={item.url}>
-                  <li className="icon">
-                    {/* <Button> {item.icon}</Button> */}
-                    <i>{item.icon}</i>
-                    <i> {item.icon}</i>
-                  </li>
-                  <span className="link hide">{item.title}</span>
-                </NavLink>
-              </ul>
-            </div>
-          ))}
-        </div>
+      <div className="sidebar-links">
+        {sidebarItems.map((item) => (
+          <div key={item.url}>
+            <ul>
+              <NavLink onClick={handleChildClick} to={item.url}>
+                <li className="icon">
+                  {/* <Button> {item.icon}</Button> */}
+                  <i>{item.icon}</i>
+                  <i> {item.icon}</i>
+                </li>
+                <span className="link hide">{item.title}</span>
+              </NavLink>
+            </ul>
+          </div>
+        ))}
       </div>
+      <Button isActive onClick={handleToggleTheme}>
+        {theme === "dark" ? "☼" : "☽"}
+      </Button>
     </Styled.Sidebar>
   );
 };

@@ -4,17 +4,17 @@ export const Sidebar = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  height: 96vh;
-  background-color: ${({ theme }) => theme.cardBg};
+  height: 90vh;
+  background-color: ${(theme) => theme.cardBg};
   width: 10rem;
-  padding: 1rem 0.85rem;
+  padding: 1.8rem 0.85rem;
+  transition: width 0.5s ease-in-out;
+  backdrop-filter: blur(2px);
+  transition: all 0.2s;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: width 0.5s ease-in-out;
-  backdrop-filter: blur(2px);
-  transition: all 0.4s;
-  z-index: 5;
   box-shadow: var(--box-shadow-light);
   cursor: pointer;
   @media ${deviceQueries.laptop} {
@@ -25,7 +25,7 @@ export const Sidebar = styled.nav`
     box-shadow: var(--box-shadow-light);
   }
   &.shrink {
-    width: 3rem;
+    width: 3.8rem;
   }
 `;
 

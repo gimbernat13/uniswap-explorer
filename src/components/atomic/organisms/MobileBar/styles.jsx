@@ -13,7 +13,7 @@ export const MobileBar = styled.nav`
   flex-direction: column;
   transition: width 0.5s ease-in-out;
   backdrop-filter: blur(2px);
-  transition: all 0.4s;
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -55,7 +55,7 @@ export const BarCharts = ({ chartData }) => {
             <Tooltip />
             <Legend />
             rgba(15, 53, 255, 0.3)
-            <Bar dataKey={selectedFilter} fill="#98a1fa" />
+            <Bar dataKey={selectedFilter} fill="var(--accent-purple)" />
           </BarChart>
         </ResponsiveContainer>
       </Styled.ChartGrid>

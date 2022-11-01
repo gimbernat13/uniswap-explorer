@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Button = styled.div`
+  position: relative;
+  z-index: 2;
   transition: all 0.2s;
   width: ${(props) => props.width};
   height: fit-content !important;

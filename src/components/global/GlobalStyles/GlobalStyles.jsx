@@ -10,7 +10,7 @@ export const lightTheme = {
   body: "#E2E4EB",
   // body: "linear-gradient(rgb(238, 243, 255) 0%, rgb(214, 216, 255) 100%)",
   text: "#3d3d3d",
-  cardBg: "white",
+  cardBg: "#ffffffc0",
   boxShadow: "var(--card-box-shadow)",
 };
 export const darkTheme = {

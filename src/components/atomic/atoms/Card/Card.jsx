@@ -7,7 +7,7 @@ const CARD_VARIANTS = {
   `,
   transparent: css`
     background-color: transparent !important;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
     box-shadow: none;
   `,
 };
