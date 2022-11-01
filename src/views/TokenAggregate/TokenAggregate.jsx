@@ -12,7 +12,6 @@ import { TokenMainDetails } from "components/atomic/molecules/TokenMainDetails/T
 import { TokenDetails } from "components/atomic/molecules/TokenDetails/TokenDetails";
 import { Card } from "components/atomic/atoms/Card/Card";
 import Chart from "components/atomic/organisms/Chart/Chart";
-import { Loader } from "components/atomic/atoms/Loader/styles";
 import { Button } from "components/atomic/atoms/Button/Button";
 import { BarLoader } from "react-spinners";
 export const TokenAggregate = () => {

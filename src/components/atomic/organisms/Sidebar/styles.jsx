@@ -27,7 +27,7 @@ export const Sidebar = styled.nav`
     }
   }
   .active {
-    border-radius:var(--border-radius) !important;
+    border-radius: var(--border-radius) !important;
   }
 `;
 export const SidebarInner = styled.div`
@@ -37,7 +37,6 @@ export const SidebarInner = styled.div`
   flex-direction: column;
   button {
     align-items: center;
-    margin-left: 5px;
   }
 `;
 

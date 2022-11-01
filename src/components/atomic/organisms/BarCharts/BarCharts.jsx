@@ -29,7 +29,7 @@ export const BarCharts = ({ chartData }) => {
   return (
     <>
       <Styled.ChartGrid>
-        <div>
+        <Styled.ButtonsFlex>
           {filters.map((filter, i) => {
             return (
               <Button
@@ -41,7 +41,7 @@ export const BarCharts = ({ chartData }) => {
               </Button>
             );
           })}
-        </div>
+        </Styled.ButtonsFlex>
 
         <ResponsiveContainer width="100%" height={350}>
           <BarChart

@@ -1,4 +1,4 @@
-import { ThemeContext, themes } from "context/ThemeContext";
+import { motion } from "framer-motion";
 import React from "react";
 import styled, { css } from "styled-components";
 const CARD_VARIANTS = {
@@ -12,7 +12,7 @@ const CARD_VARIANTS = {
   `,
 };
 
-const StyledCard = styled.div`
+const StyledCard = styled(motion.div)`
   position: relative;
   display: ${(props) => (props.flex ? "flex" : "block")};
   transition: all 0.3s;
@@ -37,9 +37,25 @@ const CardInner = styled.div`
   padding: ${(props) => (props.noPadding ? "none" : " 0.8rem")};
 `;
 
+const animated = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
 export function Card({ variant, children, height, fitContent, noPadding }) {
   return (
-    <StyledCard fitContent={fitContent} height={height} variant={variant}>
+    <StyledCard
+      variants={animated}
+      initial="hidden"
+      animate="show"
+      fitContent={fitContent}
+      height={height}
+      variant={variant}
+    >
       <CardInner noPadding={noPadding}>{children}</CardInner>
     </StyledCard>
   );

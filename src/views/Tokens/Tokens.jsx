@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { Switch, useHistory, useParams } from "react-router-dom";
+import { Switch, useHistory } from "react-router-dom";
 import { RouteWithSubRoutes } from "../..";
 
 import { Loader } from "components/atomic/atoms/Loader/Loader";
@@ -17,9 +17,6 @@ export function TokensView({ routes }) {
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(TOKENS);
 
-  console.log("oarams ", window.location);
-  console.log("3232 ", useHistory());
-
   const { location } = useHistory();
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
@@ -35,7 +32,6 @@ export function TokensView({ routes }) {
         ))}
       </Switch>
       <Styled.FlexSpaced>
-        {/* <FilterButtons /> */}
         <h3>Most Traded</h3>
         <div>
           <ViewTypeButtons

@@ -4,10 +4,7 @@ import { TokensContext } from "../../../../context/TokensContext";
 
 import formatNumber from "../../../../utils/formatNumber";
 import * as Styled from "./styles";
-const animatedItem = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
+
 export const TokenCard = ({ token, index }) => {
   const { state: tokensState } = useContext(TokensContext);
   return (

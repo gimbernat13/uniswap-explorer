@@ -7,19 +7,13 @@ import * as Styled from "./styles";
 import { BarCharts } from "components/atomic/organisms/BarCharts/BarCharts";
 import { Card } from "components/atomic/atoms/Card/Card";
 import { Loader } from "components/atomic/atoms/Loader/Loader";
-import { FlexContainer } from "components/global/FlexContainer/FlexContainer";
 import { RecentSwaps } from "components/atomic/organisms/RecentSwaps/RecentSwaps";
-import { Button } from "components/atomic/atoms/Button/Button";
-import { darkTheme, lightTheme, SwapWidget } from "@uniswap/widgets";
-import Modal from "components/atomic/molecules/Modal/Modal";
+import { darkTheme, SwapWidget } from "@uniswap/widgets";
 import { ThemeContext } from "styled-components";
 
 export const PairAggregate = () => {
   const { pairID } = useParams();
-  const modalRef = React.useRef();
-  const openModal = () => {
-    modalRef.current.openModal();
-  };
+
   const { loading, error, data } = useQuery(PAIR_AGGREGATE, {
     variables: { id: pairID },
   });
@@ -33,7 +27,6 @@ export const PairAggregate = () => {
   if (error) return `Error! ${error.message}`;
 
   const { pairDayDatas, pair, swaps } = data;
-  console.log("pair da", pairDayDatas);
   return (
     <>
       <Styled.AggregateGrid>

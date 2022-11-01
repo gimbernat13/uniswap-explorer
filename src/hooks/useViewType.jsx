@@ -1,7 +1,6 @@
 import React from "react";
 import { UilTable } from "@iconscout/react-unicons";
 import { UilListUl } from "@iconscout/react-unicons";
-import { Button } from "components/atomic/atoms/Button/Button";
 
 export const useViewType = () => {
   const viewTypes = [
