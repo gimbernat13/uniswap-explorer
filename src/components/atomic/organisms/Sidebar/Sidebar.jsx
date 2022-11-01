@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'components/atomic/atoms/Button/Button';
 import { useOnClickOutside } from 'context/useOnClickOutside';

@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import {
   setFilterBy,
   setItemsOnPage,
   setSortBy,
-} from "../../../../context/actionNames";
-import { PairsContext } from "../../../../context/PairsContext";
-import { Select } from "../../../Select/Select";
-import { filterByOptions, itemsOnPageOptions, sortByOptions } from "./config";
+} from '../../../../context/actionNames';
+import { PairsContext } from '../../../../context/PairsContext';
+import { Select } from '../../../Select/Select';
+import { filterByOptions, itemsOnPageOptions, sortByOptions } from './config';
 
-export const PairFilters = () => {
+export function PairFilters() {
   const PairContext = useContext(PairsContext);
   const { dispatch: pairsDispatch, state: tokensState } = PairContext;
 
@@ -31,6 +31,6 @@ export const PairFilters = () => {
       </div>
     </div>
   );
-};
+}
 {
 }
