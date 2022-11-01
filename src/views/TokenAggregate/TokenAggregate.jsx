@@ -34,8 +34,6 @@ export const TokenAggregate = () => {
   }, [tokenID]);
   if (loading) return <BarLoader color="#828bdd" />;
   if (error) return `Error! ${error.message}`;
-
-  // const { id } = data.token;
   return (
     <>
       <Modal ref={modalRef}>

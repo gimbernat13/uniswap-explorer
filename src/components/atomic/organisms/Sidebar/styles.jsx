@@ -11,7 +11,6 @@ export const Sidebar = styled.nav`
   backdrop-filter: blur(2px);
   transition: all 0.2s;
   z-index: 5;
-
   box-shadow: var(--box-shadow-light);
   cursor: pointer;
   @media ${deviceQueries.laptop} {
@@ -27,6 +26,9 @@ export const Sidebar = styled.nav`
       opacity: 0;
     }
   }
+  .active {
+    border-radius:var(--border-radius) !important;
+  }
 `;
 export const SidebarInner = styled.div`
   padding: 1rem 0.5rem;
@@ -37,13 +39,11 @@ export const SidebarInner = styled.div`
     align-items: center;
     margin-left: 5px;
   }
-  /* justify-content: space-between; */
 `;
 
-export const SidebarLink = styled.div`
+export const SidebarLink = styled.li`
   display: flex;
-  border-radius: var(--border-radius);
-  padding: 0.8rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   align-items: center;
   gap: 10px;
   margin-left: 14px;

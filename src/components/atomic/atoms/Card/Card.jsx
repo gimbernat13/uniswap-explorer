@@ -27,11 +27,9 @@ const StyledCard = styled.div`
   background-color: ${({ theme }) => theme.cardBg};
   &:hover {
     box-shadow: ${({ theme }) => theme.boxShadow};
-    /* border: var(--border-ultra-light); */
   }
 
   ${(props) => {
-    console.log("variant ", props.variant);
     return props.variant && CARD_VARIANTS[props.variant];
   }}
 `;

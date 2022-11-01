@@ -20,7 +20,6 @@ import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
 import { Pairs } from "./views/Pairs/Pairs";
 import { Layout } from "components/global/Layout/Layout";
 import reportWebVitals from "./reportWebVitals";
-import { Home } from "views/Home/Home";
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
   cache: new InMemoryCache(),
@@ -46,10 +45,7 @@ const routes = [
       },
     ],
   },
-  {
-    path: "/",
-    component: Home,
-  },
+ 
 ];
 
 export function RouteWithSubRoutes(route) {

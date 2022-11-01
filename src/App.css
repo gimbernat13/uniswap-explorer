@@ -110,21 +110,7 @@ ul {
 
 .active {
   background-color: var(--accent-purple) !important;
-  /* border-radius: var(--border-radius); */
-  background-clip: content-box, border-box;
-  /* box-shadow: var(--transparent-black) 2px 1000px 2px inset; */
-  /* box-shadow: rgb(123, 123, 123) 2px 1000px 2px inset; */
-  opacity: 0.9;
-  font-size: 1rem !important;
-  font-weight: 400 !important;
-  background-origin: border-box;
-  background-image: linear-gradient(rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0)),
-    linear-gradient(95.5deg,
-      rgba(15, 53, 255, 0.3) 12.82%,
-      rgba(255, 72, 181, 0.3) 41.96%,
-      rgba(15, 53, 255, 0.08) 75.06%,
-      rgba(15, 53, 255, 0.11) 107.66%);
+  color: white !important;
 }
 
 h3 {

@@ -72,11 +72,6 @@ export const PairAggregate = () => {
             </Card>
           </Styled.PairSpecs>
           <Card height="100%">
-            <FlexContainer>
-              {/* <Button onClick={() => setSelectedFilter("dailyTxns")}>
-            Daily Transactions
-          </Button> */}
-            </FlexContainer>
             <BarCharts
               yValue1={pairDayDatas.dailyVolumeToken0}
               yValue2={pairDayDatas.dailyVolumeToken1}
@@ -85,7 +80,6 @@ export const PairAggregate = () => {
           </Card>
         </Styled.AggregateLeft>
         <Styled.AggregateRight>
-          {/* <Card height="100%"> */}
           <div>
             <SwapWidget
               defaultInputTokenAddress={pair.token0.id}
@@ -93,8 +87,6 @@ export const PairAggregate = () => {
               theme={theme === "dark" ? darkTheme : darkTheme}
             />
           </div>
-
-          {/* </Card> */}
         </Styled.AggregateRight>
       </Styled.AggregateGrid>
       <br />
