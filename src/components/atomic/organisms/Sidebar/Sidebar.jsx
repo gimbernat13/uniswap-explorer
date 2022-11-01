@@ -44,6 +44,10 @@ export const Sidebar = ({ theme, toggleTheme }) => {
     >
       <Styled.SidebarInner>
         <Styled.SidebarLinks>
+          <Styled.SidebarLink>
+            <h1 style={{ transform: "scale(1.5) , marginLeft: -5px" }}>🦄</h1>
+            <h2 className="hide"> Explorer</h2>
+          </Styled.SidebarLink>
           {sidebarItems.map((item) => (
             <NavLink key={item.url} onClick={handleChildClick} to={item.url}>
               <Styled.SidebarLink>

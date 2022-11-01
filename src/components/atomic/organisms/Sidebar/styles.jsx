@@ -6,7 +6,7 @@ export const Sidebar = styled.nav`
   left: 0;
   height: 100vh;
   background-color: ${({ theme }) => theme.sidebarBg};
-  width: 10rem;
+  width: 15rem;
   transition: width 0.5s ease-in-out;
   backdrop-filter: blur(2px);
   transition: all 0.2s;
