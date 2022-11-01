@@ -1,4 +1,5 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
+
 export const PAIR_AGGREGATE = gql`
   query TokenDetails($id: String!) {
     pair(id: $id) {

@@ -1,26 +1,26 @@
 export const filterByOptions = [
   {
-    value: "totalLiquidity",
-    name: " Liquidity",
+    value: 'totalLiquidity',
+    name: ' Liquidity',
   },
   {
-    value: "tradeVolumeUSD",
-    name: "Volume",
+    value: 'tradeVolumeUSD',
+    name: 'Volume',
   },
   {
-    value: "volume",
-    name: "Newly Added",
+    value: 'volume',
+    name: 'Newly Added',
   },
 ];
 
 export const sortByOptions = [
   {
-    value: "asc",
-    name: "Ascending",
+    value: 'asc',
+    name: 'Ascending',
   },
   {
-    value: "desc",
-    name: "Descending",
+    value: 'desc',
+    name: 'Descending',
   },
 ];
 export const itemsOnPageOptions = [

@@ -1,11 +1,11 @@
 export const filterByOptions = [
   {
-    value: "txCount",
-    name: "TX Count",
+    value: 'txCount',
+    name: 'TX Count',
   },
   {
-    value: "tradeVolumeUSD",
-    name: "Volume",
+    value: 'tradeVolumeUSD',
+    name: 'Volume',
   },
 ];
 
@@ -30,14 +30,14 @@ export const itemsOnPageOptions = [
 export const timeOptions = [
   {
     value: 30,
-    name: "30 Days",
+    name: '30 Days',
   },
   {
     value: 100,
-    name: "100 Days",
+    name: '100 Days',
   },
   {
     value: 1000,
-    name: "All Time",
+    name: 'All Time',
   },
 ];

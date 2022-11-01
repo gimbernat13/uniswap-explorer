@@ -1,4 +1,4 @@
 export const timestampToDate = (date) => {
-  var newDate = new Date(date);
+  const newDate = new Date(date);
   return newDate;
 };

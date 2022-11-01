@@ -1,4 +1,5 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
+
 export const TOKENS = gql`
   query Tokens {
     tokens(

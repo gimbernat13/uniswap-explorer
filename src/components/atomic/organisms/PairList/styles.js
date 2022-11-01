@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from "framer-motion";
-import styled from "styled-components";
+import { AnimatePresence, motion } from 'framer-motion';
+import styled from 'styled-components';
 
 export const PoolGrid = styled(motion.div)`
   display: grid;

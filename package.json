@@ -12,6 +12,7 @@
     "@uniswap/v3-sdk": "^3.9.0",
     "@uniswap/widgets": "^2.16.2",
     "@walletconnect/ethereum-provider": "^1.8.0",
+    "eslint-config-airbnb": "^19.0.4",
     "framer-motion": "^7.4.0",
     "graphql": "^15.5.0",
     "react": "^18.2.0",
@@ -29,7 +30,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "lintFix": "eslint  --ext .js --ignore-path .gitignore . --fix"
+
   },
   "eslintConfig": {
     "extends": [

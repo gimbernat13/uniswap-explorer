@@ -1,30 +1,31 @@
-import React, { useRef } from "react";
-import * as Styled from "./styles";
-import { NavLink } from "react-router-dom";
-import { Button } from "components/atomic/atoms/Button/Button";
-import { useOnClickOutside } from "context/useOnClickOutside";
+import React, { useRef, useCallback } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Button } from 'components/atomic/atoms/Button/Button';
+import { useOnClickOutside } from 'context/useOnClickOutside';
 import {
   UilCoins,
   UilWaterGlass,
   UilMoon,
   UilSun,
   UilNerd,
-} from "@iconscout/react-unicons";
-export const Sidebar = ({ theme, toggleTheme }) => {
+} from '@iconscout/react-unicons';
+import * as Styled from './styles';
+
+export function Sidebar({ theme, toggleTheme }) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
   const toggleSidebarOpen = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   const sidebarItems = [
     {
-      title: "Tokens",
+      title: 'Tokens',
       icon: <UilCoins size={20} />,
-      url: "/tokens",
+      url: '/tokens',
     },
     {
-      title: "Pairs",
+      title: 'Pairs',
       icon: <UilWaterGlass size={20} />,
-      url: "/pairs",
+      url: '/pairs',
     },
   ];
 
@@ -41,14 +42,13 @@ export const Sidebar = ({ theme, toggleTheme }) => {
     <Styled.Sidebar
       ref={ref}
       onClick={toggleSidebarOpen}
-      className={isSidebarOpen ? "expanded" : "shrink"}
+      className={isSidebarOpen ? 'expanded' : 'shrink'}
     >
       <Styled.SidebarInner>
         <Styled.SidebarLinks>
+          <UilNerd />
+
           <Styled.SidebarLink>
-            <h1 style={{ transform: "scale(1.5) , marginLeft: -5px" }}>
-              <UilNerd />
-            </h1>
             <h2 className="hide"> Explorer</h2>
           </Styled.SidebarLink>
           {sidebarItems.map((item) => (
@@ -61,7 +61,7 @@ export const Sidebar = ({ theme, toggleTheme }) => {
           ))}
         </Styled.SidebarLinks>
         <Button onClick={handleToggleTheme}>
-          {theme === "dark" ? (
+          {theme === 'dark' ? (
             <UilSun size={15} color="white" />
           ) : (
             <UilMoon size={15} />
@@ -70,4 +70,4 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       </Styled.SidebarInner>
     </Styled.Sidebar>
   );
-};
+}
