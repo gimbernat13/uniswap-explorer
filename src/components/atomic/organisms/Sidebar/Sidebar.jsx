@@ -3,8 +3,12 @@ import * as Styled from "./styles";
 import { NavLink } from "react-router-dom";
 import { Button } from "components/atomic/atoms/Button/Button";
 import { useOnClickOutside } from "context/useOnClickOutside";
-import { UilCoins, UilWaterGlass } from "@iconscout/react-unicons";
-
+import {
+  UilCoins,
+  UilWaterGlass,
+  UilMoon,
+  UilSun,
+} from "@iconscout/react-unicons";
 export const Sidebar = ({ theme, toggleTheme }) => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
   const toggleSidebarOpen = () => {
@@ -38,10 +42,14 @@ export const Sidebar = ({ theme, toggleTheme }) => {
       onClick={toggleSidebarOpen}
       className={isSidebarOpen ? "expanded" : "shrink"}
     >
-      <Button onClick={handleToggleTheme}>
-        {theme === "dark" ? "☼" : "☽"}
-      </Button>
       <Styled.SidebarInner>
+        <Button isActive onClick={handleToggleTheme}>
+          {theme === "dark" ? (
+            <UilSun size={15} color="white" />
+          ) : (
+            <UilMoon size={15} />
+          )}
+        </Button>
         <Styled.SidebarLinks>
           {sidebarItems.map((item) => (
             <NavLink key={item.url} onClick={handleChildClick} to={item.url}>

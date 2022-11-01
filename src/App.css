@@ -9,6 +9,8 @@
   --transparent-black: rgba(0, 0, 0, 0.385);
   --transparent-black-dark: rgba(0, 0, 0, 0.906);
 
+  --accent-gray: #bebebe;
+
   --accent-green: #36d7b7;
   --accent-purple: #5460ce;
   --accent-purple-dark: #4449734b;
@@ -109,9 +111,8 @@ ul {
 }
 
 .active {
-  background-color: var(--accent-purple);
+  background-color: var(--accent-gray);
   border-radius: var(--border-radius);
-  color: white !important;
 }
 
 h3 {

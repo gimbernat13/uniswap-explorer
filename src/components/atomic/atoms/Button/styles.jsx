@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.div`
+export const Button = styled.button`
   position: relative;
   z-index: 2;
   transition: all 0.2s;
@@ -12,18 +12,9 @@ export const Button = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   border: var(--border-thick);
-  background-color: #0000002c;
   display: inline-block;
   opacity: 0.9;
   background-color: ${({ theme }) => theme.cardBg};
-
-  background-color: ${(props) =>
-    props.isActive
-      ? "var(--accent-purple) "
-      : " var(--transparent-black-light)"};
-
-  color: ${(props) => (props.isActive ? "white" : "")};
-
   font-size: 0.8rem !important;
   font-weight: 500 !important;
   text-align: center;
@@ -31,11 +22,6 @@ export const Button = styled.div`
   /* box-shadow: var(--box-shadow-light); */
   &:hover {
     filter: brightness(1.3);
-  }
-  &.active {
-    color: white;
-    font-weight: 500 !important;
-    background-color: var(--accent-purple-dark);
   }
 `;
 export const ButtonInner = styled.div`
