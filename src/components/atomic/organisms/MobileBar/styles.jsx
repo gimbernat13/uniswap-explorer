@@ -1,5 +1,6 @@
-import { deviceQueries } from "config/viewSizes";
-import styled from "styled-components";
+import { deviceQueries } from 'config/viewSizes';
+import styled from 'styled-components';
+
 export const MobileBar = styled.nav`
   position: fixed;
   bottom: 0;

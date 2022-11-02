@@ -1,25 +1,23 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Button as StyledButton } from "../Button/styles";
-import * as Styled from "./styles";
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { Button as StyledButton } from '../Button/styles';
+import * as Styled from './styles';
 
-export const NavButtons = () => {
-  let history = useHistory();
+export function NavButtons() {
+  const history = useHistory();
 
   return (
-    <>
-      <Styled.Flex>
-        <Styled.NavFlex>
-          <StyledButton onClick={() => history.goBack()}> 🔙 </StyledButton>
+    <Styled.Flex>
+      <Styled.NavFlex>
+        <StyledButton onClick={() => history.goBack()}> 🔙 </StyledButton>
 
-          <StyledButton>
-            <Link to="/tokens">Tokens</Link>
-          </StyledButton>
-          <StyledButton>
-            <Link to="/pairs">Pairs</Link>
-          </StyledButton>
-        </Styled.NavFlex>
-      </Styled.Flex>
-    </>
+        <StyledButton>
+          <Link to="/tokens">Tokens</Link>
+        </StyledButton>
+        <StyledButton>
+          <Link to="/pairs">Pairs</Link>
+        </StyledButton>
+      </Styled.NavFlex>
+    </Styled.Flex>
   );
-};
+}

@@ -1,9 +1,9 @@
-import React from "react";
-import formatNumber from "../../../../utils/formatNumber";
-import { Card } from "../../atoms/Card/Card";
-import * as Styled from "./styles";
+import React from 'react';
+import formatNumber from '../../../../utils/formatNumber';
+import { Card } from '../../atoms/Card/Card';
+import * as Styled from './styles';
 
-export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
+export function TokenDetails({ tokenData, tokenDayDatas }) {
   const {
     name,
     symbol,
@@ -20,13 +20,19 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
       <Styled.DetailsGridItem>
         <Card height="100%">
           <div className="medium-text">Total Volume</div>
-          <div>${formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))}</div>
+          <div>
+            $
+            {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))}
+          </div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
         <Card height="100%">
           <div className="medium-text">Total Liquidity </div>
-          <div>ETH {formatNumber(parseFloat(totalLiquidity).toFixed(2))} </div>
+          <div>
+            ETH
+            {formatNumber(parseFloat(totalLiquidity).toFixed(2))}
+          </div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
@@ -38,7 +44,10 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
       <Styled.DetailsGridItem>
         <Card height="100%">
           <div className="medium-text">Daily Volume </div>
-          <div>${formatNumber(parseFloat(dailyVolumeUSD).toFixed(2))} </div>
+          <div>
+            $
+            {formatNumber(parseFloat(dailyVolumeUSD).toFixed(2))}
+          </div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
@@ -55,4 +64,4 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
       </Styled.DetailsGridItem>
     </Styled.DetailsGrid>
   );
-};
+}

@@ -1,20 +1,20 @@
-import React from "react";
-import * as Styled from "./styles";
-import { UilCoins, UilWaterGlass } from "@iconscout/react-unicons";
-import { NavLink } from "react-router-dom";
-import { Button } from "../NavButtons/styles";
+import React from 'react';
+import { UilCoins, UilWaterGlass } from '@iconscout/react-unicons';
+import { NavLink } from 'react-router-dom';
+import * as Styled from './styles';
+import { Button } from '../NavButtons/styles';
 
-export const MobileBar = () => {
+export function MobileBar() {
   const sidebarItems = [
     {
-      title: "Tokens",
+      title: 'Tokens',
       icon: <UilCoins size={20} />,
-      url: "/tokens",
+      url: '/tokens',
     },
     {
-      title: "Pairs",
+      title: 'Pairs',
       icon: <UilWaterGlass size={20} />,
-      url: "/pairs",
+      url: '/pairs',
     },
   ];
   function handleChildClick(e) {
@@ -39,4 +39,4 @@ export const MobileBar = () => {
       </Styled.NavLinks>
     </Styled.MobileBar>
   );
-};
+}

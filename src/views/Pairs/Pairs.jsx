@@ -1,17 +1,18 @@
-import { useQuery } from "@apollo/client";
-import React from "react";
-import { Switch, useHistory, useParams } from "react-router-dom";
-import { RouteWithSubRoutes } from "../..";
+import { useQuery } from '@apollo/client';
+import React from 'react';
+import { Switch, useHistory, useParams } from 'react-router-dom';
 
-import { PAIRS } from "./queries";
-import * as Styled from "./styles";
-import { Loader } from "components/atomic/atoms/Loader/Loader";
-import { PairList } from "components/atomic/organisms/PairList/PairList";
-import { PairTable } from "components/atomic/organisms/PairTable/PairTable";
-import { useViewType } from "hooks/useViewType";
-import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
-import { hasSubRoute } from "utils/hasSubRoute";
-import { Card, CARD_VARIANTS } from "components/atomic/atoms/Card/Card";
+import { Loader } from 'components/atomic/atoms/Loader/Loader';
+import { PairList } from 'components/atomic/organisms/PairList/PairList';
+import { PairTable } from 'components/atomic/organisms/PairTable/PairTable';
+import { useViewType } from 'hooks/useViewType';
+import { ViewTypeButtons } from 'components/atomic/molecules/ViewTypeButtons/ViewTypeButtons';
+import { hasSubRoute } from 'utils/hasSubRoute';
+import { Card, CARD_VARIANTS } from 'components/atomic/atoms/Card/Card';
+import { RouteWithSubRoutes } from 'index';
+import * as Styled from './styles';
+import { PAIRS } from './queries';
+
 export function Pairs({ routes }) {
   React.useEffect(() => {}, []);
 
@@ -24,7 +25,7 @@ export function Pairs({ routes }) {
   return (
     <div>
       <h3>Pairs</h3>
-      {!hasSubRoute("/pairs", location) && (
+      {!hasSubRoute('/pairs', location) && (
         <Card fitContent>Select a Pair to view Stats</Card>
       )}
       <Switch>
@@ -42,8 +43,8 @@ export function Pairs({ routes }) {
           />
         </div>
       </Styled.FlexSpaced>
-      {viewType.id === "table" && <PairTable tableData={data.pairs} />}
-      {viewType.id === "cards" && <PairList data={data} />}
+      {viewType.id === 'table' && <PairTable tableData={data.pairs} />}
+      {viewType.id === 'cards' && <PairList data={data} />}
     </div>
   );
 }

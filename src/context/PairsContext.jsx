@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 import {
   setFilterBy,
   setSortBy,
   setItemsOnPage,
   setSelectedPair,
-} from "./actionNames";
+} from './actionNames';
 
 export const PairsContext = React.createContext();
 
 const INITIAL_STATE = {
-  filterBy: "tradeVolumeUSD",
-  sortBy: "asc",
+  filterBy: 'tradeVolumeUSD',
+  sortBy: 'asc',
   itemsOnPage: 150,
-  selectedPair: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  selectedPair: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
 };
 
 export function reducer(state, action) {

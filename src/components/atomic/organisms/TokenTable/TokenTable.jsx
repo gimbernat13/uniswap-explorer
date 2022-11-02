@@ -1,41 +1,54 @@
-import React from "react";
-import { useTable, useSortBy } from "react-table";
-import formatNumber from "../../../../utils/formatNumber";
-import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
-import { Link } from "react-router-dom";
-import { Card } from "components/atomic/atoms/Card/Card";
+import React from 'react';
+import { useTable, useSortBy } from 'react-table';
+import { UilAngleUp, UilAngleDown } from '@iconscout/react-unicons';
+import { Link } from 'react-router-dom';
+import { Card } from 'components/atomic/atoms/Card/Card';
+import formatNumber from '../../../../utils/formatNumber';
+
 export function TokenTable({ tableData }) {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Symbol",
-        accessor: "symbol",
+        Header: 'Symbol',
+        accessor: 'symbol',
       },
       {
-        Header: "Name",
-        accessor: "name",
+        Header: 'Name',
+        accessor: 'name',
       },
       {
-        Header: "Trade Volume ",
+        Header: 'Trade Volume ',
         accessor: (row) => (
-          <div>{formatNumber(parseFloat(row.tradeVolume).toFixed(2))} </div>
+          <div>
+            {formatNumber(parseFloat(row.tradeVolume).toFixed(2))}
+            {' '}
+          </div>
         ),
       },
       {
         Header: "Tx's",
-        accessor: (row) => <div>{formatNumber(parseFloat(row.txCount))} </div>,
+        accessor: (row) => (
+          <div>
+            {formatNumber(parseFloat(row.txCount))}
+            {' '}
+          </div>
+        ),
       },
       {
-        Header: "Trade Volume USD",
+        Header: 'Trade Volume USD',
         accessor: (row) => (
-          <div>{formatNumber(parseFloat(row.tradeVolumeUSD).toFixed(2))} </div>
+          <div>
+            {formatNumber(parseFloat(row.tradeVolumeUSD).toFixed(2))}
+            {' '}
+          </div>
         ),
       },
     ],
-    []
+    [],
   );
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data: tableData }, useSortBy);
+  const {
+    getTableProps, getTableBodyProps, headerGroups, rows, prepareRow,
+  } = useTable({ columns, data: tableData }, useSortBy);
 
   return (
     <Card noPadding>
@@ -47,12 +60,12 @@ export function TokenTable({ tableData }) {
                 <th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   style={{
-                    borderBottom: "var(--border)",
-                    fontWeight: "bold",
+                    borderBottom: 'var(--border)',
+                    fontWeight: 'bold',
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    {column.render("Header")}
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    {column.render('Header')}
                     {column.isSorted ? (
                       column.isSortedDesc ? (
                         <UilAngleDown />
@@ -61,7 +74,8 @@ export function TokenTable({ tableData }) {
                       )
                     ) : (
                       <UilAngleUp color="transparent" />
-                    )}{" "}
+                    )}
+                    {' '}
                   </div>
                 </th>
               ))}
@@ -73,15 +87,13 @@ export function TokenTable({ tableData }) {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()} style={{}}>
-                      <Link to={`/tokens/${row.original.id}`}>
-                        {cell.render("Cell")}
-                      </Link>
-                    </td>
-                  );
-                })}
+                {row.cells.map((cell) => (
+                  <td {...cell.getCellProps()} style={{}}>
+                    <Link to={`/tokens/${row.original.id}`}>
+                      {cell.render('Cell')}
+                    </Link>
+                  </td>
+                ))}
               </tr>
             );
           })}

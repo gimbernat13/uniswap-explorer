@@ -1,9 +1,9 @@
-import React from "react";
-import * as Styled from "./styles";
+import React from 'react';
+import * as Styled from './styles';
 
-export const TokenMainDetails = ({ data }) => {
+export function TokenMainDetails({ data }) {
   const { name, symbol, id } = data;
-  console.log("data" , data)
+  console.log('data', data);
   return (
     <Styled.FlexSpacedV>
       <div>
@@ -29,4 +29,4 @@ export const TokenMainDetails = ({ data }) => {
       </div>
     </Styled.FlexSpacedV>
   );
-};
+}

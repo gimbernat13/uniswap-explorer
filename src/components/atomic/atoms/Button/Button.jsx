@@ -1,10 +1,12 @@
-import React from "react";
-import * as Styled from "./styles";
+import React from 'react';
+import * as Styled from './styles';
 
-export const Button = ({ onClick, children, width, isActive }) => {
+export function Button({
+  onClick, children, width, isActive,
+}) {
   return (
     <Styled.Button
-      className={isActive ? "active" : ""}
+      className={isActive ? 'active' : ''}
       width={width}
       onClick={onClick}
       isActive={isActive}
@@ -12,4 +14,4 @@ export const Button = ({ onClick, children, width, isActive }) => {
       <Styled.ButtonInner>{children}</Styled.ButtonInner>
     </Styled.Button>
   );
-};
+}

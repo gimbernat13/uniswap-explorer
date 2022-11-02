@@ -1,6 +1,6 @@
-import React from "react";
-import { StyledFlexContainer } from "./styles";
+import React from 'react';
+import { StyledFlexContainer } from './styles';
 
-export const FlexContainer = ({ children }) => {
+export function FlexContainer({ children }) {
   return <StyledFlexContainer>{children}</StyledFlexContainer>;
-};
+}

@@ -1,5 +1,6 @@
-import { deviceQueries } from "config/viewSizes";
-import styled from "styled-components";
+import { deviceQueries } from 'config/viewSizes';
+import styled from 'styled-components';
+
 export const DetailsGrid = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;

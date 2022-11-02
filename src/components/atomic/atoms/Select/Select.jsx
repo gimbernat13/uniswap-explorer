@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
-import * as Styled from "./styles";
-import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
-import { useOnClickOutside } from "context/useOnClickOutside";
+import React, { useRef } from 'react';
+import { UilAngleUp, UilAngleDown } from '@iconscout/react-unicons';
+import { useOnClickOutside } from 'context/useOnClickOutside';
+import * as Styled from './styles';
 
-export const Select = ({ options, dispatch, action, state, value }) => {
+export function Select({
+  options, dispatch, action, state, value,
+}) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   function expand() {
@@ -31,21 +33,19 @@ export const Select = ({ options, dispatch, action, state, value }) => {
       </Styled.Flex>
       {isOpen && (
         <Styled.SelectInner>
-          {options &&
-            options.map((option, i) => {
-              return (
-                <Styled.SelectItem
-                  key={option + i}
-                  onClick={() => {
-                    dispatch({ type: action, payload: option });
-                  }}
-                >
-                  {option.name}
-                </Styled.SelectItem>
-              );
-            })}
+          {options
+            && options.map((option, i) => (
+              <Styled.SelectItem
+                key={option + i}
+                onClick={() => {
+                  dispatch({ type: action, payload: option });
+                }}
+              >
+                {option.name}
+              </Styled.SelectItem>
+            ))}
         </Styled.SelectInner>
       )}
     </Styled.Select>
   );
-};
+}

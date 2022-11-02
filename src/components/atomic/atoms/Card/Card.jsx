@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import React from "react";
-import styled, { css } from "styled-components";
+import { motion } from 'framer-motion';
+import React from 'react';
+import styled, { css } from 'styled-components';
+
 const CARD_VARIANTS = {
   primary: css`
     border: var(--border-ultra-light) !important;
@@ -13,13 +14,13 @@ const CARD_VARIANTS = {
 };
 const StyledCard = styled(motion.div)`
   position: relative;
-  display: ${(props) => (props.flex ? "flex" : "block")};
+  display: ${(props) => (props.flex ? 'flex' : 'block')};
   transition: all 0.3s;
   border-radius: var(--border-radius);
   font-size: 1rem !important;
   font-weight: 400 !important;
-  height: ${(props) => (props.height ? props.height : "100%")};
-  width: ${(props) => props.fitContent && "fit-content"};
+  height: ${(props) => (props.height ? props.height : '100%')};
+  width: ${(props) => props.fitContent && 'fit-content'};
   border: var(--border-ultra-light);
   color: ${({ theme }) => theme.text};
   backdrop-filter: blur(5px);
@@ -28,12 +29,10 @@ const StyledCard = styled(motion.div)`
     box-shadow: ${({ theme }) => theme.boxShadow};
   }
 
-  ${(props) => {
-    return props.variant && CARD_VARIANTS[props.variant];
-  }}
+  ${(props) => props.variant && CARD_VARIANTS[props.variant]}
 `;
 const CardInner = styled.div`
-  padding: ${(props) => (props.noPadding ? "none" : " 0.8rem")};
+  padding: ${(props) => (props.noPadding ? 'none' : ' 0.8rem')};
 `;
 
 const animated = {

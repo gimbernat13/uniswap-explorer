@@ -1,5 +1,5 @@
-import { deviceQueries } from "config/viewSizes";
-import styled from "styled-components";
+import { deviceQueries } from 'config/viewSizes';
+import styled from 'styled-components';
 
 export const TokenAggregateGrid = styled.div`
   display: grid;

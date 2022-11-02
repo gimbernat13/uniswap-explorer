@@ -1,15 +1,15 @@
-import React from "react";
-import { css } from "styled-components";
+import React from 'react';
+import { css } from 'styled-components';
 
 export const ThemeContext = React.createContext();
-export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = React.useState("dark");
+export function ThemeContextProvider({ children }) {
+  const [theme, setTheme] = React.useState('dark');
 
   const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
+    if (theme === 'dark') {
+      setTheme('light');
     } else {
-      setTheme("dark");
+      setTheme('dark');
     }
   };
 
@@ -18,4 +18,4 @@ export const ThemeContextProvider = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
+}

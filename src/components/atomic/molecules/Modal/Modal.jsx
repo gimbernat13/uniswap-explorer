@@ -1,16 +1,14 @@
-import React, { forwardRef, useImperativeHandle } from "react";
-import ReactDOM from "react-dom";
-import * as Styled from "./styles";
+import React, { forwardRef, useImperativeHandle } from 'react';
+import ReactDOM from 'react-dom';
+import * as Styled from './styles';
 
 const Modal = forwardRef((props, ref) => {
   const [display, setDisplay] = React.useState(false);
 
-  useImperativeHandle(ref, () => {
-    return {
-      openModal: () => open(),
-      close: () => close(),
-    };
-  });
+  useImperativeHandle(ref, () => ({
+    openModal: () => open(),
+    close: () => close(),
+  }));
 
   const open = () => {
     setDisplay(true);
@@ -32,7 +30,7 @@ const Modal = forwardRef((props, ref) => {
           {props.children}
         </Styled.ModalBox>
       </Styled.ModalWrapper>,
-      document.getElementById("modal-root")
+      document.getElementById('modal-root'),
     );
   }
 

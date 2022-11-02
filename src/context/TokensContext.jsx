@@ -1,46 +1,46 @@
-import React from "react";
+import React from 'react';
 import {
   setFilterBy,
   setSortBy,
   setItemsOnPage,
   setSelectedToken,
   setTimeFrame,
-} from "./actionNames";
+} from './actionNames';
 
 export const TokensContext = React.createContext();
 export const timeOptions = [
   {
     id: 7,
-    name: "Last Week",
+    name: 'Last Week',
   },
   {
     id: 30,
-    name: "30 Days",
+    name: '30 Days',
   },
   {
     id: 100,
-    name: "100 Days",
+    name: '100 Days',
   },
   {
     id: 500,
-    name: "500 days",
+    name: '500 days',
   },
   {
     id: 1000,
-    name: "All Time",
+    name: 'All Time',
   },
 ];
 
 export const tokenFilters = [
-  { name: "Price", id: "priceUSD" },
-  { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
-  { name: "Daily Tx's", id: "dailyTxns" },
+  { name: 'Price', id: 'priceUSD' },
+  { name: 'Daily Volume', id: 'dailyVolumeUSD' }, // FIXME: Excluded for now until chart fix
+  { name: "Daily Tx's", id: 'dailyTxns' },
 ];
 const INITIAL_STATE = {
   filterBy: tokenFilters[0],
-  sortBy: "desc",
+  sortBy: 'desc',
   itemsOnPage: 150,
-  selectedToken: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  selectedToken: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
   timeFrame: timeOptions[2],
 };
 
