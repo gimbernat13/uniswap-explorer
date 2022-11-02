@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ChartGrid = styled(motion.div)``;
 export const FilterButtons = styled(motion.div)`
   display: flex;
-  gap: 5px;
+  gap: 10px;
 `;
 
 export const FilterChartFlex = styled(motion.div)`

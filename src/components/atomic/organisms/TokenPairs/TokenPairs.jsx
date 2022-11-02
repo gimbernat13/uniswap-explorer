@@ -9,7 +9,7 @@ export function TokenPairs({ data }) {
     <Styled.TokenPairs>
       {data.map((pair) => (
         <Link to={`/pairs/${pair.id}`}>
-          <Card key={pair.id} transparent>
+          <Card key={pair.id}>
             <div className="medium-text">
               {pair.token0.symbol}
               {' '}

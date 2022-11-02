@@ -16,7 +16,6 @@ export function PairList({ data }) {
               <Card
                 className={pair.id === selectedPair && 'active'}
                 key={pair.id}
-                transparent
               >
                 {selectedPair}
                 <div className="medium-text">

@@ -5,5 +5,5 @@ export const PoolGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 `;

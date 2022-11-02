@@ -7,5 +7,5 @@ export const ChartGrid = styled(motion.div)`
 `;
 export const ButtonsFlex = styled(motion.div)`
   display: flex;
-  gap: 5px;
+  gap: 10px;
 `;

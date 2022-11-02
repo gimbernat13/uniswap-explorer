@@ -8,7 +8,6 @@ import {
   UilWaterGlass,
   UilMoon,
   UilSun,
-  UilNerd,
 } from '@iconscout/react-unicons';
 import * as Styled from './styles';
 
@@ -47,10 +46,6 @@ export function Sidebar({ theme, toggleTheme }) {
     >
       <Styled.SidebarInner>
         <Styled.SidebarLinks>
-          <UilNerd />
-          <Styled.SidebarLink>
-            <h2 className="hide"> Explorer</h2>
-          </Styled.SidebarLink>
           {sidebarItems.map((item) => (
             <NavLink key={item.url} onClick={handleChildClick} to={item.url}>
               <Styled.SidebarLink>

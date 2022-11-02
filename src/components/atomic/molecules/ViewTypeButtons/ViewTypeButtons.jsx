@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ViewButtons = styled.div`
   display: flex;
-  gap: 5px;
+  gap: 10px;
 `;
 
 export function ViewTypeButtons({

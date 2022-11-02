@@ -4,7 +4,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.text};
   width: ${(props) => props.width};
   background-color: ${({ theme }) => theme.cardBg};
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   position: relative;
   z-index: 2;
   transition: all 0.2s;

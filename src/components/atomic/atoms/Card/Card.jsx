@@ -2,34 +2,26 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const CARD_VARIANTS = {
-  primary: css`
-    border: var(--border-ultra-light) !important;
-  `,
-  transparent: css`
-    background-color: transparent !important;
-    border: 1px solid transparent !important;
-    box-shadow: none;
-  `,
-};
 const StyledCard = styled(motion.div)`
+  background-color: ${({ theme }) => theme.cardBg};
+  color: ${({ theme }) => theme.text};
+  border: ${(props) => (props.transparent ? '1px solid transparent' : ' var(--border-ultra-light)')};
   position: relative;
   display: ${(props) => (props.flex ? 'flex' : 'block')};
+  background-color: ${({ theme, transparent }) => (transparent ? 'transparent' : theme.cardBg)};
+
   transition: all 0.3s;
   border-radius: var(--border-radius);
   font-size: 1rem !important;
   font-weight: 400 !important;
   height: ${(props) => (props.height ? props.height : '100%')};
   width: ${(props) => props.fitcontent && 'fit-content'};
-  border: var(--border-ultra-light);
-  color: ${({ theme }) => theme.text};
   backdrop-filter: blur(5px);
-  background-color: ${({ theme }) => theme.cardBg};
+
   &:hover {
     box-shadow: ${({ theme }) => theme.boxShadow};
   }
 
-  ${(props) => props.variant && CARD_VARIANTS[props.variant]}
 `;
 const CardInner = styled.div`
   padding: ${(props) => (props.noPadding ? 'none' : ' 0.8rem')};
@@ -51,6 +43,7 @@ export function Card({
   fitcontent,
   noPadding,
   className,
+  transparent,
 }) {
   return (
     <StyledCard
@@ -61,6 +54,7 @@ export function Card({
       height={height}
       variant={variant}
       className={className}
+      transparent={transparent}
     >
       <CardInner noPadding={noPadding}>{children}</CardInner>
     </StyledCard>
