@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import { Card } from 'components/atomic/atoms/Card/Card';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -16,7 +17,6 @@ export function PairTable({ tableData }) {
           <div>
             <Link to={`/pairs/${row.id}`}>
               {row.token0.symbol}
-              {' '}
               -
               {row.token1.symbol}
             </Link>
@@ -28,7 +28,6 @@ export function PairTable({ tableData }) {
         accessor: (row) => (
           <div>
             {formatNumber(parseFloat(row.txCount))}
-            {' '}
           </div>
         ),
       },
@@ -46,7 +45,6 @@ export function PairTable({ tableData }) {
         accessor: (row) => (
           <div>
             {formatNumber(parseFloat(row.reserveETH).toFixed(2))}
-            {' '}
           </div>
         ),
       },

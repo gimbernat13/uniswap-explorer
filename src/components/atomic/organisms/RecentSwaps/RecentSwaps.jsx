@@ -3,7 +3,6 @@ import formatNumber from 'utils/formatNumber';
 import * as Styled from './styles';
 
 export function RecentSwaps({ swapData, pairData }) {
-  const { amountUSD } = swapData;
   const { token0, token1 } = pairData;
   console.log('swap data ', swapData);
 
@@ -11,7 +10,7 @@ export function RecentSwaps({ swapData, pairData }) {
     <Styled.TxTable className="styled-table" initial="hidden" animate="show">
       <tbody>
         {swapData.map((swap, i) => (
-          <Styled.TxRow key={i}>
+          <Styled.TxRow key={swap.id}>
             <td>
               $
               {formatNumber(parseInt(swap.amountUSD, 2))}

@@ -13,8 +13,10 @@ export function ThemeContextProvider({ children }) {
     }
   };
 
+  const memoizedValues = React.useMemo(() => ({ theme, toggleTheme }), []);
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={memoizedValues}>
       {children}
     </ThemeContext.Provider>
   );

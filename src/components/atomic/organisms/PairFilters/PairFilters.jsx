@@ -1,11 +1,11 @@
+import { Select } from 'components/atomic/atoms/Select/Select';
 import React, { useContext } from 'react';
 import {
   setFilterBy,
   setItemsOnPage,
-  setSortBy,
 } from '../../../../context/actionNames';
 import { PairsContext } from '../../../../context/PairsContext';
-import { Select } from '../../../Select/Select';
+
 import { filterByOptions, itemsOnPageOptions, sortByOptions } from './config';
 
 export function PairFilters() {

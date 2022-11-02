@@ -80,9 +80,10 @@ export function TokensContextProvider({ children }) {
   const [state, dispatch] = React.useReducer(reducer, {
     ...INITIAL_STATE,
   });
+  const memoizedValues = React.useMemo(() => ({ state, dispatch }), [state]);
 
   return (
-    <TokensContext.Provider value={{ state, dispatch }}>
+    <TokensContext.Provider value={memoizedValues}>
       {children}
     </TokensContext.Provider>
   );

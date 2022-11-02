@@ -1,9 +1,12 @@
+/* eslint-disable import/no-cycle */
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { Switch, useHistory } from 'react-router-dom';
+
 import { Loader } from 'components/atomic/atoms/Loader/Loader';
 import { TokenCardList } from 'components/atomic/organisms/TokenCardList/TokenCardList';
 import { TokenTable } from 'components/atomic/organisms/TokenTable/TokenTable';
+
 import { useViewType } from 'hooks/useViewType';
 import { ViewTypeButtons } from 'components/atomic/molecules/ViewTypeButtons/ViewTypeButtons';
 import { Card } from 'components/atomic/atoms/Card/Card';
@@ -15,8 +18,8 @@ import { TOKENS } from './queries';
 export function TokensView({ routes }) {
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(TOKENS);
-  const { location } = useHistory();
 
+  const { location } = useHistory();
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
   return (

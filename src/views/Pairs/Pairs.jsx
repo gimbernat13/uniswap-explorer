@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { Switch, useHistory, useParams } from 'react-router-dom';
@@ -8,7 +9,7 @@ import { PairTable } from 'components/atomic/organisms/PairTable/PairTable';
 import { useViewType } from 'hooks/useViewType';
 import { ViewTypeButtons } from 'components/atomic/molecules/ViewTypeButtons/ViewTypeButtons';
 import { hasSubRoute } from 'utils/hasSubRoute';
-import { Card, CARD_VARIANTS } from 'components/atomic/atoms/Card/Card';
+import { Card } from 'components/atomic/atoms/Card/Card';
 import { RouteWithSubRoutes } from 'index';
 import * as Styled from './styles';
 import { PAIRS } from './queries';

@@ -4,8 +4,7 @@
     "es2021": true
   },
 
-
-  "extends": ["plugin:react/recommended", "airbnb" ,  "react-app"],
+  "extends": ["plugin:react/recommended", "airbnb", "react-app"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -16,8 +15,8 @@
   "plugins": ["react"],
   "rules": {
     "import/prefer-default-export": 0,
-    "react/prop-types": 0
-
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/resolver": {
@@ -25,5 +24,10 @@
         "paths": ["src"]
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.js"]
+    }
+  ]
 }
