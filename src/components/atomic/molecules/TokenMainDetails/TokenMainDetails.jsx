@@ -3,7 +3,6 @@ import * as Styled from './styles';
 
 export function TokenMainDetails({ data }) {
   const { name, symbol, id } = data;
-  console.log('data', data);
   return (
     <Styled.FlexSpacedV>
       <div>

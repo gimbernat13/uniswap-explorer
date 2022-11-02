@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import { css } from 'styled-components';
 
 export const ThemeContext = React.createContext();
 export function ThemeContextProvider({ children }) {

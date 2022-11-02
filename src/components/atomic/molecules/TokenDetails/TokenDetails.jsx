@@ -5,11 +5,7 @@ import * as Styled from './styles';
 
 export function TokenDetails({ tokenData, tokenDayDatas }) {
   const {
-    name,
-    symbol,
-    id,
     tradeVolumeUSD,
-    derivedETH,
     txCount: tokenTxCount,
     totalLiquidity,
   } = tokenData;
@@ -37,7 +33,7 @@ export function TokenDetails({ tokenData, tokenDayDatas }) {
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
         <Card height="100%">
-          <div className="medium-text">Total TX's:</div>
+          <div className="medium-text">Total TX`&apos;`s:</div>
           <div>{formatNumber(parseFloat(tokenTxCount))}</div>
         </Card>
       </Styled.DetailsGridItem>

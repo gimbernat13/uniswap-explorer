@@ -46,9 +46,10 @@ export function PairsContextProvider({ children }) {
   const [state, dispatch] = React.useReducer(reducer, {
     ...INITIAL_STATE,
   });
+  const memoizedValues = React.useMemo(() => ({ state, dispatch }), [state]);
 
   return (
-    <PairsContext.Provider value={{ state, dispatch }}>
+    <PairsContext.Provider value={memoizedValues}>
       {children}
     </PairsContext.Provider>
   );

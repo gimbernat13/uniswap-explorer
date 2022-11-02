@@ -6,11 +6,11 @@ import {
 } from '../../../../context/actionNames';
 import { PairsContext } from '../../../../context/PairsContext';
 
-import { filterByOptions, itemsOnPageOptions, sortByOptions } from './config';
+import { filterByOptions, itemsOnPageOptions } from './config';
 
 export function PairFilters() {
   const PairContext = useContext(PairsContext);
-  const { dispatch: pairsDispatch, state: tokensState } = PairContext;
+  const { dispatch: pairsDispatch } = PairContext;
 
   return (
     <div>
@@ -32,5 +32,4 @@ export function PairFilters() {
     </div>
   );
 }
-{
-}
+

@@ -29,8 +29,8 @@ export function TokensView({ routes }) {
         <Card fitContent>Select a Token to view Stats</Card>
       )}
       <Switch>
-        {routes.map((route, i) => (
-          <RouteWithSubRoutes key={i} {...route} />
+        {routes.map((route) => (
+          <RouteWithSubRoutes key={route.path} {...route} />
         ))}
       </Switch>
       <Styled.FlexSpaced>

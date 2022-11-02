@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { useQuery } from '@apollo/client';
 import React from 'react';
-import { Switch, useHistory, useParams } from 'react-router-dom';
+import { Switch, useHistory } from 'react-router-dom';
 
 import { Loader } from 'components/atomic/atoms/Loader/Loader';
 import { PairList } from 'components/atomic/organisms/PairList/PairList';
@@ -17,7 +17,6 @@ import { PAIRS } from './queries';
 export function Pairs({ routes }) {
   React.useEffect(() => {}, []);
 
-  console.log(useParams());
   const { location } = useHistory();
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(PAIRS);
@@ -30,8 +29,8 @@ export function Pairs({ routes }) {
         <Card fitContent>Select a Pair to view Stats</Card>
       )}
       <Switch>
-        {routes.map((route, i) => (
-          <RouteWithSubRoutes key={i} {...route} />
+        {routes.map((route) => (
+          <RouteWithSubRoutes key={route.path} {...route} />
         ))}
       </Switch>
       <Styled.FlexSpaced>

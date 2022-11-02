@@ -51,7 +51,7 @@ export function Sidebar({ theme, toggleTheme }) {
             <h2 className="hide"> Explorer</h2>
           </Styled.SidebarLink>
           {sidebarItems.map((item) => (
-            <NavLink key={item.url} onClick={handleChildClick} to={item.url}>
+            <NavLink key={item.url} onClick={() => handleChildClick()} to={item.url}>
               <Styled.SidebarLink>
                 <li className="icon">{item.icon}</li>
                 <span className="hide">{item.title}</span>
@@ -60,7 +60,7 @@ export function Sidebar({ theme, toggleTheme }) {
           ))}
 
         </Styled.SidebarLinks>
-        <Button onClick={handleToggleTheme}>
+        <Button onClick={() => handleToggleTheme()}>
           {theme === 'dark' ? (
             <UilSun size={15} color="white" />
           ) : (

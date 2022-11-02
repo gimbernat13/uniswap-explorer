@@ -4,7 +4,6 @@ import * as Styled from './styles';
 
 export function RecentSwaps({ swapData, pairData }) {
   const { token0, token1 } = pairData;
-  console.log('swap data ', swapData);
 
   return (
     <Styled.TxTable className="styled-table" initial="hidden" animate="show">

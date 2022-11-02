@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import { useTable, useSortBy } from 'react-table';
 import { UilAngleUp, UilAngleDown } from '@iconscout/react-unicons';

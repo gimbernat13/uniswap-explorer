@@ -18,7 +18,7 @@ export function TokenPairs({ data }) {
             </div>
             <div>
               $
-              {formatNumber(parseInt(pair.volumeUSD))}
+              {formatNumber(parseInt(pair.volumeUSD, 10))}
             </div>
           </Card>
         </Link>

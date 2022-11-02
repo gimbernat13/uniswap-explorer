@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-unstable-nested-components */
 import { Card } from 'components/atomic/atoms/Card/Card';
 import React, { useContext } from 'react';

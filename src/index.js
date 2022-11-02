@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ApolloProvider } from '@apollo/client/react';
@@ -74,8 +76,8 @@ root.render(
                   <Route exact path="/">
                     <Redirect to="/tokens" />
                   </Route>
-                  {routes.map((route, i) => (
-                    <RouteWithSubRoutes key={i} {...route} />
+                  {routes.map((route) => (
+                    <RouteWithSubRoutes key={route.path} {...route} />
                   ))}
                 </Switch>
               </Layout>
