@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/is-fitContent-code-point/-/is-fitContent-code-point-3.0.0.tgz: Request failed "404 Not Found"
+  Error: https://registry.yarnpkg.com/is-fitcontent-code-point/-/is-fitcontent-code-point-3.0.0.tgz: Request failed "404 Not Found"
       at ResponseError.ExtendableBuiltin (/usr/local/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:696:66)
       at new ResponseError (/usr/local/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:802:124)
       at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:67099:16)
@@ -7144,14 +7144,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
     integrity sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==
   
-  is-fitContent-code-point@^2.0.0:
+  is-fitcontent-code-point@^2.0.0:
     version "2.0.0"
-    resolved "https://registry.yarnpkg.com/is-fitContent-code-point/-/is-fitContent-code-point-2.0.0.tgz#a3b30a5c4f199183167aaab93beefae3ddfb654f"
+    resolved "https://registry.yarnpkg.com/is-fitcontent-code-point/-/is-fitcontent-code-point-2.0.0.tgz#a3b30a5c4f199183167aaab93beefae3ddfb654f"
     integrity sha512-VHskAKYM8RfSFXwee5t5cbN5PZeq1Wrh6qd5bkyiXIf6UQcN6w/A0eXM9r6t8d+GYOh+o6ZhiEnb88LN/Y8m2w==
   
-  is-fitContent-code-point@^3.0.0:
+  is-fitcontent-code-point@^3.0.0:
     version "3.0.0"
-    resolved "https://registry.yarnpkg.com/is-fitContent-code-point/-/is-fitContent-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
+    resolved "https://registry.yarnpkg.com/is-fitcontent-code-point/-/is-fitcontent-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
     integrity sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
   
   is-function@^1.0.1:
@@ -10769,7 +10769,7 @@ Lockfile:
     integrity sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w==
     dependencies:
       emoji-regex "^7.0.1"
-      is-fitContent-code-point "^2.0.0"
+      is-fitcontent-code-point "^2.0.0"
       strip-ansi "^5.1.0"
   
   string-width@^4.1.0, string-width@^4.2.0:
@@ -10778,7 +10778,7 @@ Lockfile:
     integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
     dependencies:
       emoji-regex "^8.0.0"
-      is-fitContent-code-point "^3.0.0"
+      is-fitcontent-code-point "^3.0.0"
       strip-ansi "^6.0.1"
   
   string.prototype.matchall@^4.0.6, string.prototype.matchall@^4.0.7:

@@ -20,7 +20,7 @@ const StyledCard = styled(motion.div)`
   font-size: 1rem !important;
   font-weight: 400 !important;
   height: ${(props) => (props.height ? props.height : '100%')};
-  width: ${(props) => props.fitContent && 'fit-content'};
+  width: ${(props) => props.fitcontent && 'fit-content'};
   border: var(--border-ultra-light);
   color: ${({ theme }) => theme.text};
   backdrop-filter: blur(5px);
@@ -48,7 +48,7 @@ export function Card({
   variant,
   children,
   height,
-  fitContent,
+  fitcontent,
   noPadding,
   className,
 }) {
@@ -57,7 +57,7 @@ export function Card({
       variants={animated}
       initial="hidden"
       animate="show"
-      fitContent={fitContent}
+      fitcontent={fitcontent}
       height={height}
       variant={variant}
       className={className}

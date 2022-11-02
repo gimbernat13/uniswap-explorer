@@ -1,4 +1,5 @@
 import { Card } from 'components/atomic/atoms/Card/Card';
+import { setSelectedPair } from 'context/actionNames';
 import { PairsContext } from 'context/PairsContext';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -6,17 +7,18 @@ import formatNumber from 'utils/formatNumber';
 import * as Styled from './styles';
 
 export function PairList({ data }) {
-  const { selectedPair } = useContext(PairsContext);
+  const { selectedPair, dispatch: pairDispatch } = useContext(PairsContext);
   return (
     <Styled.PoolGrid initial="hidden" animate="show">
       {data.pairs
           && data.pairs.map((pair) => (
-            <Link to={`/pairs/${pair.id}`}>
+            <Link onClick={() => pairDispatch({ type: setSelectedPair, payload: pair.id })} to={`/pairs/${pair.id}`}>
               <Card
-                className={pair.id === selectedPair}
+                className={pair.id === selectedPair && 'active'}
                 key={pair.id}
                 transparent
               >
+                {selectedPair}
                 <div className="medium-text">
                   {pair.token0.symbol}
                   {' '}

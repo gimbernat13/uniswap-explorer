@@ -26,7 +26,7 @@ export function TokensView({ routes }) {
     <div>
       <h3>Tokens</h3>
       {!hasSubRoute('/tokens', location) && (
-        <Card fitContent>Select a Token to view Stats</Card>
+        <Card fitcontent>Select a Token to view Stats</Card>
       )}
       <Switch>
         {routes.map((route) => (

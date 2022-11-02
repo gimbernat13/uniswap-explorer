@@ -26,7 +26,7 @@ export function Pairs({ routes }) {
     <div>
       <h3>Pairs</h3>
       {!hasSubRoute('/pairs', location) && (
-        <Card fitContent>Select a Pair to view Stats</Card>
+        <Card fitcontent>Select a Pair to view Stats</Card>
       )}
       <Switch>
         {routes.map((route) => (

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 export const ThemeContext = React.createContext();

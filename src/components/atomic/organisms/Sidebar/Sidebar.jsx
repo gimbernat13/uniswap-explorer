@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'components/atomic/atoms/Button/Button';
@@ -12,7 +13,7 @@ import {
 import * as Styled from './styles';
 
 export function Sidebar({ theme, toggleTheme }) {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const toggleSidebarOpen = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -33,8 +34,8 @@ export function Sidebar({ theme, toggleTheme }) {
     e.stopPropagation();
   }
   function handleToggleTheme(e) {
-    e.stopPropagation();
     toggleTheme();
+    // e.stopPropagation();
   }
   const ref = useRef();
   useOnClickOutside(ref, () => setIsSidebarOpen(false));
@@ -51,16 +52,16 @@ export function Sidebar({ theme, toggleTheme }) {
             <h2 className="hide"> Explorer</h2>
           </Styled.SidebarLink>
           {sidebarItems.map((item) => (
-            <NavLink key={item.url} onClick={() => handleChildClick()} to={item.url}>
+            <NavLink key={item.url} onClick={handleChildClick} to={item.url}>
               <Styled.SidebarLink>
-                <li className="icon">{item.icon}</li>
+                <i className="icon">{item.icon}</i>
                 <span className="hide">{item.title}</span>
               </Styled.SidebarLink>
             </NavLink>
           ))}
 
         </Styled.SidebarLinks>
-        <Button onClick={() => handleToggleTheme()}>
+        <Button onClick={handleToggleTheme}>
           {theme === 'dark' ? (
             <UilSun size={15} color="white" />
           ) : (
