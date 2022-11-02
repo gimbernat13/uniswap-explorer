@@ -17,12 +17,11 @@ export function Select({
   }
   const ref = useRef();
   useOnClickOutside(ref, () => close());
-  console.log(state);
   return (
     <Styled.Select
       ref={ref}
-      onFocus={expand}
-      onBlur={close}
+      onFocus={() => expand()}
+      onBlur={() => close()}
       onClick={() => setIsOpen(!isOpen)}
     >
       <Styled.Flex>
@@ -34,9 +33,9 @@ export function Select({
       {isOpen && (
         <Styled.SelectInner>
           {options
-            && options.map((option, i) => (
+            && options.map((option) => (
               <Styled.SelectItem
-                key={option + i}
+                key={option.id}
                 onClick={() => {
                   dispatch({ type: action, payload: option });
                 }}

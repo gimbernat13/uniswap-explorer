@@ -1,8 +1,8 @@
 import React from 'react';
 import { UilCoins, UilWaterGlass } from '@iconscout/react-unicons';
 import { NavLink } from 'react-router-dom';
+import { Button } from 'components/atomic/atoms/Button/Button';
 import * as Styled from './styles';
-import { Button } from '../NavButtons/styles';
 
 export function MobileBar() {
   const sidebarItems = [
@@ -27,7 +27,7 @@ export function MobileBar() {
           <li key={item.url}>
             <div>
               <Button>
-                <NavLink onClick={handleChildClick} to={item.url}>
+                <NavLink onClick={() => handleChildClick()} to={item.url}>
                   {/* <i>{item.icon}</i> */}
 
                   <span className="link hide">{item.title}</span>

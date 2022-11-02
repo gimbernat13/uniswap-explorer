@@ -32,4 +32,3 @@ export function PairFilters() {
     </div>
   );
 }
-

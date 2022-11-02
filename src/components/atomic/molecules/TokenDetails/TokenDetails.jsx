@@ -54,7 +54,7 @@ export function TokenDetails({ tokenData, tokenDayDatas }) {
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
         <Card height="100%">
-          <div className="medium-text">Tx's 24 Hours</div>
+          <div className="medium-text">Tx`&apos;`s 24 Hours</div>
           <div>{formatNumber(parseFloat(dailyTxns))}</div>
         </Card>
       </Styled.DetailsGridItem>
