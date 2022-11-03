@@ -18,6 +18,11 @@ export function Sidebar({ theme, toggleTheme }) {
   };
   const sidebarItems = [
     {
+      title: 'Home',
+      icon: <UilCoins size={20} />,
+      url: '/',
+    },
+    {
       title: 'Tokens',
       icon: <UilCoins size={20} />,
       url: '/tokens',

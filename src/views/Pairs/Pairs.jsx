@@ -1,8 +1,8 @@
+/* eslint-disable max-len */
 /* eslint-disable import/no-cycle */
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { Switch, useHistory } from 'react-router-dom';
-
 import { Loader } from 'components/atomic/atoms/Loader/Loader';
 import { PairList } from 'components/atomic/organisms/PairList/PairList';
 import { PairTable } from 'components/atomic/organisms/PairTable/PairTable';
@@ -11,12 +11,18 @@ import { ViewTypeButtons } from 'components/atomic/molecules/ViewTypeButtons/Vie
 import { hasSubRoute } from 'utils/hasSubRoute';
 import { Card } from 'components/atomic/atoms/Card/Card';
 import { RouteWithSubRoutes } from 'index';
+import {
+  UilCoins,
+  UilWaterGlass,
+  UilMoon,
+  UilSun,
+} from '@iconscout/react-unicons';
+import GradientTitle from 'components/atomic/atoms/GradientTitle/GradientTitle';
 import * as Styled from './styles';
 import { PAIRS } from './queries';
 
 export function Pairs({ routes }) {
   React.useEffect(() => {}, []);
-
   const { location } = useHistory();
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const { loading, error, data } = useQuery(PAIRS);

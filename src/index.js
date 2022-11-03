@@ -11,6 +11,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { Layout } from 'components/global/Layout/Layout';
+import { Home } from 'views/Home/Home';
 import { TokensContextProvider } from './context/TokensContext';
 
 import { ThemeContextProvider } from './context/ThemeContext';
@@ -48,6 +49,10 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/',
+    component: Home,
+  },
 
 ];
 
@@ -73,9 +78,9 @@ root.render(
             <Router>
               <Layout>
                 <Switch>
-                  <Route exact path="/">
+                  {/* <Route exact path="/">
                     <Redirect to="/tokens" />
-                  </Route>
+                  </Route> */}
                   {routes.map((route) => (
                     <RouteWithSubRoutes key={route.path} {...route} />
                   ))}

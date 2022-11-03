@@ -1,5 +1,5 @@
 :root {
-  --border-radius: 1rem;
+  --border-radius: .75rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
   --border-ultra-light: 1px solid rgba(64, 73, 99, 0.222);
@@ -9,7 +9,7 @@
   --transparent-black-dark: rgba(0, 0, 0, 0.906);
   --accent-gray: #202020;
   --accent-green: #1e7866;
-  --accent-purple: #5487ce;
+  --accent-purple: #106D99;
   --accent-purple-dark: #4449734b;
   --sidebar-margin: 80px;
   --box-shadow-light: rgba(0, 0, 0, 0.086) 6px 8px 12px, rgba(0, 0, 0, 0.108) 6px 4px 6px;
@@ -32,7 +32,7 @@ body {
   /* font-family: "Roboto Mono", monospace; */
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 0;
   margin-bottom: 0;
   background-size: cover;
@@ -47,8 +47,9 @@ a {
 
 /* ==============Text ============= */
 .large-text {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.8rem;
+  /* padding: .75rem 0; */
 }
 
 .bold {
@@ -57,9 +58,9 @@ a {
 }
 
 .medium-text {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.2rem;
-
+  margin: 5px 0;
 }
 
 
