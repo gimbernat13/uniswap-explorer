@@ -14,7 +14,8 @@ const animated = {
 
 const CARD_VARIANTS = {
   primary: css`
-  border: ${({ theme }) => theme.borderLight}; ;
+  border: ${({ theme }) => theme.borderLight}; 
+  background-color: var(--black-transparent);
   `,
 
   cool: css`
@@ -65,9 +66,6 @@ const StyledCard = styled(motion.div)`
   opacity: 0.9;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  &:hover {
-    box-shadow: var(--box-shadow-light);
-  }
   ${(props) => props.variant && CARD_VARIANTS[props.variant]}
 `;
 const CardInner = styled.div`

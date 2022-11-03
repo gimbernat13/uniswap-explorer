@@ -61,6 +61,7 @@ export default function Chart({
           />
         </div>
       </Styled.FilterChartFlex>
+      <br />
       <ResponsiveContainer height={300}>
         <AreaChart
           margin={{
@@ -68,10 +69,15 @@ export default function Chart({
           }}
           data={reverseData}
         >
+
           <defs>
             <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#2c88ff" stopOpacity={0.4} />
-              <stop offset="75%" stopColor="#2c88ff" stopOpacity={0.05} />
+              <stop offset="0%" stopColor="  rgba(4, 184, 255, 0.595)" stopOpacity={0.4} />
+              <stop offset="25%" stopColor="    rgba(47, 107, 210, 0.769) " stopOpacity={0.4} />
+
+              <stop offset="50%" stopColor="rgba(37, 48, 255, 0.609)" stopOpacity={0.4} />
+
+              <stop offset="75%" stopColor="    rgba(154, 2, 255, 0.515)" stopOpacity={0.05} />
             </linearGradient>
           </defs>
           <Area

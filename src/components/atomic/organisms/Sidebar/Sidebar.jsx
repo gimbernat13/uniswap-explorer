@@ -61,7 +61,7 @@ export function Sidebar({ theme, toggleTheme }) {
           ))}
 
         </Styled.SidebarLinks>
-        <Button onClick={handleToggleTheme}>
+        <Button variant="round" onClick={handleToggleTheme}>
           {theme === 'dark' ? (
             <UilSun size={15} color="white" />
           ) : (

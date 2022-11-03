@@ -4,11 +4,11 @@ import styled, { css } from 'styled-components';
 const CARD_VARIANTS = {
   primary: css`
     color: white;
-    background-color: var(--transparent-black);
+    background-color: var(--black);
     border: var(--border-ultra-light);
   `,
   transparent: css`
-    background-color: var(--transparent-black-light);
+    background-color: var(--black-light);
     border: var(--border-ultra-light);
     border: 1px solid transparent;
   `,

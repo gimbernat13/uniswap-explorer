@@ -4,11 +4,16 @@ const BUTTON_VARIANTS = {
   thick: css`
     box-shadow: none;
   `,
+  round: css`
+    border-radius: 500px;
+  `,
   noShadow: css`
     box-shadow: none;
   `,
 };
 export const Button = styled.button`
+    color: ${({ theme }) => theme.text};
+
   width: ${(props) => props.width};
   background: ${({
     theme, isActive,
@@ -35,8 +40,8 @@ export const Button = styled.button`
   border: ${({ theme }) => theme.borderLight};
   display: inline-block;
   opacity: 0.9;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
+  font-weight : 500;
+
   text-align: center;
   text-decoration: none;
   box-shadow: ${({ theme }) => theme.boxShadow};

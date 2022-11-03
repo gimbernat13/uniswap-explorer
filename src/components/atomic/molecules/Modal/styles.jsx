@@ -27,7 +27,7 @@ export const ModalBox = styled(motion.div)`
   width: fit-content;
   overflow-y: auto;
   height: fit-content;
-  background-color: var(--transparent-black-dark);
+  background-color: var(--black-dark);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   backdrop-filter: blur(5px);

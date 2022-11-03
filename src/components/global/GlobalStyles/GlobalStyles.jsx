@@ -19,8 +19,8 @@ export const lightTheme = {
 export const darkTheme = {
   body: 'linear-gradient(rgb(32, 39, 56) 0%, rgb(7, 8, 22) 100%)',
   text: '#f1f1f1',
-  cardBg: 'var(--transparent-black)',
+  cardBg: 'var(--black)',
   boxShadow: 'var(--card-box-shadow)',
-  sidebarBg: 'var(--transparent-black)',
+  sidebarBg: 'var(--black)',
   borderLight: 'var(--border-ultra-light)',
 };
