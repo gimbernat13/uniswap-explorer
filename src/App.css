@@ -2,7 +2,7 @@
   --border-radius: .75rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
-  --border-ultra-light: 1px solid rgba(64, 73, 99, 0.222);
+  --border-ultra-light: 2px solid rgba(64, 73, 99, 0.222);
   --border-thick: 1px solid rgba(128, 144, 192, 0.367);
   --transparent-black-light: none !important;
   --transparent-black: rgb(0, 0, 0);
@@ -112,6 +112,18 @@ tr:hover {
 }
 
 .active {
-  background-color: var(--accent-purple) !important;
+  font-weight: bold;
+  /* color: white !important; */
+  background:
+    linear-gradient(95.5deg,
+      rgba(4, 184, 255, 0.595) 25.82%,
+      rgba(47, 107, 210, 0.769) 50.96%,
+      rgba(37, 48, 255, 0.609) 75.06%,
+      rgba(154, 2, 255, 0.515) 107.66%) border-box;
+}
+
+.active svg {
+  font-weight: bold;
+  /* background-color: var(--accent-purple) !important; */
   /* color: white !important; */
 }
