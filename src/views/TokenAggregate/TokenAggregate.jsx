@@ -52,11 +52,11 @@ export function TokenAggregate() {
               />
             </Card>
           </Styled.LeftTopGrid>
-          <Card>
-            <Styled.Chart>
+          <Styled.Chart>
+            <Card>
               <Chart chartData={data.tokenDayDatas} yKey="priceUSD" />
-            </Styled.Chart>
-          </Card>
+            </Card>
+          </Styled.Chart>
         </Styled.LeftGrid>
         <Styled.RightGrid>
           <Card>

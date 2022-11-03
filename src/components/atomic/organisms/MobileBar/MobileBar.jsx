@@ -28,9 +28,8 @@ export function MobileBar() {
             <div>
               <Button>
                 <NavLink onClick={() => handleChildClick()} to={item.url}>
-                  {/* <i>{item.icon}</i> */}
-
-                  <span className="link hide">{item.title}</span>
+                  <span>{item.title}</span>
+                  {item.icon}
                 </NavLink>
               </Button>
             </div>
