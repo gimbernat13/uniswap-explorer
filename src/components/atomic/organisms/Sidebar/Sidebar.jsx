@@ -38,8 +38,8 @@ export function Sidebar({ theme, toggleTheme }) {
     e.stopPropagation();
   }
   function handleToggleTheme(e) {
+    e.stopPropagation();
     toggleTheme();
-    // e.stopPropagation();
   }
   const ref = useRef();
   useOnClickOutside(ref, () => setIsSidebarOpen(false));

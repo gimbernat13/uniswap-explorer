@@ -42,7 +42,7 @@ export function TokenAggregate() {
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
           <Styled.LeftTopGrid>
-            <Card flex height="100%">
+            <Card variant="gradient" flex height="100%">
               <TokenMainDetails data={data.token} />
             </Card>
             <Card height="100%">
@@ -59,7 +59,7 @@ export function TokenAggregate() {
           </Styled.Chart>
         </Styled.LeftGrid>
         <Styled.RightGrid>
-          <Card>
+          <Card flex>
             <TokenPairs data={data.pairs} />
           </Card>
           <Button isActive width="100%" onClick={openModal}>

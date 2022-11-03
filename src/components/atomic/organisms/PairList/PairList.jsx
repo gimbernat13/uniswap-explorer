@@ -14,13 +14,13 @@ export function PairList({ data }) {
           && data.pairs.map((pair) => (
             <Link onClick={() => pairDispatch({ type: setSelectedPair, payload: pair.id })} to={`/pairs/${pair.id}`}>
               <Card
+                variant="gradient"
                 className={pair.id === selectedPair && 'active'}
                 key={pair.id}
               >
                 {selectedPair}
                 <div className="medium-text">
                   {pair.token0.symbol}
-                  {' '}
                   -
                   {pair.token1.symbol}
                 </div>
