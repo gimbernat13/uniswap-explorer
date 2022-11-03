@@ -3,34 +3,33 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const StyledCard = styled(motion.div)`
-transition: all .2s;
   backdrop-filter: blur(1px);
   border-radius: 1rem;
   border: var(--border-thick);
   /* background-clip: content-box, border-box; */
   display: ${(props) => (props.flex ? 'flex' : 'block')};
   width: ${(props) => props.fitcontent && 'fit-content'};
+  box-shadow:  ${({ theme }) => `${theme.cardBg} 2px 1000px 2px inset`};
   /* box-shadow: ${({ theme }) => theme.boxShadow}; */
   background-color: ${({ theme }) => theme.cardBg};
   opacity: 0.9;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  box-shadow: var(--box-shadow-light);
-  
-  background: linear-gradient(white, white) padding-box,
-  linear-gradient(rgba(255, 255, 255, 0),
+  background-origin: border-box;
+      &:hover{
+        border:1px solid transparent;
+
+        box-shadow:  ${({ theme }) => `${theme.cardBg} 2px 1000px 2px inset`};
+        background-image: linear-gradient(rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0)),
           linear-gradient(95.5deg,
       rgba(4, 184, 255, 0.595) 25.82%,
       rgba(47, 107, 210, 0.769) 50.96%,
       rgba(37, 48, 255, 0.609) 75.06%,
       rgba(154, 2, 255, 0.515) 107.66%) 
-       border-box;
-       border: 2px solid transparent;
-            &:hover{
-              box-shadow: var(--box-shadow-light);
+      
+      }
 
-            }
 `;
 const CardInner = styled.div`
   padding: ${(props) => (props.noPadding ? 'none' : ' 1rem')};

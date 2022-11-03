@@ -12,7 +12,7 @@
   --accent-purple: #106D99;
   --accent-purple-dark: #4449734b;
   --sidebar-margin: 80px;
-  --box-shadow-light: rgba(0, 0, 0, 0.086) 6px 8px 12px, rgba(0, 0, 0, 0.108) 6px 4px 6px;
+  --box-shadow-light: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
   --box-shadow: rgb(0 0 0 / 24%) 6px 8px 12px, rgb(0 0 0 / 24%) 6px 4px 6px,
     rgb(0 0 0 / 32%) 2px 2px 4px;
   --main-color: #4a82fb6a;
