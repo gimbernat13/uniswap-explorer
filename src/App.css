@@ -113,5 +113,5 @@ tr:hover {
 
 .active {
   background-color: var(--accent-purple) !important;
-  color: white !important;
+  /* color: white !important; */
 }
