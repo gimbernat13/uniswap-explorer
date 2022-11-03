@@ -53,7 +53,7 @@ export function TokenTable({ tableData }) {
   } = useTable({ columns, data: tableData }, useSortBy);
 
   return (
-    <Card noPadding>
+    <Card variant="primary" noPadding>
       <table className="styled-table" {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (

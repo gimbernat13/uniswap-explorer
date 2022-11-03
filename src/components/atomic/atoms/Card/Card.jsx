@@ -14,6 +14,10 @@ const animated = {
 
 const CARD_VARIANTS = {
   primary: css`
+  border: ${({ theme }) => theme.borderLight}; ;
+  `,
+
+  cool: css`
   background: ${({
     theme,
   }) => ` linear-gradient(${theme.cardBg}, ${theme.cardBg}) padding-box,
