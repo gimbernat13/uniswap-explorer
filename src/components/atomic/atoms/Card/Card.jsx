@@ -55,11 +55,14 @@ const CARD_VARIANTS = {
   `,
 };
 const StyledCard = styled(motion.div)`
+  position: relative;
   backdrop-filter: blur(1px);
   border-radius: 1rem;
   border: 2px solid transparent;
   background-color: ${({ theme }) => theme.cardBg};
   display: ${(props) => (props.flex ? 'flex' : 'block')};
+  height: ${(props) => (props.height ? props.height : '100%')};
+
   width: ${(props) => props.fitcontent && 'fit-content'};
   box-shadow: ${({ theme }) => theme.boxShadow};
   opacity: 0.9;
