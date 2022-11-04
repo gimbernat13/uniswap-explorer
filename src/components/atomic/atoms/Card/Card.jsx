@@ -15,7 +15,6 @@ const animated = {
 const CARD_VARIANTS = {
   primary: css`
   border: ${({ theme }) => theme.borderLight}; 
-  background-color: var(--black-transparent);
   `,
 
   cool: css`

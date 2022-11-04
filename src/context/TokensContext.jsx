@@ -40,7 +40,7 @@ const INITIAL_STATE = {
   filterBy: tokenFilters[0],
   sortBy: 'desc',
   itemsOnPage: 150,
-  selectedToken: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
+  selectedToken: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
   timeFrame: timeOptions[2],
 };
 

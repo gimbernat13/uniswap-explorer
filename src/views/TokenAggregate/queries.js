@@ -14,7 +14,7 @@ export const TOKEN_DETAILS = gql`
       orderBy: volumeUSD
       orderDirection: desc
       first: 5
-      where: { token0: $id }
+      where: { token1: $id }
     ) {
       id
       volumeUSD
