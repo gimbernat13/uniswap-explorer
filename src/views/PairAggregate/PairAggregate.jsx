@@ -42,7 +42,7 @@ export function PairAggregate() {
               </Card>
             </Link>
             <Link to={`/tokens/${pair.token1.id}`}>
-              <Card variant="gradientF" height="100%">
+              <Card variant="gradient" height="100%">
                 <div className="large-text">{pair.token1.symbol}</div>
                 <div>
                   {formatNumber(parseFloat(pair.reserve1).toFixed(2))}
@@ -82,11 +82,11 @@ export function PairAggregate() {
         </Styled.AggregateLeft>
         <Styled.AggregateRight>
           <div>
-            {/* <SwapWidget
+            <SwapWidget
               defaultInputTokenAddress={pair.token0.id}
               defaultOutputTokenAddress={pair.token1.id}
               theme={theme === 'dark' ? darkTheme : darkTheme}
-            /> */}
+            />
           </div>
         </Styled.AggregateRight>
       </Styled.AggregateGrid>

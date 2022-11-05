@@ -33,6 +33,8 @@ const CARD_VARIANTS = {
     }
   `,
   transparent: css`
+    border: 2px solid transparent;
+
   `,
   noShadow: css`
     box-shadow: none;
@@ -58,7 +60,8 @@ const StyledCard = styled(motion.div)`
   position: relative;
   backdrop-filter: blur(1px);
   border-radius: 1rem;
-  border: 2px solid transparent;
+  border: ${({ theme }) => theme.cardBorder};
+
   background-color: ${({ theme }) => theme.cardBg};
   display: ${(props) => (props.flex ? 'flex' : 'block')};
   height: ${(props) => (props.height ? props.height : '100%')};

@@ -15,6 +15,8 @@ export const lightTheme = {
   boxShadow: 'var(--card-box-shadow)',
   sidebarBg: 'white',
   borderLight: 'var(--border-ultra-light)',
+  cardBorder: '2px solid transparent',
+
 };
 export const darkTheme = {
   body: 'linear-gradient(rgb(32, 39, 56) 0%, rgb(7, 8, 22) 100%)',
@@ -23,4 +25,7 @@ export const darkTheme = {
   boxShadow: 'var(--card-box-shadow)',
   sidebarBg: 'var(--black)',
   borderLight: 'var(--border-ultra-light)',
+  cardBorder: 'var(--border-ultra-light)',
+
+
 };
