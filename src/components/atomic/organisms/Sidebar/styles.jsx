@@ -42,11 +42,11 @@ export const SidebarLink = styled.li`
   display: flex;
   padding: 0.5rem 0.5rem;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   margin-left: 4px;
 `;
 export const SidebarLinks = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 `;

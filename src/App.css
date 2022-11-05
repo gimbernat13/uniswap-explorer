@@ -1,18 +1,17 @@
 :root {
-  --border-radius: 1rem;
+  --border-radius: .75rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
-  --border-ultra-light: 1px solid rgba(64, 73, 99, 0.222);
-  --border-thick: 2px solid rgba(128, 144, 192, 0.367);
-  --transparent-black-light: none !important;
-  --transparent-black: rgba(0, 0, 0, 0.385);
-  --transparent-black-dark: rgba(0, 0, 0, 0.906);
+  --border-ultra-light: 2px solid rgba(64, 73, 99, 0.374);
+  --border-thick: 1px solid rgba(128, 144, 192, 0.367);
+  --black: rgb(0, 0, 0);
+  --black-transparent: rgba(0, 0, 0, 0.54);
   --accent-gray: #202020;
   --accent-green: #1e7866;
-  --accent-purple: #5487ce;
+  --accent-purple: #106D99;
   --accent-purple-dark: #4449734b;
   --sidebar-margin: 80px;
-  --box-shadow-light: rgba(0, 0, 0, 0.086) 6px 8px 12px, rgba(0, 0, 0, 0.108) 6px 4px 6px;
+  --box-shadow-light: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
   --box-shadow: rgb(0 0 0 / 24%) 6px 8px 12px, rgb(0 0 0 / 24%) 6px 4px 6px,
     rgb(0 0 0 / 32%) 2px 2px 4px;
   --main-color: #4a82fb6a;
@@ -32,7 +31,7 @@ body {
   /* font-family: "Roboto Mono", monospace; */
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 0;
   margin-bottom: 0;
   background-size: cover;
@@ -47,7 +46,7 @@ a {
 
 /* ==============Text ============= */
 .large-text {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.8rem;
 }
 
@@ -57,9 +56,9 @@ a {
 }
 
 .medium-text {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.2rem;
-
+  /* margin: 5px 0; */
 }
 
 
@@ -112,6 +111,18 @@ tr:hover {
 }
 
 .active {
-  background-color: var(--accent-purple) !important;
-  color: white !important;
+  font-weight: bold;
+  /* color: white !important; */
+  /* background:
+    linear-gradient(95.5deg,
+      rgba(4, 184, 255, 0.595) 25.82%,
+      rgba(47, 107, 210, 0.769) 50.96%,
+      rgba(37, 48, 255, 0.609) 75.06%,
+      rgba(154, 2, 255, 0.515) 107.66%) border-box; */
+}
+
+.active svg {
+  font-weight: bold;
+  /* background-color: var(--accent-purple) !important; */
+  /* color: white !important; */
 }

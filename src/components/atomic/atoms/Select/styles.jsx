@@ -1,19 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Select = styled.div`
+  border: ${({ theme }) => theme.borderLight};
+
   border-radius: var(--border-radius);
   text-align: center;
   margin-right: 0.5rem;
   transition: all 0.2s;
   cursor: pointer;
   position: relative;
-  border: var(--border-thick);
   font-size: 0.8rem !important;
   width: 150px;
   background-color: ${({ theme }) => theme.cardBg};
 
-  &:hover {
-  }
+
   img {
     margin-left: 10px;
   }
@@ -25,15 +25,32 @@ export const SelectInner = styled.div`
   top: 45px;
   z-index: 3;
   border-radius: 1rem;
-  border: 1px solid rgba(148, 148, 148, 0.317);
+  border: ${({ theme }) => theme.borderLight};
   background-color: ${({ theme }) => theme.cardBg};
-
   backdrop-filter: blur(1px);
+ 
+  &:hover {
+    filter: brightness(1.3);
+    background: ${({ theme }) => ` linear-gradient(${theme.cardBg}, ${theme.cardBg}) padding-box,
+      linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      linear-gradient(
+          95.5deg,
+          rgba(4, 184, 255, 0.595) 25.82%,
+          rgba(47, 107, 210, 0.769) 50.96%,
+          rgba(37, 48, 255, 0.609) 75.06%,
+          rgba(154, 2, 255, 0.515) 107.66%
+        )
+        border-box`};
+
+  }
+
 `;
 export const SelectItem = styled.div`
   border-radius: 0.5rem;
   margin: 10px;
   padding: 1rem;
+  &:hover{
+filter: brightness(.8)  }
 `;
 export const Flex = styled.div`
   padding: 8px 0.85rem;

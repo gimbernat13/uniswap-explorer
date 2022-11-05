@@ -1,17 +1,17 @@
-import { useQuery } from "@apollo/client";
-import React, { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import formatNumber from "../../utils/formatNumber";
-import { PAIR_AGGREGATE } from "./queries";
-import * as Styled from "./styles";
-import { BarCharts } from "components/atomic/organisms/BarCharts/BarCharts";
-import { Card } from "components/atomic/atoms/Card/Card";
-import { Loader } from "components/atomic/atoms/Loader/Loader";
-import { RecentSwaps } from "components/atomic/organisms/RecentSwaps/RecentSwaps";
-import { darkTheme, SwapWidget } from "@uniswap/widgets";
-import { ThemeContext } from "styled-components";
+import { useQuery } from '@apollo/client';
+import React, { useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { BarCharts } from 'components/atomic/organisms/BarCharts/BarCharts';
+import { Card } from 'components/atomic/atoms/Card/Card';
+import { Loader } from 'components/atomic/atoms/Loader/Loader';
+import { RecentSwaps } from 'components/atomic/organisms/RecentSwaps/RecentSwaps';
+import { darkTheme, SwapWidget } from '@uniswap/widgets';
+import { ThemeContext } from 'styled-components';
+import * as Styled from './styles';
+import { PAIR_AGGREGATE } from './queries';
+import formatNumber from '../../utils/formatNumber';
 
-export const PairAggregate = () => {
+export function PairAggregate() {
   const { pairID } = useParams();
 
   const { loading, error, data } = useQuery(PAIR_AGGREGATE, {
@@ -19,7 +19,7 @@ export const PairAggregate = () => {
   });
 
   React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [pairID]);
 
   const { theme } = useContext(ThemeContext);
@@ -33,15 +33,21 @@ export const PairAggregate = () => {
         <Styled.AggregateLeft>
           <Styled.PairSpecs>
             <Link to={`/tokens/${pair.token0.id}`}>
-              <Card height="100%">
+              <Card variant="gradient" height="100%">
                 <div className="large-text">{pair.token0.symbol}</div>
-                <div>{formatNumber(parseFloat(pair.reserve0).toFixed(2))} </div>
+                <div>
+                  {formatNumber(parseFloat(pair.reserve0).toFixed(2))}
+                  {' '}
+                </div>
               </Card>
             </Link>
             <Link to={`/tokens/${pair.token1.id}`}>
-              <Card height="100%">
+              <Card variant="gradientF" height="100%">
                 <div className="large-text">{pair.token1.symbol}</div>
-                <div>{formatNumber(parseFloat(pair.reserve1).toFixed(2))} </div>
+                <div>
+                  {formatNumber(parseFloat(pair.reserve1).toFixed(2))}
+                  {' '}
+                </div>
               </Card>
             </Link>
 
@@ -49,17 +55,19 @@ export const PairAggregate = () => {
               <Styled.InfoCard>
                 <div className="bold">Volume: </div>
                 <div>
-                  ${formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
+                  $
+                  {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))}
                 </div>
                 <div className="bold"> 24h V:</div>
                 <div>
                   {formatNumber(
-                    parseFloat(pairDayDatas[0].dailyVolumeToken0).toFixed(2)
+                    parseFloat(pairDayDatas[0].dailyVolumeToken0).toFixed(2),
                   )}
                 </div>
                 <div className="bold"> Reserve: </div>
                 <div>
-                  ${formatNumber(parseFloat(pair.reserveUSD).toFixed(2))}
+                  $
+                  {formatNumber(parseFloat(pair.reserveUSD).toFixed(2))}
                 </div>
               </Styled.InfoCard>
             </Card>
@@ -74,11 +82,11 @@ export const PairAggregate = () => {
         </Styled.AggregateLeft>
         <Styled.AggregateRight>
           <div>
-            <SwapWidget
+            {/* <SwapWidget
               defaultInputTokenAddress={pair.token0.id}
               defaultOutputTokenAddress={pair.token1.id}
-              theme={theme === "dark" ? darkTheme : darkTheme}
-            />
+              theme={theme === 'dark' ? darkTheme : darkTheme}
+            /> */}
           </div>
         </Styled.AggregateRight>
       </Styled.AggregateGrid>
@@ -88,4 +96,4 @@ export const PairAggregate = () => {
       </Card>
     </>
   );
-};
+}

@@ -1,15 +1,11 @@
-import React from "react";
-import formatNumber from "../../../../utils/formatNumber";
-import { Card } from "../../atoms/Card/Card";
-import * as Styled from "./styles";
+import React from 'react';
+import formatNumber from '../../../../utils/formatNumber';
+import { Card } from '../../atoms/Card/Card';
+import * as Styled from './styles';
 
-export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
+export function TokenDetails({ tokenData, tokenDayDatas }) {
   const {
-    name,
-    symbol,
-    id,
     tradeVolumeUSD,
-    derivedETH,
     txCount: tokenTxCount,
     totalLiquidity,
   } = tokenData;
@@ -18,41 +14,50 @@ export const TokenDetails = ({ tokenData, tokenDayDatas }) => {
   return (
     <Styled.DetailsGrid>
       <Styled.DetailsGridItem>
-        <Card height="100%">
-          <div className="medium-text">Total Volume</div>
-          <div>${formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))}</div>
+        <Card variant="noShadow" height="100%">
+          <div>Total Volume</div>
+          <div className="bold">
+            $
+            {formatNumber(parseFloat(tradeVolumeUSD).toFixed(2))}
+          </div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
-        <Card height="100%">
-          <div className="medium-text">Total Liquidity </div>
-          <div>ETH {formatNumber(parseFloat(totalLiquidity).toFixed(2))} </div>
+        <Card variant="noShadow" height="100%">
+          <div>Liquidity </div>
+          <div className="bold">
+            ETH
+            {formatNumber(parseFloat(totalLiquidity).toFixed(2))}
+          </div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
-        <Card height="100%">
-          <div className="medium-text">Total TX's:</div>
-          <div>{formatNumber(parseFloat(tokenTxCount))}</div>
+        <Card variant="noShadow" height="100%">
+          <div>Total TXs:</div>
+          <div className="bold">{formatNumber(parseFloat(tokenTxCount))}</div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
-        <Card height="100%">
-          <div className="medium-text">Daily Volume </div>
-          <div>${formatNumber(parseFloat(dailyVolumeUSD).toFixed(2))} </div>
+        <Card variant="noShadow" height="100%">
+          <div>Daily Volume </div>
+          <div className="bold">
+            $
+            {formatNumber(parseFloat(dailyVolumeUSD).toFixed(2))}
+          </div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
-        <Card height="100%">
-          <div className="medium-text">Daily Liquidity</div>
-          <div>{formatNumber(parseFloat(totalLiquidityUSD).toFixed(2))}</div>
+        <Card variant="noShadow" height="100%">
+          <div>Liquidity 24h</div>
+          <div className="bold">{formatNumber(parseFloat(totalLiquidityUSD).toFixed(2))}</div>
         </Card>
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
-        <Card height="100%">
-          <div className="medium-text">Tx's 24 Hours</div>
-          <div>{formatNumber(parseFloat(dailyTxns))}</div>
+        <Card variant="noShadow" height="100%">
+          <div>Txs 24 Hours</div>
+          <div className="bold">{formatNumber(parseFloat(dailyTxns))}</div>
         </Card>
       </Styled.DetailsGridItem>
     </Styled.DetailsGrid>
   );
-};
+}
