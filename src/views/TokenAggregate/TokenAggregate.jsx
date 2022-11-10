@@ -42,7 +42,7 @@ export function TokenAggregate() {
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
           <Styled.LeftTopGrid>
-            <Card flex height="100%">
+            <Card flex>
               <TokenMainDetails data={data.token} />
             </Card>
             <Card height="100%">

@@ -3,14 +3,13 @@ import * as Styled from "./styles";
 
 export const TokenMainDetails = ({ data }) => {
   const { name, symbol, id } = data;
-  console.log("data" , data)
   return (
     <Styled.FlexSpacedV>
       <div>
         <div className="large-text">{symbol}</div>
         <div className="medium-text">{name}</div>
       </div>
-      <div>
+  
         <Styled.DetailLinks>
           <a href={`https://www.coingecko.com/en/coins/${id}`}>
             <img
@@ -26,7 +25,7 @@ export const TokenMainDetails = ({ data }) => {
             />
           </a>
         </Styled.DetailLinks>
-      </div>
+
     </Styled.FlexSpacedV>
   );
 };

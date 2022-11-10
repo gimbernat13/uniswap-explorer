@@ -64,7 +64,8 @@ const StyledCard = styled(motion.div)`
 
   background-color: ${({ theme }) => theme.cardBg};
   display: ${(props) => (props.flex ? 'flex' : 'block')};
-  height: ${(props) => (props.height ? props.height : '100%')};
+  align-items: center;
+    height: ${(props) => (props.height ? props.height : '100%')};
 
   width: ${(props) => props.fitcontent && 'fit-content'};
   box-shadow: ${({ theme }) => theme.boxShadow};
