@@ -16,12 +16,6 @@ export function TokenTable({ tableData }) {
         accessor: "name",
       },
       {
-        Header: "Trade Volume ",
-        accessor: (row) => (
-          <div>{formatNumber(parseFloat(row.tradeVolume).toFixed(2))} </div>
-        ),
-      },
-      {
         Header: "Tx's",
         accessor: (row) => <div>{formatNumber(parseFloat(row.txCount))} </div>,
       },

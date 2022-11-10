@@ -50,7 +50,8 @@ export const SelectItem = styled.div`
   margin: 10px;
   padding: 1rem;
   &:hover{
-filter: brightness(.8)  }
+    background: ${({ theme }) => theme.sidebarBg};
+}
 `;
 export const Flex = styled.div`
   padding: 8px 0.85rem;

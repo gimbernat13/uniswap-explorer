@@ -21,14 +21,7 @@ export const timeOptions = [
     id: 100,
     name: "100 Days",
   },
-  {
-    id: 500,
-    name: "500 days",
-  },
-  {
-    id: 1000,
-    name: "All Time",
-  },
+ 
 ];
 
 export const tokenFilters = [

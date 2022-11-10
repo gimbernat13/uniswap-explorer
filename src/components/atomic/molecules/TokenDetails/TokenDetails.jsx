@@ -26,7 +26,6 @@ export function TokenDetails({ tokenData, tokenDayDatas }) {
         <Card variant="noShadow" height="100%">
           <div>Liquidity </div>
           <div className="bold">
-            ETH
             {formatNumber(parseFloat(totalLiquidity).toFixed(2))}
           </div>
         </Card>
@@ -54,7 +53,7 @@ export function TokenDetails({ tokenData, tokenDayDatas }) {
       </Styled.DetailsGridItem>
       <Styled.DetailsGridItem>
         <Card variant="noShadow" height="100%">
-          <div>Txs 24 Hours</div>
+          <div>Txs 24h</div>
           <div className="bold">{formatNumber(parseFloat(dailyTxns))}</div>
         </Card>
       </Styled.DetailsGridItem>

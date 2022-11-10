@@ -17,11 +17,11 @@ export function Sidebar({ theme, toggleTheme }) {
     setIsSidebarOpen(!isSidebarOpen);
   };
   const sidebarItems = [
-    {
-      title: 'Home',
-      icon: <UilCoins size={20} />,
-      url: '/',
-    },
+    // {
+    //   title: 'Home',
+    //   icon: <UilCoins size={20} />,
+    //   url: '/',
+    // },
     {
       title: 'Tokens',
       icon: <UilCoins size={20} />,

@@ -52,6 +52,8 @@ a {
 
 .bold {
   font-weight: bold;
+  font-size: 1.2rem;
+  margin: 5px 0;
 
 }
 
@@ -95,7 +97,6 @@ td {
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 10px;
-  cursor: pointer;
 }
 
 th:first-child {
@@ -106,19 +107,12 @@ th:last-child {
   border-top-right-radius: var(--border-radius);
 }
 
-tr:hover {
-  background-color: var(--accent-purple-dark);
-}
+tr:hover {}
 
 .active {
   font-weight: bold;
-  /* color: white !important; */
-  /* background:
-    linear-gradient(95.5deg,
-      rgba(4, 184, 255, 0.595) 25.82%,
-      rgba(47, 107, 210, 0.769) 50.96%,
-      rgba(37, 48, 255, 0.609) 75.06%,
-      rgba(154, 2, 255, 0.515) 107.66%) border-box; */
+  color: white !important;
+  background: var(--accent-purple);
 }
 
 .active svg {

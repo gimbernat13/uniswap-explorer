@@ -4,7 +4,6 @@ import * as Styled from "./styles";
 export const Button = ({ onClick, children, width, isActive }) => {
   return (
     <Styled.Button
-      className={isActive ? "active" : ""}
       width={width}
       onClick={onClick}
       isActive={isActive}
