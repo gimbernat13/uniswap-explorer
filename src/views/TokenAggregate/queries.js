@@ -27,7 +27,7 @@ export const TOKEN_DETAILS = gql`
     }
     tokenDayDatas(
       orderBy: date
-      orderDirection: desc
+      orderDirection: asc
       first: $timeFrame
       where: { token: $id }
     ) {
