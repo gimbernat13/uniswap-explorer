@@ -28,7 +28,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   height: 100%;
-  /* font-family: "Roboto Mono", monospace; */
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
   font-weight: 300;
@@ -85,7 +84,6 @@ table {
   text-align: start;
   border-spacing: 0px !important;
   font-variant: normal;
-  /* border: var(--border-light); */
   border-radius: var(--border-radius);
 }
 
@@ -107,7 +105,10 @@ th:last-child {
   border-top-right-radius: var(--border-radius);
 }
 
-tr:hover {}
+tr:hover {
+  filter: brightness(.8);
+  cursor: pointer;
+}
 
 .active {
   font-weight: bold;
@@ -117,6 +118,4 @@ tr:hover {}
 
 .active svg {
   font-weight: bold;
-  /* background-color: var(--accent-purple) !important; */
-  /* color: white !important; */
 }
