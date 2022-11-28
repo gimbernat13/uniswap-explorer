@@ -15,7 +15,6 @@ export const Select = ({ options, dispatch, action, state, value }) => {
   }
   const ref = useRef();
   useOnClickOutside(ref, () => close());
-  console.log(state);
   return (
     <Styled.Select
       ref={ref}
