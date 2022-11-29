@@ -8,12 +8,9 @@ export const RecentSwaps = ({ swapData, pairData }) => {
   return (
     <Styled.TxTable className="styled-table" initial="hidden" animate="show">
       <tbody>
-      <thead>
-
-        <th>Amount USD</th>
-        
-      </thead>
         {swapData.map((swap) => {
+
+          console.log("swap data" , swapData)
           console.log("swap " , swap.id)
           return (
             <Styled.TxRow key={swap.id}>
