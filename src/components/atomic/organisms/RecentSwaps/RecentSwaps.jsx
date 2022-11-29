@@ -18,15 +18,7 @@ export const RecentSwaps = ({ swapData, pairData }) => {
               <td>{token0.symbol} </td>
               <td>{token1.symbol} </td>
               <td>{swap.id}</td>
-              <td>
-              <a href={`https://etherscan.io/tx/${swap.id}`}>
-                  <img
-                    style={{ height: "20px" }}
-                    src="https://etherscan.io/assets/svg/logos/logo-etherscan.svg?v=0.0.2"
-                    alt=""
-                  />
-                </a>
-              </td>
+           
             </Styled.TxRow>
           );
         })}
