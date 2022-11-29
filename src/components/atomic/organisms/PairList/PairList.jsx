@@ -26,7 +26,8 @@ export function PairList({ data }) {
                 </div>
                 <div>
                   $
-                  {formatNumber(parseInt(pair.volumeUSD, 2))}
+             {formatNumber(parseFloat(pair.volumeUSD).toFixed(2))} 
+
                 </div>
               </Card>
             </Link>

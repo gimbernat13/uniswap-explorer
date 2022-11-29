@@ -62,6 +62,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
             />
           </div>
         </Styled.FilterChartFlex>
+        <br />
         <ResponsiveContainer height={300}>
           <AreaChart
             margin={{

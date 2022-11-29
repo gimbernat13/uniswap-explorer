@@ -51,6 +51,7 @@ export const PAIR_AGGREGATE = gql`
           symbol
         }
       }
+      id
       amount0In
       amount0Out
       amount1In

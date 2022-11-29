@@ -2,7 +2,7 @@ import React from "react";
 import { useTable, useSortBy } from "react-table";
 import formatNumber from "../../../../utils/formatNumber";
 import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Card } from "components/atomic/atoms/Card/Card";
 export function TokenTable({ tableData }) {
   const columns = React.useMemo(
@@ -31,6 +31,12 @@ export function TokenTable({ tableData }) {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data: tableData }, useSortBy);
 
+    const history = useHistory()
+
+    function handleRowClick(row) {
+      history.push(`/tokens/${row.original.id}`);
+
+    }
   return (
     <Card noPadding>
       <table className="styled-table" {...getTableProps()}>
@@ -66,13 +72,11 @@ export function TokenTable({ tableData }) {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr onClick={()  => handleRowClick(row)} {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
                     <td {...cell.getCellProps()} style={{}}>
-                      <Link to={`/tokens/${row.original.id}`}>
                         {cell.render("Cell")}
-                      </Link>
                     </td>
                   );
                 })}
