@@ -23,6 +23,6 @@ export const RecentSwaps = ({ swapData, pairData }) => {
           );
         })}
       </tbody>
-    </Styled.TxTable>
+    </Styled.TxTable>  
   );
 };

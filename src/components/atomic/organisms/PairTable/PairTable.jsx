@@ -89,7 +89,7 @@ export function PairTable({ tableData }) {
             return (
               <tr
                 {...row.getRowProps()}
-                className={row.id === pairState.selectedPair ? "active" : ""}
+                // className={row.id === pairState.selectedPair ? "active" : ""}
                 onClick={() =>
                   pairDispatch({ type: setSelectedPair, payload: row.id })
                 }
