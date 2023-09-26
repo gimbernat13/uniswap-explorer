@@ -19,7 +19,15 @@ import { setFilterBy, setTimeFrame } from "context/actionNames";
 
 export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
-  var reverseData = [...chartData].reverse();
+  const convertedData = chartData.map(item => ({
+    ...item,
+    // assuming tokensState.filterBy.id could be 'dailyVolumeUSD', 'dailyTxns', or 'reserveUSD'
+    dailyVolumeUSD: Number(item.dailyVolumeUSD), // using Number() to convert to number
+    dailyTxns: Number(item.dailyTxns), // using Number() to convert to number
+    reserveUSD: Number(item.reserveUSD), // using Number() to convert to number
+  }));
+
+  var reverseData = [...convertedData].reverse();
   const TokenContext = useContext(TokensContext);
   const { dispatch: tokensDispatch, state: tokensState } = TokenContext;
 
