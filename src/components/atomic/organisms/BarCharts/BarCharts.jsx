@@ -32,19 +32,30 @@ export const options = {
   },
 };
 
+
+// X axis 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => 33),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-  ],
-};
+export function BarCharts({ chartData }) {
 
-export function BarCharts() {
+  const newLabels = chartData.map((chartItem) => console.log("this is chart bitch " , chartItem.date))
+
+  console.log("chart data , " , chartData)
+  const data = {
+    newLabels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: labels.map(() => 33),
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+      {
+        label: 'Dataset 2',
+        data: labels.map(() => 33),
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+    ],
+  };
+
   return <Bar options={options} data={data} />;
 }
