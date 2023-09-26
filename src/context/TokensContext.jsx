@@ -30,7 +30,8 @@ export const tokenFilters = [
   { name: "Daily Tx's", id: "dailyTxns" },
 ];
 const INITIAL_STATE = {
-  filterBy: tokenFilters[0],
+  // filterBy: tokenFilters[0],
+  filterBy: "dailyVolumeUSD",
   sortBy: "desc",
   itemsOnPage: 150,
   selectedToken: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",

@@ -13,6 +13,7 @@ import formatNumber from '../../utils/formatNumber';
 
 export function PairAggregate() {
   const { pairID } = useParams();
+  const { theme } = useContext(ThemeContext);
 
   const { loading, error, data } = useQuery(PAIR_AGGREGATE, {
     variables: { id: pairID },
@@ -22,7 +23,6 @@ export function PairAggregate() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [pairID]);
 
-  const { theme } = useContext(ThemeContext);
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
@@ -46,7 +46,6 @@ export function PairAggregate() {
                 <div className="large-text">{pair.token1.symbol}</div>
                 <div>
                   {formatNumber(parseFloat(pair.reserve1).toFixed(2))}
-                  {' '}
                 </div>
               </Card>
             </Link>

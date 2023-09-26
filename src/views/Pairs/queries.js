@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const PAIRS = gql`
-  query Pairs($filter: String, $order: String, $itemsOnPage: Int) {
-    pairs(first: 30, orderBy: txCount, orderDirection: desc) {
+  query Pairs($order: String = "reserveUSD", $itemsOnPage: Int = 30) {
+    pairs(first: $itemsOnPage, orderBy: $order, orderDirection: desc) {
       id
       txCount
       volumeUSD

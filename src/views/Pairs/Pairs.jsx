@@ -33,7 +33,7 @@ export function Pairs({ routes }) {
         ))}
       </Switch>
       <Styled.FlexSpaced>
-        <h3>Most Traded</h3>
+        <h3>Most Liquid Pairs </h3>
         <div>
           <ViewTypeButtons
             viewType={viewType}

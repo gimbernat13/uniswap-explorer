@@ -17,7 +17,7 @@ import {
 } from "context/TokensContext";
 import { setFilterBy, setTimeFrame } from "context/actionNames";
 
-export default function Chart({ chartData, xKey, yKey, yKey1 }) {
+export default function PoopChart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
   var reverseData = [...chartData].reverse();
   const TokenContext = useContext(TokensContext);

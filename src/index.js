@@ -21,9 +21,14 @@ import { Pairs } from "./views/Pairs/Pairs";
 import { Layout } from "components/global/Layout/Layout";
 import reportWebVitals from "./reportWebVitals";
 const client = new ApolloClient({
-  uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
+  uri: "https://gateway.thegraph.com/api/d99922df0bb58bd1a9243636622e047b/subgraphs/id/2szAn45skWZFLPUbxFEtjiEzT1FMW8Ff5ReUPbZbQxtt",
   cache: new InMemoryCache(),
 });
+
+
+const  THEGRAPH_API_KEY  = process.env.REACT_APP_THEGRAPH_API_KEY
+console.log("the graph key" , process.env.REACT_APP_THEGRAPH_API_KEY); // 
+
 const routes = [
   {
     path: "/pairs",
@@ -83,7 +88,7 @@ root.render(
         </TokensContextProvider>
       </ThemeContextProvider>
     </ApolloProvider>
-    ,
+    
   </React.StrictMode>
 );
 

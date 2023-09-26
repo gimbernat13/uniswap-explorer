@@ -4,11 +4,8 @@ export const FlexSpacedV = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: red;
   height: 100%;
   min-height: 0;
-
-
 `;
 export const DetailLinks = styled.div`
   display: flex;

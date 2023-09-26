@@ -14,6 +14,7 @@ import { TOKEN_DETAILS } from './queries';
 import { TokensContext } from '../../context/TokensContext';
 import { setSelectedToken } from '../../context/actionNames';
 import * as Styled from './styles';
+import PoopChart from 'components/atomic/organisms/PoopChart/Chart';
 
 export function TokenAggregate() {
   const modalRef = React.useRef();
@@ -54,7 +55,9 @@ export function TokenAggregate() {
           </Styled.LeftTopGrid>
           <Styled.Chart>
             <Card>
-              <Chart chartData={data.tokenDayDatas} yKey="priceUSD" />
+              {/* <Chart chartData={data.tokenDayDatas} yKey="priceUSD" /> */}
+              {/* <Chart chartData={data.tokenDayDatas} yKey="volumeUSD" /> */}
+              <PoopChart />
             </Card>
           </Styled.Chart>
         </Styled.LeftGrid>
