@@ -35,6 +35,18 @@ export const BarCharts = ({ chartData }) => {
     { name: "Daily Txns", id: "dailyTxns" },
     { name: "Reserve", id: "reserveUSD" },
   ];
+
+  function CustomTooltip({ active, payload, label }) {
+    if (active && payload && payload.length) {
+      return (
+        <div style={{ padding: '10px', border: '1px solid #ccc' }}>
+          <p>{`${label} : ${payload[0].name}`}</p>
+          <p>{`Value: ${payload[0].value.toFixed(2)}`}</p>
+        </div>
+      );
+    }
+    return null;
+  }
   return (
     <>
       <Styled.ChartGrid>
@@ -57,8 +69,8 @@ export const BarCharts = ({ chartData }) => {
             data={reverseData}
           >
             <XAxis dataKey={getTimeAxis} />
-            <YAxis  width={80} />
-            <Tooltip />
+            <YAxis width={80} />
+            <Tooltip content={<CustomTooltip />} />
             <Legend />
             <Bar dataKey={selectedFilter} fill="var(--accent-purple)" />
           </BarChart>
