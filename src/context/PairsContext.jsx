@@ -12,7 +12,7 @@ const INITIAL_STATE = {
   filterBy: "tradeVolumeUSD",
   sortBy: "asc",
   itemsOnPage: 150,
-  selectedPair: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  selectedPair: "",
 };
 
 export function reducer(state, action) {

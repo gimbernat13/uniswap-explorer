@@ -81,11 +81,11 @@ export function PairAggregate() {
         </Styled.AggregateLeft>
         <Styled.AggregateRight>
           <div>
-            <SwapWidget
+            {/* <SwapWidget
               defaultInputTokenAddress={pair.token0.id}
               defaultOutputTokenAddress={pair.token1.id}
               theme={theme === 'dark' ? darkTheme : darkTheme}
-            />
+            /> */}
           </div>
         </Styled.AggregateRight>
       </Styled.AggregateGrid>

@@ -1,64 +1,55 @@
-import { Button } from "components/atomic/atoms/Button/Button";
-import React from "react";
+import React from 'react';
 import {
-  Bar,
-  BarChart,
-  Legend,
-  ResponsiveContainer,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
   Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-import * as Styled from "./styles";
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
 
-export const BarCharts = ({ chartData }) => {
-  // FIXME: Extract to utils
-  const getTimeAxis = (data) => {
-    const milliseconds = data.date * 1000;
-    const newDate = new Date(milliseconds);
-    const formattedDate = newDate.toISOString().split("T")[0];
-    return formattedDate;
-  };
-  var reverseData = [...chartData].reverse();
-  const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
-  const filters = [
-    { name: "Daily Volume", id: "dailyVolumeUSD" },
-    { name: "Daily Txns", id: "dailyTxns" },
-    { name: "Reserve", id: "reserveUSD" },
-  ];
-  return (
-    <>
-      <Styled.ChartGrid>
-        <Styled.ButtonsFlex>
-          {filters.map((filter, i) => {
-            return (
-              <Button
-                isActive={filter.id === selectedFilter}
-                onClick={() => setSelectedFilter(filter.id)}
-                className={filter.id === selectedFilter ? "active" : ""}
-              >
-                {filter.name}
-              </Button>
-            );
-          })}
-        </Styled.ButtonsFlex>
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-        <ResponsiveContainer width="100%" height={350}>
-          <BarChart
-            margin={{
-              top: 30,
-            }}
-            data={reverseData}
-          >
-            <XAxis dataKey={getTimeAxis} />
-            <YAxis width={80} />
-            <Tooltip />
-            <Legend />
-            rgba(15, 53, 255, 0.3)
-            <Bar dataKey={selectedFilter} fill="var(--accent-purple)" />
-          </BarChart>
-        </ResponsiveContainer>
-      </Styled.ChartGrid>
-    </>
-  );
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top' 
+    },
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart',
+    },
+  },
 };
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: labels.map(() => 33),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+    {
+      label: 'Dataset 2',
+      data: labels.map(() => 33),
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
+  ],
+};
+
+export function BarCharts() {
+  return <Bar options={options} data={data} />;
+}

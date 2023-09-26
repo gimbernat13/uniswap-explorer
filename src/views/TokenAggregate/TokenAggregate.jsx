@@ -47,17 +47,15 @@ export function TokenAggregate() {
               <TokenMainDetails data={data.token} />
             </Card>
             <Card height="100%">
-              <TokenDetails
+              {/* <TokenDetails
                 tokenData={data.token}
                 tokenDayDatas={data.tokenDayDatas[0]}
-              />
+              /> */}
             </Card>
           </Styled.LeftTopGrid>
           <Styled.Chart>
             <Card>
-              {/* <Chart chartData={data.tokenDayDatas} yKey="priceUSD" /> */}
-              {/* <Chart chartData={data.tokenDayDatas} yKey="volumeUSD" /> */}
-              <PoopChart />
+              <Chart chartData={data.tokenDayDatas} yKey="priceUSD" />
             </Card>
           </Styled.Chart>
         </Styled.LeftGrid>
@@ -70,6 +68,8 @@ export function TokenAggregate() {
           </Button>
         </Styled.RightGrid>
       </Styled.TokenAggregateGrid>
+      <Chart chartData={data.tokenDayDatas} yKey="priceUSD" />
+
     </>
   );
 }

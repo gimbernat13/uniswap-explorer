@@ -17,13 +17,11 @@ import {
 } from "context/TokensContext";
 import { setFilterBy, setTimeFrame } from "context/actionNames";
 
-export default function PoopChart({ chartData, xKey, yKey, yKey1 }) {
-  //  FIXME: create dynamic reverser for token or pair day datas
+export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   var reverseData = [...chartData].reverse();
   const TokenContext = useContext(TokensContext);
   const { dispatch: tokensDispatch, state: tokensState } = TokenContext;
 
-  // For time charts
   const getTimeAxis = (data) => {
     const milliseconds = data.date * 1000;
     const newDate = new Date(milliseconds);
@@ -66,6 +64,9 @@ export default function PoopChart({ chartData, xKey, yKey, yKey1 }) {
           <AreaChart
             margin={{
               top: 30,
+              right: 10, // Adjusted the margin
+              bottom: 10, // Adjusted the margin
+              left: 10, // Adjusted the margin
             }}
             data={reverseData}
           >
@@ -79,19 +80,20 @@ export default function PoopChart({ chartData, xKey, yKey, yKey1 }) {
               dataKey={tokensState.filterBy.id}
               stroke="#96a0f7"
               fill="url(#color)"
+              width={500} // static width
+              height={300}
             />
             <XAxis dataKey={getTimeAxis} axisLine={true} tickLine={false} />
             <YAxis
               width={80}
               type="number"
-              // domain={["auto", "auto"]}
-              dataKey={tokensState.filterBy.id}
+              domain={['auto', 'auto']} // Uncommented and set to auto
+              dataKey={tokensState.filterBy.id} // corrected dataKey
               axisLine={false}
               tickLine={false}
-              tickCount={100}
-            />{" "}
+              tickCount={8} // reduced tickCount
+            />
             <Tooltip />
-            {/* <CartesianGrid opacity={0.1} vertical={false} /> */}
           </AreaChart>
         </ResponsiveContainer>
       </Styled.ChartGrid>
