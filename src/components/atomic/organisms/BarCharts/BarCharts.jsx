@@ -23,7 +23,7 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top' 
+      position: 'top'
     },
     title: {
       display: true,
@@ -41,11 +41,6 @@ export const data = {
       label: 'Dataset 1',
       data: labels.map(() => 33),
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => 33),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
   ],
 };
