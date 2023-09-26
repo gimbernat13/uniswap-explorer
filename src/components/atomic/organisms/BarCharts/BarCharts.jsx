@@ -1,61 +1,69 @@
-import React from 'react';
+import { Button } from "components/atomic/atoms/Button/Button";
+import React from "react";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
+  Bar,
+  BarChart,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
+  ResponsiveContainer,
   Tooltip,
-  Legend
-);
+  XAxis,
+  YAxis,
+} from "recharts";
+import * as Styled from "./styles";
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top'
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
-};
-
-
-// X axis 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export function BarCharts({ chartData }) {
-
-  const newLabels = chartData.map((chartItem) => console.log("this is chart bitch " , chartItem.date))
-
-  console.log("chart data , " , chartData)
-  const data = {
-    newLabels,
-    datasets: [
-      {
-        label: 'Dataset 1',
-        data: labels.map(() => 33),
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      {
-        label: 'Dataset 2',
-        data: labels.map(() => 33),
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-    ],
+export const BarCharts = ({ chartData }) => {
+  console.log("chart data ", chartData)
+  // FIXME: Extract to utils
+  const getTimeAxis = (data) => {
+    const milliseconds = data.date * 1000;
+    const newDate = new Date(milliseconds);
+    const formattedDate = newDate.toISOString().split("T")[0];
+    return formattedDate;
   };
+  const convertedData = chartData.map(item => ({
+    ...item,
+    dailyVolumeUSD: +item.dailyVolumeUSD, // using unary plus to convert to number
+    dailyTxns: +item.dailyTxns, // using unary plus to convert to number
+    reserveUSD: +item.reserveUSD, // using unary plus to convert to number
+  }));
 
-  return <Bar options={options} data={data} />;
-}
+
+  var reverseData = [...convertedData].reverse();
+  const [selectedFilter, setSelectedFilter] = React.useState("dailyVolumeUSD");
+  const filters = [
+    { name: "Daily Volume", id: "dailyVolumeUSD" },
+    { name: "Daily Txns", id: "dailyTxns" },
+    { name: "Reserve", id: "reserveUSD" },
+  ];
+  return (
+    <>
+      <Styled.ChartGrid>
+        <Styled.ButtonsFlex>
+          {filters.map((filter, i) => {
+            return (
+              <Button
+                isActive={filter.id === selectedFilter}
+                onClick={() => setSelectedFilter(filter.id)}
+                className={filter.id === selectedFilter ? "active" : ""}
+              >
+                {filter.name}
+              </Button>
+            );
+          })}
+        </Styled.ButtonsFlex>
+
+        <ResponsiveContainer width="100%" height={350}>
+          <BarChart
+            data={reverseData}
+          >
+            <XAxis dataKey={getTimeAxis} />
+            <YAxis  width={80} />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey={selectedFilter} fill="var(--accent-purple)" />
+          </BarChart>
+        </ResponsiveContainer>
+      </Styled.ChartGrid>
+    </>
+  );
+};

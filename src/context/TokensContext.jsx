@@ -25,9 +25,11 @@ export const timeOptions = [
 
 export const tokenFilters = [
   { name: "Price", id: "priceUSD" },
-  // { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
-  // { name: "Daily Tx's", id: "dailyTxns" },
+  { name: "Daily Volume", id: "dailyVolumeUSD" }, //FIXME: Excluded for now until chart fix
+  { name: "Daily Tx's", id: "dailyTxns" },
 ];
+
+
 const INITIAL_STATE = {
   filterBy: tokenFilters[0],
   sortBy: "desc",
