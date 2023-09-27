@@ -4,10 +4,8 @@ import formatNumber from "../../../../utils/formatNumber";
 import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
 import { Link } from "react-router-dom";
 import { Card } from "components/atomic/atoms/Card/Card";
-
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 export function TokenTable({ tableData }) {
-  const [activeRow, setActiveRow] = React.useState(null);
-
   const columns = React.useMemo(
     () => [
       {
@@ -31,14 +29,13 @@ export function TokenTable({ tableData }) {
     ],
     []
   );
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data: tableData }, useSortBy);
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data: tableData }, useSortBy);
+
+  const location = useLocation();
+  const tokenIdFromUrl = location.pathname.split("/").pop();
+
 
   return (
     <Card noPadding>
@@ -74,18 +71,19 @@ export function TokenTable({ tableData }) {
         <tbody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
+            const isActive = row.original.id === tokenIdFromUrl;
+
             return (
-              <tr
-                {...row.getRowProps()}
-                onClick={() => setActiveRow(row.id)}
-                className={row.id === activeRow ? 'active' : ''}
-              >
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>
-                    <Link to={`/tokens/${row.original.id}`}>
-                      {cell.render("Cell")}
-                    </Link></td>
-                ))}
+              <tr {...row.getRowProps()} className={isActive ? "active" : ""}>
+                {row.cells.map((cell) => {
+                  return (
+                    <td {...cell.getCellProps()} style={{}}>
+                      <Link to={`/tokens/${row.original.id}`}>
+                        {cell.render("Cell")}
+                      </Link>
+                    </td>
+                  );
+                })}
               </tr>
             );
           })}
@@ -94,4 +92,3 @@ export function TokenTable({ tableData }) {
     </Card>
   );
 }
-
