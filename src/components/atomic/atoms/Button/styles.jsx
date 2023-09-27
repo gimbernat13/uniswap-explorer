@@ -12,8 +12,7 @@ const BUTTON_VARIANTS = {
   `,
 };
 export const Button = styled.button`
-    color: ${({ theme }) => theme.text};
-
+  color: ${({ theme }) => theme.text};
   width: ${(props) => props.width};
   background: ${({
     theme, isActive,
@@ -27,7 +26,6 @@ export const Button = styled.button`
           rgba(154, 2, 255, 0.515) 107.66%
         )
         border-box`};
-    
   background-color: ${({ theme }) => theme.cardBg};
   border-radius: 10px;
   position: relative;

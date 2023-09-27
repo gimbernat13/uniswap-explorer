@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from "@apollo/client";
 import { Switch, useHistory } from "react-router-dom";
-import { RouteWithSubRoutes } from "../..";
+import { RouteWithSubRoutes } from "../.."; // Adjust according to your project structure
 import { TOKENS } from "./queries";
 import { Loader } from "components/atomic/atoms/Loader/Loader";
 import { TokenCardList } from "components/atomic/organisms/TokenCardList/TokenCardList";
@@ -10,17 +10,17 @@ import { useViewType } from "hooks/useViewType";
 import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
 import { Card } from "components/atomic/atoms/Card/Card";
 import { hasSubRoute } from "utils/hasSubRoute";
-import * as Styled from "./styles";
+import * as Styled from "./styles"; // Adjust according to your project structure
 import { Button } from 'components/atomic/atoms/Button/Button';
 
 export function TokensView({ routes }) {
   const { viewType, viewTypes, handleViewTypeChange } = useViewType();
   const [skip, setSkip] = useState(0);
   const [allTokens, setAllTokens] = useState([]);
-  const [loadingMore, setLoadingMore] = useState(false); // New state to track loading more tokens
-
+  const [loadingMore, setLoadingMore] = useState(false);
+  
   const { loading, error, data, fetchMore } = useQuery(TOKENS, {
-    variables: { skip: 0, first: 30 }
+    variables: { skip: 0, first: 10 }
   });
 
   useEffect(() => {
@@ -30,12 +30,12 @@ export function TokensView({ routes }) {
   }, [data]);
 
   const loadMoreTokens = () => {
-    setLoadingMore(true); // Set loadingMore to true when loading more tokens
+    setLoadingMore(true);
     setSkip(prevSkip => prevSkip + 30);
     fetchMore({
       variables: { skip, first: 30 },
       updateQuery: (prev, { fetchMoreResult }) => {
-        setLoadingMore(false); // Set loadingMore to false after tokens are fetched
+        setLoadingMore(false);
         if (!fetchMoreResult) return prev;
         return { tokens: [...prev.tokens, ...fetchMoreResult.tokens] };
       }
@@ -62,9 +62,12 @@ export function TokensView({ routes }) {
         </div>
       </Styled.FlexSpaced>
       {viewType.id === "table" && <TokenTable tableData={allTokens} />}
-      {viewType.id === "cards" && <TokenCardList data={allTokens} />}
+      {viewType.id === "cards" && <TokenCardList data={data} />}
       <br />
-      {loadingMore ? <Loader /> : <Button width="100%" onClick={loadMoreTokens} disabled={loadingMore}>Load More</Button>}  {/* Display Loader when more tokens are being fetched */}
+      {loadingMore ? <Loader /> : <Button isActive width="100%" onClick={loadMoreTokens} disabled={loadingMore}>Load More Tokens</Button>}
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

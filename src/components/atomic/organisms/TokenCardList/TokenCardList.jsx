@@ -2,9 +2,11 @@ import { TokenCard } from "components/atomic/molecules/TokenCard/TokenCard";
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Styled from "./styles";
+import { Card } from "components/atomic/atoms/Card/Card";
 
-export const TokenCardList = ({ data }) => {
+export const TokenCardList = ({ data = [] }) => {
   return (
+    <Card noPadding>
     <Styled.TokenGrid>
       {data.tokens.map((token, i) => {
         return (
@@ -14,5 +16,6 @@ export const TokenCardList = ({ data }) => {
         );
       })}
     </Styled.TokenGrid>
+    </ Card>
   );
 };
