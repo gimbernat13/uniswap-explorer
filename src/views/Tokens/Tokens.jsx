@@ -25,16 +25,18 @@ export function TokensView({ routes }) {
 
   useEffect(() => {
     if (data && data.tokens) {
-      setAllTokens(prevTokens => [...prevTokens, ...data.tokens]);
+      // Ensuring the uniqueness of tokens based on their id
+      const uniqueTokensMap = new Map();
+      [...allTokens, ...data.tokens].forEach(token => uniqueTokensMap.set(token.id, token));
+      setAllTokens([...uniqueTokensMap.values()]);
     }
   }, [data]);
 
   const loadMoreTokens = () => {
     setLoadingMore(true);
-    let newSkip = skip + 30;
-    setSkip(newSkip);
+    setSkip(prevSkip => prevSkip + 30);
     fetchMore({
-      variables: { skip: newSkip, first: 30 },
+      variables: { skip, first: 30 },
       updateQuery: (prev, { fetchMoreResult }) => {
         setLoadingMore(false);
         if (!fetchMoreResult) return prev;
@@ -42,7 +44,6 @@ export function TokensView({ routes }) {
       }
     });
   };
-
 
   const { location } = useHistory();
   if (loading) return <Loader />;
