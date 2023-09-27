@@ -6,7 +6,6 @@ import { Card } from "components/atomic/atoms/Card/Card";
 
 export const TokenCardList = ({ data = [] }) => {
   return (
-    <Card noPadding>
     <Styled.TokenGrid>
       {data.tokens.map((token, i) => {
         return (
@@ -16,6 +15,5 @@ export const TokenCardList = ({ data = [] }) => {
         );
       })}
     </Styled.TokenGrid>
-    </ Card>
   );
 };
