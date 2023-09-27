@@ -4,10 +4,10 @@ import { TokensContext } from 'context/TokensContext';
 import formatNumber from 'utils/formatNumber';
 import * as Styled from './styles';
 
-export function TokenCard({ token, index }) {
+export function TokenCard({ token, index, isActive }) {
   const { state: tokensState } = useContext(TokensContext);
   return (
-    <Card variant="gradient" isActive={tokensState.selectedToken === token.id}>
+    <Card variant="gradient" isActive={isActive}>
       <Styled.TokenCard className="card">
         {/* <div className="symbol bold large">{index}</div> */}
         <div className="symbol bold large">{token.symbol.toUpperCase()}</div>

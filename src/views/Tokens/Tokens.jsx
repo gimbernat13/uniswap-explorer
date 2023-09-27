@@ -18,9 +18,9 @@ export function TokensView({ routes }) {
   const [skip, setSkip] = useState(0);
   const [allTokens, setAllTokens] = useState([]);
   const [loadingMore, setLoadingMore] = useState(false);
-  
+
   const { loading, error, data, fetchMore } = useQuery(TOKENS, {
-    variables: { skip: 0, first: 10 }
+    variables: { skip: 0, first: 15 }
   });
 
   useEffect(() => {
@@ -31,9 +31,10 @@ export function TokensView({ routes }) {
 
   const loadMoreTokens = () => {
     setLoadingMore(true);
-    setSkip(prevSkip => prevSkip + 30);
+    let newSkip = skip + 30;
+    setSkip(newSkip);
     fetchMore({
-      variables: { skip, first: 30 },
+      variables: { skip: newSkip, first: 30 },
       updateQuery: (prev, { fetchMoreResult }) => {
         setLoadingMore(false);
         if (!fetchMoreResult) return prev;
@@ -41,6 +42,7 @@ export function TokensView({ routes }) {
       }
     });
   };
+
 
   const { location } = useHistory();
   if (loading) return <Loader />;
