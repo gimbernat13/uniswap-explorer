@@ -39,7 +39,7 @@ export const BarCharts = ({ chartData }) => {
   function CustomTooltip({ active, payload, label }) {
     if (active && payload && payload.length) {
       return (
-        <div style={{ padding: '10px', border: '1px solid #ccc' }}>
+        <div style={{ backgroundColor: 'lightgray' ,color: "black", padding: '10px', border: '1px solid #ccc' }}>
           <p>{`${label} : ${payload[0].name}`}</p>
           <p>{`Value: ${payload[0].value.toFixed(2)}`}</p>
         </div>

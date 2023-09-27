@@ -1,12 +1,13 @@
 import { gql } from "@apollo/client";
+
 export const TOKENS = gql`
-  query Tokens {
+  query Tokens($skip: Int!, $first: Int!) {
     tokens(
-      first: 150
+      skip: $skip
+      first: $first
       orderBy: txCount
       orderDirection: desc
-    ) # where: { tradeVolumeUSD_gt: 20000, txCount_gt: 500 }
-    {
+    ) {
       id
       symbol
       name
@@ -17,3 +18,4 @@ export const TOKENS = gql`
     }
   }
 `;
+

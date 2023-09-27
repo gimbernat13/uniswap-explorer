@@ -90,9 +90,9 @@ export function PairAggregate() {
         </Styled.AggregateRight>
       </Styled.AggregateGrid>
       <br />
-      <Card>
+      {/* <Card>
         <RecentSwaps pairData={pair} swapData={swaps} />
-      </Card>
+      </Card> */}
     </>
   );
 }
