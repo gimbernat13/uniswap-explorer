@@ -46,7 +46,7 @@ export function TokensView({ routes }) {
   };
 
   const { location } = useHistory();
-  if (loading) return <Loader />;
+  if (loading) return <Loader  />;
   if (error) return `Error! ${error.message}`;
 
   return (

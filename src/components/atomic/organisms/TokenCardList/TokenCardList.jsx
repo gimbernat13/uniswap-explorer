@@ -9,8 +9,6 @@ import formatNumber from 'utils/formatNumber';
 export const TokenCardList = ({ data }) => {
   const location = useLocation();
   const tokenIdFromUrl = location.pathname.split("/").pop();
-
-  console.log(" 🐸  Data  ", data)
   return (
     <Styled.TokenGrid>
       {data.map((token, i) => {
