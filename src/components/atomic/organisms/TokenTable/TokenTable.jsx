@@ -34,6 +34,12 @@ export function TokenTable({ tableData }) {
           <div>{formatNumber(parseFloat(row.tradeVolumeUSD).toFixed(2))} </div>
         ),
       },
+      {
+        Header: "Liquidity USD",
+        accessor: (row) => (
+          <div>{formatNumber(parseFloat(row.totalLiquidity).toFixed(2))} </div>
+        ),
+      },
     ],
     []
   );
@@ -47,7 +53,7 @@ export function TokenTable({ tableData }) {
 
   return (
     <Card noPadding>
-      <table className="stylssed-table" {...getTableProps()}>
+      <table className="styled-table" {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>

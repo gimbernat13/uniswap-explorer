@@ -20,7 +20,7 @@ export function PairList({ data }) {
           return (
             <Link onClick={() => pairDispatch({ type: setSelectedPair, payload: pair.id })} to={`/pairs/${pair.id}`}>
               <Card
-                variant={isActive ? "cool" : "gradient"}
+                variant="gradient"
                 className={pair.id === selectedPair && 'active'}
                 key={pair.id}
               >

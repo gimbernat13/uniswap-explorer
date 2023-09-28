@@ -18,12 +18,8 @@ export const TokenCardList = ({ data }) => {
             <Card  variant={isActive ? "cool" : "gradient"} isActive={isActive}>
               <div className="symbol bold large">{token.symbol.toUpperCase()}</div>
               <div className="symbol">
-                $
+                Vol : $ 
                 {formatNumber(parseFloat(token.tradeVolumeUSD).toFixed(2))}
-              </div>
-              <div className="symbol">
-                $
-                {formatNumber(parseFloat(token.reserveUSD).toFixed(2))}
               </div>
             </Card>
           </Link>

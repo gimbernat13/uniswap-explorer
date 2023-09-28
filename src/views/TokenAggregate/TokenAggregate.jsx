@@ -61,7 +61,6 @@ export function TokenAggregate() {
         </Styled.LeftGrid>
         <Styled.RightGrid>
           <Card flex>
-            <h3>Most Liquid Pairs</h3>
             <TokenPairs data={data.pairs} />
           </Card>
           <Button isActive width="100%" onClick={openModal}>

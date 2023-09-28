@@ -43,6 +43,7 @@ export function PairTable({ tableData }) {
           <div>{formatNumber(parseFloat(row.reserveUSD).toFixed(2))} </div>
         ),
       },
+  
     ],
     []
   );

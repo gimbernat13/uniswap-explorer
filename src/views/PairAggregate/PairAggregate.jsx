@@ -5,7 +5,11 @@ import { BarCharts } from 'components/atomic/organisms/BarCharts/BarCharts';
 import { Card } from 'components/atomic/atoms/Card/Card';
 import { Loader } from 'components/atomic/atoms/Loader/Loader';
 import { RecentSwaps } from 'components/atomic/organisms/RecentSwaps/RecentSwaps';
-import { darkTheme, SwapWidget } from '@uniswap/widgets';
+// import { darkTheme, SwapWidget } from '@uniswap/widgets';
+import { Theme, SwapWidget } from '@uniswap/widgets'
+import '@uniswap/widgets/fonts.css'
+
+
 import { ThemeContext } from 'styled-components';
 import * as Styled from './styles';
 import { PAIR_AGGREGATE } from './queries';
@@ -81,6 +85,7 @@ export function PairAggregate() {
         </Styled.AggregateLeft>
         <Styled.AggregateRight>
           <div>
+          <SwapWidget />
 
             {/* <SwapWidget
               // defaultInputTokenAddress={pair.token0.id}
