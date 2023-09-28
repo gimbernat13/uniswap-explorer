@@ -2,7 +2,7 @@
   --border-radius: .75rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
-  --border-ultra-light: 3px solid rgba(64, 73, 99, 0.374);
+  --border-ultra-light: 2px solid rgba(64, 73, 99, 0.374);
   --border-thick: 1px solid rgba(128, 144, 192, 0.367);
   --black: #0F111B;
   --black-transparent: rgba(0, 0, 0, 0.54);
@@ -123,13 +123,16 @@ tr:hover {}
 .active {
   font-weight: bold;
   color: white !important;
-  background: var(--accent-crazy);
+  background: var(--accent-crazy) !important;
 }
 
 .active svg {
   font-weight: bold;
   /* background-color: var(--accent-purple) !important; */
   /* color: white !important; */
+}
+.styled-table tbody th{
+  cursor: pointer !important;
 }
 
 .styled-table tbody tr:hover {

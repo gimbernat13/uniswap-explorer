@@ -5,7 +5,15 @@ import { UilAngleUp, UilAngleDown } from "@iconscout/react-unicons";
 import { Link } from "react-router-dom";
 import { Card } from "components/atomic/atoms/Card/Card";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
+
 export function TokenTable({ tableData }) {
+
+  const history = useHistory();
+  const navigateTo = (id) => {
+    history.push(`/tokens/${id}`);
+  };
+
   const columns = React.useMemo(
     () => [
       {
@@ -39,7 +47,7 @@ export function TokenTable({ tableData }) {
 
   return (
     <Card noPadding>
-      <table className="styled-table" {...getTableProps()}>
+      <table className="stylssed-table" {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -74,7 +82,7 @@ export function TokenTable({ tableData }) {
             const isActive = row.original.id === tokenIdFromUrl;
 
             return (
-              <tr {...row.getRowProps()} className={isActive ? "a" : ""}>
+              <tr {...row.getRowProps()} className={isActive ? "active" : ""} onClick={() => navigateTo(row.original.id)}>
                 {row.cells.map((cell) => {
                   return (
                     <td {...cell.getCellProps()} style={{}}>
