@@ -122,8 +122,7 @@ tr:hover {}
 
 .active {
   font-weight: bold;
-  color: white !important;
-  background: var(--accent-crazy) !important;
+  background: var(--accent-crazy-light) !important;
 }
 
 .active svg {

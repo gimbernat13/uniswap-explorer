@@ -31,7 +31,6 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.cardBg};
   border-radius: 10px;
   position: relative;
-  z-index: 2;
   transition: all 0.2s;
   height: fit-content !important;
   padding: 8px 0.85rem;

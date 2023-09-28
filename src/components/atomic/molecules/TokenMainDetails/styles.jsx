@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
 export const FlexSpacedV = styled.div`
-flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 0;
-  background-color: blue;
 `;
 
 export const DataContainer = styled.div`
@@ -16,10 +10,11 @@ export const DataContainer = styled.div`
 `;
 
 export const DetailLinks = styled.div`
+position: absolute;
+bottom: 10%;
+right: 10%;
   display: flex;
   align-items: center;
-  margin-top: 10px;
-
   a {
     display: flex;
     align-items: center;
