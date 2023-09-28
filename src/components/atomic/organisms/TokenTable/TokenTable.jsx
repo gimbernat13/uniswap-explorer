@@ -39,7 +39,7 @@ export function TokenTable({ tableData }) {
 
   return (
     <Card noPadding>
-      <table className="stylssed-table" {...getTableProps()}>
+      <table className="styled-table" {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -74,7 +74,7 @@ export function TokenTable({ tableData }) {
             const isActive = row.original.id === tokenIdFromUrl;
 
             return (
-              <tr {...row.getRowProps()} className={isActive ? "active" : ""}>
+              <tr {...row.getRowProps()} className={isActive ? "a" : ""}>
                 {row.cells.map((cell) => {
                   return (
                     <td {...cell.getCellProps()} style={{}}>

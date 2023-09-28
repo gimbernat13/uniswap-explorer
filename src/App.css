@@ -14,6 +14,12 @@
       rgba(47, 107, 210, 0.769) 50.96%,
       rgba(37, 48, 255, 0.609) 75.06%,
       rgba(154, 2, 255, 0.515) 107.66%);
+      --accent-crazy-light: linear-gradient(95.5deg,
+      rgba(4, 184, 255, 0.15) 25.82%,   /* Reduced alpha to 0.15 */
+      rgba(47, 107, 210, 0.2) 50.96%,   /* Reduced alpha to 0.2 */
+      rgba(37, 48, 255, 0.15) 75.06%,   /* Reduced alpha to 0.15 */
+      rgba(154, 2, 255, 0.1) 107.66%);  /* Reduced alpha to 0.1 */
+  
   --accent-purple-dark: #4449734b;
   --sidebar-margin: 80px;
   --box-shadow-light: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
@@ -124,4 +130,12 @@ tr:hover {}
   font-weight: bold;
   /* background-color: var(--accent-purple) !important; */
   /* color: white !important; */
+}
+
+.styled-table tbody tr:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: var(--accent-crazy-light);
+
 }
