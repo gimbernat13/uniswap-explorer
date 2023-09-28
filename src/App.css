@@ -2,13 +2,18 @@
   --border-radius: .75rem;
   --border: 1px solid rgb(64, 73, 99);
   --border-light: 1px solid rgba(64, 73, 99, 0.557);
-  --border-ultra-light: 2px solid rgba(64, 73, 99, 0.374);
+  --border-ultra-light: 3px solid rgba(64, 73, 99, 0.374);
   --border-thick: 1px solid rgba(128, 144, 192, 0.367);
   --black: #0F111B;
   --black-transparent: rgba(0, 0, 0, 0.54);
   --accent-gray: #202020;
   --accent-green: #1e7866;
   --accent-purple: #4A83FB;
+  --accent-crazy: linear-gradient(95.5deg,
+      rgba(4, 184, 255, 0.595) 25.82%,
+      rgba(47, 107, 210, 0.769) 50.96%,
+      rgba(37, 48, 255, 0.609) 75.06%,
+      rgba(154, 2, 255, 0.515) 107.66%);
   --accent-purple-dark: #4449734b;
   --sidebar-margin: 80px;
   --box-shadow-light: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
@@ -112,7 +117,7 @@ tr:hover {}
 .active {
   font-weight: bold;
   color: white !important;
-  background: var(--accent-purple);
+  background: var(--accent-crazy);
 }
 
 .active svg {

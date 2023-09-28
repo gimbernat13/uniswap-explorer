@@ -12,3 +12,4 @@ export const Button = ({ onClick, children, width, isActive }) => {
     </Styled.Button>
   );
 };
+ 

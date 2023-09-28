@@ -51,6 +51,17 @@ export function Sidebar({ theme, toggleTheme }) {
     >
       <Styled.SidebarInner>
         <Styled.SidebarLinks>
+
+          <Button isActive variant="round" onClick={handleToggleTheme}>
+            
+            {theme === 'dark' ? (
+              <UilSun size={15} color="white" />
+            ) : (
+              <UilMoon size={15} />
+              
+            )}
+          </Button>
+          <br />
           {sidebarItems.map((item) => (
             <NavLink key={item.url} onClick={handleChildClick} to={item.url}>
               <Styled.SidebarLink>
@@ -58,16 +69,12 @@ export function Sidebar({ theme, toggleTheme }) {
                 <span className="hide">{item.title}</span>
               </Styled.SidebarLink>
             </NavLink>
+
           ))}
 
+
         </Styled.SidebarLinks>
-        <Button variant="round" onClick={handleToggleTheme}>
-          {theme === 'dark' ? (
-            <UilSun size={15} color="white" />
-          ) : (
-            <UilMoon size={15} />
-          )}
-        </Button>
+
       </Styled.SidebarInner>
     </Styled.Sidebar>
   );

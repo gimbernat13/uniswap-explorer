@@ -5,7 +5,7 @@ const BUTTON_VARIANTS = {
     box-shadow: none;
   `,
   round: css`
-    border-radius: 500px;
+    border-radius: 100px;
   `,
   noShadow: css`
     box-shadow: none;

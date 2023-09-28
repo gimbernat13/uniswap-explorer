@@ -39,7 +39,7 @@ export function TokenTable({ tableData }) {
 
   return (
     <Card noPadding>
-      <table className="styled-table" {...getTableProps()}>
+      <table className="stylssed-table" {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>

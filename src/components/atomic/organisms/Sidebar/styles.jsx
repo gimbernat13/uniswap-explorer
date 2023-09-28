@@ -17,7 +17,9 @@ export const Sidebar = styled.nav`
     display: none;
   }
   &:hover {
-    box-shadow: var(--box-shadow-light);
+    // box-shadow: var(--box-shadow-light);
+    box-shadow: 0 0 10px 5px rgba(70, 101, 121, 0.1); // You can adjust the color, spread, and blur to your liking
+   filter: brightness(1.05);
   }
   &.shrink {
     width: 4rem;

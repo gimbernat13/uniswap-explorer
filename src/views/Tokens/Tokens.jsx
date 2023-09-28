@@ -34,9 +34,9 @@ export function TokensView({ routes }) {
 
   const loadMoreTokens = () => {
     setLoadingMore(true);
-    setSkip(prevSkip => prevSkip + 30);
+    setSkip(prevSkip => prevSkip + 50);
     fetchMore({
-      variables: { skip, first: 30 },
+      variables: { skip, first: 50 },
       updateQuery: (prev, { fetchMoreResult }) => {
         setLoadingMore(false);
         if (!fetchMoreResult) return prev;
@@ -65,7 +65,7 @@ export function TokensView({ routes }) {
         </div>
       </Styled.FlexSpaced>
       {viewType.id === "table" && <TokenTable tableData={allTokens} />}
-      {viewType.id === "cards" && <TokenCardList data={data} />}
+      {viewType.id === "cards" && <TokenCardList data={allTokens} />}
       <br />
       {loadingMore ? <Loader /> : <Button isActive width="100%" onClick={loadMoreTokens} disabled={loadingMore}>Load More Tokens</Button>}
       <br />
