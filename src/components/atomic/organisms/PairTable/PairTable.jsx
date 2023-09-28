@@ -98,7 +98,7 @@ export function PairTable({ tableData }) {
                 {row.cells.map((cell) => {
                   return (
                     <td {...cell.getCellProps()}>
-                      <Link to={`/tokens/${row.original.id}`}>
+                      <Link to={`/pairs/${row.original.id}`}>
                         {cell.render("Cell")}
                       </Link>
                     </td>

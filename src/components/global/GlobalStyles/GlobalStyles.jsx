@@ -26,6 +26,7 @@ export const darkTheme = {
   sidebarBg: 'var(--black)',
   borderLight: 'var(--border-ultra-light)',
   cardBorder: 'var(--border-ultra-light)',
+  activeTableItem: 'var(--accent-crazy-light)',
 
 
 };

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Select = styled.div`
   border: ${({ theme }) => theme.borderLight};
-
   border-radius: var(--border-radius);
   text-align: center;
   margin-right: 0.5rem;
@@ -10,10 +9,8 @@ export const Select = styled.div`
   cursor: pointer;
   position: relative;
   font-size: 0.8rem !important;
-  width: 150px;
+  width: fit-content;
   background-color: ${({ theme }) => theme.cardBg};
-
-
   img {
     margin-left: 10px;
   }
@@ -41,7 +38,6 @@ export const SelectInner = styled.div`
           rgba(154, 2, 255, 0.515) 107.66%
         )
         border-box`};
-
   }
 
 `;

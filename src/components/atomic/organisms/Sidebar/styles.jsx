@@ -17,7 +17,7 @@ export const Sidebar = styled.nav`
     display: none;
   }
   &:hover {
-box-shadow: var(--box-shadow-light);
+box-shadow: var(--box-shadow-light)
   }
   &.shrink {
     width: 4rem;

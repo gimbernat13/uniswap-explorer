@@ -23,7 +23,7 @@ export const LeftTopGrid = styled.div`
 `;
 export const Chart = styled.div`
   @media ${deviceQueries.laptopM} {
-    display: none;
+    /* display: none; */
   }
 `;
 export const LeftGrid = styled.div`
