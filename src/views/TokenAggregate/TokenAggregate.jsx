@@ -14,6 +14,7 @@ import { TOKEN_DETAILS } from './queries';
 import { TokensContext } from '../../context/TokensContext';
 import { setSelectedToken } from '../../context/actionNames';
 import * as Styled from './styles';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 export function TokenAggregate() {
   const modalRef = React.useRef();
@@ -21,22 +22,24 @@ export function TokenAggregate() {
     modalRef.current.openModal();
   };
 
-  const { tokenID } = useParams();
   const { state: tokensState, dispatch } = useContext(TokensContext);
+
+  const location = useLocation();
+  const tokenID = location.pathname.split("/").pop();
 
   const { loading, error, data } = useQuery(TOKEN_DETAILS, {
     variables: { id: tokenID, timeFrame: tokensState.timeFrame.id },
   });
 
-
-  console.log("token data" , data)
-
   React.useEffect(() => {
-    dispatch({ type: setSelectedToken, payload: tokenID });
+    console.log('useEffect is triggered'); // for debugging
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, [dispatch, tokenID]);
+    if(tokenID) dispatch({ type: setSelectedToken, payload: tokenID });
+  }, [tokenID, dispatch]);
+
   if (loading) return <BarLoader color="#828bdd" />;
   if (error) return `Error! ${error.message}`;
+  
   return (
     <>
       <Modal ref={modalRef}>
@@ -45,9 +48,7 @@ export function TokenAggregate() {
       <Styled.TokenAggregateGrid>
         <Styled.LeftGrid>
           <Styled.LeftTopGrid>
-
-              <TokenMainDetails data={data.token} />
-     
+            <TokenMainDetails data={data.token} />
             <Card height="100%">
               <TokenDetails
                 tokenData={data.token}
@@ -70,7 +71,6 @@ export function TokenAggregate() {
           </Button>
         </Styled.RightGrid>
       </Styled.TokenAggregateGrid>
-
     </>
   );
 }

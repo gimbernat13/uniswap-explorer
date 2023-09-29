@@ -12,7 +12,6 @@ import { TokensContextProvider } from "./context/TokensContext";
 
 import { ThemeContextProvider } from "./context/ThemeContext";
 import "./App.css";
-// import { Layout } from "components/Layout/Layout";
 import { PairsContextProvider } from "./context/PairsContext";
 import { PairAggregate } from "./views/PairAggregate/PairAggregate";
 import { TokensView } from "./views/Tokens/Tokens";
@@ -20,7 +19,6 @@ import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
 import { Pairs } from "./views/Pairs/Pairs";
 import { Layout } from "components/global/Layout/Layout";
 import reportWebVitals from "./reportWebVitals";
-// https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
   cache: new InMemoryCache(),
