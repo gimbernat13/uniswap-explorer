@@ -4,9 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { BarCharts } from 'components/atomic/organisms/BarCharts/BarCharts';
 import { Card } from 'components/atomic/atoms/Card/Card';
 import { Loader } from 'components/atomic/atoms/Loader/Loader';
-import { RecentSwaps } from 'components/atomic/organisms/RecentSwaps/RecentSwaps';
-// import { darkTheme, SwapWidget } from '@uniswap/widgets';
-import { Theme, SwapWidget, darkTheme, lightTheme } from '@uniswap/widgets'
+import {  SwapWidget, darkTheme, lightTheme } from '@uniswap/widgets'
 import '@uniswap/widgets/fonts.css'
 
 
@@ -30,23 +28,10 @@ export function PairAggregate() {
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
-  const { pairDayDatas, pair, swaps } = data;
+  const { pairDayDatas, pair } = data;
 
 
 
-  const myLightTheme: Theme = {
-    ...lightTheme, // Extend the lightTheme
-    accent: '#FF007A',
-    primary: '#000000',
-    secondary: '#565A69',
-  }
-
-  const myDarkTheme: Theme = {
-    ...darkTheme, // Extend the darkTheme
-    accent: '#2172E5',
-    primary: '#FFFFFF',
-    secondary: '#888D9B',
-  }
 
 
   return (
@@ -106,15 +91,13 @@ export function PairAggregate() {
             <SwapWidget defaultInputTokenAddress={pair.token0.id}
               defaultOutputTokenAddress={pair.token1.id}
               key={theme} // adding key as theme
-              theme={theme === 'dark' ?  lightTheme : darkTheme }
+              theme={theme === 'dark' ? lightTheme : darkTheme}
             />
           </div>
         </Styled.AggregateRight>
       </Styled.AggregateGrid>
       <br />
-      {/* <Card>
-        <RecentSwaps pairData={pair} swapData={swaps} />
-      </Card> */}
+
     </>
   );
 }

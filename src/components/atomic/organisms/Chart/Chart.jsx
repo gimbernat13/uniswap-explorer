@@ -9,13 +9,11 @@ import {
 import React, { useContext } from "react";
 import { Button } from "components/atomic/atoms/Button/Button";
 import * as Styled from "./styles";
-import { Select } from "components/atomic/atoms/Select/Select";
 import {
-  timeOptions,
   tokenFilters,
   TokensContext,
 } from "context/TokensContext";
-import { setFilterBy, setTimeFrame } from "context/actionNames";
+import { setFilterBy } from "context/actionNames";
 
 export default function Chart({ chartData, xKey, yKey, yKey1 }) {
   //  FIXME: create dynamic reverser for token or pair day datas
@@ -60,15 +58,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
               );
             })}
           </Styled.FilterButtons>
-          {/* <div>
-            <Select
-              dispatch={tokensDispatch}
-              action={setTimeFrame}
-              options={timeOptions}
-              state={tokensState}
-              value={tokensState.timeFrame}
-            />
-          </div> */}
+       
         </Styled.FilterChartFlex>
         <ResponsiveContainer height={300}>
           <AreaChart

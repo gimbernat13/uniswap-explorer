@@ -1,11 +1,9 @@
 import { Card } from 'components/atomic/atoms/Card/Card';
-import React, { useContext } from 'react';
-import { TokensContext } from 'context/TokensContext';
+import React from 'react';
 import formatNumber from 'utils/formatNumber';
 import * as Styled from './styles';
 
 export function TokenCard({ token, index, isActive }) {
-  const { state: tokensState } = useContext(TokensContext);
   return (
     <Card variant="gradient" isActive={isActive}>
       <Styled.TokenCard className="card">

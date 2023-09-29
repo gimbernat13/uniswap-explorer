@@ -30,7 +30,7 @@ export function TokensView({ routes }) {
       [...allTokens, ...data.tokens].forEach(token => uniqueTokensMap.set(token.id, token));
       setAllTokens([...uniqueTokensMap.values()]);
     }
-  }, [data]);
+  }, [allTokens, data]);
 
   const loadMoreTokens = () => {
     setLoadingMore(true);

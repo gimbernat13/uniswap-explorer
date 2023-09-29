@@ -2,7 +2,6 @@ import React from "react";
 import formatNumber from "utils/formatNumber";
 import * as Styled from "./styles";
 export const RecentSwaps = ({ swapData, pairData }) => {
-  const { amountUSD } = swapData;
   const { token0, token1 } = pairData;
   console.log("swap data ", swapData);
 

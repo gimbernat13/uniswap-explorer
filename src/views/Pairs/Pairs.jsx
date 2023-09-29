@@ -11,7 +11,7 @@ import { PairTable } from "components/atomic/organisms/PairTable/PairTable";
 import { useViewType } from "hooks/useViewType";
 import { ViewTypeButtons } from "components/atomic/molecules/ViewTypeButtons/ViewTypeButtons";
 import { hasSubRoute } from "utils/hasSubRoute";
-import { Card, CARD_VARIANTS } from "components/atomic/atoms/Card/Card";
+import { Card } from "components/atomic/atoms/Card/Card";
 export function Pairs({ routes }) {
   React.useEffect(() => {}, []);
 

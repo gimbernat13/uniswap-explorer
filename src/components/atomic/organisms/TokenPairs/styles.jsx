@@ -1,4 +1,3 @@
-import { deviceQueries } from "config/viewSizes";
 import styled from "styled-components";
 
 export const TokenPairs = styled.div`
