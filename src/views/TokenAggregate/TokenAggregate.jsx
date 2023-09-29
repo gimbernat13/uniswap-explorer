@@ -29,6 +29,9 @@ export function TokenAggregate() {
     variables: { id: tokenID, timeFrame: tokensState.timeFrame.id },
   });
 
+
+  console.log("token data" , data)
+
   React.useEffect(() => {
     dispatch({ type: setSelectedToken, payload: tokenID });
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

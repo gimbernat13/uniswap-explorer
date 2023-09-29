@@ -34,12 +34,7 @@ export function TokenTable({ tableData }) {
           <div>{formatNumber(parseFloat(row.tradeVolumeUSD).toFixed(2))} </div>
         ),
       },
-      {
-        Header: "Liquidity USD",
-        accessor: (row) => (
-          <div>{formatNumber(parseFloat(row.totalLiquidity).toFixed(2))} </div>
-        ),
-      },
+     
     ],
     []
   );

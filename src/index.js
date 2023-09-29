@@ -20,14 +20,12 @@ import { TokenAggregate } from "./views/TokenAggregate/TokenAggregate";
 import { Pairs } from "./views/Pairs/Pairs";
 import { Layout } from "components/global/Layout/Layout";
 import reportWebVitals from "./reportWebVitals";
+// https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
 const client = new ApolloClient({
-  uri: "https://gateway.thegraph.com/api/1bc3d7826e217d5a90a4a1d5ca8d1f84/subgraphs/id/2szAn45skWZFLPUbxFEtjiEzT1FMW8Ff5ReUPbZbQxtt",
+  uri: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
   cache: new InMemoryCache(),
 });
 
-
-const  THEGRAPH_API_KEY  = process.env.REACT_APP_THEGRAPH_API_KEY
-console.log("the graph key" , process.env.REACT_APP_THEGRAPH_API_KEY); // 
 
 const routes = [
   {

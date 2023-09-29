@@ -19,7 +19,7 @@ export const PAIR_AGGREGATE = gql`
       }
     }
     pairDayDatas(
-      first: 100
+      first: 30
       orderBy: date
       orderDirection: desc
       where: { pairAddress: $id, date_gt: 1592505859 }

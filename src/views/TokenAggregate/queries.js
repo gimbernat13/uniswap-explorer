@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 export const TOKEN_DETAILS = gql`
-  query TokenDetails($id: String!, $timeFrame: Int!) {
+  query TokenDetails($id: String!) {
     token(id: $id) {
       name
       symbol
@@ -12,7 +12,7 @@ export const TOKEN_DETAILS = gql`
     pairs(
       orderBy: volumeUSD
       orderDirection: desc
-      first: 6
+      first: 5
       where: { token0: $id }
     ) {
       id
@@ -28,7 +28,7 @@ export const TOKEN_DETAILS = gql`
     tokenDayDatas(
       orderBy: date
       orderDirection: desc
-      first: $timeFrame
+      first: 30
       where: { token: $id }
     ) {
       id

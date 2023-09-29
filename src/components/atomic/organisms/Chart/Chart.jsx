@@ -60,7 +60,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
               );
             })}
           </Styled.FilterButtons>
-          <div>
+          {/* <div>
             <Select
               dispatch={tokensDispatch}
               action={setTimeFrame}
@@ -68,7 +68,7 @@ export default function Chart({ chartData, xKey, yKey, yKey1 }) {
               state={tokensState}
               value={tokensState.timeFrame}
             />
-          </div>
+          </div> */}
         </Styled.FilterChartFlex>
         <ResponsiveContainer height={300}>
           <AreaChart
