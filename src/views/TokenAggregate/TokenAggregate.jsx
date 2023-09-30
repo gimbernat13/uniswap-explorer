@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useQuery } from '@apollo/client';
 import { SwapWidget, darkTheme } from '@uniswap/widgets';
-import { useParams } from 'react-router-dom';
 import { TokenPairs } from 'components/atomic/organisms/TokenPairs/TokenPairs';
 import Modal from 'components/atomic/molecules/Modal/Modal';
 import { TokenMainDetails } from 'components/atomic/molecules/TokenMainDetails/TokenMainDetails';
@@ -34,12 +33,12 @@ export function TokenAggregate() {
   React.useEffect(() => {
     console.log('useEffect is triggered'); // for debugging
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    if(tokenID) dispatch({ type: setSelectedToken, payload: tokenID });
+    if (tokenID) dispatch({ type: setSelectedToken, payload: tokenID });
   }, [tokenID, dispatch]);
 
   if (loading) return <BarLoader color="#828bdd" />;
   if (error) return `Error! ${error.message}`;
-  
+
   return (
     <>
       <Modal ref={modalRef}>
